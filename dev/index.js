@@ -22,7 +22,5 @@ function importAll (r) {
   r.keys().forEach(key => cache[key] = r(key));
 };
 
-
-import "./views/index.pug";
 importAll(require.context("./static/BEM/", true, /\.styl$/));
 importAll(require.context("./static/fonts/", true, /\.otf$|\.ttf$|\.woff$|\.svg$|\.eot$/));

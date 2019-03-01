@@ -18,7 +18,7 @@ module.exports = function(paths) {
         },
         plugins: [
 			new HTMLWebpackPlugin({
-				template: paths + "/dev/index.pug",
+				template: paths + "/dev/views/index.pug",
 				inject: false,
 				minify: false
 			}),
