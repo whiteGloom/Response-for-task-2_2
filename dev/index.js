@@ -23,4 +23,5 @@ function importAll (r) {
 };
 
 importAll(require.context("./static/BEM/", true, /\.styl$/));
-importAll(require.context("./static/fonts/", true, /\.otf$|\.ttf$|\.woff$|\.svg$|\.eot$/));
+importAll(require.context("./static/BEM/", true, /\.(jpe?g|gif|png|svg)/));
+importAll(require.context("./static/fonts/", true, /\.(woff|otf|ttf|eot)/));

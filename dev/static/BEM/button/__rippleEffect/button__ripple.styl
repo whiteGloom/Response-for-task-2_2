@@ -1,0 +1,15 @@
+.button__rippleEffect
+	position: absolute
+	top: 0; right: 0; bottom: 0; left: 0 
+	background-position: center
+	opacity: 0
+	transition: .5s all
+	z-index: 1
+
+.button:hover .button__rippleEffect
+	background: radial-gradient(circle, white 1%, transparent 1%) center/15000%
+
+.button:active .button__rippleEffect
+	background-size: 100%
+	transition: 0s all
+	opacity: .4
