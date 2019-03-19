@@ -1,19 +1,20 @@
-mixin buttonMix(params)
+mixin buttonMix(options)
 	-
-		var type 	= params.type ? params.type : 'box',
-			blocked	= params.blocked,
-			color 	= blocked === true ? 'blocked' : params.color ? params.color : 'aquamarine',
-			text = params.text ? params.text : "button",
-			background = params.background ? params.background : 'rightArrow';
+		var options		= options ? options : {};
+		var type 		= options.type ? options.type : 'box',
+			blocked		= options.blocked,
+			color 		= blocked === true ? 'blocked' : options.color ? options.color : 'aquamarine',
+			text 		= options.text ? options.text : 'button',
+			background 	= options.background ? options.background : 'rightArrow';
 
-	button.button(class= "" +  ( blocked === true ? "button_blocked" : ""))
-		.button__outer(class="" + 
-				(" button__outer_type_" + type) + 
-				(" button__outer_color_" + color))
+	button.button(class= '' +  ( blocked === true ? ' button_blocked' : ''))
+		.button__outer(class='' + 
+				(' button__outer_type_' + type) + 
+				(' button__outer_color_' + color))
 
-			.button__inner(class="" +
-					(" button__inner_type_" + type) + 
-					(" button__inner_color_" + color))
+			.button__inner(class='' +
+					(' button__inner_type_' + type) + 
+					(' button__inner_color_' + color))
 
 				if blocked !== true
 					.button__rippleEffect
@@ -21,23 +22,23 @@ mixin buttonMix(params)
 				case type
 					when 'box' 
 					when 'boxMini'
-						.button__content(class="" + 
-								(" button__content_type_" + type) + 
-								(" button__content_color_" + color))= text
+						.button__content(class='' + 
+								(' button__content_type_' + type) + 
+								(' button__content_color_' + color))= text
 
 					when 'round'
-						svg.button__content(viewbox="0 0 44 44" 
-							class="" +
-								(" button__content_type_" + type) + 
-								(" button__content_color_" + color))
+						svg.button__content(viewbox='0 0 44 44'
+							class='' +
+								(' button__content_type_' + type) + 
+								(' button__content_color_' + color))
 
 							case background
 								when 'rightArrow'
-									g(transform="translate(25, 11) rotate(45)")
-										rect(width="4" height="17")
-										rect(width="17" height="4" y="13")
+									g(transform='translate(25, 11) rotate(45)')
+										rect(width='4' height='17')
+										rect(width='17' height='4' y='13')
 
 								when 'leftArrow'
-									g(transform="translate(20, 11) rotate(45)")
-										rect(width="4" height="17" x="13")
-										rect(width="17" height="4")
+									g(transform='translate(20, 11) rotate(45)')
+										rect(width='4' height='17' x='13')
+										rect(width='17' height='4')
