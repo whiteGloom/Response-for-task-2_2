@@ -15,13 +15,7 @@
 	-whiteGloom
 */
 
+$ = require('jquery');
+require('jchart');
 
-var cache = {};
-
-function importAll (r) {
-  r.keys().forEach(key => cache[key] = r(key));
-};
-
-importAll(require.context("./static/BEM/", true, /\.styl$/));
-importAll(require.context("./static/BEM/", true, /\.(jpe?g|gif|png|svg)/));
-importAll(require.context("./static/fonts/", true, /\.(woff|otf|ttf|eot)/));
+require('./scripts/scripts.js');

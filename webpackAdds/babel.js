@@ -2,14 +2,15 @@
     Файл с инструкциями для обработки JS файлов.
 */
 
-module.exports = function(paths) {
+module.exports = function(options) {
+    var options = options ? options : {};
     return {
         module: {
             rules: [
 				{
-					test: /\.js$/,
+					test: /\.(js)/,
 					loader: "babel-loader",
-					exclude: /node_modules/
+					exclude: /[\\/]node_modules[\\/]/
 				}
             ]
         }

@@ -2,7 +2,8 @@
     Файл с инструкциями для обработки статики ( изображений, векторов, шрифтов и т.п. ).
 */
 
-module.exports = function(paths) {
+module.exports = function(options) {
+    var options = options ? options : {};
     return {
         module: {
             rules: [
@@ -13,7 +14,7 @@ module.exports = function(paths) {
 				      	outputPath: 'static/images',
 				      	name: '[name].[ext]'
 				    },
-					exclude: /node_modules/
+					exclude: /[\\/](node_modules|fonts)[\\/]/
 				},
 				{
 					test:  /\.(woff|otf|ttf|eot)/,
@@ -22,7 +23,16 @@ module.exports = function(paths) {
 				      	outputPath: 'static/fonts',
 				      	name: '[name].[ext]'
 				    },
-					exclude: /node_modules/
+					exclude: /[\\/]node_modules[\\/]/
+				},
+				{
+					test:  /\.svg$/,
+					loader: "file-loader",
+				    options: {
+				      	outputPath: 'static/fonts',
+				      	name: '[name].[ext]'
+				    },
+					include: /[\\/]fonts[\\/]/
 				}
             ]
         }

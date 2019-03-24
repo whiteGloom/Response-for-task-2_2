@@ -4,7 +4,8 @@
 
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
-module.exports = function(paths) {
+module.exports = function(options) {
+    var options = options ? options : {};
     return {
         module: {
             rules: [
@@ -16,7 +17,7 @@ module.exports = function(paths) {
                         { loader: "css-loader", options: { url: false } },
                         "stylus-relative-loader"
                     ],
-                    exclude: /node_modules/
+                    exclude: /[\\/]node_modules[\\/]/
                 }
             ]
         },
