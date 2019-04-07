@@ -9,57 +9,116 @@
 	<script type="text/javascript" src="./scripts/main.js"></script>
 </head>
 
-<body>
-	<h1 class="h1">UIkit</h1>
-	<button class="button">
-		<div class="button__outer  button__outer_type_boxMini button__outer_color_aquamarine">
-			<div class="button__inner  button__inner_type_boxMini button__inner_color_aquamarine">
-				<div class="button__rippleEffect"></div>
-				<div class="button__content  button__content_type_boxMini button__content_color_aquamarine">button</div>
+<body style="width: 700px">
+	<div>
+		<h1 class="h1">UIkit</h1>
+		<div>
+			<button class="button" type="button">
+				<div class="button__outer  button__outer_form_boxMini button__outer_color_aquamarine">
+					<div class="button__inner  button__inner_form_boxMini button__inner_color_aquamarine">
+						<div class="button__rippleEffect"></div>
+						<div class="button__content  button__content_form_boxMini button__content_color_aquamarine">button</div>
+					</div>
+				</div>
+			</button>
+			<button class="button" type="button">
+				<div class="button__outer  button__outer_form_box button__outer_color_aquamarine">
+					<div class="button__inner  button__inner_form_box button__inner_color_aquamarine">
+						<div class="button__rippleEffect"></div>
+						<div class="button__content  button__content_form_box button__content_color_aquamarine">button</div>
+					</div>
+				</div>
+			</button>
+			<button class="button" type="button">
+				<div class="button__outer  button__outer_form_box button__outer_color_orange">
+					<div class="button__inner  button__inner_form_box button__inner_color_orange">
+						<div class="button__rippleEffect"></div>
+						<div class="button__content  button__content_form_box button__content_color_orange">button</div>
+					</div>
+				</div>
+			</button>
+			<button class="button" type="button">
+				<div class="button__outer  button__outer_form_boxMini button__outer_color_orange">
+					<div class="button__inner  button__inner_form_boxMini button__inner_color_orange">
+						<div class="button__rippleEffect"></div>
+						<div class="button__content  button__content_form_boxMini button__content_color_orange">button</div>
+					</div>
+				</div>
+			</button>
+		</div>
+		<div>
+			<button class="button" type="button">
+				<div class="button__outer  button__outer_form_round button__outer_color_aquamarine">
+					<div class="button__inner  button__inner_form_round button__inner_color_aquamarine">
+						<div class="button__rippleEffect"></div>
+						<svg class="button__content  button__content_form_round button__content_color_aquamarine" viewbox="0 0 44 44">
+							<g transform="translate(20, 11) rotate(45)">
+								<rect width="4" height="17" x="13"></rect>
+								<rect width="17" height="4"></rect>
+							</g>
+						</svg>
+					</div>
+				</div>
+			</button>
+			<button class="button  button_blocked" type="button">
+				<div class="button__outer  button__outer_form_round button__outer_color_blocked">
+					<div class="button__inner  button__inner_form_round button__inner_color_blocked">
+						<svg class="button__content  button__content_form_round button__content_color_blocked" viewbox="0 0 44 44">
+							<g transform="translate(20, 11) rotate(45)">
+								<rect width="4" height="17" x="13"></rect>
+								<rect width="17" height="4"></rect>
+							</g>
+						</svg>
+					</div>
+				</div>
+			</button>
+		</div>
+		<div style="justify-content: space-between; display: flex">
+			<div style="width: 8.1rem">
+				<div class="chart chart_type_progress" id="chartTestFirst"></div>
+			</div>
+			<div style="width: 8.1rem">
+				<div class="chart chart_type_progress" id="chartTestSecond"></div>
+			</div>
+			<div style="width: 8.1rem">
+				<div class="chart chart_type_progress" id="chartTestThird"></div>
 			</div>
 		</div>
-	</button>
-	<button class="button">
-		<div class="button__outer  button__outer_type_box button__outer_color_orange">
-			<div class="button__inner  button__inner_type_box button__inner_color_orange">
-				<div class="button__rippleEffect"></div>
-				<div class="button__content  button__content_type_box button__content_color_orange">button</div>
+		<input class="slider" id="sliderSimpleTest">
+		<input class="slider" id="sliderPipsTest">
+		<div class="stepbar" id="stepbarTest"></div>
+		<form class="form" style="width: 287px">
+			<div class="form__el">
+				<input class="form__textBox" type="text" placeholder="Your Name">
+				<div class="form__message" style="background-color: #4eb7a8; border-color: #4eb7a8">thanks!</div>
 			</div>
-		</div>
-	</button>
-	<button class="button  button_blocked">
-		<div class="button__outer  button__outer_type_box button__outer_color_blocked">
-			<div class="button__inner  button__inner_type_box button__inner_color_blocked">
-				<div class="button__content  button__content_type_box button__content_color_blocked">button</div>
+			<div class="form__el">
+				<input class="form__textBox" type="password" placeholder="Password">
+				<div class="form__message" style="background-color: #e75735; border-color: #e75735">thanks!</div>
 			</div>
-		</div>
-	</button>
-	<button class="button">
-		<div class="button__outer  button__outer_type_round button__outer_color_aquamarine">
-			<div class="button__inner  button__inner_type_round button__inner_color_aquamarine">
-				<div class="button__rippleEffect"></div>
-				<svg class="button__content  button__content_type_round button__content_color_aquamarine" viewbox="0 0 44 44">
-					<g transform="translate(20, 11) rotate(45)">
-						<rect width="4" height="17" x="13"></rect>
-						<rect width="17" height="4"></rect>
-					</g>
-				</svg>
+			<div class="form__el">
+				<textarea class="form__textBox form__textBox_type_big" placeholder="Your Message"></textarea>
 			</div>
-		</div>
-	</button>
-	<button class="button  button_blocked">
-		<div class="button__outer  button__outer_type_round button__outer_color_blocked">
-			<div class="button__inner  button__inner_type_round button__inner_color_blocked">
-				<svg class="button__content  button__content_type_round button__content_color_blocked" viewbox="0 0 44 44">
-					<g transform="translate(20, 11) rotate(45)">
-						<rect width="4" height="17" x="13"></rect>
-						<rect width="17" height="4"></rect>
-					</g>
-				</svg>
+			<div class="form__el">
+				<button class="toggle" type="button" data-state="off">
+					<div class="toggle__outer  toggle__outer_state_off">
+						<div class="toggle__handle  toggle__handle_state_off"></div>
+						<div class="toggle__text  toggle__text_state_off">off</div>
+					</div>
+				</button>
 			</div>
-		</div>
-	</button>
-	<div class="test"></div>
+			<div class="form__el form__el_type_submit">
+				<button class="button" type="submit">
+					<div class="button__outer  button__outer_form_box button__outer_color_aquamarine">
+						<div class="button__inner  button__inner_form_box button__inner_color_aquamarine">
+							<div class="button__rippleEffect"></div>
+							<div class="button__content  button__content_form_box button__content_color_aquamarine">button</div>
+						</div>
+					</div>
+				</button>
+			</div>
+		</form>
+	</div>
 </body>
 
 </html>

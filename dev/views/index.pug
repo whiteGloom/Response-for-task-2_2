@@ -1,4 +1,4 @@
-include ../static/BEM/mixinsList
+include ../static/styles/BEM/mixinsList
 
 doctype html
 html
@@ -8,11 +8,37 @@ html
 		link(rel="stylesheet" type="text/css" href="static/styles/styles.css")
 		script(type="text/javascript" src="./scripts/vendors.js")
 		script(type="text/javascript" src="./scripts/main.js")
-	body
-		h1.h1 UIkit
-		+buttonMix({type: "boxMini", text:"button"})
-		+buttonMix({type: "box", text:"button", color: "orange"})
-		+buttonMix({type: "box", text:"button", blocked:true})
-		+buttonMix({type: "round", background: "leftArrow"})
-		+buttonMix({type: "round", background: "leftArrow", blocked: true})
-		.test()
+	body(style="width: 700px")
+		div
+			h1.h1 UIkit
+			div
+				+buttonMix({form: "boxMini", text:"button"})
+				+buttonMix({form: "box", text:"button"})
+				+buttonMix({form: "box", text:"button", color: "orange"})
+				+buttonMix({form: "boxMini", text:"button", color: "orange"})
+			div
+				+buttonMix({form: "round", background: "leftArrow"})
+				+buttonMix({form: "round", background: "leftArrow", blocked: true})
+			div(style="justify-content: space-between; display: flex")
+				div(style="width: 8.1rem")
+					+chartMix({id: 'chartTestFirst'})
+				div(style="width: 8.1rem")
+					+chartMix({id: 'chartTestSecond'})
+				div(style="width: 8.1rem")
+					+chartMix({id: 'chartTestThird', form: 'pie'})
+			+sliderMix({id: 'sliderSimpleTest'})
+			+sliderMix({id: 'sliderPipsTest'})
+			+stepbarMix({id: 'stepbarTest'})
+			form.form(style="width: 287px")
+				.form__el
+					input.form__textBox(type="text" placeholder="Your Name")
+					.form__message(style="background-color: #4eb7a8; border-color: #4eb7a8") thanks!
+				.form__el
+					input.form__textBox(type="password" placeholder="Password")
+					.form__message(style="background-color: #e75735; border-color: #e75735") thanks!
+				.form__el
+					textarea.form__textBox.form__textBox_type_big(placeholder="Your Message")
+				.form__el
+					+toggleMix({state: 'off'})
+				.form__el.form__el_type_submit
+					+buttonMix({form: "box", text: "button", type: "submit"})

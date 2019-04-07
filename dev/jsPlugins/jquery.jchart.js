@@ -7,8 +7,8 @@
  */
 // the semi-colon before function invocation is a safety net against concatenated
 // scripts and/or other plugins which may not be closed properly.
+
 ;(function ($, window, document, undefined) {
-    $ = require('jquery');
 
     "use strict";
 
@@ -331,7 +331,7 @@
                         const chartSummary = instance._methods.drawSvgText(instance, {
                             'class': `${instance._objPrefix}summary`,
                             'x': instance.settings.appearance.centerX,
-                            'y': instance.settings.appearance.isGauge ? instance.settings.appearance.centerY * 0.9 : instance.settings.appearance.centerY
+                            'y': instance.settings.appearance.isGauge ? instance.settings.appearance.centerY * 0.9 : instance.settings.appearance.centerY + 5
                         });
                         instance.settings.elements.summary = chartSummary;
                         svgElement.appendChild(chartSummary);
@@ -1454,4 +1454,4 @@
         return null
     };
 
-})('jquery', window, document);
+})($, window, document);

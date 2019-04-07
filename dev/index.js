@@ -14,8 +14,10 @@
 
 	-whiteGloom
 */
-
 $ = require('jquery');
 require('jchart');
-
+require('ionSlider');
+require('stepbar');
+chart = require('./static/styles/bem/chart/chartScripts.js');
+require('./static/styles/bem/toggle/toggleScripts.js');
 require('./scripts/scripts.js');

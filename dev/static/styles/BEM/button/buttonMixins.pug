@@ -1,0 +1,45 @@
+mixin buttonMix(options)
+	-
+		var options		= options ? options : {};
+		var form 		= options.form ? options.form : 'box',
+			blocked		= options.blocked,
+			color 		= blocked === true ? 'blocked' : options.color ? options.color : 'aquamarine',
+			text 		= options.text ? options.text : 'button',
+			type		= options.type ? options.type : 'button',
+			background 	= options.background ? options.background : 'rightArrow';
+
+	button.button(class= '' + ( blocked === true ? ' button_blocked' : '') type=type)
+		.button__outer(class='' + 
+				(' button__outer_form_' + form) + 
+				(' button__outer_color_' + color))
+
+			.button__inner(class='' +
+					(' button__inner_form_' + form) + 
+					(' button__inner_color_' + color))
+
+				if blocked !== true
+					.button__rippleEffect
+					
+				case form
+					when 'box' 
+					when 'boxMini'
+						.button__content(class='' + 
+								(' button__content_form_' + form) + 
+								(' button__content_color_' + color))= text
+
+					when 'round'
+						svg.button__content(viewbox='0 0 44 44'
+							class='' +
+								(' button__content_form_' + form) + 
+								(' button__content_color_' + color))
+
+							case background
+								when 'rightArrow'
+									g(transform='translate(25, 11) rotate(45)')
+										rect(width='4' height='17')
+										rect(width='17' height='4' y='13')
+
+								when 'leftArrow'
+									g(transform='translate(20, 11) rotate(45)')
+										rect(width='4' height='17' x='13')
+										rect(width='17' height='4')

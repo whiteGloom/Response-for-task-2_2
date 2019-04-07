@@ -181,6 +181,14 @@ $ = __webpack_require__(/*! jquery */ "./dev/jsPlugins/jquery-3.3.1.js");
 
 __webpack_require__(/*! jchart */ "./dev/jsPlugins/jquery.jchart.js");
 
+__webpack_require__(/*! ionSlider */ "./dev/jsPlugins/ion.rangeSlider.js");
+
+__webpack_require__(/*! stepbar */ "./dev/jsPlugins/stepbar.js");
+
+chart = __webpack_require__(/*! ./static/styles/bem/chart/chartScripts.js */ "./dev/static/styles/bem/chart/chartScripts.js");
+
+__webpack_require__(/*! ./static/styles/bem/toggle/toggleScripts.js */ "./dev/static/styles/bem/toggle/toggleScripts.js");
+
 __webpack_require__(/*! ./scripts/scripts.js */ "./dev/scripts/scripts.js");
 
 /***/ }),
@@ -194,22 +202,184 @@ __webpack_require__(/*! ./scripts/scripts.js */ "./dev/scripts/scripts.js");
 
 // Test scripts
 $(document).ready(function () {
-  // $('body').hide();
-  // setTimeout(() => {
-  // 	$('body').show();
-  // }, 2000)
-  $('.test').jChart({
-    data: [{
-      value: 300
+  chart.newChart({
+    target: '#chartTestFirst',
+    type: 'progress',
+    title: '89',
+    values: [{
+      value: 89
+    }]
+  });
+  chart.newChart({
+    target: '#chartTestSecond',
+    type: 'progress',
+    title: '50',
+    values: [{
+      value: 50
+    }]
+  });
+  chart.newChart({
+    target: '#chartTestThird',
+    type: 'pie',
+    values: [{
+      value: 10,
+      color: '#747474'
     }, {
-      value: 300
-    }],
-    appearance: {
-      type: 'donut',
-      gap: 0
-    }
+      value: 30,
+      color: '#e75735'
+    }, {
+      value: 30,
+      color: '#4eb7a8'
+    }, {
+      value: 30,
+      color: '#e5e5e5'
+    }]
+  });
+  $("#sliderSimpleTest").ionRangeSlider({
+    min: 0,
+    max: 100,
+    from: 40,
+    skin: "simple"
+  });
+  $("#sliderPipsTest").ionRangeSlider({
+    min: 0,
+    max: 100,
+    from: 40,
+    grid: true,
+    skin: "pips"
+  });
+  $('#stepbarTest').stepbar({
+    items: ['1', '2', '3', '4', '5'],
+    current: 3
   });
 });
+
+/***/ }),
+
+/***/ "./dev/static/styles/bem/chart/chartScripts.js":
+/*!*****************************************************!*\
+  !*** ./dev/static/styles/bem/chart/chartScripts.js ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports.newChart = function (options) {
+  var options = options ? options : {};
+  var target = options.target ? options.target : '',
+      type = options.type ? options.type : 'progress',
+      title = options.title ? options.title : '',
+      values = options.values ? options.values : [];
+  var defaults = {
+    data: [],
+    appearance: {
+      type: 'donut',
+      gap: 0,
+      baseColor: 'transparent'
+    }
+  };
+
+  switch (type) {
+    case 'pie':
+      for (var i = 0; i < values.length; i++) {
+        values[i].strokeWidth = 8;
+        values[i].color = {
+          normal: values[i].color,
+          active: values[i].color
+        };
+      }
+
+      ;
+      defaults.data = defaults.data.concat(values);
+      defaults.appearance.title = {
+        showSummary: false
+      };
+      break;
+
+    case 'progress':
+      values[0].strokeWidth = 2;
+      values[0].color = {
+        normal: values[0].color ? values[0].color : '#e75735',
+        active: values[0].color ? values[0].color : '#e75735'
+      };
+      defaults.data = defaults.data.concat(values[0], {
+        value: 100 - values[0].value,
+        draw: false
+      });
+      defaults.appearance.title = {
+        summaryTitle: title,
+        showSummary: true
+      };
+      break;
+
+    default:
+      for (var i = 0; i < values.length; i++) {
+        values[i].color = {
+          normal: values[i].color,
+          active: values[i].color
+        };
+      }
+
+      ;
+      defaults.data = defaults.data.concat(values);
+      defaults.appearance.title = {
+        showSummary: false
+      };
+      break;
+  }
+
+  return $(target).jChart(defaults);
+};
+
+/***/ }),
+
+/***/ "./dev/static/styles/bem/toggle/toggleScripts.js":
+/*!*******************************************************!*\
+  !*** ./dev/static/styles/bem/toggle/toggleScripts.js ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports.toggleClicked = function ($) {
+  $(document).on('click', '.toggle', function () {
+    var parent = this,
+        outer = {
+      obj: $(parent).find('.toggle__outer'),
+      name: 'outer'
+    },
+        handle = {
+      obj: $(parent).find('.toggle__handle'),
+      name: 'handle'
+    },
+        text = {
+      obj: $(parent).find('.toggle__text'),
+      name: 'text'
+    },
+        els = [outer, handle, text];
+    var stateCurrent = $(parent).data('state'),
+        stateNext = stateCurrent == 'off' ? 'on' : 'off';
+
+    for (var i = els.length - 1; i >= 0; i--) {
+      $(els[i].obj).removeClass('toggle__' + els[i].name + '_state_' + stateCurrent);
+      $(els[i].obj).addClass('toggle__' + els[i].name + '_state_' + stateNext);
+    }
+
+    $(parent).data('state', stateNext);
+  });
+}($);
+
+/***/ }),
+
+/***/ "./node_modules/webpack/buildin/amd-options.js":
+/*!****************************************!*\
+  !*** (webpack)/buildin/amd-options.js ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/* WEBPACK VAR INJECTION */(function(__webpack_amd_options__) {/* globals __webpack_amd_options__ */
+module.exports = __webpack_amd_options__;
+
+/* WEBPACK VAR INJECTION */}.call(this, {}))
 
 /***/ }),
 

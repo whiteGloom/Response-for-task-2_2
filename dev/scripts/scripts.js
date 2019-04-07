@@ -1,22 +1,62 @@
 // Test scripts
-$(document).ready(function(){
-	// $('body').hide();
-
-	// setTimeout(() => {
-	// 	$('body').show();
-	// }, 2000)
-	$('.test').jChart({
-	    data: [
-	        {
-	            value: 300
-	        },
-	        {
-	            value: 300
-	        },
-	    ],
-	    appearance: {
-	        type: 'donut',
-	        gap: 0
-	    }
-	})
+$(document).ready(() =>{
+	chart.newChart({
+		target: '#chartTestFirst',
+		type: 'progress',
+		title: '89',
+		values: [
+			{
+				value: 89
+			}
+		]
+	});
+	chart.newChart({
+		target: '#chartTestSecond',
+		type: 'progress',
+		title: '50',
+		values: [
+			{
+				value: 50
+			}
+		]
+	});
+	chart.newChart({
+		target: '#chartTestThird',
+		type: 'pie',
+		values: [
+			{
+				value: 10,
+				color: '#747474'
+			},
+			{
+				value: 30,
+				color: '#e75735'
+			},
+			{
+				value: 30,
+				color: '#4eb7a8'
+			},
+			{
+				value: 30,
+				color: '#e5e5e5'
+			}
+		]
+	});
+    $("#sliderSimpleTest").ionRangeSlider({
+    	min: 0,
+    	max: 100,
+        from: 40,
+        skin: "simple"
+    });
+    $("#sliderPipsTest").ionRangeSlider({
+    	min: 0,
+    	max: 100,
+        from: 40,
+        grid: true,
+        skin: "pips"
+    });
+	$('#stepbarTest').stepbar({
+		items: ['1', '2', '3', '4', '5'],
+		current: 3
+	});
 });
