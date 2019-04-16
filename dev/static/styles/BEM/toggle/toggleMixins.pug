@@ -1,9 +1,10 @@
 mixin toggleMix(options)
 	-
-		var options = options ? options : {};
-		var state = options.state ? options.state : 'off';
-
-	button.toggle(type='button' data-state=state)
-		.toggle__outer(class='' + (' toggle__outer_state_' + state))
-			.toggle__handle(class='' + (' toggle__handle_state_' + state))
-			.toggle__text(class='' + (' toggle__text_state_' + state))= state
+		var options 	= options ? options : {};
+		var value 		= options.value ? options.value : 'false',
+			defaults	= value,
+			name 		= options.name ? options.name : 'toggle',
+			state 		= value == 'true' ? 'on' : 'off';
+	button.toggle(class='' + (' toggle_state_' + state) type='button' data-value=value data-name=name)
+		.toggle__handle(class='' + (' toggle__handle_state_' + state))
+		.toggle__text(class='' + (' toggle__text_state_' + state))= state

@@ -1,5 +1,11 @@
 // Test scripts
-$(document).ready(() =>{
+$(document).ready(() => {
+	var inputs 	= input.mkArr();
+	var toggles = toggle.mkArr();
+	var ticks 	= tick.mkArr();
+	var forms 	= form.mkArr();
+	var bars 	= bar.mkArr();
+	
 	chart.newChart({
 		target: '#chartTestFirst',
 		type: 'progress',

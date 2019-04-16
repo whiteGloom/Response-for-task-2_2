@@ -1,0 +1,13 @@
+mixin tickMix(options)
+	-
+		var options 	= options ? options : {};
+		var value 		= options.value ? options.value : 'off',
+			defaults	= value,
+			name 		= options.name ? options.name : 'tick',
+			state 		= value == 'true' ? 'on' : 'off';
+
+	button.tick(class='' + (' tick_state_' + state) type='button' data-value=value data-name=name)
+		svg.tick__icon(class='' + (' tick__icon_state_' + state) viewbox="0 0 40 40")
+			g(transform="translate(16, 28) rotate(-135)")
+				rect(width='10' height='3')
+				rect(width='3' height='16' y='3')

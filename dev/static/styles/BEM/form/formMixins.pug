@@ -1,1 +1,38 @@
-mixin formMix()
+mixin formMix(options)
+	-
+		var options = options ? options : {};
+		var name 	= options.name ? options.name : 'form';
+
+	form.form(name=name)
+		if block
+			block
+
+mixin formElMix(options)
+	-
+		var options = options ? options : {};
+
+	.form__el
+		if block
+			block
+
+mixin formElTextMix(options)
+	-
+		var options = options ? options : {};
+	.form__text
+		if block
+			block
+
+mixin formElEntryMix(options)
+	-
+		var options = options ? options : {};
+		var size = options.size ? options.size : 'auto';
+	.form__entry(class='' + (' form__entry_size_' + size))
+		if block
+			block
+
+mixin formSubmit(options)
+	-
+		var options = options ? options : {};
+	.form__submit
+		if block
+			block

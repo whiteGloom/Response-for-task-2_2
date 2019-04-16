@@ -8,8 +8,8 @@ html
 		link(rel="stylesheet" type="text/css" href="static/styles/styles.css")
 		script(type="text/javascript" src="./scripts/vendors.js")
 		script(type="text/javascript" src="./scripts/main.js")
-	body(style="width: 700px")
-		div
+	body
+		div(style="width: 700px")
 			h1.h1 UIkit
 			div
 				+buttonMix({form: "boxMini", text:"button"})
@@ -29,16 +29,50 @@ html
 			+sliderMix({id: 'sliderSimpleTest'})
 			+sliderMix({id: 'sliderPipsTest'})
 			+stepbarMix({id: 'stepbarTest'})
-			form.form(style="width: 287px")
-				.form__el
-					input.form__textBox(type="text" placeholder="Your Name")
-					.form__message(style="background-color: #4eb7a8; border-color: #4eb7a8") thanks!
-				.form__el
-					input.form__textBox(type="password" placeholder="Password")
-					.form__message(style="background-color: #e75735; border-color: #e75735") thanks!
-				.form__el
-					textarea.form__textBox.form__textBox_type_big(placeholder="Your Message")
-				.form__el
-					+toggleMix({state: 'off'})
-				.form__el.form__el_type_submit
-					+buttonMix({form: "box", text: "button", type: "submit"})
+			div(style="width: 287px")
+				+formMix
+					+formElMix
+						+formElEntryMix({size: 'fill'})
+							+inputMix({type: 'email', name:'email', required: true, placeholder: 'E-mail'})
+					+formElMix
+						+formElEntryMix({size: 'fill'})
+							+inputMix({type: 'password', name: 'password', required: true, placeholder: 'Password'})
+					+formElMix
+						+formElEntryMix({size: 'fill'})
+							+inputMix({form: 'box', name: 'message', placeholder: 'Your message'})
+					+formElMix
+						+formElTextMix
+							| The laser is
+						+formElEntryMix
+							+toggleMix({name: 'laser', value: 'false'})
+					+formElMix
+						+formElTextMix
+							| Bomb the sinagogue?
+						+formElEntryMix
+							+tickMix({name:'bomb', value: 'true'})
+					+formElMix
+						+formElEntryMix({size: 'fill'})
+							+barMix({type: 'dropdown', name: 'kolbasi'})
+								+barOptionMix({value: 'kolbasi bogatirskie'})
+									| Колбасы богатырские
+								+barOptionMix({value: 'kolbasi bovarskie'})
+									| Колбасы боварские
+								+barOptionMix({value: 'kolbasi habibskie'})
+									| Колбасы хабибские
+								+barOptionMix({value: 'kolbasi of dogs'})
+									| Колбасы собачьи
+					+formSubmit
+						+buttonMix({form: "box", text: "submit", type: "submit"})
+				div(style="margin-top: .8rem")
+					+barMix({type: 'dropdown'})
+						+barOptionMix({value: 'kolbasi bogatirskie'})
+							| Колбасы богатырские
+						+barOptionMix({value: 'kolbasi bovarskie'})
+							| Колбасы боварские
+						+barOptionMix({value: 'kolbasi habibskie'})
+							| Колбасы хабибские
+						+barOptionMix({value: 'kolbasi of dogs'})
+							| Колбасы собачьи
+				div(style="margin-top: .8rem")
+					+barMix({type: 'search'})
+						+inputMix({type: 'text', name: 'search', placeholder: 'text query', radius: 'left'})

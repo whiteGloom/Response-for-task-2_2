@@ -9,8 +9,8 @@
 	<script type="text/javascript" src="./scripts/main.js"></script>
 </head>
 
-<body style="width: 700px">
-	<div>
+<body>
+	<div style="width: 700px">
 		<h1 class="h1">UIkit</h1>
 		<div>
 			<button class="button" type="button">
@@ -81,43 +81,139 @@
 				<div class="chart chart_type_progress" id="chartTestSecond"></div>
 			</div>
 			<div style="width: 8.1rem">
-				<div class="chart chart_type_progress" id="chartTestThird"></div>
+				<div class="chart chart_type_pie" id="chartTestThird"></div>
 			</div>
 		</div>
 		<input class="slider" id="sliderSimpleTest">
 		<input class="slider" id="sliderPipsTest">
 		<div class="stepbar" id="stepbarTest"></div>
-		<form class="form" style="width: 287px">
-			<div class="form__el">
-				<input class="form__textBox" type="text" placeholder="Your Name">
-				<div class="form__message" style="background-color: #4eb7a8; border-color: #4eb7a8">thanks!</div>
-			</div>
-			<div class="form__el">
-				<input class="form__textBox" type="password" placeholder="Password">
-				<div class="form__message" style="background-color: #e75735; border-color: #e75735">thanks!</div>
-			</div>
-			<div class="form__el">
-				<textarea class="form__textBox form__textBox_type_big" placeholder="Your Message"></textarea>
-			</div>
-			<div class="form__el">
-				<button class="toggle" type="button" data-state="off">
-					<div class="toggle__outer  toggle__outer_state_off">
-						<div class="toggle__handle  toggle__handle_state_off"></div>
-						<div class="toggle__text  toggle__text_state_off">off</div>
-					</div>
-				</button>
-			</div>
-			<div class="form__el form__el_type_submit">
-				<button class="button" type="submit">
-					<div class="button__outer  button__outer_form_box button__outer_color_aquamarine">
-						<div class="button__inner  button__inner_form_box button__inner_color_aquamarine">
-							<div class="button__rippleEffect"></div>
-							<div class="button__content  button__content_form_box button__content_color_aquamarine">button</div>
+		<div style="width: 287px">
+			<form class="form" name="form">
+				<div class="form__el">
+					<div class="form__entry  form__entry_size_fill">
+						<div class="input" data-type="email" data-name="email">
+							<input class="input__entry  input__entry_form_bar input__entry_radius_default" required type="email" placeholder="E-mail">
+							<div class="input__message  input__message_state_hidden"></div>
 						</div>
 					</div>
-				</button>
+				</div>
+				<div class="form__el">
+					<div class="form__entry  form__entry_size_fill">
+						<div class="input" data-type="password" data-name="password">
+							<input class="input__entry  input__entry_form_bar input__entry_radius_default" required type="password" placeholder="Password">
+							<div class="input__message  input__message_state_hidden"></div>
+						</div>
+					</div>
+				</div>
+				<div class="form__el">
+					<div class="form__entry  form__entry_size_fill">
+						<div class="input" data-type="text" data-name="message">
+							<textarea class="input__entry  input__entry_form_box input__entry_radius_default" type="text" placeholder="Your message"></textarea>
+						</div>
+					</div>
+				</div>
+				<div class="form__el">
+					<div class="form__text">The laser is</div>
+					<div class="form__entry  form__entry_size_auto">
+						<button class="toggle  toggle_state_off" type="button" data-value="false" data-name="laser">
+							<div class="toggle__handle  toggle__handle_state_off"></div>
+							<div class="toggle__text  toggle__text_state_off">off</div>
+						</button>
+					</div>
+				</div>
+				<div class="form__el">
+					<div class="form__text">Bomb the sinagogue?</div>
+					<div class="form__entry  form__entry_size_auto">
+						<button class="tick  tick_state_on" type="button" data-value="true" data-name="bomb">
+							<svg class="tick__icon  tick__icon_state_on" viewbox="0 0 40 40">
+								<g transform="translate(16, 28) rotate(-135)">
+									<rect width="10" height="3"></rect>
+									<rect width="3" height="16" y="3"></rect>
+								</g>
+							</svg>
+						</button>
+					</div>
+				</div>
+				<div class="form__el">
+					<div class="form__entry  form__entry_size_fill">
+						<div class="bar" data-type="dropdown" data-name="kolbasi">
+							<div class="bar__outer">
+								<div class="bar__dropdown">
+									<div class="bar__dropdownText">Choose An Option</div>
+									<div class="bar__dropdownList bar__dropdownList_state_hidden">
+										<div class="bar__dropdownOption" data-value="kolbasi bogatirskie">Колбасы богатырские</div>
+										<div class="bar__dropdownOption" data-value="kolbasi bovarskie">Колбасы боварские</div>
+										<div class="bar__dropdownOption" data-value="kolbasi habibskie">Колбасы хабибские</div>
+										<div class="bar__dropdownOption" data-value="kolbasi of dogs">Колбасы собачьи</div>
+									</div>
+								</div>
+								<div class="bar__button bar__button_color_aquamarine">
+									<svg width="100%" height="100%">
+										<g transform="translate(9, 11) rotate(-45)">
+											<rect height="10" width="2"></rect>
+											<rect height="2" width="10" y="8"></rect>
+										</g>
+									</svg>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="form__submit">
+					<button class="button" type="submit">
+						<div class="button__outer  button__outer_form_box button__outer_color_aquamarine">
+							<div class="button__inner  button__inner_form_box button__inner_color_aquamarine">
+								<div class="button__rippleEffect"></div>
+								<div class="button__content  button__content_form_box button__content_color_aquamarine">submit</div>
+							</div>
+						</div>
+					</button>
+				</div>
+			</form>
+			<div style="margin-top: .8rem">
+				<div class="bar" data-type="dropdown" data-name="bar">
+					<div class="bar__outer">
+						<div class="bar__dropdown">
+							<div class="bar__dropdownText">Choose An Option</div>
+							<div class="bar__dropdownList bar__dropdownList_state_hidden">
+								<div class="bar__dropdownOption" data-value="kolbasi bogatirskie">Колбасы богатырские</div>
+								<div class="bar__dropdownOption" data-value="kolbasi bovarskie">Колбасы боварские</div>
+								<div class="bar__dropdownOption" data-value="kolbasi habibskie">Колбасы хабибские</div>
+								<div class="bar__dropdownOption" data-value="kolbasi of dogs">Колбасы собачьи</div>
+							</div>
+						</div>
+						<div class="bar__button bar__button_color_aquamarine">
+							<svg width="100%" height="100%">
+								<g transform="translate(9, 11) rotate(-45)">
+									<rect height="10" width="2"></rect>
+									<rect height="2" width="10" y="8"></rect>
+								</g>
+							</svg>
+						</div>
+					</div>
+				</div>
 			</div>
-		</form>
+			<div style="margin-top: .8rem">
+				<div class="bar" data-type="search" data-name="bar">
+					<div class="bar__outer">
+						<div class="bar__input">
+							<div class="input" data-type="text" data-name="search">
+								<input class="input__entry  input__entry_form_bar input__entry_radius_left" type="text" placeholder="text query">
+								<div class="input__message  input__message_state_hidden"></div>
+							</div>
+						</div>
+						<div class="bar__button bar__button_color_orange">
+							<svg width="100%" height="100%" viewbox="0 0 28 28">
+								<g>
+									<circle r="4" stroke-width="2" fill="transparent" stroke="white" cx="14" cy="13"></circle>
+									<rect width="6" height="3" x="23" y="-2" transform="rotate(45)" fill="white"></rect>
+								</g>
+							</svg>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 </body>
 

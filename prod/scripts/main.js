@@ -186,8 +186,11 @@ __webpack_require__(/*! ionSlider */ "./dev/jsPlugins/ion.rangeSlider.js");
 __webpack_require__(/*! stepbar */ "./dev/jsPlugins/stepbar.js");
 
 chart = __webpack_require__(/*! ./static/styles/bem/chart/chartScripts.js */ "./dev/static/styles/bem/chart/chartScripts.js");
-
-__webpack_require__(/*! ./static/styles/bem/toggle/toggleScripts.js */ "./dev/static/styles/bem/toggle/toggleScripts.js");
+toggle = __webpack_require__(/*! ./static/styles/bem/toggle/toggleScripts.js */ "./dev/static/styles/bem/toggle/toggleScripts.js");
+tick = __webpack_require__(/*! ./static/styles/bem/tick/tickScripts.js */ "./dev/static/styles/bem/tick/tickScripts.js");
+form = __webpack_require__(/*! ./static/styles/bem/form/formScripts.js */ "./dev/static/styles/bem/form/formScripts.js");
+input = __webpack_require__(/*! ./static/styles/bem/input/inputScripts.js */ "./dev/static/styles/bem/input/inputScripts.js");
+bar = __webpack_require__(/*! ./static/styles/bem/bar/barScripts.js */ "./dev/static/styles/bem/bar/barScripts.js");
 
 __webpack_require__(/*! ./scripts/scripts.js */ "./dev/scripts/scripts.js");
 
@@ -202,6 +205,11 @@ __webpack_require__(/*! ./scripts/scripts.js */ "./dev/scripts/scripts.js");
 
 // Test scripts
 $(document).ready(function () {
+  var inputs = input.mkArr();
+  var toggles = toggle.mkArr();
+  var ticks = tick.mkArr();
+  var forms = form.mkArr();
+  var bars = bar.mkArr();
   chart.newChart({
     target: '#chartTestFirst',
     type: 'progress',
@@ -253,6 +261,106 @@ $(document).ready(function () {
     current: 3
   });
 });
+
+/***/ }),
+
+/***/ "./dev/static/styles/bem/bar/barScripts.js":
+/*!*************************************************!*\
+  !*** ./dev/static/styles/bem/bar/barScripts.js ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function bar(el) {
+  this.base = el;
+  this.type = $(this.base).data('type');
+  this.button = $(this.base).find('.bar__button');
+  this.name = $(this.base).data('name');
+  this.valid = false;
+  this.custom = true;
+  $(this.base).data('custom', true);
+  $(this.base).data('valid', false);
+  $(this.base).data('value', false);
+}
+
+bar.prototype.setValue = function (value) {
+  this.value = value;
+  $(this.base).data('value', value);
+};
+
+bar.prototype.setValid = function (valid) {
+  this.valid = valid;
+  $(this.base).data('valid', valid);
+};
+
+bar.prototype.test = function () {
+  switch (this.type) {
+    case 'search':
+      {
+        this.input = $(this.base).find('.bar__input').children();
+
+        if ($(this.input).data().valid && $(this.input).data().value != undefined) {
+          location.reload();
+        }
+
+        return $(this.input).children().data();
+        break;
+      }
+
+    case 'dropdown':
+      {
+        var selecting = function selecting(event) {
+          if ($(event.target).closest('.bar')[0] == this.base && $(event.target).closest('.bar__button').length != 0) {
+            return;
+          } else {
+            if ($(event.target).closest('.bar__dropdown')[0] == this.dropdown[0]) {
+              if ($(event.target).hasClass('bar__dropdownOption')) {
+                this.setValue($(event.target).data('value'));
+                this.setValid(true);
+                $(this.dropdownList).removeClass('bar__dropdownList_state_visible').addClass('bar__dropdownList_state_hidden');
+                $(this.dropdownText).text($(event.target).text());
+                $(document).off('click', $.proxy(selecting, this));
+                return;
+              }
+            } else {
+              $(document).off('click', $.proxy(selecting, this));
+              $(this.dropdownList).removeClass('bar__dropdownList_state_visible').addClass('bar__dropdownList_state_hidden');
+              return;
+            }
+          }
+        };
+
+        this.dropdown = $(this.base).find('.bar__dropdown');
+        this.dropdownList = $(this.base).find('.bar__dropdownList');
+        this.dropdownOptions = $(this.base).find('.bar__dropdownOption');
+        this.dropdownText = $(this.base).find('.bar__dropdownText');
+
+        if ($(this.dropdownList).hasClass('bar__dropdownList_state_hidden')) {
+          $(this.dropdownList).removeClass('bar__dropdownList_state_hidden').addClass('bar__dropdownList_state_visible');
+          $(document).on('click', $.proxy(selecting, this));
+        }
+
+        break;
+      }
+  }
+};
+
+bar.prototype.onClick = function () {
+  $(this.button).on('click', $.proxy(this.test, this));
+};
+
+function makeArray() {
+  var arr = [];
+
+  for (var i = 0; i <= $('.bar').length - 1; i++) {
+    arr[i] = new bar($('.bar')[i]);
+    arr[i].onClick();
+  }
+
+  return arr;
+}
+
+module.exports.mkArr = makeArray;
 
 /***/ }),
 
@@ -332,6 +440,243 @@ module.exports.newChart = function (options) {
 
 /***/ }),
 
+/***/ "./dev/static/styles/bem/form/formScripts.js":
+/*!***************************************************!*\
+  !*** ./dev/static/styles/bem/form/formScripts.js ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function form(elem) {
+  this.base = elem;
+  this.name = $(this.base).data('name');
+}
+
+form.prototype.getValues = function () {
+  try {
+    var data = [];
+    var formEntrys = $(this.base).find('.form__entry');
+
+    for (var i = 0; i < formEntrys.length; i++) {
+      var entry = $(formEntrys[i]).children()[0];
+
+      if ($(entry).data('custom') == true) {
+        if ($(entry).data('valid') != true) {
+          throw new SyntaxError('error');
+        }
+
+        data.push({
+          name: $(entry).data('name'),
+          value: $(entry).data('value') != undefined ? $(entry).data('value') : ''
+        });
+      } else {
+        data.push({
+          name: $(entry).attr('name'),
+          value: $(entry).val()
+        });
+      }
+    }
+
+    return data;
+  } catch (err) {
+    return 'error';
+  }
+};
+
+form.prototype.onSubmit = function () {
+  $(this.base).on('submit', $.proxy(function (event) {
+    event.preventDefault();
+
+    if (this.getValues() == 'error') {
+      return;
+    }
+
+    ;
+    location.reload();
+  }, this));
+};
+
+function makeArray() {
+  var arr = [];
+
+  for (var i = 0; i <= $('.form').length - 1; i++) {
+    arr[i] = new form($('.form')[i]);
+    arr[i].onSubmit();
+  }
+
+  return arr;
+}
+
+module.exports.mkArr = makeArray;
+
+/***/ }),
+
+/***/ "./dev/static/styles/bem/input/inputScripts.js":
+/*!*****************************************************!*\
+  !*** ./dev/static/styles/bem/input/inputScripts.js ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function input(elem) {
+  this.base = elem;
+  this.type = $(this.base).data('type');
+  this.entry = $(this.base).find('.input__entry');
+  this.message = $(this.base).find('.input__message');
+  this.value = $(this.entry).val();
+  this.name = $(this.base).data('name');
+  this.valid = true;
+  $(this.base).data('custom', true);
+  $(this.base).data('valid', true);
+}
+
+input.prototype.setValue = function (value) {
+  this.value = value;
+  $(this.base).data('value', value);
+};
+
+input.prototype.setValid = function (valid) {
+  this.valid = valid;
+  $(this.base).data('valid', valid);
+};
+
+input.prototype.test = function () {
+  switch (this.type) {
+    case 'email':
+      {
+        if (/^([a-z0-9_-]+\.)*[a-z0-9_-]+@[a-z0-9_-]+(\.[a-z0-9_-]+)*\.[a-z]{2,6}$/.test($(this.entry).val())) {
+          $(this.message).addClass('input__message_state_succes').removeClass('input__message_state_error').removeClass('input__message_state_hidden').text('thanks!');
+          this.setValid(true);
+          this.setValue($(this.entry).val());
+        } else {
+          $(this.message).addClass('input__message_state_error').removeClass('input__message_state_succes').removeClass('input__message_state_hidden').text('error');
+          this.setValid(false);
+          this.setValue($(this.entry).val());
+        }
+
+        break;
+      }
+
+    case 'password':
+      {
+        if ($(this.entry).val().length > 3) {
+          $(this.message).addClass('input__message_state_succes').removeClass('input__message_state_error').removeClass('input__message_state_hidden').text('thanks!');
+          this.setValid(true);
+          this.setValue($(this.entry).val());
+        } else {
+          $(this.message).addClass('input__message_state_error').removeClass('input__message_state_succes').removeClass('input__message_state_hidden').text('error');
+          this.setValid(false);
+          this.setValue($(this.entry).val());
+        }
+
+        break;
+      }
+
+    default:
+      {
+        this.setValid(true);
+        this.setValue($(this.entry).val());
+      }
+  }
+};
+
+input.prototype.onChange = function () {
+  $(this.entry).prop('readonly', false);
+
+  if ($(this.entry).val().length != 0) {
+    this.test();
+  }
+
+  ;
+  $(this.entry).on('change', $.proxy(this.test, this));
+};
+
+input.prototype.offChange = function () {
+  $(this.entry).prop('readonly', true);
+  $(this.entry).off('change', $.proxy(this.test, this));
+};
+
+function makeArray() {
+  var arr = [];
+
+  for (var i = 0; i <= $('.input').length - 1; i++) {
+    arr[i] = new input($('.input')[i]);
+    arr[i].onChange();
+  }
+
+  return arr;
+}
+
+module.exports.mkArr = makeArray;
+
+/***/ }),
+
+/***/ "./dev/static/styles/bem/tick/tickScripts.js":
+/*!***************************************************!*\
+  !*** ./dev/static/styles/bem/tick/tickScripts.js ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function tick(elem) {
+  this.base = elem;
+  this.icon = $(this.base).find('.tick__icon');
+  this.value = $(this.base).data('value');
+  this.name = $(this.base).data('name');
+  this.valid = true;
+  $(this.base).data('custom', true);
+  $(this.base).data('valid', true);
+  $(this.base).data('value', this.value);
+}
+
+tick.prototype.setValue = function (value) {
+  this.value = value;
+  $(this.base).data('value', value);
+};
+
+tick.prototype.test = function () {
+  switch (this.value) {
+    case false:
+      {
+        $(this.base).removeClass('tick_state_off').addClass('tick_state_on');
+        $(this.icon).addClass('tick__icon_state_on').removeClass('tick__icon_state_off');
+        this.setValue(true);
+        break;
+      }
+
+    case true:
+      {
+        $(this.base).removeClass('tick_state_on').addClass('tick_state_off');
+        $(this.icon).addClass('tick__icon_state_off').removeClass('tick__icon_state_on');
+        this.setValue(false);
+        break;
+      }
+  }
+};
+
+tick.prototype.onClick = function () {
+  $(this.base).on('click', $.proxy(this.test, this));
+};
+
+tick.prototype.offClick = function () {
+  $(this.base).off('click', $.proxy(this.test, this));
+};
+
+function makeArray() {
+  var arr = [];
+
+  for (var i = 0; i <= $('.tick').length - 1; i++) {
+    arr[i] = new tick($('.tick')[i]);
+    arr[i].onClick();
+  }
+
+  return arr;
+}
+
+module.exports.mkArr = makeArray;
+
+/***/ }),
+
 /***/ "./dev/static/styles/bem/toggle/toggleScripts.js":
 /*!*******************************************************!*\
   !*** ./dev/static/styles/bem/toggle/toggleScripts.js ***!
@@ -339,33 +684,65 @@ module.exports.newChart = function (options) {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports.toggleClicked = function ($) {
-  $(document).on('click', '.toggle', function () {
-    var parent = this,
-        outer = {
-      obj: $(parent).find('.toggle__outer'),
-      name: 'outer'
-    },
-        handle = {
-      obj: $(parent).find('.toggle__handle'),
-      name: 'handle'
-    },
-        text = {
-      obj: $(parent).find('.toggle__text'),
-      name: 'text'
-    },
-        els = [outer, handle, text];
-    var stateCurrent = $(parent).data('state'),
-        stateNext = stateCurrent == 'off' ? 'on' : 'off';
+function toggle(elem) {
+  this.base = elem;
+  this.handle = $(this.base).find('.toggle__handle');
+  this.text = $(this.base).find('.toggle__text');
+  this.value = $(this.base).data('value');
+  this.name = $(this.base).data('name');
+  this.valid = true;
+  $(this.base).data('custom', true);
+  $(this.base).data('valid', true);
+  $(this.base).data('value', this.value);
+}
 
-    for (var i = els.length - 1; i >= 0; i--) {
-      $(els[i].obj).removeClass('toggle__' + els[i].name + '_state_' + stateCurrent);
-      $(els[i].obj).addClass('toggle__' + els[i].name + '_state_' + stateNext);
-    }
+toggle.prototype.setValue = function (value) {
+  this.value = value;
+  $(this.base).data('value', value);
+};
 
-    $(parent).data('state', stateNext);
-  });
-}($);
+toggle.prototype.test = function () {
+  switch (this.value) {
+    case false:
+      {
+        $(this.base).removeClass('toggle_state_off').addClass('toggle_state_on');
+        $(this.handle).addClass('toggle__handle_state_on').removeClass('toggle__handle_state_off');
+        $(this.text).addClass('toggle__text_state_on').removeClass('toggle__text_state_off').text('on');
+        this.setValue(true);
+        break;
+      }
+
+    case true:
+      {
+        $(this.base).removeClass('toggle_state_on').addClass('toggle_state_off');
+        $(this.handle).addClass('toggle__handle_state_off').removeClass('toggle__handle_state_on');
+        $(this.text).addClass('toggle__text_state_off').removeClass('toggle__text_state_on').text('off');
+        this.setValue(false);
+        break;
+      }
+  }
+};
+
+toggle.prototype.onClick = function () {
+  $(this.base).on('click', $.proxy(this.test, this));
+};
+
+toggle.prototype.offClick = function () {
+  $(this.base).off('click', $.proxy(this.test, this));
+};
+
+function makeArray() {
+  var arr = [];
+
+  for (var i = 0; i <= $('.toggle').length - 1; i++) {
+    arr[i] = new toggle($('.toggle')[i]);
+    arr[i].onClick();
+  }
+
+  return arr;
+}
+
+module.exports.mkArr = makeArray;
 
 /***/ }),
 

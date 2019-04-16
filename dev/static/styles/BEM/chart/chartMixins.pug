@@ -2,5 +2,5 @@ mixin chartMix(options)
 	-
 		var options = options ? options : {};
 		var id = options.id ? options.id : '',
-			type = options.type ? options.type : 'progress';
-	.chart(id= id class='' + ('chart_type_' + type))
+			form = options.form ? options.form : 'progress';
+	.chart(id= id class='' + ('chart_type_' + form))
