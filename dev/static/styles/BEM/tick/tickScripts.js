@@ -1,5 +1,6 @@
 function tick(elem) {
 	this.base 		= elem;
+	this.outer 		= $(this.base).find('.tick__outer');
 	this.icon 		= $(this.base).find('.tick__icon');
 	this.value		= $(this.base).data('value');
 	this.name		= $(this.base).data('name');
@@ -18,9 +19,9 @@ tick.prototype.setValue = function(value){
 tick.prototype.test = function(){
 	switch(this.value){
 		case false: {
-			$(this.base)
-				.removeClass('tick_state_off')
-				.addClass('tick_state_on');
+			$(this.outer)
+				.removeClass('tick__outer_state_off')
+				.addClass('tick__outer_state_on');
 			$(this.icon)
 				.addClass('tick__icon_state_on')
 				.removeClass('tick__icon_state_off');
@@ -28,9 +29,9 @@ tick.prototype.test = function(){
 			break
 		}
 		case true: {
-			$(this.base)
-				.removeClass('tick_state_on')
-				.addClass('tick_state_off');
+			$(this.outer)
+				.removeClass('tick__outer_state_on')
+				.addClass('tick__outer_state_off');
 			$(this.icon)
 				.addClass('tick__icon_state_off')
 				.removeClass('tick__icon_state_on');

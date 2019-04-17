@@ -1,0 +1,7 @@
+mixin iconMix(options)
+	-
+		var options = options ? options : {};
+		var image 	= options.image ? options.image : '';
+	.icon
+		.icon__outer
+			img.icon__image(src=image)

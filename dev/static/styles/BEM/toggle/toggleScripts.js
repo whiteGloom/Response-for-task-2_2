@@ -1,5 +1,6 @@
 function toggle(elem) {
 	this.base 		= elem;
+	this.outer		= $(this.base).find('.toggle__outer');
 	this.handle 	= $(this.base).find('.toggle__handle');
 	this.text 		= $(this.base).find('.toggle__text');
 	this.value		= $(this.base).data('value');
@@ -19,9 +20,9 @@ toggle.prototype.setValue = function(value){
 toggle.prototype.test = function(){
 	switch(this.value){
 		case false: {
-			$(this.base)
-				.removeClass('toggle_state_off')
-				.addClass('toggle_state_on');
+			$(this.outer)
+				.removeClass('toggle__outer_state_off')
+				.addClass('toggle__outer_state_on');
 			$(this.handle)
 				.addClass('toggle__handle_state_on')
 				.removeClass('toggle__handle_state_off');
@@ -33,9 +34,9 @@ toggle.prototype.test = function(){
 			break
 		}
 		case true: {
-			$(this.base)
-				.removeClass('toggle_state_on')
-				.addClass('toggle_state_off');
+			$(this.outer)
+				.removeClass('toggle__outer_state_on')
+				.addClass('toggle__outer_state_off');
 			$(this.handle)
 				.addClass('toggle__handle_state_off')
 				.removeClass('toggle__handle_state_on');

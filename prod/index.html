@@ -84,53 +84,71 @@
 				<div class="chart chart_type_pie" id="chartTestThird"></div>
 			</div>
 		</div>
-		<input class="slider" id="sliderSimpleTest">
-		<input class="slider" id="sliderPipsTest">
+		<div class="slider">
+			<div class="slider__outer">
+				<input class="slider__replace" id="sliderSimpleTest">
+			</div>
+		</div>
+		<div class="slider">
+			<div class="slider__outer">
+				<input class="slider__replace" id="sliderPipsTest">
+			</div>
+		</div>
 		<div class="stepbar" id="stepbarTest"></div>
 		<div style="width: 287px">
 			<form class="form" name="form">
 				<div class="form__el">
 					<div class="form__entry  form__entry_size_fill">
 						<div class="input" data-type="email" data-name="email">
-							<input class="input__entry  input__entry_form_bar input__entry_radius_default" required type="email" placeholder="E-mail">
-							<div class="input__message  input__message_state_hidden"></div>
+							<div class="input__outer">
+								<input class="input__entry  input__entry_form_bar input__entry_radius_default" required type="email" placeholder="E-mail">
+								<div class="input__message  input__message_state_hidden"></div>
+							</div>
 						</div>
 					</div>
 				</div>
 				<div class="form__el">
 					<div class="form__entry  form__entry_size_fill">
 						<div class="input" data-type="password" data-name="password">
-							<input class="input__entry  input__entry_form_bar input__entry_radius_default" required type="password" placeholder="Password">
-							<div class="input__message  input__message_state_hidden"></div>
+							<div class="input__outer">
+								<input class="input__entry  input__entry_form_bar input__entry_radius_default" required type="password" placeholder="Password">
+								<div class="input__message  input__message_state_hidden"></div>
+							</div>
 						</div>
 					</div>
 				</div>
 				<div class="form__el">
 					<div class="form__entry  form__entry_size_fill">
 						<div class="input" data-type="text" data-name="message">
-							<textarea class="input__entry  input__entry_form_box input__entry_radius_default" type="text" placeholder="Your message"></textarea>
+							<div class="input__outer">
+								<textarea class="input__entry  input__entry_form_box input__entry_radius_default" type="text" placeholder="Your message"></textarea>
+							</div>
 						</div>
 					</div>
 				</div>
 				<div class="form__el">
 					<div class="form__text">The laser is</div>
 					<div class="form__entry  form__entry_size_auto">
-						<button class="toggle  toggle_state_off" type="button" data-value="false" data-name="laser">
-							<div class="toggle__handle  toggle__handle_state_off"></div>
-							<div class="toggle__text  toggle__text_state_off">off</div>
+						<button class="toggle" type="button" data-value="false" data-name="laser">
+							<div class="toggle__outer  toggle__outer_state_off">
+								<div class="toggle__handle  toggle__handle_state_off"></div>
+								<div class="toggle__text  toggle__text_state_off">off</div>
+							</div>
 						</button>
 					</div>
 				</div>
 				<div class="form__el">
 					<div class="form__text">Bomb the sinagogue?</div>
 					<div class="form__entry  form__entry_size_auto">
-						<button class="tick  tick_state_on" type="button" data-value="true" data-name="bomb">
-							<svg class="tick__icon  tick__icon_state_on" viewbox="0 0 40 40">
-								<g transform="translate(16, 28) rotate(-135)">
-									<rect width="10" height="3"></rect>
-									<rect width="3" height="16" y="3"></rect>
-								</g>
-							</svg>
+						<button class="tick" type="button" data-value="true" data-name="bomb">
+							<div class="tick__outer  tick__outer_state_on">
+								<svg class="tick__icon  tick__icon_state_on" viewbox="0 0 40 40">
+									<g transform="translate(16, 28) rotate(-135)">
+										<rect width="10" height="3"></rect>
+										<rect width="3" height="16" y="3"></rect>
+									</g>
+								</svg>
+							</div>
 						</button>
 					</div>
 				</div>
@@ -198,8 +216,10 @@
 					<div class="bar__outer">
 						<div class="bar__input">
 							<div class="input" data-type="text" data-name="search">
-								<input class="input__entry  input__entry_form_bar input__entry_radius_left" type="text" placeholder="text query">
-								<div class="input__message  input__message_state_hidden"></div>
+								<div class="input__outer">
+									<input class="input__entry  input__entry_form_bar input__entry_radius_left" type="text" placeholder="text query">
+									<div class="input__message  input__message_state_hidden"></div>
+								</div>
 							</div>
 						</div>
 						<div class="bar__button bar__button_color_orange">
@@ -209,6 +229,50 @@
 									<rect width="6" height="3" x="23" y="-2" transform="rotate(45)" fill="white"></rect>
 								</g>
 							</svg>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div style="margin-top: .8rem">
+			<div class="user">
+				<div class="user__outer">
+					<div class="user__image">
+						<div class="icon">
+							<div class="icon__outer">
+								<img class="icon__image" src="static/images/logo.png">
+							</div>
+						</div>
+					</div>
+					<div class="user__info  user__info_color_gray">
+						<div class="user__infoName  user__infoName_color_gray">Evgeniy Miller</div>
+						<div class="user__infoProfession  user__infoProfession_color_gray">Dolbaeb</div>
+						<div class="user__infoSocials  user__infoSocials_color_gray">
+							<a class="user__infoSocial user__infoSocial_fb user__infoSocial_color_gray" target="_blank" href=""></a>
+							<a class="user__infoSocial user__infoSocial_tw user__infoSocial_color_gray" target="_blank" href=""></a>
+							<a class="user__infoSocial user__infoSocial_dr user__infoSocial_color_gray" target="_blank" href=""></a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div style="margin-top: .8rem">
+			<div class="user">
+				<div class="user__outer">
+					<div class="user__image">
+						<div class="icon">
+							<div class="icon__outer">
+								<img class="icon__image" src="static/images/logo.png">
+							</div>
+						</div>
+					</div>
+					<div class="user__info  user__info_color_aquamarine">
+						<div class="user__infoName  user__infoName_color_aquamarine">name</div>
+						<div class="user__infoProfession  user__infoProfession_color_aquamarine">profession</div>
+						<div class="user__infoSocials  user__infoSocials_color_aquamarine">
+							<a class="user__infoSocial user__infoSocial_fb user__infoSocial_color_aquamarine" target="_blank" href=""></a>
+							<a class="user__infoSocial user__infoSocial_tw user__infoSocial_color_aquamarine" target="_blank" href=""></a>
+							<a class="user__infoSocial user__infoSocial_dr user__infoSocial_color_aquamarine" target="_blank" href=""></a>
 						</div>
 					</div>
 				</div>

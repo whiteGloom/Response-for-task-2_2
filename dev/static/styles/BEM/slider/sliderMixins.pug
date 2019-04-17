@@ -2,4 +2,6 @@ mixin sliderMix(options)
 	-
 		var options = options ? options : {};
 		var id = options.id ? options.id : '';
-	input.slider(id= id)
+	.slider
+		.slider__outer
+			input.slider__replace(id= id)

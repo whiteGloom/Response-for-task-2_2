@@ -620,6 +620,7 @@ module.exports.mkArr = makeArray;
 
 function tick(elem) {
   this.base = elem;
+  this.outer = $(this.base).find('.tick__outer');
   this.icon = $(this.base).find('.tick__icon');
   this.value = $(this.base).data('value');
   this.name = $(this.base).data('name');
@@ -638,7 +639,7 @@ tick.prototype.test = function () {
   switch (this.value) {
     case false:
       {
-        $(this.base).removeClass('tick_state_off').addClass('tick_state_on');
+        $(this.outer).removeClass('tick__outer_state_off').addClass('tick__outer_state_on');
         $(this.icon).addClass('tick__icon_state_on').removeClass('tick__icon_state_off');
         this.setValue(true);
         break;
@@ -646,7 +647,7 @@ tick.prototype.test = function () {
 
     case true:
       {
-        $(this.base).removeClass('tick_state_on').addClass('tick_state_off');
+        $(this.outer).removeClass('tick__outer_state_on').addClass('tick__outer_state_off');
         $(this.icon).addClass('tick__icon_state_off').removeClass('tick__icon_state_on');
         this.setValue(false);
         break;
@@ -686,6 +687,7 @@ module.exports.mkArr = makeArray;
 
 function toggle(elem) {
   this.base = elem;
+  this.outer = $(this.base).find('.toggle__outer');
   this.handle = $(this.base).find('.toggle__handle');
   this.text = $(this.base).find('.toggle__text');
   this.value = $(this.base).data('value');
@@ -705,7 +707,7 @@ toggle.prototype.test = function () {
   switch (this.value) {
     case false:
       {
-        $(this.base).removeClass('toggle_state_off').addClass('toggle_state_on');
+        $(this.outer).removeClass('toggle__outer_state_off').addClass('toggle__outer_state_on');
         $(this.handle).addClass('toggle__handle_state_on').removeClass('toggle__handle_state_off');
         $(this.text).addClass('toggle__text_state_on').removeClass('toggle__text_state_off').text('on');
         this.setValue(true);
@@ -714,7 +716,7 @@ toggle.prototype.test = function () {
 
     case true:
       {
-        $(this.base).removeClass('toggle_state_on').addClass('toggle_state_off');
+        $(this.outer).removeClass('toggle__outer_state_on').addClass('toggle__outer_state_off');
         $(this.handle).addClass('toggle__handle_state_off').removeClass('toggle__handle_state_on');
         $(this.text).addClass('toggle__text_state_off').removeClass('toggle__text_state_on').text('off');
         this.setValue(false);

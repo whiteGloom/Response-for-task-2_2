@@ -1,0 +1,21 @@
+mixin userMix(options)
+	-
+		var options 	= options ? options : {};
+		var color 		= options.color ? options.color : 'gray',
+			name 		= options.name ? options.name : 'name',
+			profession 	= options.profession ? options.profession : 'profession',
+			facebook 	= options.facebook ? options.facebook : '',
+			twitter 	= options.twitter ? options.twitter : '',
+			dribble 	= options.dribble ? options.dribble : '';
+	.user
+		.user__outer
+			.user__image
+				if block
+					block
+			.user__info(class='' + (' user__info_color_' + color))
+				.user__infoName(class='' + (' user__infoName_color_' + color))= name
+				.user__infoProfession(class='' + (' user__infoProfession_color_' + color))= profession
+				.user__infoSocials(class='' + (' user__infoSocials_color_' + color))
+					a.user__infoSocial.user__infoSocial_fb(target="_blank" href=facebook class='' + ('user__infoSocial_color_'+color))
+					a.user__infoSocial.user__infoSocial_tw(target="_blank" href=twitter class='' + ('user__infoSocial_color_'+color))
+					a.user__infoSocial.user__infoSocial_dr(target="_blank" href=dribble class='' + ('user__infoSocial_color_'+color))
