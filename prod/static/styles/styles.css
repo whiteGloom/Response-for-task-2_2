@@ -171,6 +171,13 @@
   padding: 0.55rem 2.3rem;
 }
 
+.button__content_form_boxEvent {
+  font-family: Lato-black;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  padding: 0.3rem 1.1rem;
+}
+
 .button__content_form_boxMini {
   font-family: Lato-black;
   text-transform: uppercase;
@@ -226,10 +233,22 @@
   transform: translateY(-3px);
   border-width: 1px;
   border-style: solid;
-  border-radius: 2px;
+  border-radius: 3px;
   z-index: 0;
 }
 .button:active .button__inner_form_box {
+  transform: translateY(0);
+}
+
+.button__inner_form_boxEvent {
+  width: 100%;
+  transform: translateY(-2px);
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 3px;
+  z-index: 0;
+}
+.button:active .button__inner_form_boxEvent {
   transform: translateY(0);
 }
 
@@ -238,7 +257,7 @@
   transform: translateY(-2px);
   border-width: 1px;
   border-style: solid;
-  border-radius: 2px;
+  border-radius: 3px;
   z-index: 0;
 }
 .button:active .button__inner_form_boxMini {
@@ -256,7 +275,7 @@
 }
 
 .button__outer_color_aquamarine {
-  background-color: #4eb7a8;
+  background-color: #28a290;
 }
 .button:hover .button__outer_color_aquamarine {
   background-color: #28a290;
@@ -273,7 +292,7 @@
 }
 
 .button__outer_color_orange {
-  background-color: #e75735;
+  background-color: #bf3e1f;
 }
 .button:hover .button__outer_color_orange {
   background-color: #bf3e1f;
@@ -288,6 +307,11 @@
 .button__outer_form_box {
   border-radius: 2px;
   margin-top: 3px;
+}
+
+.button__outer_form_boxEvent {
+  border-radius: 2px;
+  margin-top: 2px;
 }
 
 .button__outer_form_boxMini {
@@ -478,6 +502,96 @@
 }
 
 
+.note__button {
+  display: grid;
+  width: 88%;
+  margin: 1.2rem auto;
+}
+
+
+.note__date_type_news {
+  font-family: Lato-black;
+  margin-top: 0.9rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+.note__date {
+  color: #fff;
+}
+
+.note__dateDay {
+  display: inline-block;
+  font-size: 5rem;
+  font-family: Lato-light;
+  line-height: 0.8;
+}
+
+.note__dateMonth {
+  display: inline-block;
+  font-family: Lato-light;
+  font-size: 2rem;
+}
+
+.note__description_type_event {
+  margin-top: 0.3rem;
+}
+
+.note__description_type_news {
+  margin-top: 0.8rem;
+}
+
+.note__description {
+  font-size: 0.75rem;
+  font-family: Lato-regular;
+  color: #fff;
+}
+
+.note__image {
+  width: 33%;
+  object-fit: cover;
+  border-radius: 3px 0 0 3px;
+}
+
+.note__info_type_event {
+  background-color: #4eb7a8;
+}
+
+.note__info_type_news {
+  background-color: #e75735;
+}
+
+.note__info {
+  width: 67%;
+  padding: 1.5rem;
+  border-radius: 0 3px 3px 0;
+}
+
+.note__outer {
+  display: flex;
+  height: 14.5rem;
+  width: 19.65rem;
+  justify-content: space-between;
+}
+
+.note__title_type_event {
+  margin-top: 1rem;
+  font-family: Lato-black;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+}
+
+.note__title_type_news {
+  font-family: Lato-light;
+  font-size: 2rem;
+  line-height: 0.85;
+}
+
+.note__title {
+  color: #fff;
+}
+
+
 .slider__outer {
   height: 5rem;
 }
@@ -601,77 +715,83 @@
   border-right-color: inherit;
 }
 
-.user__infoName_color_aquamarine {
+.user__name_color_aquamarine {
   color: #fff;
 }
 
-.user__infoName_color_gray {
+.user__name_color_gray {
   color: #e75735;
 }
 
-.user__infoName {
+.user__name {
   margin-top: 0.6rem;
   font-size: 1.2rem;
 }
 
-.user__infoProfession_color_aquamarine {
+.user__outer {
+  display: flex;
+  width: 18.5rem;
+  justify-content: space-between;
+}
+
+.user__profession_color_aquamarine {
   color: #fff;
 }
 
-.user__infoProfession_color_gray {
+.user__profession_color_gray {
   color: #4f4f4f;
 }
 
-.user__infoProfession {
+.user__profession {
   text-transform: uppercase;
   font-size: 0.8rem;
 }
 
-.user__infoSocial_dr.user__infoSocial_color_aquamarine {
+.user__social_dr.user__social_color_aquamarine {
   background-image: url("../images/draquamarine.png");
 }
-.user__infoSocial_dr.user__infoSocial_color_aquamarine:hover,
-.user__infoSocial_dr.user__infoSocial_color_aquamarine:focus {
+.user__social_dr.user__social_color_aquamarine:hover,
+.user__social_dr.user__social_color_aquamarine:focus {
   background-image: url("../images/drhover.png");
 }
-.user__infoSocial_fb.user__infoSocial_color_aquamarine {
+.user__social_fb.user__social_color_aquamarine {
   background-image: url("../images/fbaquamarine.png");
 }
-.user__infoSocial_fb.user__infoSocial_color_aquamarine:hover,
-.user__infoSocial_fb.user__infoSocial_color_aquamarine:focus {
+.user__social_fb.user__social_color_aquamarine:hover,
+.user__social_fb.user__social_color_aquamarine:focus {
   background-image: url("../images/fbhover.png");
 }
-.user__infoSocial_tw.user__infoSocial_color_aquamarine {
+.user__social_tw.user__social_color_aquamarine {
   background-image: url("../images/twaquamarine.png");
 }
-.user__infoSocial_tw.user__infoSocial_color_aquamarine:hover,
-.user__infoSocial_tw.user__infoSocial_color_aquamarine:focus {
+.user__social_tw.user__social_color_aquamarine:hover,
+.user__social_tw.user__social_color_aquamarine:focus {
   background-image: url("../images/twhover.png");
 }
 
-.user__infoSocial_dr.user__infoSocial_color_gray {
+.user__social_dr.user__social_color_gray {
   background-image: url("../images/drgray.png");
 }
-.user__infoSocial_dr.user__infoSocial_color_gray:hover,
-.user__infoSocial_dr.user__infoSocial_color_gray:focus {
+.user__social_dr.user__social_color_gray:hover,
+.user__social_dr.user__social_color_gray:focus {
   background-image: url("../images/drhover.png");
 }
-.user__infoSocial_fb.user__infoSocial_color_gray {
+.user__social_fb.user__social_color_gray {
   background-image: url("../images/fbgray.png");
 }
-.user__infoSocial_fb.user__infoSocial_color_gray:hover,
-.user__infoSocial_fb.user__infoSocial_color_gray:focus {
+.user__social_fb.user__social_color_gray:hover,
+.user__social_fb.user__social_color_gray:focus {
   background-image: url("../images/fbhover.png");
 }
-.user__infoSocial_tw.user__infoSocial_color_gray {
+.user__social_tw.user__social_color_gray {
   background-image: url("../images/twgray.png");
 }
-.user__infoSocial_tw.user__infoSocial_color_gray:hover,
-.user__infoSocial_tw.user__infoSocial_color_gray:focus {
+.user__social_tw.user__social_color_gray:hover,
+.user__social_tw.user__social_color_gray:focus {
   background-image: url("../images/twhover.png");
 }
 
-.user__infoSocial {
+.user__social {
   width: 1.45rem;
   height: 1.45rem;
   background-size: auto;
@@ -680,18 +800,10 @@
   transition: 0.3s all;
 }
 
-
-
-.user__infoSocials {
+.user__socials {
   display: flex;
   width: 7rem;
   margin: 0.8rem auto 0 auto;
-  justify-content: space-between;
-}
-
-.user__outer {
-  display: flex;
-  width: 18.5rem;
   justify-content: space-between;
 }
 

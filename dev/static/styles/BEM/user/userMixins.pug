@@ -13,9 +13,9 @@ mixin userMix(options)
 				if block
 					block
 			.user__info(class='' + (' user__info_color_' + color))
-				.user__infoName(class='' + (' user__infoName_color_' + color))= name
-				.user__infoProfession(class='' + (' user__infoProfession_color_' + color))= profession
-				.user__infoSocials(class='' + (' user__infoSocials_color_' + color))
-					a.user__infoSocial.user__infoSocial_fb(target="_blank" href=facebook class='' + ('user__infoSocial_color_'+color))
-					a.user__infoSocial.user__infoSocial_tw(target="_blank" href=twitter class='' + ('user__infoSocial_color_'+color))
-					a.user__infoSocial.user__infoSocial_dr(target="_blank" href=dribble class='' + ('user__infoSocial_color_'+color))
+				.user__name(class='' + (' user__name_color_' + color))= name
+				.user__profession(class='' + (' user__profession_color_' + color))= profession
+				.user__socials(class='' + (' user__socials_color_' + color))
+					a.user__social.user__social_fb(target="_blank" href=facebook class='' + ('user__social_color_'+color))
+					a.user__social.user__social_tw(target="_blank" href=twitter class='' + ('user__social_color_'+color))
+					a.user__social.user__social_dr(target="_blank" href=dribble class='' + ('user__social_color_'+color))

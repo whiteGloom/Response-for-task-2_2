@@ -7,6 +7,7 @@
 	<link rel="stylesheet" type="text/css" href="static/styles/styles.css">
 	<script type="text/javascript" src="./scripts/vendors.js"></script>
 	<script type="text/javascript" src="./scripts/main.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6UQbE2epfLfDfa2uaXCx1soXdAfSFU-c&amp;callback=initMap" async defer></script>
 </head>
 
 <body>
@@ -245,12 +246,12 @@
 						</div>
 					</div>
 					<div class="user__info  user__info_color_gray">
-						<div class="user__infoName  user__infoName_color_gray">Evgeniy Miller</div>
-						<div class="user__infoProfession  user__infoProfession_color_gray">Dolbaeb</div>
-						<div class="user__infoSocials  user__infoSocials_color_gray">
-							<a class="user__infoSocial user__infoSocial_fb user__infoSocial_color_gray" target="_blank" href=""></a>
-							<a class="user__infoSocial user__infoSocial_tw user__infoSocial_color_gray" target="_blank" href=""></a>
-							<a class="user__infoSocial user__infoSocial_dr user__infoSocial_color_gray" target="_blank" href=""></a>
+						<div class="user__name  user__name_color_gray">Evgeniy Miller</div>
+						<div class="user__profession  user__profession_color_gray">Dolbaeb</div>
+						<div class="user__socials  user__socials_color_gray">
+							<a class="user__social user__social_fb user__social_color_gray" target="_blank" href=""></a>
+							<a class="user__social user__social_tw user__social_color_gray" target="_blank" href=""></a>
+							<a class="user__social user__social_dr user__social_color_gray" target="_blank" href=""></a>
 						</div>
 					</div>
 				</div>
@@ -267,17 +268,55 @@
 						</div>
 					</div>
 					<div class="user__info  user__info_color_aquamarine">
-						<div class="user__infoName  user__infoName_color_aquamarine">name</div>
-						<div class="user__infoProfession  user__infoProfession_color_aquamarine">profession</div>
-						<div class="user__infoSocials  user__infoSocials_color_aquamarine">
-							<a class="user__infoSocial user__infoSocial_fb user__infoSocial_color_aquamarine" target="_blank" href=""></a>
-							<a class="user__infoSocial user__infoSocial_tw user__infoSocial_color_aquamarine" target="_blank" href=""></a>
-							<a class="user__infoSocial user__infoSocial_dr user__infoSocial_color_aquamarine" target="_blank" href=""></a>
+						<div class="user__name  user__name_color_aquamarine">name</div>
+						<div class="user__profession  user__profession_color_aquamarine">profession</div>
+						<div class="user__socials  user__socials_color_aquamarine">
+							<a class="user__social user__social_fb user__social_color_aquamarine" target="_blank" href=""></a>
+							<a class="user__social user__social_tw user__social_color_aquamarine" target="_blank" href=""></a>
+							<a class="user__social user__social_dr user__social_color_aquamarine" target="_blank" href=""></a>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+		<div style="margin-top: .8rem">
+			<div class="note">
+				<div class="note__outer">
+					<img class="note__image" src="static/images/logo.png">
+					<div class="note__info  note__info_type_news">
+						<div class="note__title  note__title_type_news">This is a title!</div>
+						<div class="note__date  note__date_type_news">23 November 2001</div>
+						<div class="note__description  note__description_type_news">This is a description, a assure you!</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div style="margin-top: .8rem">
+			<div class="note">
+				<div class="note__outer">
+					<img class="note__image" src="static/images/logo.png">
+					<div class="note__info  note__info_type_event">
+						<div class="note__date  note__date_type_event">
+							<div class="note__dateDay">23</div>
+							<div class="note__dateMonth">Nov</div>
+						</div>
+						<div class="note__title  note__title_type_event">this is a title</div>
+						<div class="note__description  note__description_type_event">This is a description, a assure you!</div>
+						<div class="note__button">
+							<button class="button" type="button">
+								<div class="button__outer  button__outer_form_boxEvent button__outer_color_aquamarine">
+									<div class="button__inner  button__inner_form_boxEvent button__inner_color_aquamarine">
+										<div class="button__rippleEffect"></div>
+										<div class="button__content  button__content_form_boxEvent button__content_color_aquamarine">button</div>
+									</div>
+								</div>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="map"></div>
 	</div>
 </body>
 
