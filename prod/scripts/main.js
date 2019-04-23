@@ -185,12 +185,15 @@ __webpack_require__(/*! ionSlider */ "./dev/jsPlugins/ion.rangeSlider.js");
 
 __webpack_require__(/*! stepbar */ "./dev/jsPlugins/stepbar.js");
 
+__webpack_require__(/*! dateTimePicker */ "./dev/jsPlugins/jquery.datetimepicker.js");
+
 chart = __webpack_require__(/*! ./static/styles/bem/chart/chartScripts.js */ "./dev/static/styles/bem/chart/chartScripts.js");
 toggle = __webpack_require__(/*! ./static/styles/bem/toggle/toggleScripts.js */ "./dev/static/styles/bem/toggle/toggleScripts.js");
 tick = __webpack_require__(/*! ./static/styles/bem/tick/tickScripts.js */ "./dev/static/styles/bem/tick/tickScripts.js");
 form = __webpack_require__(/*! ./static/styles/bem/form/formScripts.js */ "./dev/static/styles/bem/form/formScripts.js");
 input = __webpack_require__(/*! ./static/styles/bem/input/inputScripts.js */ "./dev/static/styles/bem/input/inputScripts.js");
 bar = __webpack_require__(/*! ./static/styles/bem/bar/barScripts.js */ "./dev/static/styles/bem/bar/barScripts.js");
+map = __webpack_require__(/*! ./static/styles/bem/map/mapScripts.js */ "./dev/static/styles/bem/map/mapScripts.js");
 
 __webpack_require__(/*! ./scripts/scripts.js */ "./dev/scripts/scripts.js");
 
@@ -210,19 +213,11 @@ $(document).ready(function () {
   var ticks = tick.mkArr();
   var forms = form.mkArr();
   var bars = bar.mkArr();
-  var map;
-
-  function initMap() {
-    map = new google.maps.Map($('.map')[0], {
-      center: {
-        lat: -34.397,
-        lng: 150.644
-      },
-      zoom: 8
-    });
-  }
-
-  window.initMap = initMap;
+  window.initMap = map.mkArr;
+  $('.calendar__holder').datetimepicker({
+    date: new Date(),
+    firstDayOfWeek: 1
+  });
   chart.newChart({
     target: '#chartTestFirst',
     type: 'progress',
@@ -615,6 +610,86 @@ function makeArray() {
   for (var i = 0; i <= $('.input').length - 1; i++) {
     arr[i] = new input($('.input')[i]);
     arr[i].onChange();
+  }
+
+  return arr;
+}
+
+module.exports.mkArr = makeArray;
+
+/***/ }),
+
+/***/ "./dev/static/styles/bem/map/mapScripts.js":
+/*!*************************************************!*\
+  !*** ./dev/static/styles/bem/map/mapScripts.js ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function map(el) {
+  this.base = el;
+  this.position = $(this.base).data('coordinates');
+  this.markerPosition = this.position;
+  this.myPosition;
+  this.mapHolder = $(this.base).find('.map__replace').first();
+  this.findMeButton = $(this.base).find('.map__button').filter('.map__button_type_me');
+  this.findMarkerButton = $(this.base).find('.map__button').filter('.map__button_type_marker');
+  this.map = new google.maps.Map(this.mapHolder[0], {
+    center: this.position,
+    zoom: 15
+  });
+  this.mark = new google.maps.Marker({
+    position: this.position,
+    map: this.map
+  });
+}
+
+map.prototype.findMe = function () {
+  $(this.findMeButton).on('click', $.proxy(function () {
+    var _this = this;
+
+    infoWindow = new google.maps.InfoWindow();
+
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(function (position) {
+        var pos = {
+          lat: position.coords.latitude,
+          lng: position.coords.longitude
+        };
+
+        _this.map.setCenter(pos);
+
+        _this.myPosition = pos;
+        _this.position = pos;
+      }, function () {
+        handleLocationError(true, infoWindow, this.map.getCenter());
+      });
+    } else {
+      handleLocationError(false, infoWindow, this.map.getCenter());
+    }
+
+    function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+      infoWindow.setPosition(pos);
+      infoWindow.setContent(browserHasGeolocation ? 'Error: The Geolocation service failed.' : 'Error: Your browser doesn\'t support geolocation.');
+      infoWindow.open(this.map);
+    }
+  }, this));
+};
+
+map.prototype.findMarker = function () {
+  $(this.findMarkerButton).on('click', $.proxy(function () {
+    this.map.setCenter(this.markerPosition);
+    this.position = this.markerPosition;
+  }, this));
+};
+
+function makeArray() {
+  var arr = [];
+
+  for (var i = 0; i <= $('.map').length - 1; i++) {
+    arr[i] = new map($('.map')[i]);
+    arr[i].findMarker();
+    arr[i].findMe();
   }
 
   return arr;

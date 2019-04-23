@@ -1,0 +1,10 @@
+mixin calendarMix(options)
+	-
+		var options = options ? options : {};
+		var date = new Date(),
+			day = date.getDate()
+	.calendar
+		.calendar__outer
+			.calendar__header
+				.calendar__today= day
+			.calendar__holder

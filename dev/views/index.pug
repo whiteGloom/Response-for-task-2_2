@@ -83,15 +83,17 @@ html
 			div(style="margin-top: .8rem")
 				+userMix({color: 'aquamarine'})
 					+iconMix({image: require('../static/images/logo.png')})
-			div(style="margin-top: .8rem")
+			div(style="margin-top: .8rem; width: 19.65rem")
 				+noteMix({image: require('../static/images/logo.png'), title: 'This is a title!', date: '23 November 2001'})
 					+noteDescriptionMix({type: 'news'})
 						| This is a description, a assure you!
-			div(style="margin-top: .8rem")
+			div(style="margin-top: .8rem; width: 19.65rem")
 				+noteMix({ type: 'event', image: require('../static/images/logo.png'), title: 'this is a title', dateDay: '23', dateMonth: 'Nov'})
 					+noteDescriptionMix({type: 'event'})
 						| This is a description, a assure you!
 					+noteButtonMix
-						+buttonMix({form: "boxEvent", text:"button"})
-
-			.map
+						+buttonMix({form: "boxEvent", text:"button", color: 'aquamarineAlternate'})
+			.div(style="display: grid; width: 40.4rem" )
+				+mapMix({title: 'Meet us!', street: '** Predzavodskaya ST', city: 'Seversk, RU', coordinates: '{"lat": 56.590212, "lng": 84.939791}'})
+			div(style="width: 279px; display: grid")
+				+calendarMix

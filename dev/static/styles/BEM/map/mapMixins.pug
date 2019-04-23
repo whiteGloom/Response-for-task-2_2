@@ -1,0 +1,17 @@
+mixin mapMix(options)
+	-
+		var options 	= options ? options : {};
+		var title 		= options.title ? options.title : 'title',
+			coordinates = options.coordinates ? options.coordinates : {},
+			street 		= options.street ? options.street : 'street',
+			city 		= options.city ? options.city : 'city';
+	.map(data-coordinates=coordinates)
+		.map__outer
+			.map__replace
+			.map__overlay
+				h2.map__title= title
+				.map__adress
+					em.map__adressEl= street
+					em.map__adressEl= city
+				button.map__button.map__button_type_marker
+				button.map__button.map__button_type_me

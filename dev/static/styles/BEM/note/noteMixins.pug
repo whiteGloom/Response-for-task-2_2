@@ -9,7 +9,8 @@ mixin noteMix(options)
 			dateMonth 	= options.dateMonth ? options.dateMonth : 'January';
 	.note
 		.note__outer
-			img.note__image(src=image)
+			.note__imageOuter
+				img.note__image(src=image)
 			.note__info(class='' + (' note__info_type_' + type))
 				case type
 					when 'news'

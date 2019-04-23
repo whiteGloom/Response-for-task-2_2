@@ -5,15 +5,13 @@ $(document).ready(() => {
 	var ticks 	= tick.mkArr();
 	var forms 	= form.mkArr();
 	var bars 	= bar.mkArr();
+	window.initMap = map.mkArr;
 
-	var map;
-	function initMap() {
-		map = new google.maps.Map($('.map')[0], {
-			center: {lat: -34.397, lng: 150.644},
-			zoom: 8
-		});
-	}
-	window.initMap = initMap;
+	$('.calendar__holder').datetimepicker({
+		date: new Date(),
+		firstDayOfWeek: 1
+	});
+
 
 	
 	chart.newChart({
