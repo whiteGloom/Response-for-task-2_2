@@ -88,13 +88,13 @@
       }
 
       // Text and number
-      layer2.font = fontSize + 'px Lato-black';
+      layer2.font = fontSize + 'px "Lato-black"';
       var iLabel = (i + 1) + '';
       var metrics = layer2.measureText(iLabel);
 
       layer2.fillText(iLabel, thisX - (metrics.width / 2), thisY + (fontSize / 2.5));
       
-      layer2.font = fontSize + 'px Lato-black';
+      layer2.font = fontSize + 'px "Lato-black"';
       var metrics = layer2.measureText(items[i]);
       layer2.fillStyle = fontColor;
     }

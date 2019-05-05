@@ -2,9 +2,10 @@ mixin inputMix(options)
 	-
 		var options 	= options ? options : {}
 		var type 		= options.type ? options.type : 'text',
+			color 		= options.color ? options.color : 'aquamarine',
+			form		= options.form ? options.form : 'bar',
 			required 	= options.required,
 			name 		= options.name ? options.name : 'input',
-			form 		= options.form ? options.form : 'bar',
 			radius 		= options.radius ? options.radius : 'default',
 			placeholder = options.placeholder ? options.placeholder : '';
 
@@ -12,11 +13,11 @@ mixin inputMix(options)
 		.input__outer
 			case form
 				when 'bar'
-					input.input__entry(required=(required ? required : false) type=type placeholder=placeholder class='' +
-						(' input__entry_form_' + form) +
-						(' input__entry_radius_' + radius))
+					input.input__entry(required=(required ? required : false) type=type placeholder=placeholder class='' + 
+						(' input__entry_radius_' + radius) +
+						(' input__entry_color_' + color))
 					.input__message(class='' + (' input__message_state_hidden'))
 				when 'box'
-					textarea.input__entry(required=(required ? required : false) type=type placeholder=placeholder class='' + 
-						(' input__entry_form_' + form) + 
-						(' input__entry_radius_' + radius))
+					textarea.input__entry(required=(required ? required : false) type=type placeholder=placeholder class='' +
+						(' input__entry_radius_' + radius) +
+						(' input__entry_color_' + color))

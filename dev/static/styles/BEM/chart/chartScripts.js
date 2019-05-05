@@ -57,4 +57,4 @@ module.exports.newChart = function (options) {
 	}
 
 	return $(target).jChart(defaults)
-	}
+}

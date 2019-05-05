@@ -12314,7 +12314,7 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
             var chartSummary = instance._methods.drawSvgText(instance, {
               'class': "".concat(instance._objPrefix, "summary"),
               'x': instance.settings.appearance.centerX,
-              'y': instance.settings.appearance.isGauge ? instance.settings.appearance.centerY * 0.9 : instance.settings.appearance.centerY + 5
+              'y': instance.settings.appearance.isGauge ? instance.settings.appearance.centerY * 0.9 : instance.settings.appearance.centerY + 2
             });
 
             instance.settings.elements.summary = chartSummary;
@@ -13602,11 +13602,11 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
       } // Text and number
 
 
-      layer2.font = fontSize + 'px Lato-black';
+      layer2.font = fontSize + 'px "Lato-black"';
       var iLabel = i + 1 + '';
       var metrics = layer2.measureText(iLabel);
       layer2.fillText(iLabel, thisX - metrics.width / 2, thisY + fontSize / 2.5);
-      layer2.font = fontSize + 'px Lato-black';
+      layer2.font = fontSize + 'px "Lato-black"';
       var metrics = layer2.measureText(items[i]);
       layer2.fillStyle = fontColor;
     }

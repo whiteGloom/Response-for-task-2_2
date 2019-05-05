@@ -1,19 +1,17 @@
 // Test scripts
 $(document).ready(() => {
-	var inputs 	= input.mkArr();
-	var toggles = toggle.mkArr();
-	var ticks 	= tick.mkArr();
-	var forms 	= form.mkArr();
-	var bars 	= bar.mkArr();
-	window.initMap = map.mkArr;
+	var inputs 		= input.mkArr();
+	var toggles 	= toggle.mkArr();
+	var ticks 		= tick.mkArr();
+	var forms 		= form.mkArr();
+	var bars 		= bar.mkArr();
+	window.initMap 	= map.mkArr();
 
 	$('.calendar__holder').datetimepicker({
 		date: new Date(),
 		firstDayOfWeek: 1
 	});
 
-
-	
 	chart.newChart({
 		target: '#chartTestFirst',
 		type: 'progress',

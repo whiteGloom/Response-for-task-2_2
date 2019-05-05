@@ -33,6 +33,15 @@ module.exports = function(options) {
 				      	name: '[name].[ext]'
 				    },
 					include: /[\\/]fonts[\\/]/
+				},
+				{
+					test:  /\.mp4$/,
+					loader: "file-loader",
+				    options: {
+				      	outputPath: 'static/videos',
+				      	name: '[name].[ext]'
+				    },
+					include: /[\\/]videos[\\/]/
 				}
             ]
         }

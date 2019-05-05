@@ -5,21 +5,23 @@ html
 	head
 		title UIkit
 		meta(charset="utf-8")
+		link(rel="stylesheet" type="text/css" href="https://vjs.zencdn.net/5-unsafe/video-js.css")
 		link(rel="stylesheet" type="text/css" href="static/styles/styles.css")
 		script(type="text/javascript" src="./scripts/vendors.js")
 		script(type="text/javascript" src="./scripts/main.js")
 		script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6UQbE2epfLfDfa2uaXCx1soXdAfSFU-c&callback=initMap" async defer)
+		script(src='https://vjs.zencdn.net/5-unsafe/video.js')
 	body
 		div(style="width: 700px")
 			h1.h1 UIkit
 			div
-				+buttonMix({form: "boxMini", text:"button"})
-				+buttonMix({form: "box", text:"button"})
-				+buttonMix({form: "box", text:"button", color: "orange"})
-				+buttonMix({form: "boxMini", text:"button", color: "orange"})
+				+buttonMix({form: "boxMini", content:"button"})
+				+buttonMix({form: "box", content:"button"})
+				+buttonMix({form: "box", content:"button", color: "orange"})
+				+buttonMix({form: "boxMini", content:"button", color: "orange"})
 			div
-				+buttonMix({form: "round", background: "leftArrow"})
-				+buttonMix({form: "round", background: "leftArrow", blocked: true})
+				+buttonMix({form: "round", content: "leftArrow"})
+				+buttonMix({form: "round", content: "leftArrow", blocked: true})
 			div(style="justify-content: space-between; display: flex")
 				div(style="width: 8.1rem")
 					+chartMix({id: 'chartTestFirst'})
@@ -63,7 +65,7 @@ html
 								+barOptionMix({value: 'kolbasi of dogs'})
 									| Колбасы собачьи
 					+formSubmit
-						+buttonMix({form: "box", text: "submit", type: "submit"})
+						+buttonMix({form: "box", content: "submit", type: "submit"})
 				div(style="margin-top: .8rem")
 					+barMix({type: 'dropdown'})
 						+barOptionMix({value: 'kolbasi bogatirskie'})
@@ -76,9 +78,9 @@ html
 							| Колбасы собачьи
 				div(style="margin-top: .8rem")
 					+barMix({type: 'search'})
-						+inputMix({type: 'text', name: 'search', placeholder: 'text query', radius: 'left'})
+						+inputMix({type: 'text', name: 'search', color: 'orange', placeholder: 'text query', radius: 'left'})
 			div(style="margin-top: .8rem")
-				+userMix({color: 'gray', name: 'Evgeniy Miller', profession: 'Dolbaeb'})
+				+userMix({color: 'gray',  name: 'Evgeniy Miller', profession: 'Dolbaeb'})
 					+iconMix({image: require('../static/images/logo.png')})
 			div(style="margin-top: .8rem")
 				+userMix({color: 'aquamarine'})
@@ -92,8 +94,19 @@ html
 					+noteDescriptionMix({type: 'event'})
 						| This is a description, a assure you!
 					+noteButtonMix
-						+buttonMix({form: "boxEvent", text:"button", color: 'aquamarineAlternate'})
-			.div(style="display: grid; width: 40.4rem" )
+						+buttonMix({form: "boxEvent", content: "button", color: 'aquamarineAlternate'})
+			div(style="display: grid; width: 40.4rem" )
 				+mapMix({title: 'Meet us!', street: '** Predzavodskaya ST', city: 'Seversk, RU', coordinates: '{"lat": 56.590212, "lng": 84.939791}'})
-			div(style="width: 279px; display: grid")
-				+calendarMix
+			+calendarMix
+			div(style="width: 19.65rem")
+				+messengerMix
+					+messengerHeaderMix({title: 'whiteGloom'})
+						+messengerImageMix
+							+iconMix({image: require('../static/images/logo.png')})
+					+messengerBodyMix({messages: [{sender: 'interlocutor', text: 'Hi! I\'m a Globglogabgalab. I love books, and this basement is a true treasure trove.'}]})
+						+messengerEntryMix
+							+inputMix({form: 'box', name: 'entry', placeholder: 'Your message'})
+						+messengerSendMix
+							+buttonMix({text:"button"})
+			div(style="width: 40.5rem")
+				+videoMix({src: require('../static/videos/intro8.2.mp4'), preview:  require('../static/images/logo.png')})

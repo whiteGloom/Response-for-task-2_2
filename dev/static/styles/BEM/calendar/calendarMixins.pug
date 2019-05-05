@@ -1,10 +1,11 @@
 mixin calendarMix(options)
 	-
 		var options = options ? options : {};
-		var date = new Date(),
+		var size = options.size ? options.size : 'fixed',
+			date = new Date(),
 			day = date.getDate()
 	.calendar
-		.calendar__outer
+		.calendar__outer(class='' + ('calendar__outer_size_' + size))
 			.calendar__header
 				.calendar__today= day
 			.calendar__holder

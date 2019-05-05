@@ -331,7 +331,7 @@
                         const chartSummary = instance._methods.drawSvgText(instance, {
                             'class': `${instance._objPrefix}summary`,
                             'x': instance.settings.appearance.centerX,
-                            'y': instance.settings.appearance.isGauge ? instance.settings.appearance.centerY * 0.9 : instance.settings.appearance.centerY + 5
+                            'y': instance.settings.appearance.isGauge ? instance.settings.appearance.centerY * 0.9 : instance.settings.appearance.centerY + 2
                         });
                         instance.settings.elements.summary = chartSummary;
                         svgElement.appendChild(chartSummary);

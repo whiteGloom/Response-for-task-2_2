@@ -213,7 +213,7 @@ $(document).ready(function () {
   var ticks = tick.mkArr();
   var forms = form.mkArr();
   var bars = bar.mkArr();
-  window.initMap = map.mkArr;
+  window.initMap = map.mkArr();
   $('.calendar__holder').datetimepicker({
     date: new Date(),
     firstDayOfWeek: 1
@@ -308,6 +308,7 @@ bar.prototype.test = function () {
         this.input = $(this.base).find('.bar__input').children();
 
         if ($(this.input).data().valid && $(this.input).data().value != undefined) {
+          $(this.input).data().value = "";
           location.reload();
         }
 
@@ -631,7 +632,7 @@ function map(el) {
   this.position = $(this.base).data('coordinates');
   this.markerPosition = this.position;
   this.myPosition;
-  this.mapHolder = $(this.base).find('.map__replace').first();
+  this.mapHolder = $(this.base).find('.map__holder').first();
   this.findMeButton = $(this.base).find('.map__button').filter('.map__button_type_me');
   this.findMarkerButton = $(this.base).find('.map__button').filter('.map__button_type_marker');
   this.map = new google.maps.Map(this.mapHolder[0], {

@@ -1,0 +1,51 @@
+mixin messengerMix(options)
+	-
+		var options = options ? options : {};
+	.messenger
+		.messenger__outer
+			if block
+				block
+
+mixin messengerHeaderMix(options)
+	-
+		var options = options ? options : {};
+		var title = options.title ? options.title : 'title';
+	.messenger__header
+		.messenger__title= title
+		if block
+			block
+
+mixin messengerBodyMix(options)
+	-
+		var options 	= options ? options : {};
+		var messages 	= options.messages ? options.messages : [];
+	.messenger__body
+		.messenger__modeChangers
+			.messenger__mode.messenger__mode_type_text
+			.messenger__mode.messenger__mode_type_photo
+		.messenger__chat
+			each item in messages
+				.messenger__message(class='' + ('messenger__message_sender_' + item.sender))= item.text
+		if block
+			block
+
+mixin messengerImageMix(options)
+	-
+		var options = options ? options : {};
+	.messenger__image
+		if block	
+			block
+
+mixin messengerEntryMix(options)
+	-
+		var options = options ? options : {};
+	.messenger__entry
+		if block	
+			block
+
+mixin messengerSendMix(options)
+	-
+		var options = options ? options : {};
+	.messenger__send
+		if block	
+			block

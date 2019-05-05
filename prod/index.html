@@ -4,10 +4,12 @@
 <head>
 	<title>UIkit</title>
 	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="https://vjs.zencdn.net/5-unsafe/video-js.css">
 	<link rel="stylesheet" type="text/css" href="static/styles/styles.css">
 	<script type="text/javascript" src="./scripts/vendors.js"></script>
 	<script type="text/javascript" src="./scripts/main.js"></script>
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6UQbE2epfLfDfa2uaXCx1soXdAfSFU-c&amp;callback=initMap" async defer></script>
+	<script src="https://vjs.zencdn.net/5-unsafe/video.js"></script>
 </head>
 
 <body>
@@ -102,7 +104,7 @@
 					<div class="form__entry  form__entry_size_fill">
 						<div class="input" data-type="email" data-name="email">
 							<div class="input__outer">
-								<input class="input__entry  input__entry_form_bar input__entry_radius_default" required type="email" placeholder="E-mail">
+								<input class="input__entry  input__entry_radius_default input__entry_color_aquamarine" required type="email" placeholder="E-mail">
 								<div class="input__message  input__message_state_hidden"></div>
 							</div>
 						</div>
@@ -112,7 +114,7 @@
 					<div class="form__entry  form__entry_size_fill">
 						<div class="input" data-type="password" data-name="password">
 							<div class="input__outer">
-								<input class="input__entry  input__entry_form_bar input__entry_radius_default" required type="password" placeholder="Password">
+								<input class="input__entry  input__entry_radius_default input__entry_color_aquamarine" required type="password" placeholder="Password">
 								<div class="input__message  input__message_state_hidden"></div>
 							</div>
 						</div>
@@ -122,7 +124,7 @@
 					<div class="form__entry  form__entry_size_fill">
 						<div class="input" data-type="text" data-name="message">
 							<div class="input__outer">
-								<textarea class="input__entry  input__entry_form_box input__entry_radius_default" type="text" placeholder="Your message"></textarea>
+								<textarea class="input__entry  input__entry_radius_default input__entry_color_aquamarine" type="text" placeholder="Your message"></textarea>
 							</div>
 						</div>
 					</div>
@@ -167,7 +169,7 @@
 									</div>
 								</div>
 								<div class="bar__button bar__button_color_aquamarine">
-									<svg width="100%" height="100%">
+									<svg width="100%" height="100%" viewbox="0 0 28 28">
 										<g transform="translate(9, 11) rotate(-45)">
 											<rect height="10" width="2"></rect>
 											<rect height="2" width="10" y="8"></rect>
@@ -202,7 +204,7 @@
 							</div>
 						</div>
 						<div class="bar__button bar__button_color_aquamarine">
-							<svg width="100%" height="100%">
+							<svg width="100%" height="100%" viewbox="0 0 28 28">
 								<g transform="translate(9, 11) rotate(-45)">
 									<rect height="10" width="2"></rect>
 									<rect height="2" width="10" y="8"></rect>
@@ -218,7 +220,7 @@
 						<div class="bar__input">
 							<div class="input" data-type="text" data-name="search">
 								<div class="input__outer">
-									<input class="input__entry  input__entry_form_bar input__entry_radius_left" type="text" placeholder="text query">
+									<input class="input__entry  input__entry_radius_left input__entry_color_orange" type="text" placeholder="text query">
 									<div class="input__message  input__message_state_hidden"></div>
 								</div>
 							</div>
@@ -320,10 +322,10 @@
 				</div>
 			</div>
 		</div>
-		<div class="div" style="display: grid; width: 40.4rem">
+		<div style="display: grid; width: 40.4rem">
 			<div class="map" data-coordinates="{&quot;lat&quot;: 56.590212, &quot;lng&quot;: 84.939791}">
 				<div class="map__outer">
-					<div class="map__replace"></div>
+					<div class="map__holder"></div>
 					<div class="map__overlay">
 						<h2 class="map__title">Meet us!</h2>
 						<div class="map__adress">
@@ -336,13 +338,62 @@
 				</div>
 			</div>
 		</div>
-		<div style="width: 279px; display: grid">
-			<div class="calendar">
-				<div class="calendar__outer">
-					<div class="calendar__header">
-						<div class="calendar__today">23</div>
+		<div class="calendar">
+			<div class="calendar__outer calendar__outer_size_fixed">
+				<div class="calendar__header">
+					<div class="calendar__today">6</div>
+				</div>
+				<div class="calendar__holder"></div>
+			</div>
+		</div>
+		<div style="width: 19.65rem">
+			<div class="messenger">
+				<div class="messenger__outer">
+					<div class="messenger__header">
+						<div class="messenger__title">whiteGloom</div>
+						<div class="messenger__image">
+							<div class="icon">
+								<div class="icon__outer">
+									<img class="icon__image" src="static/images/logo.png">
+								</div>
+							</div>
+						</div>
 					</div>
-					<div class="calendar__holder"></div>
+					<div class="messenger__body">
+						<div class="messenger__modeChangers">
+							<div class="messenger__mode messenger__mode_type_text"></div>
+							<div class="messenger__mode messenger__mode_type_photo"></div>
+						</div>
+						<div class="messenger__chat">
+							<div class="messenger__message messenger__message_sender_interlocutor">Hi! I'm a Globglogabgalab. I love books, and this basement is a true treasure trove.</div>
+						</div>
+						<div class="messenger__entry">
+							<div class="input" data-type="text" data-name="entry">
+								<div class="input__outer">
+									<textarea class="input__entry  input__entry_radius_default input__entry_color_aquamarine" type="text" placeholder="Your message"></textarea>
+								</div>
+							</div>
+						</div>
+						<div class="messenger__send">
+							<button class="button" type="button">
+								<div class="button__outer  button__outer_form_box button__outer_color_aquamarine">
+									<div class="button__inner  button__inner_form_box button__inner_color_aquamarine">
+										<div class="button__rippleEffect"></div>
+										<div class="button__content  button__content_form_box button__content_color_aquamarine">button</div>
+									</div>
+								</div>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div style="width: 40.5rem">
+			<div class="video">
+				<div class="video__outer">
+					<video class="video-js vjs-default-skin" id="my_video_1" width="594px" height="336px" controls preload="none" poster="static/images/logo.png" data-setup="{ &quot;aspectRatio&quot;:&quot;594:336&quot;, &quot;playbackRates&quot;: [1, 1.5, 2] }">
+						<source src="static/videos/intro8.2.mp4" type="video/mp4">
+					</video>
 				</div>
 			</div>
 		</div>
