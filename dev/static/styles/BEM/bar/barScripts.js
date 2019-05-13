@@ -26,7 +26,6 @@ bar.prototype.test = function(){
 		case 'search': {
 			this.input = $(this.base).find('.bar__input').children();
 			if ($(this.input).data().valid && $(this.input).data().value != undefined){
-				$(this.input).data().value = "";
 				location.reload()
 			}
 			return $(this.input).children().data()

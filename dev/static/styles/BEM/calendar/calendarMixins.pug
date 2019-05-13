@@ -4,7 +4,7 @@ mixin calendarMix(options)
 		var size = options.size ? options.size : 'fixed',
 			date = new Date(),
 			day = date.getDate()
-	.calendar
+	.calendar&attributes(attributes)
 		.calendar__outer(class='' + ('calendar__outer_size_' + size))
 			.calendar__header
 				.calendar__today= day

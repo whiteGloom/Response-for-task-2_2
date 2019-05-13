@@ -1,8 +1,9 @@
 mixin messengerMix(options)
 	-
 		var options = options ? options : {};
-	.messenger
-		.messenger__outer
+		var size = options.size ? options.size : 'fixed'
+	.messenger&attributes(attributes)
+		.messenger__outer(class='' + (' messenger__outer_size_' + size))
 			if block
 				block
 
@@ -10,8 +11,8 @@ mixin messengerHeaderMix(options)
 	-
 		var options = options ? options : {};
 		var title = options.title ? options.title : 'title';
-	.messenger__header
-		.messenger__title= title
+	.messenger__header&attributes(attributes)
+		em.messenger__title= title
 		if block
 			block
 
@@ -19,33 +20,33 @@ mixin messengerBodyMix(options)
 	-
 		var options 	= options ? options : {};
 		var messages 	= options.messages ? options.messages : [];
-	.messenger__body
-		.messenger__modeChangers
-			.messenger__mode.messenger__mode_type_text
-			.messenger__mode.messenger__mode_type_photo
+	.messenger__body&attributes(attributes)
+		.messenger__modeBox
+			button.messenger__mode.messenger__mode_type_text
+			button.messenger__mode.messenger__mode_type_photo
 		.messenger__chat
 			each item in messages
-				.messenger__message(class='' + ('messenger__message_sender_' + item.sender))= item.text
+				p.messenger__message(class='' + ('messenger__message_sender_' + item.sender))= item.text
 		if block
 			block
 
 mixin messengerImageMix(options)
 	-
 		var options = options ? options : {};
-	.messenger__image
+	.messenger__image&attributes(attributes)
 		if block	
 			block
 
 mixin messengerEntryMix(options)
 	-
 		var options = options ? options : {};
-	.messenger__entry
+	.messenger__entry&attributes(attributes)
 		if block	
 			block
 
 mixin messengerSendMix(options)
 	-
 		var options = options ? options : {};
-	.messenger__send
+	.messenger__send&attributes(attributes)
 		if block	
 			block

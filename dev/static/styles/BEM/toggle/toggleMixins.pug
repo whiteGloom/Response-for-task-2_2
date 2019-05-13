@@ -5,7 +5,7 @@ mixin toggleMix(options)
 			defaults	= value,
 			name 		= options.name ? options.name : 'toggle',
 			state 		= value == 'true' ? 'on' : 'off';
-	button.toggle(type='button' data-value=value data-name=name)
+	button.toggle(type='button' data-value=value data-name=name)&attributes(attributes)
 		.toggle__outer(class='' + (' toggle__outer_state_' + state))
 			.toggle__handle(class='' + (' toggle__handle_state_' + state))
 			.toggle__text(class='' + (' toggle__text_state_' + state))= state

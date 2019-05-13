@@ -5,13 +5,13 @@ mixin mapMix(options)
 			coordinates = options.coordinates ? options.coordinates : {},
 			street 		= options.street ? options.street : 'street',
 			city 		= options.city ? options.city : 'city';
-	.map(data-coordinates=coordinates)
+	.map(data-coordinates=coordinates)&attributes(attributes)
 		.map__outer
 			.map__holder
 			.map__overlay
-				h2.map__title= title
-				.map__adress
-					em.map__adressEl= street
-					em.map__adressEl= city
+				em.map__title= title
+				.map__adressBox
+					em.map__adress= street
+					em.map__adress= city
 				button.map__button.map__button_type_marker
 				button.map__button.map__button_type_me

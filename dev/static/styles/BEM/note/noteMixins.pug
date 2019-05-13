@@ -7,29 +7,30 @@ mixin noteMix(options)
 			date 		= options.date ? options.date : 'Today',
 			dateDay 	= options.dateDay ? options.dateDay : '00',
 			dateMonth 	= options.dateMonth ? options.dateMonth : 'January';
-	.note
+	.note&attributes(attributes)
 		.note__outer
-			.note__imageOuter
+			.note__imageBox
 				img.note__image(src=image)
 			.note__info(class='' + (' note__info_type_' + type))
 				case type
 					when 'news'
-						.note__title(class='' + (' note__title_type_' + type))= title
-						.note__date(class='' + (' note__date_type_' + type))= date
+						em.note__title(class='' + (' note__title_type_' + type))= title
+						.note__dateBox
+							em.note__date(class='' + (' note__date_type_' + type))= date
 						if block
 							block
 					when 'event'
-						.note__date(class='' + (' note__date_type_' + type))
-							.note__dateDay= dateDay
-							.note__dateMonth= dateMonth
-						.note__title(class='' + (' note__title_type_' + type))= title
+						.note__dateBox(class='' + (' note__date_type_' + type))
+							em.note__date(class='' + (' note__date_type_' + type) + 'Day')= dateDay
+							em.note__date(class='' + (' note__date_type_' + type) + 'Month')= dateMonth
+						em.note__title(class='' + (' note__title_type_' + type))= title
 						if block
 							block
 
 mixin noteButtonMix(options)
 	-
 		var options = options ? options : {};
-	.note__button
+	.note__button&attributes(attributes)
 		if block
 			block
 
@@ -37,6 +38,6 @@ mixin noteDescriptionMix(options)
 	-
 		var options = options ? options : {};
 		var type = options.type ? options.type : 'news';
-	.note__description(class='' + (' note__description_type_' + type))
+	.note__description(class='' + (' note__description_type_' + type))&attributes(attributes)
 		if block
 			block

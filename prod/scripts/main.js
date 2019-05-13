@@ -308,7 +308,6 @@ bar.prototype.test = function () {
         this.input = $(this.base).find('.bar__input').children();
 
         if ($(this.input).data().valid && $(this.input).data().value != undefined) {
-          $(this.input).data().value = "";
           location.reload();
         }
 
@@ -464,7 +463,7 @@ function form(elem) {
 form.prototype.getValues = function () {
   try {
     var data = [];
-    var formEntrys = $(this.base).find('.form__entry');
+    var formEntrys = $(this.base).find('.form__elEntry');
 
     for (var i = 0; i < formEntrys.length; i++) {
       var entry = $(formEntrys[i]).children()[0];

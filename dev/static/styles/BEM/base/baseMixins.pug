@@ -1,0 +1,13 @@
+mixin baseMix(options)
+	-
+		var options = options ? options : {};
+	main.base&attributes(attributes)
+		if block
+			block
+
+mixin baseSectionMix(options)
+	-
+		var options = options ? options : {};
+	section.base__section&attributes(attributes)
+		if block
+			block

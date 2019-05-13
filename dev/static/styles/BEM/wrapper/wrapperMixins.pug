@@ -1,0 +1,10 @@
+mixin wrapperMix(options)
+	-
+		var options 	= options ? options : {};
+		var justify 	= options.justify ? options.justify : 'unset',
+			centering 	= options.centering == 'false' ? false : true;
+	.wrapper(class="" +
+			(' wrapper_justify_' + justify) +
+			(centering == true ? ' wrapper_centering' : ''))&attributes(attributes)
+		if block
+			block

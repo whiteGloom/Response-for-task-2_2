@@ -6,7 +6,7 @@ function form(elem) {
 form.prototype.getValues = function(){
 	try {
 		var data = [];
-		var formEntrys = $(this.base).find('.form__entry');
+		var formEntrys = $(this.base).find('.form__elEntry');
 		for(var i = 0; i < formEntrys.length; i++){
 			var entry = $(formEntrys[i]).children()[0];
 			if ($(entry).data('custom') == true){

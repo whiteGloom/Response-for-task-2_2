@@ -2,5 +2,7 @@ mixin chartMix(options)
 	-
 		var options = options ? options : {};
 		var id = options.id ? options.id : '',
-			form = options.form ? options.form : 'progress';
-	.chart(id= id class='' + ('chart_type_' + form))
+			size = options.size ? options.size : 'fixed',
+			type = options.type ? options.type : 'progress';
+	.chart&attributes(attributes)
+		.chart__outer(id= id class="" + (' chart__outer_size_' + size) + (' chart__outer_type_' + type))

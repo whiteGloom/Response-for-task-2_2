@@ -4,17 +4,13 @@ mixin buttonMix(options)
 		var form 	= options.form ? options.form : 'box',
 			type	= options.type ? options.type : 'button',
 			blocked	= options.blocked,
-			color 	= blocked === true ? 'blocked' : options.color ? options.color : 'aquamarine',
+			theme 	= options.theme ? options.theme : 'aquamarine',
 			content = options.content ? options.content : 'button';
 
-	button.button(class= '' + ( blocked === true ? ' button_blocked' : '') type=type)
-		.button__outer(class='' + 
-				(' button__outer_form_' + form) + 
-				(' button__outer_color_' + color))
+	button.button(class= '' + ( ' button_theme_' + theme) type=type)&attributes(attributes)
+		.button__outer(class='' + (' button__outer_form_' + form))
 
-			.button__inner(class='' +
-					(' button__inner_form_' + form) + 
-					(' button__inner_color_' + color))
+			.button__inner(class='' + (' button__inner_form_' + form))
 
 				if blocked !== true
 					.button__rippleEffect
@@ -23,15 +19,10 @@ mixin buttonMix(options)
 					when 'box' 
 					when 'boxMini'
 					when 'boxEvent'
-						.button__content(class='' + 
-								(' button__content_form_' + form) + 
-								(' button__content_color_' + color))= content
+						.button__content(class='' + (' button__content_form_' + form))= content
 
 					when 'round'
-						svg.button__content(viewbox='0 0 44 44'
-							class='' +
-								(' button__content_form_' + form) + 
-								(' button__content_color_' + color))
+						svg.button__content(viewbox='0 0 44 44' class='' + (' button__content_form_' + form))
 
 							case content
 								when 'rightArrow'
