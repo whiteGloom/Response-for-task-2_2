@@ -492,6 +492,7 @@
 
 .header__decorLine {
   border: 0.1rem solid #4eb7a8;
+  background-color: #4eb7a8;
 }
 
 .header__nav {
@@ -1442,15 +1443,15 @@ i.icon-datepicker-next:before {
 
 @font-face {
   font-family: "Lato-regular";
-  src: url("../fonts/Lato-regular.otf") format("opentype"), url("../fonts/Lato-regular.eot?#") format("eot"), url("../fonts/Lato-regular.ttf") format("truetype"), url("../fonts/Lato-regular.woff") format("woff"), url("../images/Lato-regular.svg") format("svg");
+  src: url("../fonts/Lato-Regular.otf") format("opentype"), url("../fonts/Lato-Regular.eot?#") format("eot"), url("../fonts/Lato-Regular.ttf") format("truetype"), url("../fonts/Lato-Regular.woff") format("woff"), url("../images/Lato-Regular.svg") format("svg");
 }
 @font-face {
   font-family: "Lato-black";
-  src: url("../fonts/Lato-black.otf") format("opentype"), url("../fonts/Lato-black.eot?#") format("eot"), url("../fonts/Lato-black.ttf") format("truetype"), url("../fonts/Lato-black.woff") format("woff"), url("../images/Lato-black.svg") format("svg");
+  src: url("../fonts/Lato-Black.otf") format("opentype"), url("../fonts/Lato-Black.eot?#") format("eot"), url("../fonts/Lato-Black.ttf") format("truetype"), url("../fonts/Lato-Black.woff") format("woff"), url("../images/Lato-Black.svg") format("svg");
 }
 @font-face {
   font-family: "Lato-light";
-  src: url("../fonts/Lato-light.otf") format("opentype"), url("../fonts/Lato-light.eot?#") format("eot"), url("../fonts/Lato-light.ttf") format("truetype"), url("../fonts/Lato-light.woff") format("woff"), url("../images/Lato-light.svg") format("svg");
+  src: url("../fonts/Lato-Light.otf") format("opentype"), url("../fonts/Lato-Light.eot?#") format("eot"), url("../fonts/Lato-Light.ttf") format("truetype"), url("../fonts/Lato-Light.woff") format("woff"), url("../images/Lato-Light.svg") format("svg");
 }
 html {
   color: #4f4f4f;
