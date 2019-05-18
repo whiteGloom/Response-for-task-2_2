@@ -20,7 +20,26 @@ module.exports = function(options) {
         },
         plugins: [
 			new HTMLWebpackPlugin({
-				template: base + "/dev/views/index.pug",
+				template: base + "/dev/views/uikit.pug",
+				filename: 'uikit.html',
+				inject: false,
+				minify: false
+			}),
+			new HTMLWebpackPlugin({
+				template: base + "/dev/views/home.pug",
+				filename: 'home.html',
+				inject: false,
+				minify: false
+			}),
+			new HTMLWebpackPlugin({
+				template: base + "/dev/views/contacts.pug",
+				filename: 'contacts.html',
+				inject: false,
+				minify: false
+			}),
+			new HTMLWebpackPlugin({
+				template: base + "/dev/views/about.pug",
+				filename: 'about.html',
 				inject: false,
 				minify: false
 			}),

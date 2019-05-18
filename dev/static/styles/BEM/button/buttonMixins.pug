@@ -1,3 +1,9 @@
+//- Миксин создаёт кнопку. Свойства:
+//- "form" (string) ['box', 'boxMini', 'boxEvent', 'round'] 					- отвечает форму кнопки. 												По умолчанию - 'box'.
+//- "type" (string) [стандартные html значения] 								- отвечает роль кнопки в форме. 										По умолчанию - 'button'.
+//- 'blocked' (boolean / nothing) 												- заблокирована кнопка или нет.
+//- 'theme' (string) ['orange', 'aquamarine', 'aquamarineAlternate', 'blocked'] - цветовая схема кнопки 												По умолчанию - 'aquamarine'.
+//- 'content' (string) [string, 'rightArrow', 'leftArrow'] 						- содержание кнопки (текст для формы 'box', стрелки для формы 'round') 	По умолчанию - 'button'.
 mixin buttonMix(options)
 	-
 		var options	= options ? options : {};
@@ -9,12 +15,9 @@ mixin buttonMix(options)
 
 	button.button(class= '' + ( ' button_theme_' + theme) type=type)&attributes(attributes)
 		.button__outer(class='' + (' button__outer_form_' + form))
-
 			.button__inner(class='' + (' button__inner_form_' + form))
-
 				if blocked !== true
 					.button__rippleEffect
-					
 				case form
 					when 'box' 
 					when 'boxMini'

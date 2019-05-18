@@ -1,3 +1,6 @@
+//- Миксин создаёт внешнюю часть формы . Свойства:
+//- "name" (string) - отвечает за идентификацию элемента. По умолчанию - 'form'.
+//- Ожидается элемент формы.
 mixin formMix(options)
 	-
 		var options = options ? options : {};
@@ -7,29 +10,23 @@ mixin formMix(options)
 		if block
 			block
 
+//- Миксин создаёт элемент формы. Свойства:
+//- "text" (string / nothing)- текст элемента.
+//- Ожидается элемент управления.
 mixin formElMix(options)
 	-
 		var options = options ? options : {};
+		var text = options.text;
 
 	.form__el&attributes(attributes)
-		if block
-			block
+		if text
+			.form__elText= text
+		.form__elEntry(class='' + (' form__elEntry_size_' + (text ? 'auto' : 'fill')))
+			if block
+				block
 
-mixin formElTextMix(options)
-	-
-		var options = options ? options : {};
-	em.form__elText&attributes(attributes)
-		if block
-			block
-
-mixin formElEntryMix(options)
-	-
-		var options = options ? options : {};
-		var size = options.size ? options.size : 'auto';
-	.form__elEntry(class='' + (' form__elEntry_size_' + size))&attributes(attributes)
-		if block
-			block
-
+//- Миксин создаёт элемент формы, отвечающий за отправку формы.
+//- Ожидается кнопка.
 mixin formSubmit(options)
 	-
 		var options = options ? options : {};

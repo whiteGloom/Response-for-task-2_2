@@ -1,3 +1,6 @@
+//- Миксин создаёт мессенджер. Свойства:
+//- 'size' (stirng) ['fixed', 'auto'] - размер элемента. По умолчанию - 'fixed'.
+//- Ожидается блок хедера и футера мессенджера.
 mixin messengerMix(options)
 	-
 		var options = options ? options : {};
@@ -7,6 +10,9 @@ mixin messengerMix(options)
 			if block
 				block
 
+//- Миксин создаёт хэдер мессенджера. Свойства:
+//- 'title' (string) - имя собеседника. По умолчанию - 'title'.
+//- Ожидается блок с значком мессенджера.
 mixin messengerHeaderMix(options)
 	-
 		var options = options ? options : {};
@@ -16,6 +22,9 @@ mixin messengerHeaderMix(options)
 		if block
 			block
 
+//- Миксин создаёт тело мессенджера. Свойства:
+//- 'messages' (array) [object{title, text}] - сообщения для вывода. По умолчанию - [].
+//- Ожидаются блок поля ввода мессенджера, блок кнопки мессенджера.
 mixin messengerBodyMix(options)
 	-
 		var options 	= options ? options : {};
@@ -30,6 +39,8 @@ mixin messengerBodyMix(options)
 		if block
 			block
 
+//- Миксин создаёт значок мессенджера.
+//- Ожидается блок с озображеним.
 mixin messengerImageMix(options)
 	-
 		var options = options ? options : {};
@@ -37,6 +48,8 @@ mixin messengerImageMix(options)
 		if block	
 			block
 
+//- Миксин создаёт поле ввода сообщения мессенджера.
+//- Ожидается поле ввода.
 mixin messengerEntryMix(options)
 	-
 		var options = options ? options : {};
@@ -44,6 +57,8 @@ mixin messengerEntryMix(options)
 		if block	
 			block
 
+//- Миксин создаёт кнопку отправки сообщения мессенджера.
+//- Ожидается кнопка.
 mixin messengerSendMix(options)
 	-
 		var options = options ? options : {};

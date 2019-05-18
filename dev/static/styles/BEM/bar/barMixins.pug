@@ -1,3 +1,8 @@
+//- Миксин создаёт блок выпадающего списка/блок поиска. Свойства:
+//- "type" (string) ['search', 'dropdown'] 	- отвечает за тип элемента. 			По умолчанию - 'search'.
+//- "name" (string) 						- отвечает за идентификацию элемента. 	По умолчанию - 'aquamarine'.
+//- Для блока типа 'search' ожидается поле ввода.
+//- Для блока типа 'dropdown' ожидаются пункты выпадающего списка.
 mixin barMix(options)
 	-
 		var options = options ? options : {};
@@ -28,11 +33,12 @@ mixin barMix(options)
 								rect(height='10' width='2')
 								rect(height='2' width='10' y='8')
 							
-
+//- Миксин создаёт пункт выпадающего списка. Свойства:
+//- "value" (string) - отвечает за значение пункта. По умолчанию - 'unset'.
+//- "text" (string) - отвечает за текст пункта. По умолчанию - 'text'.
 mixin barOptionMix(options)
 	-
 		var options = options ? options : {};
-		var value 	= options.value;
-	.bar__dropdownOption(data-value=value)&attributes(attributes)
-		if block
-			block
+		var value 	= options.value ? options.value : 'unset',
+			text	= options.text ? options.text : 'text';
+	.bar__dropdownOption(data-value=value)&attributes(attributes)= text

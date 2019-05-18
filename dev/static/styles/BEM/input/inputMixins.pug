@@ -1,3 +1,11 @@
+//- Миксин создаёт поле ввода. Свойства:
+//- "type" (string) [стандартные html значения] - роль поля в форме заголовка. 						По умолчанию - 'text'.
+//- "color" (string) ['aquamarine', 'orange'] 	- цвет поля. 										По умолчанию - 'aquamarine'.
+//- 'form' (string) ['bar', 'box'] 				- тип поля (большое и маленькое). 					По умолчанию - 'bar'.
+//- 'required' (boolean / nothing) 				- необходимо ли заполнение поля перед отправкой.
+//- 'name' (string) 							- идентификация поля. 								По умолчанию - 'input'.
+//- 'radius' (string) ['default', 'left'] 		- скругление границ поля. 							По умолчанию - 'default'.
+//- 'placeholder' (string) 						- пример текста. 									По умолчанию - ''.
 mixin inputMix(options)
 	-
 		var options 	= options ? options : {}

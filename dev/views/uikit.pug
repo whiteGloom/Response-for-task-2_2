@@ -1,0 +1,133 @@
+extends ./template/template
+
+block variables
+	-
+		var page = {};
+		page.pageTitle = 'UI kit';
+		page.headerTitle = 'UI kit';
+
+block body
+	+baseMix
+		+baseSectionMix
+			+wrapperMix
+				+wrapperElMix
+					+h3Mix({text: 'Box buttons'})
+				+wrapperElMix({justify: 'around'})(style="width: 75%")
+					+buttonMix({form: "boxMini", content:"button"})
+					+buttonMix({form: "box", content:"button"})
+					+buttonMix({form: "box", content:"button", theme: "orange"})
+					+buttonMix({form: "boxMini", content:"button", theme: 'blocked'})
+		+baseSectionMix
+			+wrapperMix
+				+wrapperElMix
+					+h3Mix({text: 'Round buttons'})
+				+wrapperElMix({justify: 'around'})(style="width: 50%")
+					+buttonMix({form: "round", content: "rightArrow", theme: 'orange'})
+					+buttonMix({form: "round", content: "rightArrow", theme: 'orange'})
+					+buttonMix({form: "round", content: "leftArrow"})
+					+buttonMix({form: "round", content: "leftArrow", theme: 'blocked'})
+		+baseSectionMix
+			+wrapperMix
+				+wrapperElMix
+					+h3Mix({text: 'Charts'})
+				+wrapperElMix({justify: 'around'})
+					+chartMix({id: 'chartTestFirst'})
+					+chartMix({id: 'chartTestSecond'})
+					+chartMix({id: 'chartTestThird', type: 'pie'})
+		+baseSectionMix
+			+wrapperMix
+				+wrapperElMix
+					+h3Mix({text: 'Sliders'})
+				+wrapperElMix({justify: 'between'})
+					+sliderMix({id: 'sliderSimpleTest'})(style='width: 45%')
+					+sliderMix({id: 'sliderPipsTest'})(style='width: 45%')
+		+baseSectionMix
+			+wrapperMix
+				+wrapperElMix
+					+h3Mix({text: 'Stepbar'})
+				+wrapperElMix
+					+stepbarMix({id: 'stepbarTest'})
+		+baseSectionMix
+			+wrapperMix
+				+wrapperElMix
+					+h3Mix({text: 'Form / bars'})
+				+wrapperElMix({justify: 'between'})
+					+formMix(style="width: 45%")
+						+formElMix
+							+inputMix({type: 'email', name:'email', required: true, placeholder: 'E-mail'})
+						+formElMix
+							+inputMix({type: 'password', name: 'password', required: true, placeholder: 'Password'})
+						+formElMix
+							+inputMix({form: 'box', name: 'message', placeholder: 'Your message'})
+						+formElMix({text: 'The camera is'})
+							+toggleMix({name: 'laser', value: 'false'})
+						+formElMix({text: 'Bomb the moon?'})
+							+tickMix({name:'bomb', value: 'true'})
+						+formElMix
+							+barMix({type: 'dropdown', name: 'kolbasi'})
+								+barOptionMix({value: 'kolbasi bogatirskie', text: 'Колбасы богатырские'})
+								+barOptionMix({value: 'kolbasi bovarskie', text: 'Колбасы боварские'})
+								+barOptionMix({value: 'kolbasi habibskie', text: 'Колбасы хабибские'})
+								+barOptionMix({value: 'kolbasi of dogs', text: 'Колбасы собачьи'})
+						+formSubmit
+							+buttonMix({form: "box", content: "submit", type: "submit"})
+					+wrapperMix(style="width: 45%")
+						+wrapperElMix({justify: 'unset', centering: 'false'})
+							+wrapperMix
+								+wrapperElMix({justify: 'unset', centering: 'false'})
+									+barMix({type: 'dropdown'})(style="width: 100%")
+										+barOptionMix({value: 'kolbasi bogatirskie'})
+											| Колбасы богатырские
+										+barOptionMix({value: 'kolbasi bovarskie'})
+											| Колбасы боварские
+										+barOptionMix({value: 'kolbasi habibskie'})
+											| Колбасы хабибские
+										+barOptionMix({value: 'kolbasi of dogs'})
+											| Колбасы собачьи
+								+wrapperElMix({justify: 'unset', centering: 'false'})
+									+barMix({type: 'search'})(style="width: 100%")
+										+inputMix({type: 'text', name: 'search', color: 'orange', placeholder: 'text query', radius: 'left'})
+		+baseSectionMix
+			+wrapperMix
+				+wrapperElMix
+					+h3Mix({text: 'Users'})
+				+wrapperElMix({justify: 'around'})
+					+userMix({color: 'gray',  name: 'Evgeniy Miller', profession: 'whiteGloom'})
+						+iconMix({image: require('../static/images/wglogo.png')})
+					+userMix({theme: 'aquamarine', profession: 'profession', theme: 'aquamarine'})
+						+iconMix({image: require('../static/images/lKllogo.png')})
+		+baseSectionMix
+			+wrapperMix
+				+wrapperElMix
+					+h3Mix({text: 'News / events'})
+				+wrapperElMix({justify: 'between'})
+					+noteMix({image: require('../static/images/wglogo.png'), title: 'This is a title!', date: '23 November 2001', description: 'There must be some description..'})(style="width: 19.65rem")
+					+noteMix({type: 'event', image: require('../static/images/wglogo.png'), title: 'this is a title', dateDay: '23', dateMonth: 'Nov', description: 'This is a description, I assure you.'})(style="width: 19.65rem")
+						+buttonMix({form: "boxEvent", content: "button", theme: 'aquamarineAlternate'})
+		+baseSectionMix
+			+wrapperMix
+				+wrapperElMix
+					+h3Mix({text: 'Map'})
+				+wrapperElMix
+					+mapMix({title: 'Meet us!', street: '** Predzavodskaya ST', city: 'Seversk, RU', coordinates: '{"lat": 56.590212, "lng": 84.939791}'})
+		+baseSectionMix
+			+wrapperMix
+				+wrapperElMix
+					+h3Mix({text: 'Calendar / messenger'})
+				+wrapperElMix({justify: 'between'})
+					+calendarMix
+					+messengerMix
+						+messengerHeaderMix({title: 'whiteGloom'})
+							+messengerImageMix
+								+iconMix({image: require('../static/images/wglogo.png')})
+						+messengerBodyMix({messages: [{sender: 'interlocutor', text: 'Hi! I\'m a Globglogabgalab. I love books, and this basement is a true treasure trove.'}]})
+							+messengerEntryMix
+								+inputMix({form: 'box', name: 'entry', placeholder: 'Your message'})
+							+messengerSendMix
+								+buttonMix({text:"button"})
+		+baseSectionMix
+			+wrapperMix
+				+wrapperElMix
+					+h3Mix({text: 'Video'})
+				+wrapperElMix
+					+videoMix({src: require('../static/videos/intro8.2.mp4'), preview:  require('../static/images/lKllogo.png'), title: 'intro8.2', author: 'mr lKlAlRlAlBlIlNl', source: 'https://youtu.be/y9Z-gDcCSmU'})(style="width: 100%")

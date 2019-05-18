@@ -1,3 +1,12 @@
+//- Миксин создаёт блок новостей/событий. Свойства:
+//- 'title' (string) 					- заголовок блока. 							По умолчанию - 'title'.
+//- 'type' (string) ['news', 'event'] 	- тип блока. 								По умолчанию - 'news'.
+//- 'image' (string) 					- ссылка на изображение. 					По умолчанию - ''.
+//- 'date' (string) 					- дата (для блока с типом 'news'). 			По умолчанию - 'Today'.
+//- 'dateDay' (string) 					- дата (для блока с типом 'event'). 		По умолчанию - '00'.
+//- 'dateMonth' (string) 				- дата (для блока с типом 'event'). 		По умолчанию - 'January'.
+//- 'description' (string) 				- текст описания блока. 					По умолчанию - ''.
+//- Ожидается кнопка.
 mixin noteMix(options)
 	-
 		var options 	= options ? options : {};
@@ -6,7 +15,8 @@ mixin noteMix(options)
 			image 		= options.image ? options.image : '',
 			date 		= options.date ? options.date : 'Today',
 			dateDay 	= options.dateDay ? options.dateDay : '00',
-			dateMonth 	= options.dateMonth ? options.dateMonth : 'January';
+			dateMonth 	= options.dateMonth ? options.dateMonth : 'January',
+			description = options.description ? options.description : '';
 	.note&attributes(attributes)
 		.note__outer
 			.note__imageBox
@@ -17,27 +27,13 @@ mixin noteMix(options)
 						em.note__title(class='' + (' note__title_type_' + type))= title
 						.note__dateBox
 							em.note__date(class='' + (' note__date_type_' + type))= date
-						if block
-							block
+						.note__description(class='' + (' note__description_type_' + type))= description
 					when 'event'
 						.note__dateBox(class='' + (' note__date_type_' + type))
 							em.note__date(class='' + (' note__date_type_' + type) + 'Day')= dateDay
 							em.note__date(class='' + (' note__date_type_' + type) + 'Month')= dateMonth
 						em.note__title(class='' + (' note__title_type_' + type))= title
-						if block
-							block
-
-mixin noteButtonMix(options)
-	-
-		var options = options ? options : {};
-	.note__button&attributes(attributes)
-		if block
-			block
-
-mixin noteDescriptionMix(options)
-	-
-		var options = options ? options : {};
-		var type = options.type ? options.type : 'news';
-	.note__description(class='' + (' note__description_type_' + type))&attributes(attributes)
-		if block
-			block
+						.note__description(class='' + (' note__description_type_' + type))= description
+						.note__button
+							if block
+								block

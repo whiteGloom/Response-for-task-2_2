@@ -8,7 +8,7 @@ module.exports = function(options) {
 	return {
 		mode: 'development',
 		entry: {
-			'main': base + '/dev/index.js',
+			'base': base + '/dev/index.js',
 			'static': base + '/dev/static.js'
 		},
 		output: {

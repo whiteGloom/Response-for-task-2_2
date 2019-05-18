@@ -1,3 +1,5 @@
+//- Миксин создаёт базовый элемент страницы.
+//- Ожидаются блоки-секции.
 mixin baseMix(options)
 	-
 		var options = options ? options : {};
@@ -5,6 +7,8 @@ mixin baseMix(options)
 		if block
 			block
 
+//- Миксин создаёт секцию на странице.
+//- Ожидается любое содержимое.
 mixin baseSectionMix(options)
 	-
 		var options = options ? options : {};

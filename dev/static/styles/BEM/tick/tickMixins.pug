@@ -1,8 +1,10 @@
+//- Миксин создаёт чекбокс-галочку. Свойства:
+//- 'value' (string) 	- значение чекбокса. 					По умолчанию - 'false'.
+//- 'name' (string) 	- отвечает за идентификацию чекбокса. 	По умолчанию - 'tick'.
 mixin tickMix(options)
 	-
 		var options 	= options ? options : {};
-		var value 		= options.value ? options.value : 'off',
-			defaults	= value,
+		var value 		= options.value ? options.value : 'false',
 			name 		= options.name ? options.name : 'tick',
 			state 		= value == 'true' ? 'on' : 'off';
 

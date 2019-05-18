@@ -1,3 +1,7 @@
+//- Миксин создаёт круглую диаграмму. Свойства:
+//- "id" (string) 						- отвечает за id элемента. 		По умолчанию - ''.
+//- "size" (string) ['fixed', 'auto'] 	- отвечает за размер элемента. 	По умолчанию - 'fixed'.
+//- 'type' (string) ['progress', 'pie'] - отвечает за тип диаграммы. 	По умолчанию - 'progress'.
 mixin chartMix(options)
 	-
 		var options = options ? options : {};
