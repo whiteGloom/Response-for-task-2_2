@@ -26,7 +26,7 @@ module.exports = function(options) {
 				minify: false
 			}),
 			new HTMLWebpackPlugin({
-				template: base + "/dev/views/index.pug",
+				template: base + "/dev/views/home.pug",
 				filename: 'index.html',
 				inject: false,
 				minify: false
