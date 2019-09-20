@@ -1,0 +1,13 @@
+//- Миксин создаёт календарь. Свойства:
+//- "size" (string) ['fixed', 'auto'] - отвечает за размер элемента. По умолчанию - 'fixed'.
+mixin calendarMix(options)
+    -
+        var options = options ? options : {};
+        var size = options.size ? options.size : 'fixed',
+            date = new Date(),
+            day = date.getDate()
+    .calendar&attributes(attributes)
+        .calendar__outer(class='' + ('calendar__outer_size_' + size))
+            .calendar__header
+                .calendar__today= day
+            .calendar__holder

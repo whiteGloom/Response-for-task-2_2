@@ -1,9 +1,0 @@
-//- Миксин создаёт иконку. Свойства:
-//- "image" (string) - ссылка на изображение. По умолчанию - ''.
-mixin iconMix(options)
-	-
-		var options = options ? options : {};
-		var image = options.image ? options.image : '';
-	.icon&attributes(attributes)
-		.icon__outer
-			img.icon__image(src=image)

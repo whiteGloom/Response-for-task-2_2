@@ -1,0 +1,13 @@
+//- Миксин создаёт чекбокс. Свойства:
+//- 'value' (string) - значение чекбокса. По умолчанию - 'false'.
+//- 'name' (string) - отвечает за идентификацию чекбокса. По умолчанию - 'toggle'.
+mixin toggleMix(options)
+    -
+        var options = options ? options : {};
+        var value = options.value ? options.value : 'false',
+            name = options.name ? options.name : 'toggle',
+            state = value == 'true' ? 'on' : 'off';
+    button.toggle(type='button' data-value=value data-name=name)&attributes(attributes)
+        .toggle__outer(class='' + (' toggle__outer_state_' + state))
+            .toggle__handle(class='' + (' toggle__handle_state_' + state))
+            .toggle__text(class='' + (' toggle__text_state_' + state))= state

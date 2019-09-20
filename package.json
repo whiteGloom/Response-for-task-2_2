@@ -6,7 +6,7 @@
   "scripts": {
     "build": "webpack -p",
     "build-watch": "webpack --watch",
-    "build-live": "webpack-dev-server",
+    "build-live": "webpack-dev-server"
   },
   "author": "whiteGloom <karabin.m@yandex.ru> (https://github.com/whiteGloom)",
   "license": "ISC",

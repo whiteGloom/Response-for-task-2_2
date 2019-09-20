@@ -2,9 +2,9 @@
 //- "text" (string / nothing) - текст заголовка. По умолчанию - ''.
 //- Ожидается текст или ничего.
 mixin h1Mix(options)
-	-
-		var options = options ? options : {};
-		var text = options.text ? options.text : '';
-	h1.h1&attributes(attributes)= text
-		if block
-			block
+    -
+        var options = options ? options : {};
+        var text = options.text ? options.text : '';
+    h1.h1&attributes(attributes)= text
+        if block
+            block

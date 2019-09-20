@@ -762,7 +762,7 @@
   border-bottom-color: inherit;
   left: 50%;
   margin-left: -3px;
-  top: -12px;
+  top: -12p;
 }
 
 .messenger__message_sender_user {
@@ -1020,7 +1020,7 @@
 
 .toggle__outer {
   position: relative;
-  width: 4rem;
+  width: 4remh;
   height: 1.6rem;
   border-radius: 12px;
   transition: 0.3s all;

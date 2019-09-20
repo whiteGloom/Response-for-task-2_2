@@ -2,11 +2,11 @@
 //- 'title' (string) - заголовок поста. По умолчанию - 'title'.
 //- Ожидается что угодно. >:{}
 mixin postMix(options)
-	-
-		var options = options ? options : {};
-		var title = options.title ? options.title : "title";
-	article.post
-		h3.post__title= title
-		.post__body
-			if block
-				block
+    -
+        var options = options ? options : {};
+        var title = options.title ? options.title : "title";
+    article.post
+        h3.post__title= title
+        .post__body
+            if block
+                block
