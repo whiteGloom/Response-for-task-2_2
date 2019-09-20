@@ -23,6 +23,9 @@ module.exports = function(options) {
 	    plugins: [
 	    
 	    ],
+	    devServer: {
+			stats: 'errors-only',
+	    },
 	    optimization: {
     		splitChunks: {
 				cacheGroups: {
