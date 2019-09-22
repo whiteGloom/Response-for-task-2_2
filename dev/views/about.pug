@@ -1,54 +1,52 @@
 extends ./template/template
 
 block variables
-	-
-		var page = {};
-		page.pageTitle = 'About us';
-		page.headerTitle = 'About us';
+    -
+        var page = {};
+        page.pageTitle = 'About us';
+        page.headerTitle = 'About us';
 
 block body
-	+baseMix
-		+baseSectionMix
-			+wrapperMix
-				+wrapperElMix
-					+h3Mix({text: 'Кратко о компании'})
-				+wrapperElMix
-					p.p.
-						Компания была основана в начале 2019 года, в Томске. На момент создания ей занималось всего 6 человек. Однако, уже к маю у нас было более 1500 заказов, а число работников перевалило за 60.
-					p.p.
-						У нашей компании есть принципы. Для нашей продукции мы выбираем лучшие материалы, стараясь сохранить высокое качество и приятную для покупателя цену. Мы никогда не откажем клиенту в помощи, если она ему потребуется, не стесняйтесь обращаться за ней!
-		+baseSectionMix
-			+wrapperMix
-				+wrapperElMix
-					+h2Mix({text: "Наши показатели"})
-				+wrapperElMix
-					+wrapperMix
-						+wrapperElMix
-							+h3Mix({text: "Желаемый охват городов"})
-						+wrapperElMix
-							+stepbarMix({id: 'stepbarTest'})
-				+wrapperElMix({justify: 'around'})
-					+wrapperMix(style="width: 25%")
-						+wrapperElMix
-							+h3Mix({text: 'Рейтинг'})
-						+wrapperElMix({centering: true})(style="width: max-content")
-							+chartMix({id: 'chartTestFirst'})
-					+wrapperMix(style="width: 25%")
-						+wrapperElMix
-							+h3Mix({text: 'Ассортимент'})
-						+wrapperElMix({centering: true})(style="width: max-content")
-							+chartMix({id: 'chartTestSecond'})
-					+wrapperMix(style="width: 25%")
-						+wrapperElMix
-							+h3Mix({text: '% категорий'})
-						+wrapperElMix({centering: true})(style="width: max-content")
-							+chartMix({id: 'chartTestThird', type: 'pie'})
-		+baseSectionMix
-			+wrapperMix
-				+wrapperElMix
-					+h2Mix({text: 'Где работаем'})
-				+wrapperElMix
-					p.p
-						| На данный момент в зону покрытия нашей компании входят города: 
-						strong Томск, Асино, Северск. 
-						| В ближайшее время в этот список также попадёт Кемерово. Для клиентов из других городов мы можем огранизовать доставку по почте. Доставка по почте доступна для всех стран СНГ. За подробностями доставки необходимо обратиться к менеджеру.
+    +baseMix
+        +baseSectionMix
+            +blockMix
+                +h2Mix({text: 'Кратко о компании'}) 
+                +blockElMix
+                    p.p.
+                        Компания была основана в начале 2019 года, в Томске. На момент создания ей занималось всего 6 человек. Однако, уже к маю у нас было более 1500 заказов, а число работников перевалило за 60.
+                    p.p.
+                        У нашей компании есть принципы. Для нашей продукции мы выбираем лучшие материалы, стараясь сохранить высокое качество и приятную для покупателя цену. Мы никогда не откажем клиенту в помощи, если она ему потребуется, не стесняйтесь обращаться за ней!
+        +baseSectionMix
+            +blockMix
+                +h2Mix({text: "Наши показатели"})
+                +blockElMix
+                    +blockMix
+                        +h3Mix({text: "Желаемый охват городов"})
+                        +blockElMix
+                            +stepbarMix({id: 'stepbarTest'})
+                +blockElMix
+                    +wrapperMix
+                        +wrapperElMix({justify: 'around'})
+                            +wrapperMix(style="width: 25%")
+                                +wrapperElMix
+                                    +h3Mix({text: 'Рейтинг'})
+                                +wrapperElMix({centering: true})(style="width: max-content")
+                                    +chartMix({id: 'chartTestFirst'})
+                            +wrapperMix(style="width: 25%")
+                                +wrapperElMix
+                                    +h3Mix({text: 'Ассортимент'})
+                                +wrapperElMix({centering: true})(style="width: max-content")
+                                    +chartMix({id: 'chartTestSecond'})
+                            +wrapperMix(style="width: 25%")
+                                +wrapperElMix
+                                    +h3Mix({text: '% категорий'})
+                                +wrapperElMix({centering: true})(style="width: max-content")
+                                    +chartMix({id: 'chartTestThird', type: 'pie'})
+        +baseSectionMix
+            +blockMix
+                +h2Mix({text: 'Где работаем'})
+                +blockElMix
+                    p.p
+                        | На данный момент в зону покрытия нашей компании входят города: 
+                        strong Томск, Асино, Северск. 
+                        | В ближайшее время в этот список также попадёт Кемерово. Для клиентов из других городов мы можем огранизовать доставку по почте. Доставка по почте доступна для всех стран СНГ. За подробностями доставки необходимо обратиться к менеджеру.

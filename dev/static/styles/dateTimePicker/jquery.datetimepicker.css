@@ -57,10 +57,10 @@
   color: #fff;
 }
 .perfect-datetimepicker thead tr.mainhead td.title {
-  font-family: Lato-light;
+  font-family: Lato;
+  font-weight: 200;
   font-size: 1.65rem;
   padding-bottom: .5rem;
-  font-weight: normal
 }
 .perfect-datetimepicker table.mt tbody td {
   width: 58px;
@@ -71,7 +71,8 @@
   width: 14.28571429%;
 }
 .perfect-datetimepicker td.name {
-  font-family: Lato-black;
+  font-family: Lato;
+  font-weight: bold;
   text-transform: uppercase;
   font-size: .6rem;
 }

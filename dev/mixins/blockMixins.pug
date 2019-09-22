@@ -1,0 +1,14 @@
+mixin blockMix(options)
+    -
+        var options = options ? options : {};
+    .block
+        if block
+            block
+
+mixin blockElMix(options)
+    -
+        var options = options ? options : {};
+        var margin = options.margin !== undefined ? options.margin : true;
+    .block__el(class="" + (margin ? "block__el_margin" : ""))
+        if block
+            block

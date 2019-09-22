@@ -1,54 +1,58 @@
 extends ./template/template
 
 block variables
-	-
-		var page = {};
-		page.pageTitle = 'Contacts';
-		page.headerTitle = 'Contacts';
+    -
+        var page = {};
+        page.pageTitle = 'Contacts';
+        page.headerTitle = 'Contacts';
 
 block body
-	+baseMix
-		+baseSectionMix
-			+mapMix({title: 'Мы здесь!', street: '** Predzavodskaya ST', city: 'Seversk, RU', coordinates: '{"lat": 56.590212, "lng": 84.939791}'})
-		+baseSectionMix
-			+wrapperMix
-				+wrapperElMix
-					+h2Mix({text: 'Наши менеджеры'})
-				+wrapperElMix({justify: 'around'})
-					+userMix({color: 'gray', name: 'Евгений Миллер', profession: 'Менеджер'})
-						+iconMix({image: require('../static/images/wglogo.png')})
-					+userMix({theme: 'aquamarine', name: 'Евгений Миллер', profession: 'Менеджер', theme: 'aquamarine' })
-						+iconMix({image: require('../static/images/lKllogo.png')})
-		+baseSectionMix
-			+wrapperMix
-				+wrapperElMix
-					+h2Mix({text: 'Напишите нам!'})
-				+wrapperElMix
-					+h3Mix({text: 'На почту'})
-				+wrapperElMix
-					+formMix
-						+formElMix
-							+inputMix({type: 'email', name:'email', required: true, placeholder: 'E-mail'})
-						+formElMix
-							+inputMix({name: 'name', required: true, placeholder: 'Ваше имя'})
-						+formElMix
-							+inputMix({form: 'box', name: 'message', placeholder: 'Ваше сообщение'})
-						+formElMix({text: 'Ваш город'})
-							+barMix({type: 'dropdown', name: 'City'})
-								+barOptionMix({value: 'Tomsk', text: 'Томск'})
-								+barOptionMix({value: 'Seversk', text: 'Северск'})
-								+barOptionMix({value: 'Asino', text: 'Асино'})
-						+formSubmit
-							+buttonMix({form: "box", content: "submit", type: "submit"})
-					+wrapperElMix
-						+h3Mix({text: 'Или онлайн'})
-					+wrapperElMix
-						+messengerMix({size: 'auto'})
-							+messengerHeaderMix({title: 'Евгений Миллер'})
-								+messengerImageMix
-									+iconMix({image: require('../static/images/wglogo.png')})
-							+messengerBodyMix({messages: [{sender: 'interlocutor', text: 'Здравствуйте, могу вам чем-то помочь?'}]})
-								+messengerEntryMix
-									+inputMix({form: 'box', name: 'entry', placeholder: 'Your message'})
-								+messengerSendMix
-									+buttonMix({text:"button"})
+    +baseMix
+        +baseSectionMix
+            +blockMix
+                +blockElMix
+                    +mapMix({title: 'Мы здесь!', street: '** Predzavodskaya ST', city: 'Seversk, RU', coordinates: '{"lat": 56.590212, "lng": 84.939791}'})
+        +baseSectionMix
+            +blockMix
+                +h2Mix({text: 'Наши менеджеры'})
+                +blockElMix
+                    +wrapperMix
+                        +wrapperElMix({justify: 'around'})
+                            +userMix({color: 'gray', name: 'Евгений Миллер', profession: 'Менеджер'})
+                                +iconMix({image: require('../static/images/wg-logo.jpg'), alt: "logo"})
+                            +userMix({theme: 'aquamarine', name: 'Евгений Миллер', profession: 'Менеджер', theme: 'aquamarine' })
+                                +iconMix({image: require('../static/images/lkl-logo.png'), alt: "logo"})
+        +baseSectionMix
+            +blockMix
+                +h2Mix({text: 'Напишите нам!'})
+                +blockElMix
+                    +blockMix
+                        +h3Mix({text: 'На почту'})
+                        +blockElMix
+                            +formMix
+                                +formElMix
+                                    +inputMix({type: 'email', name:'email', required: true, placeholder: 'E-mail'})
+                                +formElMix
+                                    +inputMix({name: 'name', required: true, placeholder: 'Ваше имя'})
+                                +formElMix
+                                    +inputMix({form: 'box', name: 'message', placeholder: 'Ваше сообщение'})
+                                +formElMix({text: 'Ваш город'})
+                                    +barMix({type: 'dropdown', name: 'City'})
+                                        +barOptionMix({value: 'Tomsk', text: 'Томск'})
+                                        +barOptionMix({value: 'Seversk', text: 'Северск'})
+                                        +barOptionMix({value: 'Asino', text: 'Асино'})
+                                +formSubmit
+                                    +buttonMix({form: "box", theme: "aquamarine", content: "submit", type: "submit"})
+                    +blockElMix
+                        +blockMix
+                            +h3Mix({text: 'Или онлайн'})
+                            +blockElMix
+                                +messengerMix({size: 'auto'})
+                                    +messengerHeaderMix({title: 'Евгений Миллер'})
+                                        +messengerImageMix
+                                            +iconMix({image: require('../static/images/wg-logo.jpg'), alt:'logo'})
+                                    +messengerBodyMix({messages: [{sender: 'interlocutor', text: 'Здравствуйте, могу вам чем-то помочь?'}]})
+                                        +messengerEntryMix
+                                            +inputMix({form: 'box', name: 'entry', placeholder: 'Your message'})
+                                        +messengerSendMix
+                                            +buttonMix({text:"button", theme: "aquamarine"})

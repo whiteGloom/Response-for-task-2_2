@@ -132,22 +132,36 @@
   margin: 2rem auto;
 }
 
+.block__el_margin {
+  margin-top: 0.8rem;
+}
+
+
+
+.button__content_blocked {
+  color: #fff;
+  fill: #fff;
+}
+
 .button__content_form_box {
-  font-family: Lato-black;
+  font-family: Lato;
+  font-weight: bold;
   text-transform: uppercase;
   font-size: 0.8rem;
   padding: 0.55rem 2.3rem;
 }
 
 .button__content_form_boxEvent {
-  font-family: Lato-black;
+  font-family: Lato;
+  font-weight: bold;
   text-transform: uppercase;
   font-size: 0.7rem;
   padding: 0.3rem 1.1rem;
 }
 
 .button__content_form_boxMini {
-  font-family: Lato-black;
+  font-family: Lato;
+  font-weight: bold;
   text-transform: uppercase;
   font-size: 0.7rem;
   padding: 0.2rem 1.1rem;
@@ -158,9 +172,47 @@
   height: 3rem;
 }
 
+.button__content_theme_aquamarine {
+  color: #4eb7a8;
+  fill: #4eb7a8;
+}
+.button:hover .button__content_theme_aquamarine,
+.button:focus .button__content_theme_aquamarine,
+.button:active .button__content_theme_aquamarine {
+  color: #fff;
+  fill: #fff;
+}
+
+.button__content_theme_aquamarineAlternate {
+  color: #4eb7a8;
+  fill: #4eb7a8;
+}
+.button:hover .button__content_theme_aquamarineAlternate,
+.button:focus .button__content_theme_aquamarineAlternate,
+.button:active .button__content_theme_aquamarineAlternate {
+  color: #fff;
+  fill: #fff;
+}
+
+.button__content_theme_orange {
+  color: #e34a26;
+  fill: #e34a26;
+}
+.button:hover .button__content_theme_orange,
+.button:focus .button__content_theme_orange,
+.button:active .button__content_theme_orange {
+  color: #fff;
+  fill: #fff;
+}
+
 .button__content {
   display: block;
   transition: 0.2s all;
+}
+
+.button__inner_blocked {
+  background-color: #e5e5e5;
+  border-color: #e5e5e5;
 }
 
 .button__inner_form_box {
@@ -208,8 +260,46 @@
   border-style: solid;
 }
 
+.button__inner_theme_aquamarine {
+  background-color: #fff;
+  border-color: #4eb7a8;
+}
+.button:hover .button__inner_theme_aquamarine,
+.button:focus .button__inner_theme_aquamarine,
+.button:active .button__inner_theme_aquamarine {
+  background-color: #4eb7a8;
+}
+
+.button__inner_theme_aquamarineAlternate {
+  background-color: #fff;
+  border-color: #28a290;
+}
+.button:hover .button__inner_theme_aquamarineAlternate,
+.button:focus .button__inner_theme_aquamarineAlternate,
+.button:active .button__inner_theme_aquamarineAlternate {
+  background-color: #249181;
+  border-color: #249181;
+}
+
+.button__inner_theme_orange {
+  background-color: #fff;
+  border-color: #e75735;
+}
+.button:hover .button__inner_theme_orange,
+.button:focus .button__inner_theme_orange,
+.button:active .button__inner_theme_orange {
+  background-color: #e75735;
+}
+
 .button__inner {
   transition: 0.2s all;
+}
+
+.button__outer_blocked {
+  background-color: #e5e5e5;
+}
+.button__outer_blocked {
+  background-color: #e5e5e5;
 }
 
 .button__outer_form_box {
@@ -232,6 +322,33 @@
 }
 .button:active .button__outer_form_round {
   transform: scale(0.95);
+}
+
+.button__outer_theme_aquamarine {
+  background-color: #4eb7a8;
+}
+.button:hover .button__outer_theme_aquamarine,
+.button:focus .button__outer_theme_aquamarine,
+.button:active .button__outer_theme_aquamarine {
+  background-color: #28a290;
+}
+
+.button__outer_theme_aquamarineAlternate {
+  background-color: #28a290;
+}
+.button:hover .button__outer_theme_aquamarineAlternate,
+.button:focus .button__outer_theme_aquamarineAlternate,
+.button:active .button__outer_theme_aquamarineAlternate {
+  background-color: #2b7a6e;
+}
+
+.button__outer_theme_orange {
+  background-color: #e75735;
+}
+.button:hover .button__outer_theme_orange,
+.button:focus .button__outer_theme_orange,
+.button:active .button__outer_theme_orange {
+  background-color: #bf3e1f;
 }
 
 .button__outer {
@@ -259,121 +376,8 @@
   opacity: 0.4;
 }
 
-/* Outer */
-.button_theme_aquamarine .button__outer {
-  background-color: #4eb7a8;
-}
-.button_theme_aquamarine:hover .button__outer,
-.button_theme_aquamarine:focus .button__outer,
-.button_theme_aquamarine:active .button__outer {
-  background-color: #28a290;
-}
-/* Inner */
-.button_theme_aquamarine .button__inner {
-  background-color: #fff;
-  border-color: #4eb7a8;
-}
-.button_theme_aquamarine:hover .button__inner,
-.button_theme_aquamarine:focus .button__inner,
-.button_theme_aquamarine:active .button__inner {
-  background-color: #4eb7a8;
-}
-/* Content */
-.button_theme_aquamarine .button__content {
-  color: #4eb7a8;
-  fill: #4eb7a8;
-}
-.button_theme_aquamarine:hover .button__content,
-.button_theme_aquamarine:focus .button__content,
-.button_theme_aquamarine:active .button__content {
-  color: #fff;
-  fill: #fff;
-}
-
-/* Outer */
-.button_theme_aquamarineAlternate .button__outer {
-  background-color: #28a290;
-}
-.button_theme_aquamarineAlternate:hover .button__outer,
-.button_theme_aquamarineAlternate:focus .button__outer,
-.button_theme_aquamarineAlternate:active .button__outer {
-  background-color: #2b7a6e;
-}
-/* Inner */
-.button_theme_aquamarineAlternate .button__inner {
-  background-color: #fff;
-  border-color: #28a290;
-}
-.button_theme_aquamarineAlternate:hover .button__inner,
-.button_theme_aquamarineAlternate:focus .button__inner,
-.button_theme_aquamarineAlternate:active .button__inner {
-  background-color: #249181;
-  border-color: #249181;
-}
-/* Content */
-.button_theme_aquamarineAlternate .button__content {
-  color: #4eb7a8;
-  fill: #4eb7a8;
-}
-.button_theme_aquamarineAlternate:hover .button__content,
-.button_theme_aquamarineAlternate:focus .button__content,
-.button_theme_aquamarineAlternate:active .button__content {
-  color: #fff;
-  fill: #fff;
-}
-
-/* Outer */
-.button_theme_blocked {
+.button_blocked {
   cursor: default;
-}
-.button_theme_blocked .button__outer {
-  background-color: #e5e5e5;
-}
-.button_theme_blocked:hover .button__outer,
-.button_theme_blocked:focus .button__outer,
-.button_theme_blocked:active .button__outer {
-  background-color: #e5e5e5;
-}
-/* Inner */
-.button_theme_blocked .button__inner {
-  background-color: #e5e5e5;
-  border-color: #e5e5e5;
-}
-/* Content */
-.button_theme_blocked .button__content {
-  color: #fff;
-  fill: #fff;
-}
-
-/* Outer */
-.button_theme_orange .button__outer {
-  background-color: #e75735;
-}
-.button_theme_orange:hover .button__outer,
-.button_theme_orange:focus .button__outer,
-.button_theme_orange:active .button__outer {
-  background-color: #bf3e1f;
-}
-/* Inner */
-.button_theme_orange .button__inner {
-  background-color: #fff;
-  border-color: #e75735;
-}
-.button_theme_orange:hover .button__inner,
-.button_theme_orange:focus .button__inner,
-.button_theme_orange:active .button__inner {
-  background-color: #e75735;
-}
-/* Content */
-.button_theme_orange .button__content {
-  color: #e34a26;
-  fill: #e34a26;
-}
-.button_theme_orange:hover .button__content,
-.button_theme_orange:focus .button__content,
-.button_theme_orange:active .button__content {
-  color: #fff;
-  fill: #fff;
 }
 
 
@@ -402,7 +406,8 @@
   margin-top: 0.6rem;
   font-size: 5.3rem;
   text-align: center;
-  font-family: Lato-light;
+  font-family: Lato;
+  font-weight: 200;
   color: #fff;
 }
 
@@ -455,10 +460,16 @@
 }
 
 
+.h1_align {
+  text-align: center;
+}
+
 .h1 {
-  font-family: Lato-black;
+  font-family: Lato;
+  font-weight: bold;
   font-size: 2.5rem;
   text-transform: uppercase;
+  border-bottom: 0.2rem solid #4eb7a8;
 }
 
 .h2_align_center {
@@ -470,7 +481,8 @@
 }
 
 .h2 {
-  font-family: Lato-black;
+  font-family: Lato;
+  font-weight: bold;
   font-size: 1.75rem;
   text-transform: uppercase;
   border-bottom: 0.2rem dashed #4eb7a8;
@@ -485,14 +497,10 @@
 }
 
 .h3 {
-  font-family: Lato-black;
+  font-family: Lato;
+  font-weight: bold;
   font-size: 1.25rem;
   text-transform: uppercase;
-}
-
-.header__decorLine {
-  border: 0.1rem solid #4eb7a8;
-  background-color: #4eb7a8;
 }
 
 .header__nav {
@@ -503,10 +511,12 @@
 }
 
 .header__title {
-  font-family: Lato-black;
+  font-family: Lato;
+  font-weight: bold;
   font-size: 2.5rem;
   text-transform: uppercase;
   text-align: center;
+  border-bottom: 0.2rem solid #4eb7a8;
 }
 
 .header {
@@ -606,7 +616,7 @@
 .input__message::before {
   position: absolute;
   display: block;
-  content: "";
+  content: '';
   left: -6px;
   top: 50%;
   width: 0;
@@ -658,9 +668,6 @@
   background-size: contain;
   background-repeat: no-repeat;
 }
-.map__button::last-child {
-  margin-right: 0;
-}
 .map__button:hover,
 .map__button:focus {
   transform: scale(1.1);
@@ -673,7 +680,7 @@
   width: 100%;
   top: 0;
   bottom: 4.7rem;
-  position: absolute !important;
+  position: absolute;
 }
 
 .map__outer {
@@ -699,7 +706,8 @@
   float: left;
   display: inline-block;
   font-style: normal;
-  font-family: Lato-light;
+  font-family: Lato;
+  font-weight: 200;
   font-size: 2rem;
 }
 
@@ -762,7 +770,7 @@
   border-bottom-color: inherit;
   left: 50%;
   margin-left: -3px;
-  top: -12p;
+  top: -12px;
 }
 
 .messenger__message_sender_user {
@@ -833,7 +841,8 @@
   padding-top: 1.25rem;
   text-align: center;
   font-size: 2.1rem;
-  font-family: Lato-light;
+  font-family: Lato;
+  font-weight: 200;
   font-style: normal;
   color: #fff;
 }
@@ -847,17 +856,20 @@
 
 .note__date_type_eventDay {
   font-size: 5rem;
-  font-family: Lato-light;
+  font-family: Lato;
+  font-weight: 200;
   line-height: 0.8;
 }
 
 .note__date_type_eventMonth {
-  font-family: Lato-light;
+  font-family: Lato;
+  font-weight: 200;
   font-size: 2rem;
 }
 
 .note__date_type_news {
-  font-family: Lato-black;
+  font-family: Lato;
+  font-weight: bold;
   margin-top: 0.9rem;
   font-size: 0.75rem;
   text-transform: uppercase;
@@ -883,7 +895,8 @@
 
 .note__description {
   font-size: 0.75rem;
-  font-family: Lato-regular;
+  font-family: Lato;
+  font-weight: 450;
   color: #fff;
 }
 
@@ -922,13 +935,15 @@
 
 .note__title_type_event {
   margin-top: 1rem;
-  font-family: Lato-black;
+  font-family: Lato;
+  font-weight: bold;
   font-size: 0.8rem;
   text-transform: uppercase;
 }
 
 .note__title_type_news {
-  font-family: Lato-light;
+  font-family: Lato;
+  font-weight: 200;
   font-size: 2rem;
   line-height: 0.85;
 }
@@ -949,7 +964,8 @@
 }
 
 .post__title {
-  font-family: Lato-black;
+  font-family: Lato;
+  font-wight: bold;
   font-size: 1.25rem;
   text-transform: uppercase;
   text-align: start;
@@ -1020,7 +1036,7 @@
 
 .toggle__outer {
   position: relative;
-  width: 4remh;
+  width: 4rem;
   height: 1.6rem;
   border-radius: 12px;
   transition: 0.3s all;
@@ -1039,7 +1055,8 @@
 .toggle__text {
   position: absolute;
   font-size: 0.8rem;
-  font-family: Lato-black;
+  font-family: Lato;
+  font-weight: bold;
   text-transform: uppercase;
   color: #fff;
   transition: 0.3s all;
@@ -1149,7 +1166,8 @@
   display: block;
   color: #fff;
   font-size: 0.8rem;
-  font-family: Lato-black;
+  font-family: Lato;
+  font-weight: bold;
   font-style: normal;
   text-transform: uppercase;
 }
@@ -1185,7 +1203,8 @@
   display: block;
   font-style: normal;
   text-transform: capitalize;
-  font-family: Lato-light;
+  font-family: Lato;
+  font-weight: 200;
   font-size: 2.5rem;
   color: #fff;
 }
@@ -1278,10 +1297,10 @@
   color: #fff;
 }
 .perfect-datetimepicker thead tr.mainhead td.title {
-  font-family: Lato-light;
+  font-family: Lato;
+  font-weight: 200;
   font-size: 1.65rem;
   padding-bottom: 0.5rem;
-  font-weight: normal;
 }
 .perfect-datetimepicker table.mt tbody td {
   width: 58px;
@@ -1292,7 +1311,8 @@
   width: 14.28571429%;
 }
 .perfect-datetimepicker td.name {
-  font-family: Lato-black;
+  font-family: Lato;
+  font-weight: bold;
   text-transform: uppercase;
   font-size: 0.6rem;
 }
@@ -1442,21 +1462,25 @@ i.icon-datepicker-next:before {
 }
 
 @font-face {
-  font-family: "Lato-regular";
+  font-family: "Lato";
+  font-weight: 450;
   src: url("../fonts/Lato-Regular.otf") format("opentype"), url("../fonts/Lato-Regular.eot?#") format("eot"), url("../fonts/Lato-Regular.ttf") format("truetype"), url("../fonts/Lato-Regular.woff") format("woff"), url("../images/Lato-Regular.svg") format("svg");
 }
 @font-face {
-  font-family: "Lato-black";
+  font-family: "Lato";
+  font-weight: bold;
   src: url("../fonts/Lato-Black.otf") format("opentype"), url("../fonts/Lato-Black.eot?#") format("eot"), url("../fonts/Lato-Black.ttf") format("truetype"), url("../fonts/Lato-Black.woff") format("woff"), url("../images/Lato-Black.svg") format("svg");
 }
 @font-face {
-  font-family: "Lato-light";
+  font-family: "Lato";
+  font-weight: 200;
   src: url("../fonts/Lato-Light.otf") format("opentype"), url("../fonts/Lato-Light.eot?#") format("eot"), url("../fonts/Lato-Light.ttf") format("truetype"), url("../fonts/Lato-Light.woff") format("woff"), url("../images/Lato-Light.svg") format("svg");
 }
 html {
   color: #4f4f4f;
   font-size: 11pt;
-  font-family: Lato-regular;
+  font-family: Lato;
+  font-weight: 450;
 }
 @media screen and (max-width: 560px) {
   html {
@@ -1483,7 +1507,8 @@ body {
   padding: 3.5rem;
 }
 span {
-  font-family: Lato-black;
+  font-family: Lato;
+  font-weight: bold;
 }
 button {
   padding: 0;
@@ -2382,7 +2407,8 @@ Build date: 2018-12-12 00:07:25
 
 .jchart__summary {
   fill: #9d9d9d;
-  font-family: Lato-light;
+  font-family: Lato;
+  font-weight: 200;
 }
 
 #instructions {

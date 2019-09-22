@@ -88,7 +88,7 @@
       }
 
       // Text and number
-      layer2.font = fontSize + 'px "Lato-black"';
+      layer2.font = 'bold ' + fontSize + 'px "Lato"';
       var iLabel = (i + 1) + '';
       var metrics = layer2.measureText(iLabel);
 

@@ -1,15 +1,15 @@
 //- Миксин создаёт карту. Свойства:
-//- 'title' (string) - заголовок карты. По умолчанию - 'title'.
-//- 'coordinates' (object) - координаты стартовой точки. По умолчанию - {}.
-//- 'street' (string) - название улицы стартовой точки. По умолчанию - 'street'.
-//- 'city' (string) - название города стартовой точки. По умолчанию - 'city'.
+//- "title" (string) - заголовок карты. По умолчанию - "title".
+//- "coordinates" (object) - координаты стартовой точки. По умолчанию - {}.
+//- "street" (string) - название улицы стартовой точки. По умолчанию - "street".
+//- "city" (string) - название города стартовой точки. По умолчанию - "city".
 mixin mapMix(options)
     -
         var options = options ? options : {};
-        var title = options.title ? options.title : 'title',
+        var title = options.title ? options.title : "title",
             coordinates = options.coordinates ? options.coordinates : {},
-            street = options.street ? options.street : 'street',
-            city = options.city ? options.city : 'city';
+            street = options.street ? options.street : "street",
+            city = options.city ? options.city : "city";
     .map(data-coordinates=coordinates)&attributes(attributes)
         .map__outer
             .map__holder

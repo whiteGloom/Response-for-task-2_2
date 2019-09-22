@@ -1,32 +1,33 @@
-// Подключение миксинов
+//- Подключение миксинов
 include ../../mixins//mixinsList
 
-// Блок с переменными
+//- Блок с переменными
 block variables
 
 doctype html
 html
-	// Шапка страницы
-	head
-		title= page.pageTitle
-		meta(charset="utf-8")
-		link(rel="stylesheet" type="text/css" href="https://vjs.zencdn.net/5-unsafe/video-js.css")
-		link(rel="stylesheet" type="text/css" href="static/styles/styles.css")
-		script(type="text/javascript" src="./scripts/vendors.js")
-		script(type="text/javascript" src="./scripts/base.js")
-		script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6UQbE2epfLfDfa2uaXCx1soXdAfSFU-c&callback=initMap" async defer)
-		script(src='https://vjs.zencdn.net/5-unsafe/video.js')
-	// Тело странциы
-	body
-		// Хедер страницы
-		+headerMix({title: page.headerTitle})
-			a(href='./index.html')
-				+buttonMix({form: "boxMini", content:"home", theme: 'aquamarineAlternate'})
-			a(href='./about.html')
-				+buttonMix({form: "boxMini", content:"about", theme: 'aquamarineAlternate'})
-			a(href='./contacts.html')
-				+buttonMix({form: "boxMini", content:"contacts", theme: 'aquamarineAlternate'})
-			a(href='./uikit.html')
-				+buttonMix({form: "boxMini", content:"ui kit", theme: 'aquamarineAlternate'})
-		// Основная часть
-		block body
+    // Шапка страницы
+    head
+        meta(charset="utf-8")
+        meta(name="viewport" content="initial-scale=1.0, width=device-width")
+        title= page.pageTitle
+        link(rel="stylesheet" type="text/css" href="https://vjs.zencdn.net/5-unsafe/video-js.css")
+        link(rel="stylesheet" type="text/css" href="static/styles/styles.css")
+        script(type="text/javascript" src="./scripts/vendors.js")
+        script(type="text/javascript" src="./scripts/base.js")
+        script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6UQbE2epfLfDfa2uaXCx1soXdAfSFU-c&callback=initMap" async defer)
+        script(src='https://vjs.zencdn.net/5-unsafe/video.js')
+    // Тело странциы
+    body
+        // Хедер страницы
+        +headerMix({title: page.headerTitle})
+            a(href='./index.html')
+                +buttonMix({form: "boxMini", content:"home", theme: 'aquamarineAlternate'})
+            a(href='./about.html')
+                +buttonMix({form: "boxMini", content:"about", theme: 'aquamarineAlternate'})
+            a(href='./contacts.html')
+                +buttonMix({form: "boxMini", content:"contacts", theme: 'aquamarineAlternate'})
+            a(href='./uikit.html')
+                +buttonMix({form: "boxMini", content:"ui kit", theme: 'aquamarineAlternate'})
+        // Основная часть
+        block body

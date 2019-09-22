@@ -1,16 +1,16 @@
 //- Миксин создаёт видео-проигрыватель. Свойства:
-//- 'src' (string) - ссылка на файл. По умолчанию - ''.
-//- 'preview' (string) - ссылка на изображение для превью. По умолчанию - ''.
-//- 'title' (string) - заголовок видео. По умолчанию - 'unknown'.
-//- 'author' (string) - имя автора видео. По умолчанию - 'unknown'.
-//- 'source' (string / nothing) - ссылка на источник видео (внешний сайт).
+//- "src" (string) - ссылка на файл. По умолчанию - "".
+//- "preview" (string) - ссылка на изображение для превью. По умолчанию - "".
+//- "title" (string) - заголовок видео. По умолчанию - "unknown".
+//- "author" (string) - имя автора видео. По умолчанию - "unknown".
+//- "source" (string / nothing) - ссылка на источник видео (внешний сайт).
 mixin videoMix(options)
     -
         var options = options ? options : {};
-        var src = options.src ? options.src : '',
-            preview = options.preview ? options.preview : '',
-            title = options.title ? options.title : 'unknown',
-            author = options.author ? options.author : 'unknown',
+        var src = options.src ? options.src : "",
+            preview = options.preview ? options.preview : "",
+            title = options.title ? options.title : "unknown",
+            author = options.author ? options.author : "unknown",
             source = options.source;
     .video&attributes(attributes)
         .video__outer
@@ -18,8 +18,8 @@ mixin videoMix(options)
                 em.video__title= title
                 em.video__author= author
                 if source
-                    a.video__link(href=source target="_blank")= source
+                    a.video__link(href=source target="_blank" rel="noopener noreferrer")= source
             video(id="my_video_1" class="video-js vjs-default-skin" width="594px" height="336px"
                     controls preload="none" poster=preview
-                    data-setup='{ "aspectRatio":"594:336", "playbackRates": [1, 1.5, 2] }')
-                source(src=src type='video/mp4')
+                    data-setup='{"aspectRatio":"594:336", "playbackRates": [1, 1.5, 2] }')
+                source(src=src type="video/mp4")
