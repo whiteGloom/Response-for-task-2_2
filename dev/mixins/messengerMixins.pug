@@ -1,14 +1,12 @@
-//- Миксин создаёт мессенджер. Свойства:
-//- "size" (stirng) ["fixed", "auto"] - размер элемента. По умолчанию - "fixed".
+//- Миксин создаёт мессенджер.
 //- Ожидается блок хедера и футера мессенджера.
 mixin messengerMix(options)
     -
         var options = options ? options : {};
         var size = options.size ? options.size : "fixed"
     .messenger&attributes(attributes)
-        .messenger__outer(class="" + (" messenger__outer_size_" + size))
-            if block
-                block
+        if block
+            block
 
 //- Миксин создаёт хэдер мессенджера. Свойства:
 //- "title" (string) - имя собеседника. По умолчанию - "title".

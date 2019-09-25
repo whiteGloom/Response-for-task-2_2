@@ -13,7 +13,7 @@ mixin buttonMix(options)
             theme = options.theme && !blocked ? options.theme : false,
             content = options.content ? options.content : "button";
 
-    button.button(type=type class="" + (blocked ? " button_blocked" : ""))&attributes(attributes)
+    button.button(type=type class="" + (blocked ? " button_blocked" : "") + (theme ? " button_theme_" + theme : ""))&attributes(attributes)
         .button__outer(class="" +
                         (" button__outer_form_" + form) +
                         (theme ? " button__outer_theme_" + theme : "") +

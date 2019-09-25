@@ -1,0 +1,15 @@
+mixin searchbarMix(options)
+    -
+        var options = options ? options : {};
+        var type = options.type ? options.type : "search",
+            name = options.name ? options.name : "searchbar";
+    .searchbar(data-type=type data-name=name)&attributes(attributes)
+        .searchbar__outer
+            .searchbar__input
+                if block
+                    block
+            .searchbar__button
+                svg(width="100%" height="100%" viewbox="0 0 28 28")
+                    g
+                        circle(r="4" stroke-width="2" fill="transparent" stroke="white" cx="14" cy="13")
+                        rect(width="6" height="3" x="23" y="-2" transform="rotate(45)" fill="white")

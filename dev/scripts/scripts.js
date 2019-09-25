@@ -1,10 +1,11 @@
 // Test scripts
 $(document).ready(() => {
-	var inputs 		= input.mkArr();
-	var toggles 	= toggle.mkArr();
-	var ticks 		= tick.mkArr();
-	var forms 		= form.mkArr();
-	var bars 		= bar.mkArr();
+	var inputs 			= input.mkArr();
+	var toggles 		= toggle.mkArr();
+	var ticks 			= tick.mkArr();
+	var forms 			= form.mkArr();
+	var dropdowns 		= dropdown.mkArr();
+	var searchbars 		= searchbar.mkArr();
 	window.initMap 	= map.mkArr();
 
 	$('.calendar__holder').datetimepicker({

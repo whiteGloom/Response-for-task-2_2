@@ -17,6 +17,7 @@ toggle = require('./static/styles/bem/toggle/toggleScripts.js');
 tick = require('./static/styles/bem/tick/tickScripts.js');
 form = require('./static/styles/bem/form/formScripts.js');
 input = require('./static/styles/bem/input/inputScripts.js');
-bar = require('./static/styles/bem/bar/barScripts.js');
+dropdown = require('./static/styles/bem/dropdown/dropdownScripts.js');
+searchbar = require('./static/styles/bem/searchbar/searchbarScripts.js');
 map = require('./static/styles/bem/map/mapScripts.js');
 require('./scripts/scripts.js');
