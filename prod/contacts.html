@@ -4,14 +4,13 @@
 
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="initial-scale=1.0, width=device-width">
 	<title>Contacts</title>
+	<link rel="shortcut icon" href="static/images/favicon.ico" type="image/x-icon">
+	<meta name="description" content="UIKIT">
+	<meta name="Keywords" content="UIKIT">
+	<meta name="viewport" content="initial-scale=1.0, width=device-width">
 	<link rel="stylesheet" type="text/css" href="https://vjs.zencdn.net/5-unsafe/video-js.css">
 	<link rel="stylesheet" type="text/css" href="static/styles/styles.css">
-	<script type="text/javascript" src="./scripts/vendors.js"></script>
-	<script type="text/javascript" src="./scripts/base.js"></script>
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6UQbE2epfLfDfa2uaXCx1soXdAfSFU-c&amp;callback=initMap" async defer></script>
-	<script src="https://vjs.zencdn.net/5-unsafe/video.js"></script>
 </head><!-- Тело странциы-->
 
 <body>
@@ -65,17 +64,17 @@
 		<section class="base__section">
 			<div class="block">
 				<div class="block__el block__el_margin">
-					<div class="map" data-coordinates="{&quot;lat&quot;: 56.590212, &quot;lng&quot;: 84.939791}">
+					<div class="map js-map" data-coordinates="{&quot;lat&quot;: 56.590212, &quot;lng&quot;: 84.939791}">
 						<div class="map__outer">
-							<div class="map__holder"></div>
+							<div class="map__holder js-map__holder"></div>
 							<div class="map__overlay">
 								<em class="map__title">Мы здесь!</em>
 								<div class="map__adressBox">
 									<em class="map__adress">** Predzavodskaya ST</em>
 									<em class="map__adress">Seversk, RU</em>
 								</div>
-								<button class="map__button map__button_type_marker"></button>
-								<button class="map__button map__button_type_me"></button>
+								<button class="map__button map__button_type_marker js-map__button_type_marker"></button>
+								<button class="map__button map__button_type_me js-map__button_type_me"></button>
 							</div>
 						</div>
 					</div>
@@ -182,43 +181,43 @@
 							<h3 class="h3  h3_align_center">На почту</h3>
 						</header>
 						<div class="block__el block__el_margin">
-							<form class="form" name="form">
+							<form class="form js-form" name="form">
 								<div class="form__el">
-									<div class="form__elEntry  form__elEntry_size_fill">
-										<div class="input" data-type="email" data-name="email">
+									<div class="form__elEntry js-form__elEntry  form__elEntry_size_fill">
+										<div class="input js-input" data-type="email" data-name="email">
 											<div class="input__outer">
-												<input class="input__entry  input__entry_radius_default input__entry_color_aquamarine" required type="email" placeholder="E-mail">
-												<div class="input__message  input__message_state_hidden"></div>
+												<input class="input__entry js-input__entry  input__entry_radius_default input__entry_color_aquamarine" required type="email" placeholder="E-mail">
+												<div class="input__message js-input__message  input__message_state_hidden"></div>
 											</div>
 										</div>
 									</div>
 								</div>
 								<div class="form__el">
-									<div class="form__elEntry  form__elEntry_size_fill">
-										<div class="input" data-type="text" data-name="name">
+									<div class="form__elEntry js-form__elEntry  form__elEntry_size_fill">
+										<div class="input js-input" data-type="text" data-name="name">
 											<div class="input__outer">
-												<input class="input__entry  input__entry_radius_default input__entry_color_aquamarine" required type="text" placeholder="Ваше имя">
-												<div class="input__message  input__message_state_hidden"></div>
+												<input class="input__entry js-input__entry  input__entry_radius_default input__entry_color_aquamarine" required type="text" placeholder="Ваше имя">
+												<div class="input__message js-input__message  input__message_state_hidden"></div>
 											</div>
 										</div>
 									</div>
 								</div>
 								<div class="form__el">
-									<div class="form__elEntry  form__elEntry_size_fill">
-										<div class="input" data-type="text" data-name="message">
+									<div class="form__elEntry js-form__elEntry  form__elEntry_size_fill">
+										<div class="input js-input" data-type="text" data-name="message">
 											<div class="input__outer">
-												<textarea class="input__entry  input__entry_radius_default input__entry_color_aquamarine" type="text" placeholder="Ваше сообщение"></textarea>
+												<textarea class="input__entry js-input__entry  input__entry_radius_default input__entry_color_aquamarine" type="text" placeholder="Ваше сообщение"></textarea>
 											</div>
 										</div>
 									</div>
 								</div>
 								<div class="form__el">
 									<div class="form__elText">Ваш город</div>
-									<div class="form__elEntry  form__elEntry_size_auto">
-										<div class="dropdown">
+									<div class="form__elEntry js-form__elEntry  form__elEntry_size_auto">
+										<div class="dropdown js-dropdown">
 											<div class="dropdown__outer">
-												<div class="dropdown__currentValue">Выберите город</div>
-												<div class="dropdown__button">
+												<div class="dropdown__currentValue js-dropdown__currentValue">Выберите город</div>
+												<div class="dropdown__button js-dropdown__button">
 													<svg width="100%" height="100%" viewbox="0 0 28 28">
 														<g transform="translate(7, 12) rotate(-45)">
 															<rect height="10" width="2"></rect>
@@ -226,7 +225,7 @@
 														</g>
 													</svg>
 												</div>
-												<div class="dropdown__optionsBox dropdown__optionsBox_state_hidden">
+												<div class="dropdown__optionsBox js-dropdown__optionsBox dropdown__optionsBox_state_hidden">
 													<div class="dropdown__option" data-value="Tomsk">Томск</div>
 													<div class="dropdown__option" data-value="Seversk">Северск</div>
 													<div class="dropdown__option" data-value="Asino">Асино</div>
@@ -273,9 +272,9 @@
 										<div class="messenger__chat"><p class="messenger__message messenger__message_sender_interlocutor">Здравствуйте, могу я Вам чем-то помочь?</p>
 										</div>
 										<div class="messenger__entry">
-											<div class="input" data-type="text" data-name="entry">
+											<div class="input js-input" data-type="text" data-name="entry">
 												<div class="input__outer">
-													<textarea class="input__entry  input__entry_radius_default input__entry_color_aquamarine" type="text" placeholder="Your message"></textarea>
+													<textarea class="input__entry js-input__entry  input__entry_radius_default input__entry_color_aquamarine" type="text" placeholder="Your message"></textarea>
 												</div>
 											</div>
 										</div>
@@ -298,6 +297,10 @@
 			</div>
 		</section>
 	</main>
+	<script type="text/javascript" src="./scripts/vendors.js"></script>
+	<script type="text/javascript" src="./scripts/base.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6UQbE2epfLfDfa2uaXCx1soXdAfSFU-c&amp;callback=initMap" async defer></script>
+	<script src="https://vjs.zencdn.net/5-unsafe/video.js"></script>
 </body>
 
 </html>

@@ -1,39 +1,39 @@
 function form(elem) {
 	this.base = elem;
-	this.name = $(this.base).data('name')
+	this.name = $(this.base).data("name")
 }
 
 form.prototype.getValues = function(){
 	try {
 		var data = [];
-		var formEntrys = $(this.base).find('.form__elEntry');
+		var formEntrys = $(this.base).find(".js-form__elEntry");
 		for(var i = 0; i < formEntrys.length; i++){
 			var entry = $(formEntrys[i]).children()[0];
-			if ($(entry).data('custom') == true){
-				if($(entry).data('valid') != true ){
-					throw new SyntaxError('error')
+			if ($(entry).data("custom") == true){
+				if($(entry).data("valid") != true ){
+					throw new SyntaxError("error")
 				}
 				data.push({
-					name: $(entry).data('name'),
-					value: $(entry).data('value') != undefined ? $(entry).data('value') : ''				
+					name: $(entry).data("name"),
+					value: $(entry).data("value") != undefined ? $(entry).data("value") : ""				
 				})
 			}else{
 				data.push({
-					name: $(entry).attr('name'),
+					name: $(entry).attr("name"),
 					value: $(entry).val()
 				})
 			}
 		}
 		return data
 	} catch (err){
-		return 'error'
+		return "error"
 	}
 };
 
 form.prototype.onSubmit = function() {
-	$(this.base).on('submit', $.proxy(function (event){
+	$(this.base).on("submit", $.proxy(function (event){
 		event.preventDefault();
-		if(this.getValues() == 'error'){
+		if(this.getValues() == "error"){
 			return
 		};
 		location.reload()
@@ -42,8 +42,9 @@ form.prototype.onSubmit = function() {
 
 function makeArray() {
 	var arr = [];
-	for (var i = 0; i <= $('.form').length - 1; i++) {
-		arr[i] = new form($('.form')[i]);
+	var $forms = $(".js-form");
+	for (var i = 0; i <= $forms.length - 1; i++) {
+		arr[i] = new form($forms[i]);
 		arr[i].onSubmit();
 	}
 	return arr;

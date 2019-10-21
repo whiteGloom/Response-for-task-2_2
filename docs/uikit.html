@@ -4,14 +4,13 @@
 
 <head>
 	<meta charset="utf-8">
-	<meta name="viewport" content="initial-scale=1.0, width=device-width">
 	<title>UI kit</title>
+	<link rel="shortcut icon" href="static/images/favicon.ico" type="image/x-icon">
+	<meta name="description" content="UIKIT">
+	<meta name="Keywords" content="UIKIT">
+	<meta name="viewport" content="initial-scale=1.0, width=device-width">
 	<link rel="stylesheet" type="text/css" href="https://vjs.zencdn.net/5-unsafe/video-js.css">
 	<link rel="stylesheet" type="text/css" href="static/styles/styles.css">
-	<script type="text/javascript" src="./scripts/vendors.js"></script>
-	<script type="text/javascript" src="./scripts/base.js"></script>
-	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6UQbE2epfLfDfa2uaXCx1soXdAfSFU-c&amp;callback=initMap" async defer></script>
-	<script src="https://vjs.zencdn.net/5-unsafe/video.js"></script>
 </head><!-- Тело странциы-->
 
 <body>
@@ -219,14 +218,14 @@
 							<div class="wrapper" style="width: 45%;">
 								<div class="slider">
 									<div class="slider__outer">
-										<input class="slider__holder" id="sliderSimpleTest">
+										<input class="slider__holder js-slider__holder">
 									</div>
 								</div>
 							</div>
 							<div class="wrapper" style="width: 45%;">
 								<div class="slider">
 									<div class="slider__outer">
-										<input class="slider__holder" id="sliderPipsTest">
+										<input class="slider__holder js-slider__holder">
 									</div>
 								</div>
 							</div>
@@ -241,7 +240,7 @@
 					<h3 class="h3  h3_align_center">Stepbar</h3>
 				</header>
 				<div class="block__el block__el_margin">
-					<div class="stepbar" id="stepbarTest"></div>
+					<div class="stepbar js-stepbar"></div>
 				</div>
 			</div>
 		</section>
@@ -253,53 +252,53 @@
 				<div class="block__el block__el_margin">
 					<div class="wrapper">
 						<div class="wrapper__el  wrapper__el_justify_between wrapper__el_centering">
-							<form class="form" name="form" style="width: 45%;">
+							<form class="form js-form" name="form" style="width: 45%;">
 								<div class="form__el">
-									<div class="form__elEntry  form__elEntry_size_fill">
-										<div class="input" data-type="email" data-name="email">
+									<div class="form__elEntry js-form__elEntry  form__elEntry_size_fill">
+										<div class="input js-input" data-type="email" data-name="email">
 											<div class="input__outer">
-												<input class="input__entry  input__entry_radius_default input__entry_color_aquamarine" required type="email" placeholder="E-mail">
-												<div class="input__message  input__message_state_hidden"></div>
+												<input class="input__entry js-input__entry  input__entry_radius_default input__entry_color_aquamarine" required type="email" placeholder="E-mail">
+												<div class="input__message js-input__message  input__message_state_hidden"></div>
 											</div>
 										</div>
 									</div>
 								</div>
 								<div class="form__el">
-									<div class="form__elEntry  form__elEntry_size_fill">
-										<div class="input" data-type="password" data-name="password">
+									<div class="form__elEntry js-form__elEntry  form__elEntry_size_fill">
+										<div class="input js-input" data-type="password" data-name="password">
 											<div class="input__outer">
-												<input class="input__entry  input__entry_radius_default input__entry_color_aquamarine" required type="password" placeholder="Password">
-												<div class="input__message  input__message_state_hidden"></div>
+												<input class="input__entry js-input__entry  input__entry_radius_default input__entry_color_aquamarine" required type="password" placeholder="Password">
+												<div class="input__message js-input__message  input__message_state_hidden"></div>
 											</div>
 										</div>
 									</div>
 								</div>
 								<div class="form__el">
-									<div class="form__elEntry  form__elEntry_size_fill">
-										<div class="input" data-type="text" data-name="message">
+									<div class="form__elEntry js-form__elEntry  form__elEntry_size_fill">
+										<div class="input js-input" data-type="text" data-name="message">
 											<div class="input__outer">
-												<textarea class="input__entry  input__entry_radius_default input__entry_color_aquamarine" type="text" placeholder="Your message"></textarea>
+												<textarea class="input__entry js-input__entry  input__entry_radius_default input__entry_color_aquamarine" type="text" placeholder="Your message"></textarea>
 											</div>
 										</div>
 									</div>
 								</div>
 								<div class="form__el">
 									<div class="form__elText">The camera is</div>
-									<div class="form__elEntry  form__elEntry_size_auto">
-										<button class="toggle" type="button" data-value="false" data-name="laser">
-											<div class="toggle__outer  toggle__outer_state_off">
-												<div class="toggle__handle  toggle__handle_state_off"></div>
-												<div class="toggle__text  toggle__text_state_off">off</div>
+									<div class="form__elEntry js-form__elEntry  form__elEntry_size_auto">
+										<button class="toggle js-toggle" type="button" data-value="false" data-name="laser">
+											<div class="toggle__outer js-toggle__outer  toggle__outer_state_off">
+												<div class="toggle__handle js-toggle__handle  toggle__handle_state_off"></div>
+												<div class="toggle__text js-toggle__text  toggle__text_state_off">off</div>
 											</div>
 										</button>
 									</div>
 								</div>
 								<div class="form__el">
 									<div class="form__elText">Bomb the moon?</div>
-									<div class="form__elEntry  form__elEntry_size_auto">
-										<button class="tick" type="button" data-value="true" data-name="bomb">
-											<div class="tick__outer  tick__outer_state_on">
-												<svg class="tick__icon  tick__icon_state_on" viewbox="0 0 40 40">
+									<div class="form__elEntry js-form__elEntry  form__elEntry_size_auto">
+										<button class="tick js-tick" type="button" data-value="true" data-name="bomb">
+											<div class="tick__outer js-tick__outer  tick__outer_state_on">
+												<svg class="tick__icon js-tick__icon  tick__icon_state_on" viewbox="0 0 40 40">
 													<g transform="translate(16, 28) rotate(-135)">
 														<rect width="10" height="3"></rect>
 														<rect width="3" height="16" y="3"></rect>
@@ -310,11 +309,11 @@
 									</div>
 								</div>
 								<div class="form__el">
-									<div class="form__elEntry  form__elEntry_size_fill">
-										<div class="dropdown">
+									<div class="form__elEntry js-form__elEntry  form__elEntry_size_fill">
+										<div class="dropdown js-dropdown">
 											<div class="dropdown__outer">
-												<div class="dropdown__currentValue">Choose an option</div>
-												<div class="dropdown__button">
+												<div class="dropdown__currentValue js-dropdown__currentValue">Choose an option</div>
+												<div class="dropdown__button js-dropdown__button">
 													<svg width="100%" height="100%" viewbox="0 0 28 28">
 														<g transform="translate(7, 12) rotate(-45)">
 															<rect height="10" width="2"></rect>
@@ -322,7 +321,7 @@
 														</g>
 													</svg>
 												</div>
-												<div class="dropdown__optionsBox dropdown__optionsBox_state_hidden">
+												<div class="dropdown__optionsBox js-dropdown__optionsBox dropdown__optionsBox_state_hidden">
 													<div class="dropdown__option" data-value="Tomsk">Томск</div>
 													<div class="dropdown__option" data-value="Kemerovo">Кемерово</div>
 													<div class="dropdown__option" data-value="Novosibirsk">Новосибирск</div>
@@ -345,10 +344,10 @@
 							</form>
 							<div class="wrapper" style="width: 45%;">
 								<div class="wrapper__el  wrapper__el_justify_unset">
-									<div class="dropdown">
+									<div class="dropdown js-dropdown">
 										<div class="dropdown__outer">
-											<div class="dropdown__currentValue">Choose an option</div>
-											<div class="dropdown__button">
+											<div class="dropdown__currentValue js-dropdown__currentValue">Choose an option</div>
+											<div class="dropdown__button js-dropdown__button">
 												<svg width="100%" height="100%" viewbox="0 0 28 28">
 													<g transform="translate(7, 12) rotate(-45)">
 														<rect height="10" width="2"></rect>
@@ -356,7 +355,7 @@
 													</g>
 												</svg>
 											</div>
-											<div class="dropdown__optionsBox dropdown__optionsBox_state_hidden">
+											<div class="dropdown__optionsBox js-dropdown__optionsBox dropdown__optionsBox_state_hidden">
 												<div class="dropdown__option" data-value="Tomsk">Томск</div>
 												<div class="dropdown__option" data-value="Kemerovo">Кемерово</div>
 												<div class="dropdown__option" data-value="Novosibirsk">Новосибирск</div>
@@ -366,17 +365,17 @@
 									</div>
 								</div>
 								<div class="wrapper__el  wrapper__el_justify_unset">
-									<div class="searchbar" data-type="search" data-name="searchbar">
+									<div class="searchbar js-searchbar" data-type="search" data-name="searchbar">
 										<div class="searchbar__outer">
-											<div class="searchbar__input">
-												<div class="input" data-type="text" data-name="search">
+											<div class="searchbar__input js-searchbar__input">
+												<div class="input js-input" data-type="text" data-name="search">
 													<div class="input__outer">
-														<input class="input__entry  input__entry_radius_left input__entry_color_orange" type="text" placeholder="Search query">
-														<div class="input__message  input__message_state_hidden"></div>
+														<input class="input__entry js-input__entry  input__entry_radius_left input__entry_color_orange" type="text" placeholder="Search query">
+														<div class="input__message js-input__message  input__message_state_hidden"></div>
 													</div>
 												</div>
 											</div>
-											<div class="searchbar__button">
+											<div class="searchbar__button js-searchbar__button">
 												<svg width="100%" height="100%" viewbox="0 0 28 28">
 													<g>
 														<circle r="4" stroke-width="2" fill="transparent" stroke="white" cx="14" cy="13"></circle>
@@ -544,17 +543,17 @@
 					<h3 class="h3  h3_align_center">Map</h3>
 				</header>
 				<div class="block__el block__el_margin">
-					<div class="map" data-coordinates="{&quot;lat&quot;: 56.590212, &quot;lng&quot;: 84.939791}">
+					<div class="map js-map" data-coordinates="{&quot;lat&quot;: 56.590212, &quot;lng&quot;: 84.939791}">
 						<div class="map__outer">
-							<div class="map__holder"></div>
+							<div class="map__holder js-map__holder"></div>
 							<div class="map__overlay">
 								<em class="map__title">Meet us!</em>
 								<div class="map__adressBox">
 									<em class="map__adress">** Predzavodskaya ST</em>
 									<em class="map__adress">Seversk, RU</em>
 								</div>
-								<button class="map__button map__button_type_marker"></button>
-								<button class="map__button map__button_type_me"></button>
+								<button class="map__button map__button_type_marker js-map__button_type_marker"></button>
+								<button class="map__button map__button_type_me js-map__button_type_me"></button>
 							</div>
 						</div>
 					</div>
@@ -572,9 +571,9 @@
 							<div class="wrapper" style="width: 19rem;">
 								<div class="calendar">
 									<div class="calendar__header">
-										<div class="calendar__today">25</div>
+										<div class="calendar__today">21</div>
 									</div>
-									<div class="calendar__holder"></div>
+									<div class="calendar__holder js-calendar__holder"></div>
 								</div>
 							</div>
 							<div class="wrapper" style="width: 19.6rem;">
@@ -597,9 +596,9 @@
 										<div class="messenger__chat"><p class="messenger__message messenger__message_sender_interlocutor">Hi! I&quot;m a Globglogabgalab. I love books, and this basement is a true treasure trove.</p>
 										</div>
 										<div class="messenger__entry">
-											<div class="input" data-type="text" data-name="entry">
+											<div class="input js-input" data-type="text" data-name="entry">
 												<div class="input__outer">
-													<textarea class="input__entry  input__entry_radius_default input__entry_color_aquamarine" type="text" placeholder="Your message"></textarea>
+													<textarea class="input__entry js-input__entry  input__entry_radius_default input__entry_color_aquamarine" type="text" placeholder="Your message"></textarea>
 												</div>
 											</div>
 										</div>
@@ -643,6 +642,10 @@
 			</div>
 		</section>
 	</main>
+	<script type="text/javascript" src="./scripts/vendors.js"></script>
+	<script type="text/javascript" src="./scripts/base.js"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6UQbE2epfLfDfa2uaXCx1soXdAfSFU-c&amp;callback=initMap" async defer></script>
+	<script src="https://vjs.zencdn.net/5-unsafe/video.js"></script>
 </body>
 
 </html>

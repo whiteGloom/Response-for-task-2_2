@@ -1,9 +1,7 @@
-//- Миксин создаёт слайдер. Свойства:
-//- "id" (string) - отвечает за id слайдера. По умолчанию - "".
+//- Миксин создаёт слайдер.
 mixin sliderMix(options)
     -
         var options = options ? options : {};
-        var id = options.id ? options.id : "";
     .slider&attributes(attributes)
         .slider__outer
-            input.slider__holder(id= id)
+            input.slider__holder.js-slider__holder

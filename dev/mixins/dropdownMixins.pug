@@ -3,14 +3,14 @@ mixin dropdownMix(options)
         var options = options ? options : {};
         var defaultText = options.defaultText ? options.defaultText : "Choose an option",
             data = options.data ? options.data : [];
-    .dropdown
+    .dropdown.js-dropdown
         .dropdown__outer
-            .dropdown__currentValue= defaultText
-            .dropdown__button
+            .dropdown__currentValue.js-dropdown__currentValue= defaultText
+            .dropdown__button.js-dropdown__button
                 svg(width="100%" height="100%" viewbox="0 0 28 28")
                     g(transform="translate(7, 12) rotate(-45)")
                         rect(height="10" width="2")
                         rect(height="2" width="10" y="8")
-            .dropdown__optionsBox.dropdown__optionsBox_state_hidden
+            .dropdown__optionsBox.js-dropdown__optionsBox.dropdown__optionsBox_state_hidden
                 each option, index in data
                     .dropdown__option(data-value=option.value)= option.text

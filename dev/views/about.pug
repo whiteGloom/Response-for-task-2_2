@@ -30,17 +30,17 @@ block body
                             +wrapperMix(style="width: 25%")
                                 +wrapperElMix
                                     +h3Mix({text: "Рейтинг"})
-                                +wrapperElMix({centering: true})(style="width: max-content")
+                                +wrapperElMix({centering: true, justify: "around"})
                                     +chartMix({id: "chartTestFirst"})
                             +wrapperMix(style="width: 25%")
                                 +wrapperElMix
                                     +h3Mix({text: "Ассортимент"})
-                                +wrapperElMix({centering: true})(style="width: max-content")
+                                +wrapperElMix({centering: true, justify: "around"})
                                     +chartMix({id: "chartTestSecond"})
                             +wrapperMix(style="width: 25%")
                                 +wrapperElMix
                                     +h3Mix({text: "% категорий"})
-                                +wrapperElMix({centering: true})(style="width: max-content")
+                                +wrapperElMix({centering: true, justify: "around"})
                                     +chartMix({id: "chartTestThird", type: "pie"})
         +baseSectionMix
             +blockMix

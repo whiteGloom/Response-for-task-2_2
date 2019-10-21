@@ -6,7 +6,7 @@ mixin formMix(options)
         var options = options ? options : {};
         var name     = options.name ? options.name : "form";
 
-    form.form(name=name)&attributes(attributes)
+    form.form.js-form(name=name)&attributes(attributes)
         if block
             block
 
@@ -21,7 +21,7 @@ mixin formElMix(options)
     .form__el&attributes(attributes)
         if text
             .form__elText= text
-        .form__elEntry(class="" + (" form__elEntry_size_" + (text ? "auto" : "fill")))
+        .form__elEntry.js-form__elEntry(class="" + (" form__elEntry_size_" + (text ? "auto" : "fill")))
             if block
                 block
 
