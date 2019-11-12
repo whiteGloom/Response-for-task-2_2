@@ -646,11 +646,11 @@
 }
 
 .map__button_type_marker {
-  background-image: url("../images/marker.png");
+  background-image: url("../images/markerIcon.png");
 }
 
 .map__button_type_me {
-  background-image: url("../images/me.png");
+  background-image: url("../images/meIcon.png");
 }
 
 .map__button {
@@ -790,11 +790,11 @@
 }
 
 .messenger__mode_type_photo {
-  background-image: url("../images/camera.png");
+  background-image: url("../images/cameraIcon.png");
 }
 
 .messenger__mode_type_text {
-  background-image: url("../images/chat.png");
+  background-image: url("../images/chatIcon.png");
 }
 
 .messenger__mode {

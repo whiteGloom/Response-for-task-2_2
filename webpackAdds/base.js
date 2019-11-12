@@ -29,10 +29,14 @@ module.exports = function(options) {
 	    optimization: {
     		splitChunks: {
 				cacheGroups: {
-					commons: {
-						name: 'vendors',
-						chunks: 'all',
-						test: /[\\/]jsPlugins[\\/]/,
+					vendors: {
+						test: /[\\/](vendors|node_modules)[\\/]/,
+						name: "vendors",
+						filename: "scripts/[name].js",
+						chunks (chunk) {
+							return true
+						},
+						enforce: true
 					}
 				}
 			}

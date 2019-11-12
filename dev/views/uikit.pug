@@ -105,10 +105,10 @@ block body
                         +wrapperElMix({justify: "around"})
                             +wrapperMix(style="width: 18.2rem")
                                 +userMix({color: "gray",  name: "Evgeniy Miller", profession: "whiteGloom"})
-                                    +iconMix({image: require("../static/images/wg-logo.jpg")})
+                                    +iconMix({image: "./static/images/wg-logo.jpg"})
                             +wrapperMix(style="width: 18.2rem")
                                 +userMix({theme: "aquamarine", profession: "profession", theme: "aquamarine"})
-                                    +iconMix({image: require("../static/images/lkl-logo.png")})
+                                    +iconMix({image: "./static/images/lkl-logo.png"})
         +baseSectionMix
             +blockMix
                 +h3Mix({text: "News / events"})
@@ -116,9 +116,9 @@ block body
                     +wrapperMix
                         +wrapperElMix({justify: "between"})
                             +wrapperMix(style="width: 19.65rem")
-                                +noteMix({image: require("../static/images/wg-logo.jpg"), title: "This is a title!", date: "23 November 2001", description: "There must be some description.."})
+                                +noteMix({image: "./static/images/wg-logo.jpg", title: "This is a title!", date: "23 November 2001", description: "There must be some description.."})
                             +wrapperMix(style="width: 19.65rem")
-                                +noteMix({type: "event", image: require("../static/images/wg-logo.jpg"), title: "this is a title", dateDay: "23", dateMonth: "Nov", description: "This is a description, I assure you."})
+                                +noteMix({type: "event", image: "./static/images/wg-logo.jpg", title: "this is a title", dateDay: "23", dateMonth: "Nov", description: "This is a description, I assure you."})
                                     +buttonMix({form: "boxEvent", theme: "aquamarine", content: "button", theme: "aquamarineAlternate"})
         +baseSectionMix
             +blockMix
@@ -137,7 +137,7 @@ block body
                                 +messengerMix
                                     +messengerHeaderMix({title: "whiteGloom"})
                                         +messengerImageMix
-                                            +iconMix({image: require("../static/images/wg-logo.jpg")})
+                                            +iconMix({image: "./static/images/wg-logo.jpg"})
                                     +messengerBodyMix({messages: [{sender: "interlocutor", text: "Hi! I\"m a Globglogabgalab. I love books, and this basement is a true treasure trove."}]})
                                         +messengerEntryMix
                                             +inputMix({form: "box", name: "entry", placeholder: "Your message"})
@@ -147,4 +147,4 @@ block body
             +blockMix
                 +h3Mix({text: "Video"})
                 +blockElMix
-                    +videoMix({src: require("../static/videos/intro8.2.mp4"), preview:  require("../static/images/lkl-logo.png"), title: "intro8.2", author: "mr lKlAlRlAlBlIlNl", source: "https://youtu.be/y9Z-gDcCSmU"})
+                    +videoMix({src: "./static/videos/intro8.2.mp4", preview:  "./static/images/lkl-logo.png", title: "intro8.2", author: "mr lKlAlRlAlBlIlNl", source: "https://youtu.be/y9Z-gDcCSmU"})

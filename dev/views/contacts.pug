@@ -20,10 +20,10 @@ block body
                         +wrapperElMix({justify: "around"})
                             +wrapperMix(style="width: 18.2rem")
                                 +userMix({color: "gray", name: "Евгений Миллер", profession: "Менеджер"})
-                                    +iconMix({image: require("../static/images/wg-logo.jpg"), alt: "logo"})
+                                    +iconMix({image: "./static/images/wg-logo.jpg", alt: "logo"})
                             +wrapperMix(style="width: 18.2rem")
                                 +userMix({theme: "aquamarine", name: "Евгений Миллер", profession: "Менеджер", theme: "aquamarine" })
-                                    +iconMix({image: require("../static/images/lkl-logo.png"), alt: "logo"})
+                                    +iconMix({image: "./static/images/lkl-logo.png", alt: "logo"})
         +baseSectionMix
             +blockMix
                 +h2Mix({text: "Напишите нам!"})
@@ -53,7 +53,7 @@ block body
                                 +messengerMix({size: "auto"})
                                     +messengerHeaderMix({title: "Евгений Миллер"})
                                         +messengerImageMix
-                                            +iconMix({image: require("../static/images/wg-logo.jpg"), alt:"logo"})
+                                            +iconMix({image: "./static/images/wg-logo.jpg", alt:"logo"})
                                     +messengerBodyMix({messages: [{sender: "interlocutor", text: "Здравствуйте, могу я Вам чем-то помочь?"}]})
                                         +messengerEntryMix
                                             +inputMix({form: "box", name: "entry", placeholder: "Your message"})

@@ -8,11 +8,10 @@ module.exports = function(options) {
     return {
         resolve : {
             alias: {
-                'jquery':           base + '/dev/jsPlugins/jquery-3.3.1.js',
-                'jchart':           base + '/dev/jsPlugins/jquery.jchart.js',
-                'ionSlider':        base + '/dev/jsPlugins/ion.rangeSlider.js',
-                'dateTimePicker':   base + '/dev/jsPlugins/jquery.datetimepicker.js',
-                'stepbar':          base + '/dev/jsPlugins/stepbar.js'
+                'jchart': base + '/dev/vendors/jquery.jchart.js',
+                'ionSlider': base + '/dev/vendors/ion.rangeSlider.js',
+                'dateTimePicker': base + '/dev/vendors/jquery.datetimepicker.js',
+                'stepbar': base + '/dev/vendors/stepbar.js'
             }
         }
     }
