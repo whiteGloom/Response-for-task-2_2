@@ -1,12 +1,18 @@
-//- Миксин создаёт шапку страницы. Свойства:
-//- "title" (string) - текст заголовка. По умолчанию - "title".
-//- Ожидаются кнопки.
-mixin headerMix(options)
+include ../h1/h1
+include ../button/button
+
+mixin header(options)
     -
         var options = options ? options : {};
-        var title = options.title ? options.title : "title";
+        var {title = "title"} = options;
     header.header
-        h1.header__title= title
+        +h1({text: title, align: "center"})
         nav.header__nav
-            if block
-                block
+            a.header__link(href="./index.html")
+                +button({form: "boxMini", content:"home", theme: "aquamarineAlternate"})
+            a.header__link(href="./about.html")
+                +button({form: "boxMini", content:"about", theme: "aquamarineAlternate"})
+            a.header__link(href="./contacts.html")
+                +button({form: "boxMini", content:"contacts", theme: "aquamarineAlternate"})
+            a.header__link(href="./uikit.html")
+                +button({form: "boxMini", content:"ui kit", theme: "aquamarineAlternate"})

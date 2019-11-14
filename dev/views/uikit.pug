@@ -7,144 +7,98 @@ block variables
         page.headerTitle = "UI kit";
 
 block body
-    +baseMix
-        +baseSectionMix
-            +blockMix
-                +h3Mix({text: "Box buttons"})
-                +blockElMix
-                    +wrapperMix
-                        +wrapperElMix({justify: "around"})(style="width: 75%")
-                            +wrapperMix
-                                +buttonMix({form: "boxMini", content:"button", theme: "aquamarine"})
-                            +wrapperMix
-                                +buttonMix({form: "box", content:"button", theme: "aquamarine"})
-                            +wrapperMix
-                                +buttonMix({form: "box", content:"button", theme: "orange"})
-                            +wrapperMix
-                                +buttonMix({form: "boxMini", content:"button", blocked: true})
-        +baseSectionMix
-            +blockMix
-                +h3Mix({text: "Round buttons"})
-                +blockElMix
-                    +wrapperMix
-                        +wrapperElMix({justify: "around"})(style="width: 50%")
-                            +wrapperMix
-                                +buttonMix({form: "round", content: "rightArrow", theme: "orange"})
-                            +wrapperMix
-                                +buttonMix({form: "round", content: "rightArrow", theme: "orange"})
-                            +wrapperMix
-                                +buttonMix({form: "round", content: "leftArrow", theme: "aquamarine"})
-                            +wrapperMix
-                                +buttonMix({form: "round", content: "leftArrow", blocked: true})
-        +baseSectionMix
-            +blockMix
-                +h3Mix({text: "Charts"})
-                +blockElMix
-                    +wrapperMix
-                        +wrapperElMix({justify: "around"})
-                            +chartMix({id: "chartTestFirst"})
-                            +chartMix({id: "chartTestSecond"})
-                            +chartMix({id: "chartTestThird", type: "pie"})
-        +baseSectionMix
-            +blockMix
-                +h3Mix({text: "Sliders"})
-                +blockElMix
-                    +wrapperMix
-                        +wrapperElMix({justify: "between"})
-                            +wrapperMix(style="width: 45%")
-                                +sliderMix({id: "sliderSimpleTest"})
-                            +wrapperMix(style="width: 45%")
-                                +sliderMix({id: "sliderPipsTest"})
-        +baseSectionMix
-            +blockMix
-                +h3Mix({text: "Stepbar"})
-                +blockElMix
-                    +stepbarMix({id: "stepbarTest"})
-        +baseSectionMix
-            +blockMix
-                +h3Mix({text: "Form / Bars"})
-                +blockElMix
-                    +wrapperMix
-                        +wrapperElMix({justify: "between"})
-                            +formMix(style="width: 45%")
-                                +formElMix
-                                    +inputMix({type: "email", name:"email", required: true, placeholder: "E-mail"})
-                                +formElMix
-                                    +inputMix({type: "password", name: "password", required: true, placeholder: "Password"})
-                                +formElMix
-                                    +inputMix({form: "box", name: "message", placeholder: "Your message"})
-                                +formElMix({text: "The camera is"})
-                                    +toggleMix({name: "laser", value: "false"})
-                                +formElMix({text: "Bomb the moon?"})
-                                    +tickMix({name:"bomb", value: "true"})
-                                +formElMix
-                                    +dropdownMix({type: "dropdown", data: [
-                                            {value: "Tomsk", text: "Томск"},
-                                            {value: "Kemerovo", text: "Кемерово"},
-                                            {value: "Novosibirsk", text: "Новосибирск"},
-                                            {value: "Krasnoyarsk", text: "Красноярск"}
-                                        ]})
-                                +formSubmit
-                                    +buttonMix({form: "box", theme: "aquamarine", content: "submit", type: "submit"})
-                            +wrapperMix(style="width: 45%")
-                                +wrapperElMix({justify: "unset", centering: "false"})
-                                    +dropdownMix({type: "dropdown", data: [
-                                            {value: "Tomsk", text: "Томск"},
-                                            {value: "Kemerovo", text: "Кемерово"},
-                                            {value: "Novosibirsk", text: "Новосибирск"},
-                                            {value: "Krasnoyarsk", text: "Красноярск"}
-                                        ]})
-                                +wrapperElMix({justify: "unset", centering: "false"})
-                                    +searchbarMix({type: "search"})
-                                        +inputMix({type: "text", name: "search", color: "orange", placeholder: "Search query", radius: "left"})
-        +baseSectionMix
-            +blockMix
-                +h3Mix({text: "Users"})
-                +blockElMix
-                    +wrapperMix
-                        +wrapperElMix({justify: "around"})
-                            +wrapperMix(style="width: 18.2rem")
-                                +userMix({color: "gray",  name: "Evgeniy Miller", profession: "whiteGloom"})
-                                    +iconMix({image: "./static/images/wg-logo.jpg"})
-                            +wrapperMix(style="width: 18.2rem")
-                                +userMix({theme: "aquamarine", profession: "profession", theme: "aquamarine"})
-                                    +iconMix({image: "./static/images/lkl-logo.png"})
-        +baseSectionMix
-            +blockMix
-                +h3Mix({text: "News / events"})
-                +blockElMix
-                    +wrapperMix
-                        +wrapperElMix({justify: "between"})
-                            +wrapperMix(style="width: 19.65rem")
-                                +noteMix({image: "./static/images/wg-logo.jpg", title: "This is a title!", date: "23 November 2001", description: "There must be some description.."})
-                            +wrapperMix(style="width: 19.65rem")
-                                +noteMix({type: "event", image: "./static/images/wg-logo.jpg", title: "this is a title", dateDay: "23", dateMonth: "Nov", description: "This is a description, I assure you."})
-                                    +buttonMix({form: "boxEvent", theme: "aquamarine", content: "button", theme: "aquamarineAlternate"})
-        +baseSectionMix
-            +blockMix
-                +h3Mix({text: "Map"})
-                +blockElMix
-                    +mapMix({title: "Meet us!", street: "** Predzavodskaya ST", city: "Seversk, RU", coordinates: '{"lat": 56.590212, "lng": 84.939791}'})
-        +baseSectionMix
-            +blockMix
-                +h3Mix({text: "Calendar / messenger"})
-                +blockElMix
-                    +wrapperMix
-                        +wrapperElMix({justify: "between"})
-                            +wrapperMix(style="width: 19rem")
-                                +calendarMix
-                            +wrapperMix(style="width: 19.6rem")
-                                +messengerMix
-                                    +messengerHeaderMix({title: "whiteGloom"})
-                                        +messengerImageMix
-                                            +iconMix({image: "./static/images/wg-logo.jpg"})
-                                    +messengerBodyMix({messages: [{sender: "interlocutor", text: "Hi! I\"m a Globglogabgalab. I love books, and this basement is a true treasure trove."}]})
-                                        +messengerEntryMix
-                                            +inputMix({form: "box", name: "entry", placeholder: "Your message"})
-                                        +messengerSendMix
-                                            +buttonMix({text:"button", theme: "aquamarine"})
-        +baseSectionMix
-            +blockMix
-                +h3Mix({text: "Video"})
-                +blockElMix
-                    +videoMix({src: "./static/videos/intro8.2.mp4", preview:  "./static/images/lkl-logo.png", title: "intro8.2", author: "mr lKlAlRlAlBlIlNl", source: "https://youtu.be/y9Z-gDcCSmU"})
+    main.base
+        section.base__section
+            +block({title: {text: "Box buttons", level: 3}})
+                +wrapper({justify: "around"})(style="width: 75%")
+                    +wrapper
+                        +button({form: "boxMini", content:"button", theme: "aquamarine"})
+                    +wrapper
+                        +button({form: "box", content:"button", theme: "aquamarine"})
+                    +wrapper
+                        +button({form: "box", content:"button", theme: "orange"})
+                    +wrapper
+                        +button({form: "boxMini", content:"button", blocked: true})
+        section.base__section
+            +block({title: {text: "Round buttons", level: 3}})
+                +wrapper({justify: "around"})(style="width: 50%")
+                    +wrapper(style="width: 30%")
+                        +button({form: "round", content: "rightArrow", theme: "orange"})
+                    +wrapper(style="width: 30%")
+                        +button({form: "round", content: "rightArrow", theme: "orange"})
+                    +wrapper(style="width: 30%")
+                        +button({form: "round", content: "leftArrow", theme: "aquamarine"})
+                    +wrapper(style="width: 30%")
+                        +button({form: "round", content: "leftArrow", blocked: true})
+        section.base__section
+            +block({title: {text: "Charts", level: 3}})
+                +wrapper({justify: "around"})
+                    +chart({id: "chartTestFirst"})
+                    +chart({id: "chartTestSecond"})
+                    +chart({id: "chartTestThird", type: "pie"})
+        section.base__section
+            +block({title: {text: "Sliders", level: 3}})
+                +wrapper({justify: "between"})
+                    +wrapper({centering: false})(style="width: 45%")
+                        +slider({id: "sliderSimpleTest"})
+                    +wrapper({centering: false})(style="width: 45%")
+                        +slider({id: "sliderPipsTest"})
+        section.base__section
+            +block({title: {text: "Stepbar", level: 3}})
+                +stepbar({id: "stepbarTest"})
+        section.base__section
+            +block({title: {text: "Form / Bars", level: 3}})
+                +wrapper({justify: "between"})
+                    +form({
+                        data: [
+                            {type: "input", properties: {type: "email", name:"email", required: true, placeholder: "E-mail"}},
+                            {type: "input", properties: {type: "password", name: "password", required: true, placeholder: "Password"}},
+                            {type: "input", properties: {form: "box", name: "message", placeholder: "Your message"}},
+                            {text: "The camera is", type: "toggle", properties: {name: "laser", value: "false"}},
+                            {text: "Bomb the moon?", type: "tick", properties: {name:"bomb", value: "true"}},
+                            {type: "dropdown", properties: {
+                                type: "dropdown", data: [
+                                    {value: "Tomsk", text: "Томск"},
+                                    {value: "Kemerovo", text: "Кемерово"},
+                                    {value: "Novosibirsk", text: "Новосибирск"},
+                                    {value: "Krasnoyarsk", text: "Красноярск"}
+                                ]}
+                            }
+                        ]
+                    })(style="width: 45%")
+                    +wrapper({justify: "unset", centering: "false"})(style="width: 45%")
+                        +searchbar({type: "search"})
+                            +input({type: "text", name: "search", color: "orange", placeholder: "Search query", radius: "left"})
+        section.base__section
+            +block({title: {text: "Users", level: 3}})
+                +wrapper({justify: "around"})
+                    +wrapper(style="width: 18.2rem")
+                        +user({color: "gray",  name: "Evgeniy Miller", profession: "whiteGloom", logo: "./static/images/wg-logo.jpg"})
+                    +wrapper(style="width: 18.2rem")
+                        +user({theme: "aquamarine", profession: "profession", theme: "aquamarine", logo: "./static/images/lkl-logo.png"})
+        section.base__section
+            +block({title: {text: "News / events", level: 3}})
+                +wrapper({justify: "between"})
+                    +wrapper(style="width: 19.65rem")
+                        +note({image: "./static/images/wg-logo.jpg", title: "This is a title!", date: "23 November 2001", description: "There must be some description.."})
+                    +wrapper(style="width: 19.65rem")
+                        +note({type: "event", image: "./static/images/wg-logo.jpg", title: "this is a title", dateDay: "23", dateMonth: "Nov", description: "This is a description, I assure you."})
+        section.base__section
+            +block({title: {text: "Map", level: 3}})
+                +map({title: "Meet us!", street: "** Predzavodskaya ST", city: "Seversk, RU", coordinates: '{"lat": 56.590212, "lng": 84.939791}'})
+        section.base__section
+            +block({title: {text: "Calendar / messenger", level: 3}})
+                +wrapper({justify: "between"})
+                    +wrapper(style="width: 19rem")
+                        +calendar
+                    +wrapper(style="width: 19.6rem")
+                        +messenger({
+                            title: "whiteGloom",
+                            logo: "./static/images/wg-logo.jpg",
+                            messages: [
+                                {sender: "interlocutor", text: "Hi! I\"m a Globglogabgalab. I love books, and this basement is a true treasure trove."}
+                            ]
+                        })
+        section.base__section
+            +block({title: {text: "Video", level: 3}})
+                +video({src: "./static/videos/intro8.2.mp4", preview:  "./static/images/lkl-logo.png", title: "intro8.2", author: "mr lKlAlRlAlBlIlNl", source: "https://youtu.be/y9Z-gDcCSmU"})

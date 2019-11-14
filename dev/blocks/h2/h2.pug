@@ -1,13 +1,6 @@
-//- Миксин создаёт заголовок 2 уровня. Свойства:
-//- "text" (string / nothing) - текст заголовка. По умолчанию - "".
-//- "align" (string) ["center", "start"] - центровка текста.
-//- Ожидается текст или ничего.
-mixin h2Mix(options)
+mixin h2(options)
     -
         var options = options ? options : {};
-        var text = options.text ? options.text : "",
-            align = options.align ? options.align : "center";
+        var {text = "", align = "center"} = options;
     header
         h2.h2(class="" + (" h2_align_" + align))&attributes(attributes)= text
-            if block
-                block

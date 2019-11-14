@@ -7,55 +7,36 @@ block variables
         page.headerTitle = "Contacts";
 
 block body
-    +baseMix
-        +baseSectionMix
-            +blockMix
-                +blockElMix
-                    +mapMix({title: "Мы здесь!", street: "** Predzavodskaya ST", city: "Seversk, RU", coordinates: '{"lat": 56.590212, "lng": 84.939791}'})
-        +baseSectionMix
-            +blockMix
-                +h2Mix({text: "Наши менеджеры"})
-                +blockElMix
-                    +wrapperMix
-                        +wrapperElMix({justify: "around"})
-                            +wrapperMix(style="width: 18.2rem")
-                                +userMix({color: "gray", name: "Евгений Миллер", profession: "Менеджер"})
-                                    +iconMix({image: "./static/images/wg-logo.jpg", alt: "logo"})
-                            +wrapperMix(style="width: 18.2rem")
-                                +userMix({theme: "aquamarine", name: "Евгений Миллер", profession: "Менеджер", theme: "aquamarine" })
-                                    +iconMix({image: "./static/images/lkl-logo.png", alt: "logo"})
-        +baseSectionMix
-            +blockMix
-                +h2Mix({text: "Напишите нам!"})
-                +blockElMix
-                    +blockMix
-                        +h3Mix({text: "На почту"})
-                        +blockElMix
-                            +formMix
-                                +formElMix
-                                    +inputMix({type: "email", name:"email", required: true, placeholder: "E-mail"})
-                                +formElMix
-                                    +inputMix({name: "name", required: true, placeholder: "Ваше имя"})
-                                +formElMix
-                                    +inputMix({form: "box", name: "message", placeholder: "Ваше сообщение"})
-                                +formElMix({text: "Ваш город"})
-                                    +dropdownMix({type: "dropdown", defaultText: "Выберите город", data: [
-                                            {value: "Tomsk", text: "Томск"},
-                                            {value: "Seversk", text: "Северск"},
-                                            {value: "Asino", text: "Асино"}
-                                        ]})
-                                +formSubmit
-                                    +buttonMix({form: "box", theme: "aquamarine", content: "submit", type: "submit"})
-                    +blockElMix
-                        +blockMix
-                            +h3Mix({text: "Или онлайн"})
-                            +blockElMix
-                                +messengerMix({size: "auto"})
-                                    +messengerHeaderMix({title: "Евгений Миллер"})
-                                        +messengerImageMix
-                                            +iconMix({image: "./static/images/wg-logo.jpg", alt:"logo"})
-                                    +messengerBodyMix({messages: [{sender: "interlocutor", text: "Здравствуйте, могу я Вам чем-то помочь?"}]})
-                                        +messengerEntryMix
-                                            +inputMix({form: "box", name: "entry", placeholder: "Your message"})
-                                        +messengerSendMix
-                                            +buttonMix({text:"button", theme: "aquamarine"})
+    main.base
+        section.base__section
+            +block
+                +map({title: "Мы здесь!", street: "** Predzavodskaya ST", city: "Seversk, RU", coordinates: '{"lat": 56.590212, "lng": 84.939791}'})
+        section.base__section
+            +block({title: {text: "Наши менеджеры", level: 2}})
+                +wrapper({justify: "around"})
+                    +wrapper(style="width: 18.2rem")
+                        +user({color: "gray", name: "Евгений Миллер", profession: "Менеджер", logo: "./static/images/wg-logo.jpg"})
+                    +wrapper(style="width: 18.2rem")
+                        +user({theme: "aquamarine", name: "Евгений Миллер", profession: "Менеджер", theme: "aquamarine", logo: "./static/images/lkl-logo.png"})
+        section.base__section
+            +block({title: {text: "Напишите нам!", level: 2}})
+                +block({title: {text: "На почту", level: 3}})
+                    +form({data: [
+                        {type: "input", properties: {type: "email", name:"email", required: true, placeholder: "E-mail"}},
+                        {type: "input", properties: {name: "name", required: true, placeholder: "Ваше имя"}},
+                        {type: "input", properties: {form: "box", name: "message", placeholder: "Ваше сообщение"}},
+                        {text: "Ваш город", type: "dropdown", properties: {type: "dropdown", defaultText: "Выберите город", data: [
+                            {value: "Tomsk", text: "Томск"},
+                            {value: "Seversk", text: "Северск"},
+                            {value: "Asino", text: "Асино"}
+                        ]}},
+                    ]})
+                +block({title: {text: "Или онлайн", level: 3}})
+                    +messenger({
+                        size: "auto",
+                        title: "Евгений Миллер",
+                        logo: "./static/images/wg-logo.jpg",
+                        messages: [
+                            {sender: "interlocutor", text: "Здравствуйте, могу я Вам чем-то помочь?"}
+                        ]
+                    })

@@ -1,27 +1,22 @@
-//- Блок с информацией о пользователе. Свойства:
-//- "image" (string) - обёртка для иконки пользователя. По умолчанию - "".
-//- "name" (string) - имя (фамилия) пользователя. По умолчанию - "name".
-//- "profession" (string) - профессия пользователя. По умолчанию - "unknown".
-//- "facebook" (string) - ссылка на профиль пользователя в facebook. По умолчанию - "#".
-//- "dribble" (string) - ссылка на профиль пользователя в dribble. По умолчанию - "#".
-//- "twitter" (string) - ссылка на профиль пользователя в twitter. По умолчанию - "#".
-//- "theme" (string) ["gray", "aquamarine"] - цветовая схема блока. По умолчанию - "gray".
-//- Ожидается изображение.
-mixin userMix(options)
+include ../icon/icon
+
+mixin user(options)
     -
         var options = options ? options : {};
-        var image = options.image ? options.image : "",
-            name = options.name ? options.name : "name",
-            profession = options.profession ? options.profession : "unknown",
-            facebook = options.facebook ? options.facebook : "#",
-            twitter = options.twitter ? options.twitter : "#",
-            dribble = options.dribble ? options.dribble : "#",
-            theme = options.theme ? options.theme : "gray";
-    .user()&attributes(attributes)
+        var {
+            image = "",
+            name = "name",
+            profession = "unknown",
+            facebook = "#",
+            twitter = "#",
+            dribble = "#",
+            theme = "gray",
+            logo = ""
+        } = options;
+    .user&attributes(attributes)
         .user__outer
             .user__image
-                if block
-                    block
+                +icon({image: logo, alt: "logo"})
             .user__info(class="" + (" user__info_theme_" + theme))
                 em.user__name(class="" + (" user__name_theme_" + theme))= name
                 em.user__profession(class="" + (" user__profession_theme_" + theme))= profession

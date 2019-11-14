@@ -1,8 +1,7 @@
-mixin searchbarMix(options)
+mixin searchbar(options)
     -
         var options = options ? options : {};
-        var type = options.type ? options.type : "search",
-            name = options.name ? options.name : "searchbar";
+        var {type = "search", name = "searchbar"} = options;
     .searchbar.js-searchbar(data-type=type data-name=name)&attributes(attributes)
         .searchbar__outer
             .searchbar__input.js-searchbar__input

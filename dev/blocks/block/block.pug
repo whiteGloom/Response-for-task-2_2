@@ -1,14 +1,17 @@
-mixin blockMix(options)
-    -
-        var options = options ? options : {};
-    .block
-        if block
-            block
+include ../h2/h2
+include ../h3/h3
 
-mixin blockElMix(options)
+mixin block(options)
     -
         var options = options ? options : {};
-        var margin = options.margin !== undefined ? options.margin : true;
-    .block__el(class="" + (margin ? "block__el_margin" : ""))
-        if block
-            block
+        var {margin = true, title} = options;
+    .block
+        if title
+            case title.level
+                when 2
+                    +h2({text: title.text, align: title.align})
+                when 3
+                    +h3({text: title.text, align: title.align})
+        .block__content(class="" + (margin ? "block__content_margin" : ""))
+            if block
+                block

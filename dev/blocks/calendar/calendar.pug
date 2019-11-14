@@ -1,9 +1,7 @@
 //- Миксин создаёт календарь.
-mixin calendarMix(options)
+mixin calendar()
     -
-        var options = options ? options : {};
-        var date = new Date(),
-            day = date.getDate()
+        var day = (new Date()).getDate();
     .calendar&attributes(attributes)
         .calendar__header
             .calendar__today= day

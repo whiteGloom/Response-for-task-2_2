@@ -1,0 +1,88 @@
+.dropdown
+  width: 100%
+
+.dropdown__outer
+  position: relative
+  display: flex
+  width: 100%
+  height: 2rem
+  justify-content: space-between
+
+.dropdown__currentValue
+  position: relative
+  width: 100%
+  height: 100%
+  min-width: 6rem
+  border-radius: 3px 0 0 3px
+  padding: .35rem .9rem .5rem .9rem
+  box-sizing: border-box
+  flex-shrink: 1
+  background-color: #e5e5e5
+  color: #888888
+  transition: .4s all
+  cursor: default
+
+.dropdown__currentValue:focus
+  background-color: #e75735
+  color: white
+
+.dropdown__button
+  width: 2.2rem
+  height: 100%
+  border-radius: 0 3px 3px 0
+  fill: white
+  flex-shrink: 0
+  transition: .2s all
+  cursor: pointer
+  background-color: #4eb7a8
+
+.dropdown__button:hover
+.dropdown__button:focus
+  background-color: #28a290
+
+.dropdown__option
+  position: relative
+  padding: .35rem .9rem .5rem .9rem
+  cursor: pointer;
+  color: #888888
+  transition: .3s all
+  text-decoration: underline
+
+.dropdown__option:hover
+  background-color: #4eb7a8
+  color: white
+
+.dropdown__option:focus
+  background-color: #4eb7a8
+  color: white
+
+.dropdown__optionsBox
+  position: absolute
+  width: 100%
+  top: 100%
+  left: 0
+  margin-top: 3px
+  box-sizing: border-box
+  background-color: white
+  border: 1px solid #4eb7a8
+  border-radius: 3px
+  cursor: default
+  transition: .3s all
+  z-index: 999
+
+.dropdown__optionsBox::before
+  content: ''
+  position: absolute
+  display: block
+  width: 0; height: 0
+  top: -7px; left: 50%
+  margin-left: -3px;
+  overflow: hidden
+  border: 3px solid transparent
+  border-bottom-color: inherit
+
+.dropdown__optionsBox_state_hidden
+  display: none
+
+.dropdown__optionsBox_state_visible
+  display: block

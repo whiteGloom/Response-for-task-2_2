@@ -1,8 +1,7 @@
-mixin dropdownMix(options)
+mixin dropdown(options)
     -
         var options = options ? options : {};
-        var defaultText = options.defaultText ? options.defaultText : "Choose an option",
-            data = options.data ? options.data : [];
+        var {defaultText = "Choose an option", data = []} = options;
     .dropdown.js-dropdown
         .dropdown__outer
             .dropdown__currentValue.js-dropdown__currentValue= defaultText

@@ -1,65 +1,31 @@
-//- Миксин создаёт мессенджер.
-//- Ожидается блок хедера и футера мессенджера.
-mixin messengerMix(options)
+include ../icon/icon
+include ../input/input
+include ../button/button
+
+mixin messenger(options)
     -
         var options = options ? options : {};
-        var size = options.size ? options.size : "fixed"
+        var {
+            size = "fixed",
+            title = "title",
+            logo = "",
+            messages = [],
+            sendButtonTheme = "aquamarine",
+            inputPlaceholder = "Your message"
+        } = options;
     .messenger&attributes(attributes)
-        if block
-            block
-
-//- Миксин создаёт хэдер мессенджера. Свойства:
-//- "title" (string) - имя собеседника. По умолчанию - "title".
-//- Ожидается блок с значком мессенджера.
-mixin messengerHeaderMix(options)
-    -
-        var options = options ? options : {};
-        var title = options.title ? options.title : "title";
-    .messenger__header&attributes(attributes)
-        em.messenger__title= title
-        if block
-            block
-
-//- Миксин создаёт тело мессенджера. Свойства:
-//- "messages" (array) [object{title, text}] - сообщения для вывода. По умолчанию - [].
-//- Ожидаются блок поля ввода мессенджера, блок кнопки мессенджера.
-mixin messengerBodyMix(options)
-    -
-        var options = options ? options : {};
-        var messages = options.messages ? options.messages : [];
-    .messenger__body&attributes(attributes)
-        .messenger__modeBox
-            button.messenger__mode.messenger__mode_type_text
-            button.messenger__mode.messenger__mode_type_photo
-        .messenger__chat
-            each item in messages
-                p.messenger__message(class="" + ("messenger__message_sender_" + item.sender))= item.text
-        if block
-            block
-
-//- Миксин создаёт значок мессенджера.
-//- Ожидается блок с озображеним.
-mixin messengerImageMix(options)
-    -
-        var options = options ? options : {};
-    .messenger__image&attributes(attributes)
-        if block
-            block
-
-//- Миксин создаёт поле ввода сообщения мессенджера.
-//- Ожидается поле ввода.
-mixin messengerEntryMix(options)
-    -
-        var options = options ? options : {};
-    .messenger__entry&attributes(attributes)
-        if block    
-            block
-
-//- Миксин создаёт кнопку отправки сообщения мессенджера.
-//- Ожидается кнопка.
-mixin messengerSendMix(options)
-    -
-        var options = options ? options : {};
-    .messenger__send&attributes(attributes)
-        if block    
-            block
+        .messenger__header
+            em.messenger__title= title
+            .messenger__image
+                +icon({image: logo, alt:"logo"})
+        .messenger__body
+            .messenger__modeBox
+                button.messenger__mode.messenger__mode_type_text
+                button.messenger__mode.messenger__mode_type_photo
+            .messenger__chat
+                for item in messages
+                    p.messenger__message(class="" + ("messenger__message_sender_" + item.sender))= item.text
+            .messenger__entry
+                +input({form: "box", name: "entry", placeholder: inputPlaceholder})
+            .messenger__send
+                +button({text:"button", theme: sendButtonTheme})

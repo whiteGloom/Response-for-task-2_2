@@ -1,12 +1,5 @@
-//- Миксин создаёт заголовок 1 уровня. Свойства:
-//- "text" (string / nothing) - текст заголовка. По умолчанию - "".
-//- Ожидается текст или ничего.
-mixin h1Mix(options)
+mixin h1(options)
     -
         var options = options ? options : {};
-        var text = options.text ? options.text : "",
-        	align = options.align !== undefined ? options.align : true;
-    header
-        h1.h1(class="" + (align ? " h1_align" : ""))&attributes(attributes)= text
-            if block
-                block
+        var {text = "", align = "center"} = options;
+    h1.h1(class="" + (" h1_align_" + align))&attributes(attributes)= text

@@ -1,0 +1,10 @@
+include ../chart/chart
+
+mixin rate(options)
+    -
+        var options = options ? options : {};
+        var {title = "", id = ""} = options;
+    .rate
+        .rate__title= title
+        .rate__value
+            +chart({id: id})

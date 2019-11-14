@@ -7,46 +7,19 @@ block variables
         page.headerTitle = "About us";
 
 block body
-    +baseMix
-        +baseSectionMix
-            +blockMix
-                +h2Mix({text: "Кратко о компании"}) 
-                +blockElMix
-                    p.p.
-                        Компания была основана в начале 2019 года, в Томске. На момент создания ей занималось всего 6 человек. Однако, уже к маю у нас было более 1500 заказов, а число работников перевалило за 60.
-                    p.p.
-                        У нашей компании есть принципы. Для нашей продукции мы выбираем лучшие материалы, стараясь сохранить высокое качество и приятную для покупателя цену. Мы никогда не откажем клиенту в помощи, если она ему потребуется, не стесняйтесь обращаться за ней!
-        +baseSectionMix
-            +blockMix
-                +h2Mix({text: "Наши показатели"})
-                +blockElMix
-                    +blockMix
-                        +h3Mix({text: "Желаемый охват городов"})
-                        +blockElMix
-                            +stepbarMix({id: "stepbarTest"})
-                +blockElMix
-                    +wrapperMix
-                        +wrapperElMix({justify: "around"})
-                            +wrapperMix(style="width: 25%")
-                                +wrapperElMix
-                                    +h3Mix({text: "Рейтинг"})
-                                +wrapperElMix({centering: true, justify: "around"})
-                                    +chartMix({id: "chartTestFirst"})
-                            +wrapperMix(style="width: 25%")
-                                +wrapperElMix
-                                    +h3Mix({text: "Ассортимент"})
-                                +wrapperElMix({centering: true, justify: "around"})
-                                    +chartMix({id: "chartTestSecond"})
-                            +wrapperMix(style="width: 25%")
-                                +wrapperElMix
-                                    +h3Mix({text: "% категорий"})
-                                +wrapperElMix({centering: true, justify: "around"})
-                                    +chartMix({id: "chartTestThird", type: "pie"})
-        +baseSectionMix
-            +blockMix
-                +h2Mix({text: "Где работаем"})
-                +blockElMix
-                    p.p
-                        | На данный момент в зону покрытия нашей компании входят города: 
-                        strong Томск, Асино, Северск. 
-                        | В ближайшее время в этот список также попадёт Кемерово. Для клиентов из других городов мы можем огранизовать доставку по почте. Доставка по почте доступна для всех стран СНГ. За подробностями доставки необходимо обратиться к менеджеру.
+    main.base
+        section.base__section
+            +block({title: {text: "Кратко о компании", level: 2}})
+                +p({text: "Компания была основана в начале 2019 года, в Томске. На момент создания ей занималось всего 6 человек. Однако, уже к маю у нас было более 1500 заказов, а число работников перевалило за 60."})
+                +p({text: "У нашей компании есть принципы. Для нашей продукции мы выбираем лучшие материалы, стараясь сохранить высокое качество и приятную для покупателя цену. Мы никогда не откажем клиенту в помощи, если она ему потребуется, не стесняйтесь обращаться за ней!"})
+        section.base__section
+            +block({title: {text: "Наши показатели", level: 2}})
+                +block({title: {text: "Желаемый охват городов", level: 3}})
+                    +stepbar({id: "stepbarTest"})
+                +wrapper({justify: "around"})
+                    +rate({title: "Рейтинг", id: "chartTestFirst"})
+                    +rate({title: "Ассортимент", id: "chartTestSecond"})
+                    +rate({title: "% Категорий", id: "chartTestThird"})
+        section.base__section
+            +block({title: {text: "Где работаем", level: 2}})
+                +p({text: "На данный момент в зону покрытия нашей компании входят города: <strong> Томск, Асино, Северск. </strong> В ближайшее время в этот список также попадёт Кемерово. Для клиентов из других городов мы можем огранизовать доставку по почте. Доставка по почте доступна для всех стран СНГ. За подробностями доставки необходимо обратиться к менеджеру."})

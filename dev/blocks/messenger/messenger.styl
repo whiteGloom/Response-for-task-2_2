@@ -1,0 +1,113 @@
+.messenger
+  width: 100%
+  min-width: 12.5rem
+
+.messenger__header
+  position: relative
+  width: 100%
+  height: 5.6rem
+  border-radius: 3px 3px 0 0
+  background-color: #4eb7a8
+  border-bottom: 2.35rem solid #46ab9d
+
+.messenger__title
+  display: block
+  padding-top: 1.25rem
+  text-align: center
+  font-size: 2.1rem
+  font-family: Lato
+  font-weight: 200
+  font-style: normal
+  color: white
+
+.messenger__image
+  position: absolute
+  top: 4.75rem
+  width: 6.5rem
+  left: 50%
+  margin-left: -3.25rem
+
+.messenger__body
+  width: 100%
+  padding: 8%
+  border-radius: 0 0 3px 3px
+  box-sizing: border-box
+  background-color: #f2f2f2
+  overflow: hidden
+
+.messenger__modeBox
+  width: 96%
+  margin: 0 auto
+  display: flex
+  justify-content: space-between
+
+.messenger__mode
+  width: 1.5rem
+  height: 1.5rem
+  background-position: center
+  background-repeat: no-repeat
+  background-size: contain
+  transition: .1s all
+
+.messenger__mode:hover
+.messenger__mode:focus
+  transform: scale(1.1)
+
+.messenger__mode:active
+  transform: scale(.9)
+
+.messenger__mode_type_text
+  background-image: url('../images/chat-icon.png')
+
+.messenger__mode_type_photo
+  background-image: url('../images/camera-icon.png')
+
+.messenger__chat
+  width: 100%
+  min-height: 5.85rem
+  max-height: 10rem
+  margin-top: .85rem
+  overflow: auto
+  border-radius: 2px
+
+.messenger__message
+  position: relative
+  margin-top: .75rem
+  padding: 1.1rem 1.3rem .7rem
+  border-radius: 3px
+  font-size: .8rem
+  border-color: white
+
+.messenger__message:first-child
+  margin-top: 6px
+
+.messenger__message_sender_interlocutor
+  background-color: white
+  color: #868686
+
+.messenger__message_sender_interlocutor::before
+  content: ''
+  display: block
+  position: absolute
+  border: 6px solid transparent
+  border-bottom-color: inherit
+  left: 50%
+  margin-left: -3px
+  top: -12px
+
+.messenger__message_sender_user
+  background-color: #4eb7a8
+  color: white
+
+.messenger__entry
+  width: 100%
+  height: 6rem
+  margin-top: .6rem
+  background-color: white
+  border-radius: 3px
+  padding: .2rem
+  box-sizing: border-box
+
+.messenger__send
+  width: 100%
+  margin-top: 1rem

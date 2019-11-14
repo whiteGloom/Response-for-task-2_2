@@ -1,12 +1,9 @@
-//- Миксин создаёт пост блога. Свойства:
-//- "title" (string) - заголовок поста. По умолчанию - "title".
-//- Ожидается что угодно. >:{}
-mixin postMix(options)
+mixin article(options)
     -
         var options = options ? options : {};
-        var title = options.title ? options.title : "title";
-    article.post
-        h3.post__title= title
-        .post__body
-            if block
-                block
+        var {data = []} = options;
+    article.article
+        for item in data
+            .article__el
+                h3.article__title= item.title
+                .article__body= item.text

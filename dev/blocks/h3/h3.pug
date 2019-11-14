@@ -1,13 +1,6 @@
-//- Миксин создаёт заголовок 3 уровня. Свойства:
-//- "text" (string / nothing) - текст заголовка. По умолчанию - "".
-//- "align" (string) ["center", "start"] - центровка текста.
-//- Ожидается текст или ничего.
-mixin h3Mix(options)
+mixin h3(options)
     -
         var options = options ? options : {};
-        var text     = options.text ? options.text : "",
-            align    = options.align ? options.align : "center";
+        var {text = "", align = "center"} = options;
     header
         h3.h3(class="" + (" h3_align_" + align))&attributes(attributes)= text
-            if block
-                block

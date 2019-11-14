@@ -19,15 +19,7 @@ html
     // Тело странциы
     body
         // Хедер страницы
-        +headerMix({title: page.headerTitle})
-            a(href="./index.html")
-                +buttonMix({form: "boxMini", content:"home", theme: "aquamarineAlternate"})
-            a(href="./about.html")
-                +buttonMix({form: "boxMini", content:"about", theme: "aquamarineAlternate"})
-            a(href="./contacts.html")
-                +buttonMix({form: "boxMini", content:"contacts", theme: "aquamarineAlternate"})
-            a(href="./uikit.html")
-                +buttonMix({form: "boxMini", content:"ui kit", theme: "aquamarineAlternate"})
+        +header({title: page.headerTitle})
         // Основная часть
         block body
         script(type="text/javascript" src="./scripts/vendors.js")
