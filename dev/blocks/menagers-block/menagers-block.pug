@@ -1,0 +1,15 @@
+include ../wrapper/wrapper
+include ../user/user
+include ../title/title
+
+mixin menagers-block(options)
+    -
+        options = options || {};
+        const {data = []} = options;
+    .block
+        .block__title
+            +title({text: "Наши менеджеры"})
+        .block__el
+            +wrapper({justify: "around"})
+                for item in data
+                    +user(item)

@@ -1,27 +1,26 @@
-.form{}
+.form
+  &__el
+    display: flex
+    width: 100%
+    margin-top: .8rem
 
-.form__el
-  display: flex
-  width: 100%
-  margin-top: .8rem
+    &:first-child
+      margin-top: 0
 
-.form__el:first-child
-  margin-top: 0
+  &__elEntry
+    &_size
+      &_auto
+        flex-shrink: 0
 
-.form__elEntry{}
+      &_fill
+        width: 100%
 
-.form__elEntry_size_auto
-  flex-shrink: 0
+  &__elText
+    width: 100%
+    cursor: default
+    font-style: normal
 
-.form__elEntry_size_fill
-  width: 100%
-
-.form__elText
-  width: 100%
-  cursor: default
-  font-style: normal
-
-.form__submit
-  margin-top: .6rem
-  margin-left: auto
-  display: table
+  &__submit
+    margin-top: .6rem
+    margin-left: auto
+    display: table

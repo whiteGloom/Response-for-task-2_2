@@ -1,0 +1,22 @@
+include ../wrapper/wrapper
+include ../title/title
+include ../stepbar/stepbar
+include ../rate/rate
+
+mixin stats-block(options)
+    -
+        options = options || {};
+        const {rateData = [], coverageData = {}} = options;
+    .block
+        .block__title
+            +title({text: "Наши показатели"})
+        .block__el
+            .block
+                .block__title
+                    +title({text: "Желаемый охват городов", level: 3})
+                .block__el
+                    +stepbar(coverageData)
+        .block__el
+            +wrapper({justify: "around"})
+                for rate in rateData
+                    +rate({title: rate.title, id: rate.id})

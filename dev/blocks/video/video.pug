@@ -1,8 +1,8 @@
 mixin video(options)
     -
-        var options = options ? options : {};
-        var {src = "", preview = "", title = "unknown", author = "unknown", source} = options;
-    .video&attributes(attributes)
+        options = options || {};
+        const {src = "", preview = "", title = "unknown", author = "unknown", source} = options;
+    .video
         .video__outer
             .video__info
                 em.video__title= title

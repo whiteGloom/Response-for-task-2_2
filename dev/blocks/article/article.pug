@@ -1,9 +1,9 @@
 mixin article(options)
     -
-        var options = options ? options : {};
-        var {data = []} = options;
+        options = options || {};
+        const {data = []} = options;
     article.article
         for item in data
             .article__el
                 h3.article__title= item.title
-                .article__body= item.text
+                .article__content= item.text

@@ -1,0 +1,11 @@
+mixin title(options)
+    -   
+        options = options || {};
+        const {text = "title", level = 2, align = "center"} = options;
+    case level
+        when 1
+            h1.title.title_level_1(class="" + ("title_align_" + align))= text
+        when 2
+            h2.title.title_level_2(class="" + ("title_align_" + align))= text
+        when 3
+            h3.title.title_level_3(class="" + ("title_align_" + align))= text

@@ -1,27 +1,32 @@
-extends ./template/template
+include ../blocks/content/contacts-page-content
+include ../blocks/header/header
 
-block variables
-    -
-        var page = {};
-        page.pageTitle = "Contacts";
-        page.headerTitle = "Contacts";
-
-block body
-    main.base
-        section.base__section
-            +block
-                +map({title: "Мы здесь!", street: "** Predzavodskaya ST", city: "Seversk, RU", coordinates: '{"lat": 56.590212, "lng": 84.939791}'})
-        section.base__section
-            +block({title: {text: "Наши менеджеры", level: 2}})
-                +wrapper({justify: "around"})
-                    +wrapper(style="width: 18.2rem")
-                        +user({color: "gray", name: "Евгений Миллер", profession: "Менеджер", logo: "./static/images/wg-logo.jpg"})
-                    +wrapper(style="width: 18.2rem")
-                        +user({theme: "aquamarine", name: "Евгений Миллер", profession: "Менеджер", theme: "aquamarine", logo: "./static/images/lkl-logo.png"})
-        section.base__section
-            +block({title: {text: "Напишите нам!", level: 2}})
-                +block({title: {text: "На почту", level: 3}})
-                    +form({data: [
+doctype html
+html
+    // Шапка страницы
+    head
+        meta(charset="utf-8")
+        title Contacts
+        link(rel="shortcut icon" href="static/images/favicon.ico" type="image/x-icon")
+        meta(name="description" content="UIKIT")
+        meta(name="Keywords" content="UIKIT")
+        meta(name="viewport" content="initial-scale=1.0, width=device-width")
+        link(rel="stylesheet" type="text/css" href="https://vjs.zencdn.net/5-unsafe/video-js.css")
+        link(rel="stylesheet" type="text/css" href="static/styles/styles.css")
+    // Тело странциы
+    body
+        +header({title: "Contacts"})
+        main.base
+            +contacts-page-content({
+                mapData: {
+                    title: "Мы здесь!", street: "** Predzavodskaya ST", city: "Seversk, RU", coordinates: '{"lat": 56.590212, "lng": 84.939791}'
+                },
+                menagersData: {data: [
+                    {color: "gray", name: "Евгений Миллер", profession: "Менеджер", logo: "./static/images/wg-logo.jpg"},
+                    {theme: "aquamarine", name: "Евгений Миллер", profession: "Менеджер", theme: "aquamarine", logo: "./static/images/lkl-logo.png"}
+                ]},
+                contactUsData: {
+                    formData: [
                         {type: "input", properties: {type: "email", name:"email", required: true, placeholder: "E-mail"}},
                         {type: "input", properties: {name: "name", required: true, placeholder: "Ваше имя"}},
                         {type: "input", properties: {form: "box", name: "message", placeholder: "Ваше сообщение"}},
@@ -30,13 +35,18 @@ block body
                             {value: "Seversk", text: "Северск"},
                             {value: "Asino", text: "Асино"}
                         ]}},
-                    ]})
-                +block({title: {text: "Или онлайн", level: 3}})
-                    +messenger({
+                    ],
+                    messengerData: {
                         size: "auto",
                         title: "Евгений Миллер",
                         logo: "./static/images/wg-logo.jpg",
                         messages: [
                             {sender: "interlocutor", text: "Здравствуйте, могу я Вам чем-то помочь?"}
                         ]
-                    })
+                    }
+                }
+            })
+        script(type="text/javascript" src="./scripts/vendors.js")
+        script(type="text/javascript" src="./scripts/base.js")
+        script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6UQbE2epfLfDfa2uaXCx1soXdAfSFU-c&callback=initMap" async defer)
+        script(src="https://vjs.zencdn.net/5-unsafe/video.js")

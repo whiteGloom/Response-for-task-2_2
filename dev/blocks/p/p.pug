@@ -1,5 +1,5 @@
 mixin p(options)
     -
-        var options = options ? options : {};
-        var {text = ""} = options;
+        options = options || {};
+        const {text = ""} = options;
     p.p!= text

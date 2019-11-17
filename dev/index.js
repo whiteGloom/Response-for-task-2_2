@@ -12,6 +12,7 @@ require('jchart');
 require('ionSlider');
 require('stepbar');
 require('dateTimePicker');
+
 chart = require('./scripts/chartScripts.js');
 toggle = require('./scripts/toggleScripts.js');
 tick = require('./scripts/tickScripts.js');
@@ -20,4 +21,5 @@ input = require('./scripts/inputScripts.js');
 dropdown = require('./scripts/dropdownScripts.js');
 searchbar = require('./scripts/searchbarScripts.js');
 map = require('./scripts/mapScripts.js');
+
 require('./scripts/scripts.js');

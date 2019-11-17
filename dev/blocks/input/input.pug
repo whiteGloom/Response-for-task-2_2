@@ -1,7 +1,7 @@
 mixin input(options)
     -
-        var options = options ? options : {};
-        var {
+        options = options || {};
+        const {
             type = "text",
             color = "aquamarine",
             form = "bar",
@@ -11,7 +11,7 @@ mixin input(options)
             placeholder = ""
         } = options;
 
-    .input.js-input(data-type=type data-name=name)&attributes(attributes)
+    .input.js-input(data-type=type data-name=name)
         .input__outer
             case form
                 when "bar"

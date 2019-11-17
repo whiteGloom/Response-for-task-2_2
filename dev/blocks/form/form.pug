@@ -1,13 +1,13 @@
 include ../button/button
 include ../toggle/toggle
 include ../tick/tick
+include ../dropdown/dropdown
 
 mixin form(options)
     -
-        var options = options ? options : {};
-        var {name = "form", data = [], submitTheme = "aquamarine"} = options;
-
-    form.form.js-form(name=name)&attributes(attributes)
+        options = options || {};
+        const {name = "form", data = [], submitTheme = "aquamarine"} = options;
+    form.form.js-form(name=name)
         for item in data
             .form__el
                 if item.text

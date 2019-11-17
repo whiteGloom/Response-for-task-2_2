@@ -1,19 +1,27 @@
-extends ./template/template
+include ../blocks/content/home-page-content
+include ../blocks/header/header
 
-block variables
-    -
-        var page = {};
-        page.pageTitle = "Home";
-        page.headerTitle = "Home";
-
-block body
-    main.base
-        section.base__section
-            +block
-                +video({src: "./static/videos/intro8.2.mp4", preview:  "./static/images/lkl-logo.png", title: "intro8.2", author: "mr lKlAlRlAlBlIlNl", source: "https://youtu.be/y9Z-gDcCSmU"})
-        section.base__section
-            +block({title: {text: "Блог", level: 2, align: "center"}})
-                +article({data: [
+doctype html
+html
+    // Шапка страницы
+    head
+        meta(charset="utf-8")
+        title Home
+        link(rel="shortcut icon" href="static/images/favicon.ico" type="image/x-icon")
+        meta(name="description" content="UIKIT")
+        meta(name="Keywords" content="UIKIT")
+        meta(name="viewport" content="initial-scale=1.0, width=device-width")
+        link(rel="stylesheet" type="text/css" href="https://vjs.zencdn.net/5-unsafe/video-js.css")
+        link(rel="stylesheet" type="text/css" href="static/styles/styles.css")
+    // Тело странциы
+    body
+        +header({title: "Home"})
+        main.base
+            +home-page-content({
+                videoData: {
+                    src: "./static/videos/intro8.2.mp4", preview:  "./static/images/lkl-logo.png", title: "intro8.2", author: "mr lKlAlRlAlBlIlNl", source: "https://youtu.be/y9Z-gDcCSmU"
+                },
+                blogData: {data: [
                     {
                         title: "Конкурс! #shirtsstyle",
                         text: "Мы объявляем конкурс, в призовой фонд которого мы выделяем: 2 (два) Mac mini; MacBook Pro в качестве главного приза! Для участия в конкурсе необходимо купить нашем магазине любой товар на сумму не менее 300 рублей. Результаты конкурса будут оглашены 3 сентября 2019 года."
@@ -30,7 +38,17 @@ block body
                         title: "Мы открылись! #shirtsstyle",
                         text: "Сегодня мы рады сообщить Вам прекрасную новость - мы открылись! Наш магазин, начиная с сегоднешнего дня, будет годет готов предоставить вам широкий выбор футболок разых расцветок, сшитых из натурального хлопка."
                     },
-                ]})
-        section.base__section
-            +block({title: {text: "События", level: 2}})
-                +note({image: "./static/images/wg-logo.jpg", title: "Конкурс", date: "3 Сентября 2019", description: "Мы объявляем конкурс, в призовой фонд которого мы выделяем: 2 (два) Mac mini; MacBook Pro в качестве главного приза! Для участия в конкурсе необходимо купить нашем магазине любой товар на сумму не менее 300 рублей. Результаты конкурса будут оглашены 3 сентября 2019 года. "})
+                ]},
+                eventsData: {data: [
+                    {
+                        image: "./static/images/wg-logo.jpg",
+                        title: "Конкурс",
+                        date: "3 Сентября 2019",
+                        description: "Мы объявляем конкурс, в призовой фонд которого мы выделяем: 2 (два) Mac mini; MacBook Pro в качестве главного приза! Для участия в конкурсе необходимо купить нашем магазине любой товар на сумму не менее 300 рублей. Результаты конкурса будут оглашены 3 сентября 2019 года. "
+                    }
+                ]}
+            })
+        script(type="text/javascript" src="./scripts/vendors.js")
+        script(type="text/javascript" src="./scripts/base.js")
+        script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6UQbE2epfLfDfa2uaXCx1soXdAfSFU-c&callback=initMap" async defer)
+        script(src="https://vjs.zencdn.net/5-unsafe/video.js")

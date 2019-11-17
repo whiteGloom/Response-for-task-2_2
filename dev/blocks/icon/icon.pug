@@ -1,7 +1,7 @@
 mixin icon(options)
     -
-        var options = options ? options : {};
-        var {image = "", alt = "image"} = options;
-    .icon&attributes(attributes)
+        options = options || {};
+        const {image = "", alt = "image"} = options;
+    .icon
         .icon__outer
             img.icon__image(src=image alt=alt)

@@ -1,2 +1,5 @@
-mixin stepbar()
-    .stepbar.js-stepbar&attributes(attributes)
+mixin stepbar(options)
+    -
+        options = options || {};
+        const {id = ""} = options;
+    .stepbar.js-stepbar(id=id)

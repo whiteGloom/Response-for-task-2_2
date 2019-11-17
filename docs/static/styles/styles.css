@@ -5,49 +5,39 @@
   margin-top: 0;
 }
 .article__title {
-  font-family: Lato;
+  font-family: Lato, Arial, sans-serif;
   font-wight: bold;
   font-size: 1.25rem;
   text-transform: uppercase;
   text-align: start;
   text-decoration: underline;
 }
-.article__body {
+.article__content {
   margin-top: 0.4rem;
   text-indent: 1rem;
 }
 
 .base {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  margin: 2rem 0;
 }
 .base__section {
   margin-top: 3rem;
 }
-.base__section:first-of-type {
+.base__section:first-child {
   margin-top: 0;
 }
 
-.block__content_margin {
+.block__el {
   margin-top: 0.8rem;
 }
-
-.button {
-  width: 100%;
+.block__el:first-child {
+  margin-top: 0;
 }
+
 .button_blocked {
   cursor: default;
 }
-.button_form_box {
-  width: 100%;
-}
 .button_form_boxEvent {
-  width: 100%;
-}
-.button_form_boxEvent {
-  width: 100%;
-}
-.button_form_boxMini {
   width: 100%;
 }
 .button__outer {
@@ -66,11 +56,8 @@
   border-radius: 2px;
   margin-top: 3px;
 }
+.button__outer_form_boxMini,
 .button__outer_form_boxEvent {
-  border-radius: 2px;
-  margin-top: 2px;
-}
-.button__outer_form_boxMini {
   border-radius: 2px;
   margin-top: 2px;
 }
@@ -263,10 +250,18 @@
 }
 
 .calendar {
-  width: 100%;
   min-width: 13rem;
   overflow: hidden;
   border-radius: 3px;
+}
+.calendar_size_normal {
+  width: 19rem;
+}
+.calendar_size_min {
+  width: 3rem;
+}
+.calendar_size_auto {
+  width: 100%;
 }
 .calendar__header {
   width: 100%;
@@ -278,19 +273,22 @@
   margin-top: 0.6rem;
   font-size: 5.3rem;
   text-align: center;
-  font-family: Lato;
+  font-family: Lato, Arial, sans-serif;
   font-weight: 200;
   color: #fff;
 }
 
-.chart__outer_size_auto {
+.chart {
+  min-width: 8.1rem;
+}
+.chart_size_auto {
   width: 100%;
 }
-.chart__outer_size_fixed {
+.chart_size_min {
   width: 8.1rem;
   height: 8.1rem;
 }
-.chart__outer_type_pie {
+.chart_type_pie {
   padding: 0.6rem;
   box-sizing: border-box;
 }
@@ -345,13 +343,10 @@
   transition: 0.3s all;
   text-decoration: underline;
 }
-.dropdown__option:hover {
-  background-color: #4eb7a8;
-  color: #fff;
-}
+.dropdown__option:hover,
 .dropdown__option:focus {
-  background-color: #4eb7a8;
   color: #fff;
+  background-color: #4eb7a8;
 }
 .dropdown__optionsBox {
   position: absolute;
@@ -412,49 +407,8 @@
   display: table;
 }
 
-.h1 {
-  font-family: Lato;
-  font-weight: bold;
-  font-size: 2.5rem;
-  text-transform: uppercase;
-  border-bottom: 0.2rem solid #4eb7a8;
-}
-.h1_align_center {
-  text-align: center;
-}
-.h1_align_start {
-  text-align: start;
-}
-
-.h2 {
-  font-family: Lato;
-  font-weight: bold;
-  font-size: 1.75rem;
-  text-transform: uppercase;
-  border-bottom: 0.2rem dashed #4eb7a8;
-}
-.h2_align_center {
-  text-align: center;
-}
-.h2_align_start {
-  text-align: start;
-}
-
-.h3 {
-  font-family: Lato;
-  font-weight: bold;
-  font-size: 1.25rem;
-  text-transform: uppercase;
-}
-.h3_align_center {
-  text-align: center;
-}
-.h3_align_start {
-  text-align: start;
-}
-
 .header__title {
-  font-family: Lato;
+  font-family: Lato, Arial, sans-serif;
   font-weight: bold;
   font-size: 2.5rem;
   text-transform: uppercase;
@@ -466,10 +420,6 @@
   width: 75%;
   justify-content: space-between;
   margin: 0.4rem auto 0;
-}
-
-.hr {
-  border: 0.1rem solid #4eb7a8;
 }
 
 .icon {
@@ -605,7 +555,7 @@
   float: left;
   display: inline-block;
   font-style: normal;
-  font-family: Lato;
+  font-family: Lato, Arial, sans-serif;
   font-weight: 200;
   font-size: 2rem;
 }
@@ -647,8 +597,16 @@
 }
 
 .messenger {
-  width: 100%;
   min-width: 12.5rem;
+}
+.messenger_size_min {
+  width: 12.5rem;
+}
+.messenger_size_auto {
+  width: 100%;
+}
+.messenger_size_normal {
+  width: 19.6rem;
 }
 .messenger__header {
   position: relative;
@@ -663,7 +621,7 @@
   padding-top: 1.25rem;
   text-align: center;
   font-size: 2.1rem;
-  font-family: Lato;
+  font-family: Lato, Arial, sans-serif;
   font-weight: 200;
   font-style: normal;
   color: #fff;
@@ -762,6 +720,12 @@
 }
 
 .note {
+  min-width: 19.65rem;
+}
+.note_size_min {
+  width: 19.65rem;
+}
+.note_size_auto {
   width: 100%;
 }
 .note__outer {
@@ -795,16 +759,15 @@
   display: block;
   font-style: normal;
   color: #fff;
+  font-family: Lato, Arial, sans-serif;
 }
 .note__title_type_event {
   margin-top: 1rem;
-  font-family: Lato;
   font-weight: bold;
   font-size: 0.8rem;
   text-transform: uppercase;
 }
 .note__title_type_news {
-  font-family: Lato;
   font-weight: 200;
   font-size: 2rem;
   line-height: 0.85;
@@ -813,20 +776,18 @@
   display: inline-block;
   font-style: normal;
   color: #fff;
+  font-family: Lato, Arial, sans-serif;
 }
 .note__date_type_eventDay {
   font-size: 5rem;
-  font-family: Lato;
   font-weight: 200;
   line-height: 0.8;
 }
 .note__date_type_eventMonth {
-  font-family: Lato;
   font-weight: 200;
   font-size: 2rem;
 }
 .note__date_type_news {
-  font-family: Lato;
   font-weight: bold;
   margin-top: 0.9rem;
   font-size: 0.75rem;
@@ -860,7 +821,7 @@
   flex-wrap: wrap;
 }
 .rate__title {
-  font-family: Lato;
+  font-family: Lato, Arial, sans-serif;
   font-weight: bold;
   font-size: 1.25rem;
   text-transform: uppercase;
@@ -873,6 +834,7 @@
 
 .searchbar {
   width: 100%;
+  min-width: 18rem;
 }
 .searchbar__outer {
   display: flex;
@@ -900,8 +862,14 @@
   background-color: #bf3e1f;
 }
 
-.slider__outer {
-  height: 5rem;
+.slider {
+  min-width: 18rem;
+  min-height: 5rem;
+}
+.slider_size_min {
+  width: 18rem;
+}
+.slider_size_auto {
   width: 100%;
 }
 
@@ -926,6 +894,29 @@
   fill: #fff;
 }
 
+.title {
+  font-family: Lato, Arial, sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.title_align_center {
+  text-align: center;
+}
+.title_align_start {
+  text-align: start;
+}
+.title_level_1 {
+  font-size: 2.5rem;
+  border-bottom: 0.2rem solid #4eb7a8;
+}
+.title_level_2 {
+  font-size: 1.75rem;
+  border-bottom: 0.2rem dashed #4eb7a8;
+}
+.title_level_3 {
+  font-size: 1.25rem;
+}
+
 .toggle__outer {
   position: relative;
   width: 4rem;
@@ -940,6 +931,7 @@
   background-color: #4eb7a8;
 }
 .toggle__handle {
+  top: 0.2rem;
   position: absolute;
   width: 1.2rem;
   height: 1.2rem;
@@ -948,38 +940,34 @@
   transition: 0.2s all;
 }
 .toggle__handle_state_off {
-  top: 0.2rem;
   left: 0.2rem;
 }
 .toggle__handle_state_on {
-  top: 0.2rem;
   left: 2.6rem;
 }
 .toggle__text {
   position: absolute;
+  top: 0.25rem;
   font-size: 0.8rem;
-  font-family: Lato;
+  font-family: Lato, Arial, sans-serif;
   font-weight: bold;
   text-transform: uppercase;
   color: #fff;
   transition: 0.3s all;
 }
 .toggle__text_state_off {
-  top: 0.25rem;
   left: 1.75rem;
 }
 .toggle__text_state_on {
-  top: 0.25rem;
   left: 0.75rem;
 }
 
 .user {
-  width: 100%;
+  width: 18.2rem;
 }
 .user__outer {
   display: flex;
   width: 100%;
-  min-width: 18.2rem;
   justify-content: space-between;
 }
 .user__image {
@@ -1089,7 +1077,7 @@
   display: block;
   font-style: normal;
   text-transform: capitalize;
-  font-family: Lato;
+  font-family: Lato, Arial, sans-serif;
   font-weight: 200;
   font-size: 2.5rem;
   color: #fff;
@@ -1098,7 +1086,7 @@
   display: block;
   color: #fff;
   font-size: 0.8rem;
-  font-family: Lato;
+  font-family: Lato, Arial, sans-serif;
   font-weight: bold;
   font-style: normal;
   text-transform: uppercase;
@@ -1113,20 +1101,28 @@
   color: #fff;
 }
 
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+.wrapper_size_full {
+  width: 100%;
+}
+.wrapper_size_75perc {
+  width: 75%;
+}
+.wrapper_size_half {
+  width: 50%;
+}
 .wrapper_centering {
   margin-left: auto;
   margin-right: auto;
 }
 .wrapper_justify_around {
   justify-content: space-around;
-  display: flex;
 }
 .wrapper_justify_between {
   justify-content: space-between;
-  display: flex;
-}
-.wrapper_justify_unset {
-  display: block;
 }
 
 /***常量***/
@@ -1354,24 +1350,24 @@ i.icon-datepicker-next:before {
 }
 
 @font-face {
-  font-family: "Lato";
+  font-family: 'Lato';
   font-weight: 450;
-  src: url("../fonts/Lato-Regular.otf") format("opentype"), url("../fonts/Lato-Regular.eot?#") format("eot"), url("../fonts/Lato-Regular.ttf") format("truetype"), url("../fonts/Lato-Regular.woff") format("woff"), url("../images/Lato-Regular.svg") format("svg");
+  src: url("../fonts/lato-regular.ttf") format('truetype'), url("../fonts/lato-regular.woff") format('woff'), url("../images/lato-regular.svg") format('svg');
 }
 @font-face {
-  font-family: "Lato";
+  font-family: 'Lato';
   font-weight: bold;
-  src: url("../fonts/Lato-Black.otf") format("opentype"), url("../fonts/Lato-Black.eot?#") format("eot"), url("../fonts/Lato-Black.ttf") format("truetype"), url("../fonts/Lato-Black.woff") format("woff"), url("../images/Lato-Black.svg") format("svg");
+  src: url("../fonts/lato-black.ttf") format('truetype'), url("../fonts/lato-black.woff") format('woff'), url("../images/lato-black.svg") format('svg');
 }
 @font-face {
-  font-family: "Lato";
+  font-family: 'Lato';
   font-weight: 200;
-  src: url("../fonts/Lato-Light.otf") format("opentype"), url("../fonts/Lato-Light.eot?#") format("eot"), url("../fonts/Lato-Light.ttf") format("truetype"), url("../fonts/Lato-Light.woff") format("woff"), url("../images/Lato-Light.svg") format("svg");
+  src: url("../fonts/lato-light.ttf") format('truetype'), url("../fonts/lato-light.woff") format('woff'), url("../images/lato-light.svg") format('svg');
 }
 html {
   color: #4f4f4f;
   font-size: 11pt;
-  font-family: Lato;
+  font-family: Lato, Arial, sans-serif;
   font-weight: 450;
 }
 @media screen and (max-width: 560px) {
@@ -1399,29 +1395,20 @@ body {
   max-width: 594px;
   padding: 3.5rem;
 }
-span {
-  font-family: Lato;
-  font-weight: bold;
-}
 button {
-  padding: 0;
   border: none;
   outline: none;
   background-color: transparent;
   cursor: pointer;
-}
-figure {
-  margin: 0;
-}
-h2 {
-  font-weight: normal;
 }
 p,
 em,
 h1,
 h2,
 h3,
-hr {
+hr,
+figure,
+button {
   margin: 0;
   padding: 0;
 }
@@ -2268,6 +2255,8 @@ Build date: 2018-12-12 00:07:25
 .irs--simple .irs-from,
 .irs--simple .irs-to,
 .irs--simple .irs-single {
+  font-family: Lato;
+  font-weight: bold;
   color: #fff;
   font-size: 0.9rem;
   line-height: 1.333;
@@ -2282,7 +2271,7 @@ Build date: 2018-12-12 00:07:25
   position: absolute;
   display: block;
   content: "";
-  bottom: -6px;
+  bottom: -5px;
   left: 50%;
   width: 0;
   height: 0;

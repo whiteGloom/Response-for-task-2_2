@@ -1,12 +1,12 @@
-include ../h1/h1
+include ../title/title
 include ../button/button
 
 mixin header(options)
     -
-        var options = options ? options : {};
-        var {title = "title"} = options;
+        options = options || {};
+        const {title = "title"} = options;
     header.header
-        +h1({text: title, align: "center"})
+        +title({text: title, level: 1})
         nav.header__nav
             a.header__link(href="./index.html")
                 +button({form: "boxMini", content:"home", theme: "aquamarineAlternate"})

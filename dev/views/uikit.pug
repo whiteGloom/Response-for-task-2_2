@@ -1,104 +1,24 @@
-extends ./template/template
+include ../blocks/content/uikit-page-content
+include ../blocks/header/header
 
-block variables
-    -
-        var page = {};
-        page.pageTitle = "UI kit";
-        page.headerTitle = "UI kit";
-
-block body
-    main.base
-        section.base__section
-            +block({title: {text: "Box buttons", level: 3}})
-                +wrapper({justify: "around"})(style="width: 75%")
-                    +wrapper
-                        +button({form: "boxMini", content:"button", theme: "aquamarine"})
-                    +wrapper
-                        +button({form: "box", content:"button", theme: "aquamarine"})
-                    +wrapper
-                        +button({form: "box", content:"button", theme: "orange"})
-                    +wrapper
-                        +button({form: "boxMini", content:"button", blocked: true})
-        section.base__section
-            +block({title: {text: "Round buttons", level: 3}})
-                +wrapper({justify: "around"})(style="width: 50%")
-                    +wrapper(style="width: 30%")
-                        +button({form: "round", content: "rightArrow", theme: "orange"})
-                    +wrapper(style="width: 30%")
-                        +button({form: "round", content: "rightArrow", theme: "orange"})
-                    +wrapper(style="width: 30%")
-                        +button({form: "round", content: "leftArrow", theme: "aquamarine"})
-                    +wrapper(style="width: 30%")
-                        +button({form: "round", content: "leftArrow", blocked: true})
-        section.base__section
-            +block({title: {text: "Charts", level: 3}})
-                +wrapper({justify: "around"})
-                    +chart({id: "chartTestFirst"})
-                    +chart({id: "chartTestSecond"})
-                    +chart({id: "chartTestThird", type: "pie"})
-        section.base__section
-            +block({title: {text: "Sliders", level: 3}})
-                +wrapper({justify: "between"})
-                    +wrapper({centering: false})(style="width: 45%")
-                        +slider({id: "sliderSimpleTest"})
-                    +wrapper({centering: false})(style="width: 45%")
-                        +slider({id: "sliderPipsTest"})
-        section.base__section
-            +block({title: {text: "Stepbar", level: 3}})
-                +stepbar({id: "stepbarTest"})
-        section.base__section
-            +block({title: {text: "Form / Bars", level: 3}})
-                +wrapper({justify: "between"})
-                    +form({
-                        data: [
-                            {type: "input", properties: {type: "email", name:"email", required: true, placeholder: "E-mail"}},
-                            {type: "input", properties: {type: "password", name: "password", required: true, placeholder: "Password"}},
-                            {type: "input", properties: {form: "box", name: "message", placeholder: "Your message"}},
-                            {text: "The camera is", type: "toggle", properties: {name: "laser", value: "false"}},
-                            {text: "Bomb the moon?", type: "tick", properties: {name:"bomb", value: "true"}},
-                            {type: "dropdown", properties: {
-                                type: "dropdown", data: [
-                                    {value: "Tomsk", text: "Томск"},
-                                    {value: "Kemerovo", text: "Кемерово"},
-                                    {value: "Novosibirsk", text: "Новосибирск"},
-                                    {value: "Krasnoyarsk", text: "Красноярск"}
-                                ]}
-                            }
-                        ]
-                    })(style="width: 45%")
-                    +wrapper({justify: "unset", centering: "false"})(style="width: 45%")
-                        +searchbar({type: "search"})
-                            +input({type: "text", name: "search", color: "orange", placeholder: "Search query", radius: "left"})
-        section.base__section
-            +block({title: {text: "Users", level: 3}})
-                +wrapper({justify: "around"})
-                    +wrapper(style="width: 18.2rem")
-                        +user({color: "gray",  name: "Evgeniy Miller", profession: "whiteGloom", logo: "./static/images/wg-logo.jpg"})
-                    +wrapper(style="width: 18.2rem")
-                        +user({theme: "aquamarine", profession: "profession", theme: "aquamarine", logo: "./static/images/lkl-logo.png"})
-        section.base__section
-            +block({title: {text: "News / events", level: 3}})
-                +wrapper({justify: "between"})
-                    +wrapper(style="width: 19.65rem")
-                        +note({image: "./static/images/wg-logo.jpg", title: "This is a title!", date: "23 November 2001", description: "There must be some description.."})
-                    +wrapper(style="width: 19.65rem")
-                        +note({type: "event", image: "./static/images/wg-logo.jpg", title: "this is a title", dateDay: "23", dateMonth: "Nov", description: "This is a description, I assure you."})
-        section.base__section
-            +block({title: {text: "Map", level: 3}})
-                +map({title: "Meet us!", street: "** Predzavodskaya ST", city: "Seversk, RU", coordinates: '{"lat": 56.590212, "lng": 84.939791}'})
-        section.base__section
-            +block({title: {text: "Calendar / messenger", level: 3}})
-                +wrapper({justify: "between"})
-                    +wrapper(style="width: 19rem")
-                        +calendar
-                    +wrapper(style="width: 19.6rem")
-                        +messenger({
-                            title: "whiteGloom",
-                            logo: "./static/images/wg-logo.jpg",
-                            messages: [
-                                {sender: "interlocutor", text: "Hi! I\"m a Globglogabgalab. I love books, and this basement is a true treasure trove."}
-                            ]
-                        })
-        section.base__section
-            +block({title: {text: "Video", level: 3}})
-                +video({src: "./static/videos/intro8.2.mp4", preview:  "./static/images/lkl-logo.png", title: "intro8.2", author: "mr lKlAlRlAlBlIlNl", source: "https://youtu.be/y9Z-gDcCSmU"})
+doctype html
+html
+    // Шапка страницы
+    head
+        meta(charset="utf-8")
+        title UI Kit
+        link(rel="shortcut icon" href="static/images/favicon.ico" type="image/x-icon")
+        meta(name="description" content="UIKIT")
+        meta(name="Keywords" content="UIKIT")
+        meta(name="viewport" content="initial-scale=1.0, width=device-width")
+        link(rel="stylesheet" type="text/css" href="https://vjs.zencdn.net/5-unsafe/video-js.css")
+        link(rel="stylesheet" type="text/css" href="static/styles/styles.css")
+    // Тело странциы
+    body
+        +header({title: "UI Kit"})
+        main.base
+            +uikit-page-content
+        script(type="text/javascript" src="./scripts/vendors.js")
+        script(type="text/javascript" src="./scripts/base.js")
+        script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6UQbE2epfLfDfa2uaXCx1soXdAfSFU-c&callback=initMap" async defer)
+        script(src="https://vjs.zencdn.net/5-unsafe/video.js")

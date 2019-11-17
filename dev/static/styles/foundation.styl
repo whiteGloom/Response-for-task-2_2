@@ -1,25 +1,25 @@
 @font-face {
-  font-family: "Lato";
+  font-family: 'Lato';
   font-weight: 450;
-  src: url("../fonts/Lato-Regular.otf") format("opentype"),  url("../fonts/Lato-Regular.eot?#") format("eot"), url("../fonts/Lato-Regular.ttf") format("truetype"), url("../fonts/Lato-Regular.woff") format("woff"), url("../images/Lato-Regular.svg") format("svg")
+  src: url('../fonts/lato-regular.ttf') format('truetype'), url('../fonts/lato-regular.woff') format('woff'), url('../images/lato-regular.svg') format('svg')
 }
 
 @font-face {
-  font-family: "Lato";
+  font-family: 'Lato';
   font-weight: bold;
-  src: url("../fonts/Lato-Black.otf") format("opentype"),  url("../fonts/Lato-Black.eot?#") format("eot"), url("../fonts/Lato-Black.ttf") format("truetype"), url("../fonts/Lato-Black.woff") format("woff"), url("../images/Lato-Black.svg") format("svg")
+  src: url('../fonts/lato-black.ttf') format('truetype'), url('../fonts/lato-black.woff') format('woff'), url('../images/lato-black.svg') format('svg')
 }
 
 @font-face {
-  font-family: "Lato";
+  font-family: 'Lato';
   font-weight: 200;
-  src: url("../fonts/Lato-Light.otf") format("opentype"),  url("../fonts/Lato-Light.eot?#") format("eot"), url("../fonts/Lato-Light.ttf") format("truetype"), url("../fonts/Lato-Light.woff") format("woff"), url("../images/Lato-Light.svg") format("svg")
+  src: url('../fonts/lato-light.ttf') format('truetype'), url('../fonts/lato-light.woff') format('woff'), url('../images/lato-light.svg') format('svg')
 }
 
 html
   color: #4f4f4f
   font-size: 11pt
-  font-family: Lato
+  font-family: Lato, Arial, sans-serif
   font-weight: 450
   @media screen and (max-width: 560px)
     font-size: 10pt
@@ -35,23 +35,12 @@ body
   max-width: 594px
   padding: 3.5rem
 
-span
-  font-family: Lato
-  font-weight: bold
-
 button
-  padding: 0
   border: none; outline: none
   background-color: transparent
   cursor: pointer
 
-figure
-  margin: 0
-
-h2
-  font-weight: normal
-
-p, em, h1, h2, h3, hr
+p, em, h1, h2, h3, hr, figure, button
   margin: 0
   padding: 0
 

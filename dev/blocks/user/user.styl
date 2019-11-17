@@ -1,92 +1,95 @@
 .user
-  width: 100%
+  width: 18.2rem
 
-.user__outer
-  display: flex
-  width: 100%
-  min-width: 18.2rem
-  justify-content: space-between
+  &__outer
+    display: flex
+    width: 100%
+    justify-content: space-between
 
-.user__image
-  width: 6.3rem
+  &__image
+    width: 6.3rem
 
-.user__info
-  position: relative
-  width: 11.15rem
-  min-height: 6.3rem
-  border-radius: 6px
-  text-align: center
+  &__info
+    position: relative
+    width: 11.15rem
+    min-height: 6.3rem
+    border-radius: 6px
+    text-align: center
 
-.user__info::before
-  position: absolute
-  display: block
-  content: ""
-  left: -13px
-  top: 50%
-  width: 0
-  height: 0
-  margin-top: -7px
-  overflow: hidden
-  border: 7px solid transparent
-  border-right-color: inherit
+    &::before
+      position: absolute
+      display: block
+      content: ""
+      left: -13px
+      top: 50%
+      width: 0
+      height: 0
+      margin-top: -7px
+      overflow: hidden
+      border: 7px solid transparent
+      border-right-color: inherit
 
-.user__info_theme_aquamarine
-  background-color: #4eb7a8
-  border-color: #4eb7a8
+    &_theme
+      &_aquamarine
+        background-color: #4eb7a8
+        border-color: #4eb7a8
 
-.user__info_theme_gray
-  background-color: #e5e5e5
-  border-color: #e5e5e5
+      &_gray
+        background-color: #e5e5e5
+        border-color: #e5e5e5
 
-.user__name
-  display: block
-  margin-top: .6rem
-  font-size: 1.2rem
-  font-style: normal
+  &__name
+    display: block
+    margin-top: .6rem
+    font-size: 1.2rem
+    font-style: normal
 
-.user__name_theme_aquamarine
-  color: white
+    &_theme
+      &_aquamarine
+        color: white
 
-.user__name_theme_gray
-  color: #e75735
+      &_gray
+        color: #e75735
 
-.user__profession
-  display: block
-  font-style: normal
-  text-transform: uppercase
-  font-size: .8rem
-  font-weight: bold
+  &__profession
+    display: block
+    font-style: normal
+    text-transform: uppercase
+    font-size: .8rem
+    font-weight: bold
 
-.user__profession_theme_aquamarine
-  color: white
+    &_theme
+      &_aquamarine
+        color: white
 
-.user__profession_theme_gray
-  color: #4f4f4f
+      &_gray
+        color: #4f4f4f
 
-.user__socialBox
-  display: flex
-  width: 7rem
-  margin: .8rem auto 0 auto
-  justify-content: space-between
+  &__socialBox
+    display: flex
+    width: 7rem
+    margin: .8rem auto 0 auto
+    justify-content: space-between
 
-.user__social
-  width: 1.45rem
-  height: 1.45rem
-  background-size: auto
-  background-position: center
-  background-repeat: no-repeat
-  transition: .3s all
+  &__social
+    width: 1.45rem
+    height: 1.45rem
+    background-size: auto
+    background-position: center
+    background-repeat: no-repeat
+    transition: .3s all
 
-.user__social_theme_aquamarine
-  fill: white
-  
-.user__social_theme_aquamarine:hover
-.user__social_theme_aquamarine:focus
-  fill: #e75735
+    &_theme
+      &_aquamarine
+        fill: white
+        
+      &_aquamarine:hover
+      &_aquamarine:focus
+        fill: #e75735
 
-.user__social_theme_gray
-  fill: #757575
-  
-.user__social_theme_gray:hover
-.user__social_theme_gray:focus
-  fill: #e75735
+      &_gray
+        fill: #757575
+        
+      &_gray:hover
+      &_gray:focus
+        fill: #e75735

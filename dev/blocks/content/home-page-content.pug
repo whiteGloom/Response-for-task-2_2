@@ -1,0 +1,14 @@
+include ../video/video
+include ../blog-block/blog-block
+include ../events-block/events-block
+
+mixin home-page-content(options)
+    -
+        options = options || {};
+        const {videoData = {}, blogData = {}, eventsData = {}} = options;
+    section.base__section
+        +video(videoData)
+    section.base__section
+        +blog-block(blogData)
+    section.base__section
+        +events-block(eventsData)

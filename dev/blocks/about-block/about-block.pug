@@ -1,0 +1,13 @@
+include ../p/p
+include ../title/title
+
+mixin about-block(options)
+    -
+        options = options || {};
+        const {data = []} = options;
+    section.block
+        .block__title
+            +title({text: "Кратко о компании"})
+        .block__el
+            for item in data
+                +p({text: item.text})

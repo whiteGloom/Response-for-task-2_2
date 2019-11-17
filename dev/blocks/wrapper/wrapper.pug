@@ -1,7 +1,7 @@
 mixin wrapper(options)
     -
-        var options = options ? options : {};
-        var {justify = "unset", centering = true} = options;
-    .wrapper(class="" + (" wrapper_justify_" + justify) + (centering ? " wrapper_centering" : ""))&attributes(attributes)
+        options = options || {};
+        const {justify = "between", centering = true, size = "fill"} = options;
+    .wrapper(class="" + (" wrapper_justify_" + justify) + (" wrapper_size_" + size) + (centering ? " wrapper_centering" : ""))
         if block
             block

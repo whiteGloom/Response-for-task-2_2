@@ -1,12 +1,13 @@
+include ../input/input
+
 mixin searchbar(options)
     -
-        var options = options ? options : {};
-        var {type = "search", name = "searchbar"} = options;
-    .searchbar.js-searchbar(data-type=type data-name=name)&attributes(attributes)
+        options = options || {};
+        const {name = "searchbar"} = options;
+    .searchbar.js-searchbar(data-type=type data-name=name)
         .searchbar__outer
             .searchbar__input.js-searchbar__input
-                if block
-                    block
+                +input({type: "text", name: "search", color: "orange", placeholder: "Search query", radius: "left"})
             .searchbar__button.js-searchbar__button
                 svg(width="100%" height="100%" viewbox="0 0 28 28")
                     g

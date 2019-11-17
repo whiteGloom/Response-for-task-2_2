@@ -2,8 +2,9 @@ include ../button/button
 
 mixin note(options)
     -
-        var options = options ? options : {};
-        var {
+        options = options || {};
+        const {
+            size = "min",
             type = "news",
             title = "title",
             image = "",
@@ -13,7 +14,7 @@ mixin note(options)
             description = "",
             alt = "noteAlternate"
         } = options;
-    .note&attributes(attributes)
+    .note(class="" + ("note_size_" + size))
         .note__outer
             .note__imageBox
                 img.note__image(src=image alt=alt)

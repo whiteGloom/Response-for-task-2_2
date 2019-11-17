@@ -2,8 +2,8 @@ include ../chart/chart
 
 mixin rate(options)
     -
-        var options = options ? options : {};
-        var {title = "", id = ""} = options;
+        options = options || {};
+        const {title = "", id = ""} = options;
     .rate
         .rate__title= title
         .rate__value

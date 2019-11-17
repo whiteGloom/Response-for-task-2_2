@@ -4,7 +4,7 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>About us</title>
+	<title>About</title>
 	<link rel="shortcut icon" href="static/images/favicon.ico" type="image/x-icon">
 	<meta name="description" content="UIKIT">
 	<meta name="Keywords" content="UIKIT">
@@ -14,12 +14,11 @@
 </head><!-- Тело странциы-->
 
 <body>
-	<!-- Хедер страницы-->
 	<header class="header">
-		<h1 class="h1  h1_align_center">About us</h1>
+		<h1 class="title title_level_1 title_align_center">About</h1>
 		<nav class="header__nav">
 			<a class="header__link" href="./index.html">
-				<button class="button  button_theme_aquamarineAlternate" type="button">
+				<button class="button  button_theme_aquamarineAlternate button_form_boxMini" type="button">
 					<div class="button__outer  button__outer_form_boxMini button__outer_theme_aquamarineAlternate">
 						<div class="button__inner  button__inner_form_boxMini button__inner_theme_aquamarineAlternate">
 							<div class="button__rippleEffect"></div>
@@ -29,7 +28,7 @@
 				</button>
 			</a>
 			<a class="header__link" href="./about.html">
-				<button class="button  button_theme_aquamarineAlternate" type="button">
+				<button class="button  button_theme_aquamarineAlternate button_form_boxMini" type="button">
 					<div class="button__outer  button__outer_form_boxMini button__outer_theme_aquamarineAlternate">
 						<div class="button__inner  button__inner_form_boxMini button__inner_theme_aquamarineAlternate">
 							<div class="button__rippleEffect"></div>
@@ -39,7 +38,7 @@
 				</button>
 			</a>
 			<a class="header__link" href="./contacts.html">
-				<button class="button  button_theme_aquamarineAlternate" type="button">
+				<button class="button  button_theme_aquamarineAlternate button_form_boxMini" type="button">
 					<div class="button__outer  button__outer_form_boxMini button__outer_theme_aquamarineAlternate">
 						<div class="button__inner  button__inner_form_boxMini button__inner_theme_aquamarineAlternate">
 							<div class="button__rippleEffect"></div>
@@ -49,7 +48,7 @@
 				</button>
 			</a>
 			<a class="header__link" href="./uikit.html">
-				<button class="button  button_theme_aquamarineAlternate" type="button">
+				<button class="button  button_theme_aquamarineAlternate button_form_boxMini" type="button">
 					<div class="button__outer  button__outer_form_boxMini button__outer_theme_aquamarineAlternate">
 						<div class="button__inner  button__inner_form_boxMini button__inner_theme_aquamarineAlternate">
 							<div class="button__rippleEffect"></div>
@@ -59,54 +58,50 @@
 				</button>
 			</a>
 		</nav>
-	</header><!-- Основная часть-->
+	</header>
 	<main class="base">
 		<section class="base__section">
-			<div class="block">
-				<header>
-					<h2 class="h2  h2_align_center">Кратко о компании</h2>
-				</header>
-				<div class="block__content block__content_margin"><p class="p">Компания была основана в начале 2019 года, в Томске. На момент создания ей занималось всего 6 человек. Однако, уже к маю у нас было более 1500 заказов, а число работников перевалило за 60.</p><p class="p">У нашей компании есть принципы. Для нашей продукции мы выбираем лучшие материалы, стараясь сохранить высокое качество и приятную для покупателя цену. Мы никогда не откажем клиенту в помощи, если она ему потребуется, не стесняйтесь обращаться за ней!</p>
+			<section class="block">
+				<div class="block__title">
+					<h2 class="title title_level_2 title_align_center">Кратко о компании</h2>
 				</div>
-			</div>
+				<div class="block__el"><p class="p">Компания была основана в начале 2019 года, в Томске. На момент создания ей занималось всего 6 человек. Однако, уже к маю у нас было более 1500 заказов, а число работников перевалило за 60.</p><p class="p">У нашей компании есть принципы. Для нашей продукции мы выбираем лучшие материалы, стараясь сохранить высокое качество и приятную для покупателя цену. Мы никогда не откажем клиенту в помощи, если она ему потребуется, не стесняйтесь обращаться за ней!</p>
+				</div>
+			</section>
 		</section>
 		<section class="base__section">
 			<div class="block">
-				<header>
-					<h2 class="h2  h2_align_center">Наши показатели</h2>
-				</header>
-				<div class="block__content block__content_margin">
+				<div class="block__title">
+					<h2 class="title title_level_2 title_align_center">Наши показатели</h2>
+				</div>
+				<div class="block__el">
 					<div class="block">
-						<header>
-							<h3 class="h3  h3_align_center">Желаемый охват городов</h3>
-						</header>
-						<div class="block__content block__content_margin">
-							<div class="stepbar js-stepbar"></div>
+						<div class="block__title">
+							<h3 class="title title_level_3 title_align_center">Желаемый охват городов</h3>
+						</div>
+						<div class="block__el">
+							<div class="stepbar js-stepbar" id="stepbarTest"></div>
 						</div>
 					</div>
-					<div class="wrapper  wrapper_justify_around wrapper_centering">
+				</div>
+				<div class="block__el">
+					<div class="wrapper  wrapper_justify_around wrapper_size_fill wrapper_centering">
 						<div class="rate">
 							<div class="rate__title">Рейтинг</div>
 							<div class="rate__value">
-								<div class="chart">
-									<div class="chart__outer  chart__outer_size_fixed chart__outer_type_progress" id="chartTestFirst"></div>
-								</div>
+								<div class="chart  chart_size_min chart_type_progress" id="chartTestFirst"></div>
 							</div>
 						</div>
 						<div class="rate">
 							<div class="rate__title">Ассортимент</div>
 							<div class="rate__value">
-								<div class="chart">
-									<div class="chart__outer  chart__outer_size_fixed chart__outer_type_progress" id="chartTestSecond"></div>
-								</div>
+								<div class="chart  chart_size_min chart_type_progress" id="chartTestSecond"></div>
 							</div>
 						</div>
 						<div class="rate">
 							<div class="rate__title">% Категорий</div>
 							<div class="rate__value">
-								<div class="chart">
-									<div class="chart__outer  chart__outer_size_fixed chart__outer_type_progress" id="chartTestThird"></div>
-								</div>
+								<div class="chart  chart_size_min chart_type_progress" id="chartTestThird"></div>
 							</div>
 						</div>
 					</div>
@@ -115,10 +110,10 @@
 		</section>
 		<section class="base__section">
 			<div class="block">
-				<header>
-					<h2 class="h2  h2_align_center">Где работаем</h2>
-				</header>
-				<div class="block__content block__content_margin"><p class="p">На данный момент в зону покрытия нашей компании входят города: <strong> Томск, Асино, Северск. </strong> В ближайшее время в этот список также попадёт Кемерово. Для клиентов из других городов мы можем огранизовать доставку по почте. Доставка по почте доступна для всех стран СНГ. За подробностями доставки необходимо обратиться к менеджеру.</p>
+				<div class="block__title">
+					<h2 class="title title_level_2 title_align_center">Где работаем</h2>
+				</div>
+				<div class="block__el"><p class="p">На данный момент в зону покрытия нашей компании входят города: <strong> Томск, Асино, Северск. </strong> В ближайшее время в этот список также попадёт Кемерово. Для клиентов из других городов мы можем огранизовать доставку по почте. Доставка по почте доступна для всех стран СНГ. За подробностями доставки необходимо обратиться к менеджеру.</p>
 				</div>
 			</div>
 		</section>

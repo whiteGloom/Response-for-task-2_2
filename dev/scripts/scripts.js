@@ -1,12 +1,12 @@
 // Test scripts
 $(document).ready(() => {
-	var inputs 			= input.mkArr();
-	var toggles 		= toggle.mkArr();
-	var ticks 			= tick.mkArr();
-	var forms 			= form.mkArr();
-	var dropdowns 		= dropdown.mkArr();
-	var searchbars 		= searchbar.mkArr();
-	window.initMap 	= map.mkArr();
+	let inputs = input.mkArr();
+	let toggles = toggle.mkArr();
+	let ticks = tick.mkArr();
+	let forms = form.mkArr();
+	let dropdowns = dropdown.mkArr();
+	let searchbars = searchbar.mkArr();
+	window.initMap = map.mkArr();
 
 	$(".js-calendar__holder").datetimepicker({
 		date: new Date(),
@@ -23,6 +23,7 @@ $(document).ready(() => {
 			}
 		]
 	});
+
 	chart.newChart({
 		target: "#chartTestSecond",
 		type: "progress",
@@ -33,6 +34,7 @@ $(document).ready(() => {
 			}
 		]
 	});
+
 	chart.newChart({
 		target: "#chartTestThird",
 		type: "pie",
@@ -55,19 +57,22 @@ $(document).ready(() => {
 			}
 		]
 	});
-    $($(".js-slider__holder")[0]).ionRangeSlider({
-    	min: 0,
-    	max: 100,
-        from: 40,
-        skin: "simple"
-    });
-    $($(".js-slider__holder")[1]).ionRangeSlider({
-    	min: 0,
-    	max: 100,
-        from: 40,
-        grid: true,
-        skin: "pips"
-    });
+
+	$(".js-slider__holder").eq(0).ionRangeSlider({
+		min: 0,
+		max: 100,
+		from: 40,
+		skin: "simple"
+	});
+
+	$(".js-slider__holder").eq(1).ionRangeSlider({
+		min: 0,
+		max: 100,
+		from: 40,
+		grid: true,
+		skin: "pips"
+	});
+
 	$(".js-stepbar").stepbar({
 		items: ["1", "2", "3", "4", "5"],
 		current: 3

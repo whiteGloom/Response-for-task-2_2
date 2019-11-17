@@ -1,25 +1,40 @@
-extends ./template/template
+include ../blocks/content/about-page-content
+include ../blocks/header/header
 
-block variables
-    -
-        var page = {};
-        page.pageTitle = "About us";
-        page.headerTitle = "About us";
-
-block body
-    main.base
-        section.base__section
-            +block({title: {text: "Кратко о компании", level: 2}})
-                +p({text: "Компания была основана в начале 2019 года, в Томске. На момент создания ей занималось всего 6 человек. Однако, уже к маю у нас было более 1500 заказов, а число работников перевалило за 60."})
-                +p({text: "У нашей компании есть принципы. Для нашей продукции мы выбираем лучшие материалы, стараясь сохранить высокое качество и приятную для покупателя цену. Мы никогда не откажем клиенту в помощи, если она ему потребуется, не стесняйтесь обращаться за ней!"})
-        section.base__section
-            +block({title: {text: "Наши показатели", level: 2}})
-                +block({title: {text: "Желаемый охват городов", level: 3}})
-                    +stepbar({id: "stepbarTest"})
-                +wrapper({justify: "around"})
-                    +rate({title: "Рейтинг", id: "chartTestFirst"})
-                    +rate({title: "Ассортимент", id: "chartTestSecond"})
-                    +rate({title: "% Категорий", id: "chartTestThird"})
-        section.base__section
-            +block({title: {text: "Где работаем", level: 2}})
-                +p({text: "На данный момент в зону покрытия нашей компании входят города: <strong> Томск, Асино, Северск. </strong> В ближайшее время в этот список также попадёт Кемерово. Для клиентов из других городов мы можем огранизовать доставку по почте. Доставка по почте доступна для всех стран СНГ. За подробностями доставки необходимо обратиться к менеджеру."})
+doctype html
+html
+    // Шапка страницы
+    head
+        meta(charset="utf-8")
+        title About
+        link(rel="shortcut icon" href="static/images/favicon.ico" type="image/x-icon")
+        meta(name="description" content="UIKIT")
+        meta(name="Keywords" content="UIKIT")
+        meta(name="viewport" content="initial-scale=1.0, width=device-width")
+        link(rel="stylesheet" type="text/css" href="https://vjs.zencdn.net/5-unsafe/video-js.css")
+        link(rel="stylesheet" type="text/css" href="static/styles/styles.css")
+    // Тело странциы
+    body
+        +header({title: "About"})
+        main.base
+            +about-page-content({
+                aboutData: {data: [
+                    {text: "Компания была основана в начале 2019 года, в Томске. На момент создания ей занималось всего 6 человек. Однако, уже к маю у нас было более 1500 заказов, а число работников перевалило за 60."},
+                    {text: "У нашей компании есть принципы. Для нашей продукции мы выбираем лучшие материалы, стараясь сохранить высокое качество и приятную для покупателя цену. Мы никогда не откажем клиенту в помощи, если она ему потребуется, не стесняйтесь обращаться за ней!"}
+                ]},
+                statsData: {
+                    coverageData: {id: "stepbarTest"},
+                    rateData: [
+                        {title: "Рейтинг", id: "chartTestFirst"},
+                        {title: "Ассортимент", id: "chartTestSecond"},
+                        {title: "% Категорий", id: "chartTestThird"}
+                    ]
+                },
+                workingAreaData: {data: [
+                    {text: "На данный момент в зону покрытия нашей компании входят города: <strong> Томск, Асино, Северск. </strong> В ближайшее время в этот список также попадёт Кемерово. Для клиентов из других городов мы можем огранизовать доставку по почте. Доставка по почте доступна для всех стран СНГ. За подробностями доставки необходимо обратиться к менеджеру."}
+                ]}
+            })
+        script(type="text/javascript" src="./scripts/vendors.js")
+        script(type="text/javascript" src="./scripts/base.js")
+        script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6UQbE2epfLfDfa2uaXCx1soXdAfSFU-c&callback=initMap" async defer)
+        script(src="https://vjs.zencdn.net/5-unsafe/video.js")

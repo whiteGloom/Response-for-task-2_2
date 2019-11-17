@@ -4,16 +4,16 @@ include ../button/button
 
 mixin messenger(options)
     -
-        var options = options ? options : {};
-        var {
-            size = "fixed",
+        options = options || {};
+        const {
+            size = "normal",
             title = "title",
             logo = "",
             messages = [],
             sendButtonTheme = "aquamarine",
             inputPlaceholder = "Your message"
         } = options;
-    .messenger&attributes(attributes)
+    .messenger(class="" + (" messenger_size_" + size))
         .messenger__header
             em.messenger__title= title
             .messenger__image

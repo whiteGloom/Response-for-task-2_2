@@ -1,44 +1,44 @@
 .video
   width: 100%
 
-.video__outer
-  width: 100%
-  position: relative
+  &__outer
+    width: 100%
+    position: relative
 
-.video__info
-  position: absolute
-  padding: 1.8rem 2.7rem
-  opacity: 0
-  transition: .3s all
-  z-index: 1
+  &__info
+    position: absolute
+    padding: 1.8rem 2.7rem
+    opacity: 0
+    transition: .3s all
+    z-index: 1
 
-.video__info:hover
-.video__info:focus
-  opacity: 1
+    &:hover
+    &:focus
+      opacity: 1
 
-.video__title
-  display: block
-  font-style: normal
-  text-transform: capitalize
-  font-family: Lato
-  font-weight: 200
-  font-size: 2.5rem
-  color: white
+  &__title
+    display: block
+    font-style: normal
+    text-transform: capitalize
+    font-family: Lato, Arial, sans-serif
+    font-weight: 200
+    font-size: 2.5rem
+    color: white
 
-.video__author
-  display: block
-  color: white
-  font-size: .8rem
-  font-family: Lato
-  font-weight: bold
-  font-style: normal
-  text-transform: uppercase
+  &__author
+    display: block
+    color: white
+    font-size: .8rem
+    font-family: Lato, Arial, sans-serif
+    font-weight: bold
+    font-style: normal
+    text-transform: uppercase
 
-.video__author::before
-  content: 'from '
+    &::before
+      content: 'from '
 
-.video__link
-  display: block
-  margin-top: 1.6rem
-  text-decoration: none
-  color: white
+  &__link
+    display: block
+    margin-top: 1.6rem
+    text-decoration: none
+    color: white

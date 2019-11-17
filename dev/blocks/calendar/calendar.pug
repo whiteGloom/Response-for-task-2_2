@@ -1,8 +1,9 @@
-//- Миксин создаёт календарь.
-mixin calendar()
+mixin calendar(options)
     -
-        var day = (new Date()).getDate();
-    .calendar&attributes(attributes)
+        options = options || {};
+        const {size = "normal"} = options;
+        const day = (new Date()).getDate();
+    .calendar(class="" + (" calendar_size_" + size))
         .calendar__header
             .calendar__today= day
         .calendar__holder.js-calendar__holder

@@ -1,8 +1,8 @@
 mixin map(options)
     -
-        var options = options ? options : {};
-        var {title = "title", coordinates = {}, street = "street", city = "city"} = options;
-    .map.js-map(data-coordinates=coordinates)&attributes(attributes)
+        options = options || {};
+        const {title = "title", coordinates = {}, street = "street", city = "city"} = options;
+    .map.js-map(data-coordinates=coordinates)
         .map__outer
             .map__holder.js-map__holder
             .map__overlay

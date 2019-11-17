@@ -1,16 +1,15 @@
-.chart{}
+.chart
+  min-width: 8.1rem
+  
+  &_size
+    &_auto
+      width: 100%
 
-.chart__outer{}
+    &_min
+      width: 8.1rem
+      height: 8.1rem
 
-.chart__outer_size_auto
-  width: 100%
-
-.chart__outer_size_fixed
-  width: 8.1rem
-  height: 8.1rem
-
-.chart__outer_type_pie
-  padding: .6rem
-  box-sizing: border-box
-
-.chart__outer_type_progress{}
+  &_type
+    &_pie
+      padding: .6rem
+      box-sizing: border-box

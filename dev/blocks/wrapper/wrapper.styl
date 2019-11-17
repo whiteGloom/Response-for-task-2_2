@@ -1,16 +1,24 @@
-.wrapper{}
-
-.wrapper_centering
-  margin-left: auto
-  margin-right: auto
-
-.wrapper_justify_around
-  justify-content: space-around
+.wrapper
   display: flex
+  flex-wrap: wrap
 
-.wrapper_justify_between
-  justify-content: space-between
-  display: flex
+  &_size
+    &_full
+      width: 100%
+      
+    &_75perc
+      width: 75%
+      
+    &_half
+      width: 50%
 
-.wrapper_justify_unset
-  display: block
+  &_centering
+    margin-left: auto
+    margin-right: auto
+
+  &_justify
+	  &_around
+	    justify-content: space-around
+
+	  &_between
+	    justify-content: space-between

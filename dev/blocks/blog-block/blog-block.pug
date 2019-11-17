@@ -1,0 +1,11 @@
+include ../article/article
+
+mixin blog-block(options)
+    -
+        options = options || {};
+        const {data = []} = options;
+    .block
+        .block__title
+            +title({text: "Блог"})
+        .block__el
+            +article({data: data})
