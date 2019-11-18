@@ -1,5 +1,6 @@
 include ../wrapper/wrapper
 include ../button/button
+include ../button-round/button-round
 include ../chart/chart
 include ../slider/slider
 include ../stepbar/stepbar
@@ -31,10 +32,10 @@ mixin uikit-page-content(options)
                 +title({text: "Round buttons", level: 3})
             .block__el
                 +wrapper({justify: "around", size: "half"})
-                    +button({form: "round", content: "rightArrow", theme: "orange"})
-                    +button({form: "round", content: "rightArrow", theme: "orange"})
-                    +button({form: "round", content: "leftArrow", theme: "aquamarine"})
-                    +button({form: "round", content: "leftArrow", blocked: true})
+                    +button-round({theme: "orange"})
+                    +button-round({theme: "orange"})
+                    +button-round({content: "leftArrow",})
+                    +button-round({content: "leftArrow", blocked: true})
     section.base__section
         .block
             .block__title

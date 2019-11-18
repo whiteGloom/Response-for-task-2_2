@@ -1,40 +1,23 @@
 mixin button(options)
     -
-        options = options ? options : {};
-        let {form = "box", type = "button", blocked, content = "button", theme} = options;
-            theme = theme && !blocked ? theme : false;
+        options = options || {};
+        let {form = "box", type = "button", blocked = false, size, content = "button", theme = "aquamarine"} = options;
 
-    button.button(type=type class="" + (blocked ? " button_blocked" : "") + (theme ? " button_theme_" + theme : "") + (" button_form_" + form))
+    button.button(type=type class="" + 
+        (blocked ? " button_blocked" : "") + 
+        (" button_theme_" + theme) + 
+        (size ? " button_size_" + size : "") + 
+        (" button_form_" + form))
         .button__outer(class="" +
-                        (" button__outer_form_" + form) +
-                        (theme ? " button__outer_theme_" + theme : "") +
-                        (blocked ? " button__outer_blocked" : ""))
+            (" button__outer_form_" + form) +
+            (" button__outer_theme_" + theme) +
+            (blocked ? " button__outer_blocked" : ""))
             .button__inner(class="" +
-                            (" button__inner_form_" + form) +
-                            (theme ? " button__inner_theme_" + theme : "") +
-                            (blocked ? " button__inner_blocked" : ""))
-                if blocked !== true
-                    .button__rippleEffect
-                case form
-                    when "box" 
-                    when "boxMini"
-                    when "boxEvent"
-                        .button__content(class="" + (" button__content_form_" + form) + (" button__content_theme_" + theme))= content
-
-                    when "round"
-                        svg.button__content(viewbox="0 0 44 44" class="" +
-                                                                (" button__content_form_" + form) +
-                                                                (theme ? " button__content_theme_" + theme : "") +
-                                                                (blocked ? " button__content_blocked" : ""))
-
-                            case content
-                                when "rightArrow"
-                                when "button"
-                                    g(transform="translate(25, 11) rotate(45)")
-                                        rect(width="4" height="17")
-                                        rect(width="17" height="4" y="13")
-
-                                when "leftArrow"
-                                    g(transform="translate(20, 11) rotate(45)")
-                                        rect(width="4" height="17" x="13")
-                                        rect(width="17" height="4")
+                (" button__inner_form_" + form) +
+                (" button__inner_theme_" + theme) +
+                (blocked ? " button__inner_blocked" : ""))
+                .button__rippleEffect(class="" + (!blocked ? " button__rippleEffect_active" : ""))
+                .button__content(class="" +
+                    (" button__content_form_" + form) +
+                    (" button__content_theme_" + theme) +
+                    (blocked ? " button__content_blocked" : ""))= content
