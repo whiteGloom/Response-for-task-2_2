@@ -14,27 +14,27 @@
     border-radius: 100%
     height: 100%
 
-    .button-round &&_blocked
-    .button-round:hover &&_blocked
-    .button-round:active &&_blocked
-    .button-round:focus &&_blocked
+    ~/ &&_blocked
+    ~/:hover &&_blocked
+    ~/:active &&_blocked
+    ~/:focus &&_blocked
       background-color: #e5e5e5
 
     &_theme
       &_aquamarine
         background-color: #4eb7a8
         
-      .button-round:hover &_aquamarine
-      .button-round:focus &_aquamarine
-      .button-round:active &_aquamarine
+      ~/:hover &_aquamarine
+      ~/:focus &_aquamarine
+      ~/:active &_aquamarine
         background-color: #28a290
 
       &_orange
         background-color: #e75735
       
-      .button-round:hover &_orange
-      .button-round:focus &_orange
-      .button-round:active &_orange
+      ~/:hover &_orange
+      ~/:focus &_orange
+      ~/:active &_orange
         background-color: #bf3e1f
 
   &__inner
@@ -43,10 +43,10 @@
     border-width: 3px
     border-style: solid
 
-    .button-round &&_blocked
-    .button-round:hover &&_blocked
-    .button-round:focus &&_blocked
-    .button-round:active &&_blocked
+    ~/ &&_blocked
+    ~/:hover &&_blocked
+    ~/:focus &&_blocked
+    ~/:active &&_blocked
       background-color: #e5e5e5
       border-color: #e5e5e5
 
@@ -55,18 +55,18 @@
         background-color: white
         border-color: #4eb7a8
         
-      .button-round:hover &_aquamarine
-      .button-round:focus &_aquamarine
-      .button-round:active &_aquamarine
+      ~/:hover &_aquamarine
+      ~/:focus &_aquamarine
+      ~/:active &_aquamarine
         background-color: #4eb7a8
 
       &_orange
         background-color: white
         border-color: #e75735
         
-      .button-round:hover &_orange
-      .button-round:focus &_orange
-      .button-round:active &_orange
+      ~/:hover &_orange
+      ~/:focus &_orange
+      ~/:active &_orange
         background-color: #e75735
 
   &__rippleEffect
@@ -78,10 +78,10 @@
     transition: .5s all
     z-index: 1
     
-    .button:hover &_active
+    ~/:hover &_active
       background: radial-gradient(circle, white 1%, transparent 1%) center/15000%
       
-    .button:active &_active
+    ~/:active &_active
       background-size: 100%
       transition: 0s all
       opacity: .4
@@ -92,10 +92,10 @@
     width: 3rem
     height: 3rem
 
-    .button-round &&_blocked
-    .button-round:hover &&_blocked
-    .button-round:active &&_blocked
-    .button-round:focus &&_blocked
+    ~/ &&_blocked
+    ~/:hover &&_blocked
+    ~/:active &&_blocked
+    ~/:focus &&_blocked
       color: white
       fill: white
 
@@ -104,9 +104,9 @@
         color: #4eb7a8
         fill: #4eb7a8
         
-      .button-round:hover &_aquamarine
-      .button-round:focus &_aquamarine
-      .button-round:active &_aquamarine
+      ~/:hover &_aquamarine
+      ~/:focus &_aquamarine
+      ~/:active &_aquamarine
         color: white
         fill: white
 
@@ -114,8 +114,8 @@
         color: #e34a26
         fill: #e34a26
         
-      .button-round:hover &_orange
-      .button-round:focus &_orange
-      .button-round:active &_orange
+      ~/:hover &_orange
+      ~/:focus &_orange
+      ~/:active &_orange
         color: white
         fill: white
