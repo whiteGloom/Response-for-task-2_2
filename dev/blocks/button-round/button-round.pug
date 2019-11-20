@@ -9,21 +9,18 @@ mixin button-round(options)
         .button-round__outer(class="" +
             (" button-round__outer_theme_" + theme) +
             (blocked ? " button-round__outer_blocked" : ""))
-            .button-round__inner(class="" +
-                (" button-round__inner_theme_" + theme) +
-                (blocked ? " button-round__inner_blocked" : ""))
-                .button-round__rippleEffect(class="" + 
-                    (!blocked ? " button-round__rippleEffect_active" : ""))
-                svg.button-round__content(viewbox="0 0 44 44" class="" +
-                    (" button-round__content_theme_" + theme) +
-                    (blocked ? " button-round__content_blocked" : ""))
-                    case content
-                        when "rightArrow"
-                            g(transform="translate(25, 11) rotate(45)")
-                                rect(width="4" height="17")
-                                rect(width="17" height="4" y="13")
+            .button-round__rippleEffect(class="" + 
+                (!blocked ? " button-round__rippleEffect_active" : ""))
+            svg.button-round__content(viewbox="0 0 44 44" class="" +
+                (" button-round__content_theme_" + theme) +
+                (blocked ? " button-round__content_blocked" : ""))
+                case content
+                    when "rightArrow"
+                        g(transform="translate(25, 11) rotate(45)")
+                            rect(width="4" height="17")
+                            rect(width="17" height="4" y="13")
 
-                        when "leftArrow"
-                            g(transform="translate(20, 11) rotate(45)")
-                                rect(width="4" height="17" x="13")
-                                rect(width="17" height="4")
+                    when "leftArrow"
+                        g(transform="translate(20, 11) rotate(45)")
+                            rect(width="4" height="17" x="13")
+                            rect(width="17" height="4")

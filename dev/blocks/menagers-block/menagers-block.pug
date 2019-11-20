@@ -9,7 +9,7 @@ mixin menagers-block(options)
     .block
         .block__title
             +title({text: "Наши менеджеры"})
-        .block__el
+        .block__el.block__el_margin_normal
             +wrapper({justify: "around"})
                 for item in data
                     +user(item)

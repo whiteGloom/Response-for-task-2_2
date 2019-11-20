@@ -1,9 +1,9 @@
 mixin toggle(options)
     -
         options = options || {};
-        const {value = false, name = "toggle"} = options;
-        let state = value == "true" ? "on" : "off";
-    button.toggle.js-toggle(type="button" data-value=value data-name=name)
-        .toggle__outer.js-toggle__outer(class="" + (" toggle__outer_state_" + state))
-            .toggle__handle.js-toggle__handle(class="" + (" toggle__handle_state_" + state))
-            .toggle__text.js-toggle__text(class="" + (" toggle__text_state_" + state))= state
+        const {checked = false, name = "toggle", id = ""} = options;
+        let title
+    .toggle
+        input.toggle__fakeInput(type="checkbox" name=name, checked=checked, id=id)
+        label.toggle__outer(for=id name=name)
+            .toggle__handle

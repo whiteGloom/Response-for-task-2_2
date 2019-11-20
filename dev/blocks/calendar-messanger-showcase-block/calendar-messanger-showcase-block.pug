@@ -1,0 +1,27 @@
+include ../wrapper/wrapper
+include ../title/title
+include ../calendar/calendar
+include ../messenger/messenger
+
+mixin calendar-messanger-showcase-block(options)
+    -
+        options = options || {}   
+    +wrapper({justify: "between"})
+        +wrapper({centering: false, size: "48%"})
+            .block
+                .block__title
+                    +title({text: "Calendar", level: 3})
+                .block__el.block__el_margin_extra
+                    +calendar
+        +wrapper({centering: false, size: "48%"})
+            .block
+                .block__title
+                    +title({text: "Messeging", level: 3})
+                .block__el.block__el_margin_extra
+                        +messenger({
+                            title: "whiteGloom",
+                            logo: "./static/images/wg-logo.jpg",
+                            messages: [
+                                {sender: "interlocutor", text: "Hi! I\'m a Globglogabgalab. I love books, and this basement is a true treasure trove."}
+                            ]
+                        })

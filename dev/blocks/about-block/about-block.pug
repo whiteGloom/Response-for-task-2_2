@@ -8,6 +8,6 @@ mixin about-block(options)
     section.block
         .block__title
             +title({text: "Кратко о компании"})
-        .block__el
+        .block__el.block__el_margin_normal
             for item in data
                 +p({text: item.text})

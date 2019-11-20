@@ -1,4 +1,12 @@
 .button
+  overflow: hidden
+  
+  &_form
+    &_boxMini
+      height: 1.8rem
+    &_box
+      height: 2.4rem
+
   &_blocked
     cursor: default
   
@@ -25,7 +33,6 @@
         margin-top: 3px
 
       &_boxMini
-      &_boxEvent
         border-radius: 2px
         margin-top: 2px
 
@@ -54,6 +61,14 @@
       ~/:active &_orange
         background-color: #bf3e1f
 
+      &_orangeAlternate
+        background-color: #bf3e1f
+
+      ~/:hover &_orangeAlternate
+      ~/:focus &_orangeAlternate
+      ~/:active &_orangeAlternate
+        background-color: #bf3e1f
+
   &__inner
     transition: .2s all
 
@@ -75,18 +90,6 @@
         z-index: 0
 
       ~/:active &_box
-        transform: translateY(0)
-
-      &_boxEvent
-        width: 100%
-        min-width: 7.8rem
-        transform: translateY(-2px)
-        border-width: 1px
-        border-style: solid
-        border-radius: 3px
-        z-index: 0
-
-      ~/:active &_boxEvent
         transform: translateY(0)
 
       &_boxMini
@@ -112,8 +115,8 @@
         background-color: #4eb7a8
 
       &_aquamarineAlternate
-        background-color: white
-        border-color: #28a290
+        background-color: #4eb7a8
+        border-color: #4eb7a8
 
       ~/:hover &_aquamarineAlternate
       ~/:focus &_aquamarineAlternate
@@ -130,22 +133,29 @@
       ~/:active &_orange
         background-color: #e75735
 
+      &_orangeAlternate
+        background-color: #e75735
+        border-color: #e75735
+
+      ~/:hover &_orangeAlternate
+      ~/:focus &_orangeAlternate
+      ~/:active &_orangeAlternate
+        background-color: #e75735
+
   &__rippleEffect
+    background-color: white
+    border-radius: 50%
+    pointer-events: none
     position: absolute
-    height: 100%
-    width: 100%
-    background-position: center
-    opacity: 0
-    transition: .5s all
-    z-index: 1
-
-    ~/:hover &_active
-      background: radial-gradient(circle, white 1%, transparent 1%) center/15000%
-
-    ~/:active &_active
-      background-size: 100%
-      transition: 0s all
-      opacity: .4
+    transform: scale(0)
+    
+    &_start 
+      transform: scale(0.2)
+      
+    &_active 
+      transform: scale(2)
+      transition: transform 700ms, opacity 700ms
+      opacity: 0
 
   // Content
   &__content
@@ -167,19 +177,12 @@
         font-size: .8rem
         padding: .55rem 2.3rem
 
-      &_boxEvent
-        font-family: Lato
-        font-weight: bold
-        text-transform: uppercase
-        font-size: .7rem
-        padding: .3rem 1.1rem
-
       &_boxMini
         font-family: Lato
         font-weight: bold
         text-transform: uppercase
         font-size: .7rem
-        padding: .2rem 1.1rem
+        padding: .3rem 1.1rem
 
     &_theme
       &_aquamarine
@@ -193,8 +196,8 @@
         fill: white
 
       &_aquamarineAlternate
-        color: #4eb7a8
-        fill: #4eb7a8
+        color: white
+        fill: white
 
       ~/:hover &_aquamarineAlternate
       ~/:focus &_aquamarineAlternate
@@ -209,5 +212,15 @@
       ~/:hover &_orange
       ~/:focus &_orange
       ~/:active &_orange
+        color: white
+        fill: white
+
+      &_orangeAlternate
+        color: white
+        fill: white
+
+      ~/:hover &_orangeAlternate
+      ~/:focus &_orangeAlternate
+      ~/:active &_orangeAlternate
         color: white
         fill: white

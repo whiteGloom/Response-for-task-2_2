@@ -8,6 +8,6 @@ mixin working-area-block(options)
     .block
         .block__title
             +title({text: "Где работаем"})
-        .block__el
+        .block__el.block__el_margin_normal
             for item in data
                 +p({text: item.text})

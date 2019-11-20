@@ -1,0 +1,33 @@
+include ../wrapper/wrapper
+include ../title/title
+include ../form/form
+include ../user/user
+
+mixin bars-users-showcase-blocks(options)
+    -
+        options = options || {};
+    +wrapper
+        +wrapper({size: "48perc", centering: false})
+            .block
+                .block__title
+                    +title({text: "search / drop down", level: 3})
+                .block__el.block__el_margin_big
+                    +form({submit: false, data: [
+                        {type: "searchbar"},
+                        {type: "dropdown", properties: {
+                            type: "dropdown", data: [
+                                {value: "Tomsk", text: "Томск"},
+                                {value: "Kemerovo", text: "Кемерово"},
+                                {value: "Novosibirsk", text: "Новосибирск"},
+                                {value: "Krasnoyarsk", text: "Красноярск"}
+                            ]}
+                        }
+                    ]})
+        +wrapper({size: "48perc", centering: false})
+            .block
+                .block__title
+                    +title({text: "User profile", level: 3})
+                .block__el.block__el_margin_extra
+                    +user({color: "gray",  name: "Evgeniy Miller", profession: "whiteGloom", logo: "./static/images/wg-logo.jpg"})
+                .block__el.block__el_margin_extra
+                    +user({theme: "aquamarine", profession: "profession", theme: "aquamarine", logo: "./static/images/lkl-logo.png"})

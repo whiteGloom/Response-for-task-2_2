@@ -1,0 +1,18 @@
+include ../button-round/button-round
+include ../title/title
+include ../wrapper/wrapper
+
+mixin buttons-round-showcase-block(options)
+    -
+        options = options || {};
+    .block
+        .block__title
+            +title({text: "Arrow buttons", level: 3})
+        .block__el.block__el_margin_extra
+            +wrapper({justify: "around", size: "75perc"})
+                +button-round
+                +button-round({content: "leftArrow"})
+                +button-round({blocked: true})
+                +button-round({content: "leftArrow", blocked: true})
+                +button-round({theme:"aquamarineAlternate"})
+                +button-round({theme:"aquamarineAlternate", content: "leftArrow"})

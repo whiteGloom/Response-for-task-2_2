@@ -2,11 +2,12 @@ include ../button/button
 include ../toggle/toggle
 include ../tick/tick
 include ../dropdown/dropdown
+include ../searchbar/searchbar
 
 mixin form(options)
     -
         options = options || {};
-        const {name = "form", data = [], submitTheme = "aquamarine"} = options;
+        const {name = "form", data = [], submitTheme = "aquamarineAlternate", submit = true} = options;
     form.form.js-form(name=name)
         for item in data
             .form__el
@@ -22,5 +23,8 @@ mixin form(options)
                             +toggle(item.properties)
                         when "tick"
                             +tick(item.properties)
-        .form__submit
-            +button({form: "box", theme: submitTheme, content: "submit", type: "submit"})
+                        when "searchbar"
+                            +searchbar(item.properties)
+        if submit
+            .form__submit
+                +button({form: "box", theme: submitTheme, content: "submit", type: "submit"})

@@ -1,131 +1,37 @@
-include ../wrapper/wrapper
-include ../button/button
-include ../button-round/button-round
-include ../chart/chart
-include ../slider/slider
-include ../stepbar/stepbar
-include ../form/form
-include ../user/user
-include ../searchbar/searchbar
-include ../note/note
-include ../map/map
-include ../calendar/calendar
-include ../messenger/messenger
-include ../video/video
+include ../buttons-showcase-block/buttons-showcase-block
+include ../buttons-round-showcase-block/buttons-round-showcase-block
+include ../charts-showcase-block/charts-showcase-block
+include ../sliders-showcase-block/sliders-showcase-block
+include ../stepbar-showcase-block/stepbar-showcase-block
+include ../form-showcase-block/form-showcase-block
+include ../video-showcase-block/video-showcase-block
+include ../calendar-messanger-showcase-block/calendar-messanger-showcase-block
+include ../location-showcase-block/location-showcase-block
+include ../news-event-showcase-block/news-event-showcase-block
+include ../bars-users-showcase-blocks/bars-users-showcase-blocks
 
 mixin uikit-page-content(options)
     -
         options = options || {};
     section.base__section
-        .block
-            .block__title
-                +title({text: "Box buttons", level: 3})
-            .block__el
-                +wrapper({justify: "around", size: "75perc"})
-                    +button({form: "boxMini", content:"button", theme: "aquamarine"})
-                    +button({form: "box", content:"button", theme: "aquamarine"})
-                    +button({form: "box", content:"button", theme: "orange"})
-                    +button({form: "boxMini", content:"button", blocked: true})
+        +buttons-showcase-block
     section.base__section
-        .block
-            .block__title
-                +title({text: "Round buttons", level: 3})
-            .block__el
-                +wrapper({justify: "around", size: "half"})
-                    +button-round({theme: "orange"})
-                    +button-round({theme: "orange"})
-                    +button-round({content: "leftArrow",})
-                    +button-round({content: "leftArrow", blocked: true})
+        +buttons-round-showcase-block
     section.base__section
-        .block
-            .block__title
-                +title({text: "Charts", level: 3})
-            .block__el
-                +wrapper({justify: "around"})
-                    +chart({id: "chartTestFirst"})
-                    +chart({id: "chartTestSecond"})
-                    +chart({id: "chartTestThird", type: "pie"})
+        +charts-showcase-block
     section.base__section
-        .block
-            .block__title
-                +title({text: "Sliders", level: 3})
-            .block__el
-                +wrapper({})
-                    +slider({id: "sliderSimpleTest", size: "min"})
-                    +slider({id: "sliderPipsTest", size: "min"})
+        +sliders-showcase-block
     section.base__section
-        .block
-            .block__title
-                +title({text: "Stepbar", level: 3})
-            .block__el
-                +stepbar({id: "stepbarTest"})
+        +stepbar-showcase-block
     section.base__section
-        .block
-            .block__title
-                +title({text: "Form / Bars", level: 3})
-            .block__el
-                +form({
-                    data: [
-                        {type: "input", properties: {type: "email", name:"email", required: true, placeholder: "E-mail"}},
-                        {type: "input", properties: {type: "password", name: "password", required: true, placeholder: "Password"}},
-                        {type: "input", properties: {form: "box", name: "message", placeholder: "Your message"}},
-                        {text: "The camera is", type: "toggle", properties: {name: "laser", value: "false"}},
-                        {text: "Bomb the moon?", type: "tick", properties: {name:"bomb", value: "true"}},
-                        {type: "dropdown", properties: {
-                            type: "dropdown", data: [
-                                {value: "Tomsk", text: "Томск"},
-                                {value: "Kemerovo", text: "Кемерово"},
-                                {value: "Novosibirsk", text: "Новосибирск"},
-                                {value: "Krasnoyarsk", text: "Красноярск"}
-                            ]}
-                        }
-                    ]
-                })
+        +form-showcase-block
     section.base__section
-        .block
-            .block__title
-                +title({text: "Searchbars", level: 3})
-            .block__el
-                +searchbar
+        +bars-users-showcase-blocks
     section.base__section
-        .block
-            .block__title
-                +title({text: "Users", level: 3})
-            .block__el
-                +wrapper({justify: "around"})
-                    +user({color: "gray",  name: "Evgeniy Miller", profession: "whiteGloom", logo: "./static/images/wg-logo.jpg"})
-                    +user({theme: "aquamarine", profession: "profession", theme: "aquamarine", logo: "./static/images/lkl-logo.png"})
+        +news-event-showcase-block
     section.base__section
-        .block
-            .block__title
-                +title({text: "News / events", level: 3})
-            .block__el
-                +wrapper({justify: "between"})
-                    +note({image: "./static/images/wg-logo.jpg", title: "This is a title!", date: "23 November 2001", description: "There must be some description.."})
-                    +note({type: "event", image: "./static/images/wg-logo.jpg", title: "this is a title", dateDay: "23", dateMonth: "Nov", description: "This is a description, I assure you."})
+        +location-showcase-block
     section.base__section
-        .block
-            .block__title
-                +title({text: "Map", level: 3})
-            .block__el
-                +map({title: "Meet us!", street: "** Predzavodskaya ST", city: "Seversk, RU", coordinates: '{"lat": 56.590212, "lng": 84.939791}'})
+        +calendar-messanger-showcase-block
     section.base__section
-        .block
-            .block__title
-                +title({text: "Calendar / messenger", level: 3})
-            .block__el
-                +wrapper({justify: "between"})
-                    +calendar
-                    +messenger({
-                        title: "whiteGloom",
-                        logo: "./static/images/wg-logo.jpg",
-                        messages: [
-                            {sender: "interlocutor", text: "Hi! I\'m a Globglogabgalab. I love books, and this basement is a true treasure trove."}
-                        ]
-                    })
-    section.base__section
-        .block
-            .block__title
-                +title({text: "Video", level: 3})
-            .block__el
-                +video({src: "./static/videos/intro8.2.mp4", preview:  "./static/images/lkl-logo.png", title: "intro8.2", author: "mr lKlAlRlAlBlIlNl", source: "https://youtu.be/y9Z-gDcCSmU"})
+        +video-showcase-block

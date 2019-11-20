@@ -1,8 +1,6 @@
 // Test scripts
 $(document).ready(() => {
 	let inputs = input.mkArr();
-	let toggles = toggle.mkArr();
-	let ticks = tick.mkArr();
 	let forms = form.mkArr();
 	let dropdowns = dropdown.mkArr();
 	let searchbars = searchbar.mkArr();
@@ -14,7 +12,7 @@ $(document).ready(() => {
 	});
 
 	chart.newChart({
-		target: "#chartTestFirst",
+		target: "#Rating",
 		type: "progress",
 		title: "89",
 		values: [
@@ -25,7 +23,7 @@ $(document).ready(() => {
 	});
 
 	chart.newChart({
-		target: "#chartTestSecond",
+		target: "#Assort",
 		type: "progress",
 		title: "50",
 		values: [
@@ -36,7 +34,74 @@ $(document).ready(() => {
 	});
 
 	chart.newChart({
-		target: "#chartTestThird",
+		target: "#Categories",
+		type: "pie",
+		values: [
+			{
+				value: 10,
+				color: "#747474"
+			},
+			{
+				value: 30,
+				color: "#e75735"
+			},
+			{
+				value: 30,
+				color: "#4eb7a8"
+			},
+			{
+				value: 30,
+				color: "#e5e5e5"
+			}
+		]
+	});
+
+	chart.newChart({
+		target: "#0percExample",
+		type: "progress",
+		title: "0",
+		values: [
+			{
+				value: 0
+			}
+		]
+	});
+
+	chart.newChart({
+		target: "#38percExample",
+		type: "progress",
+		title: "38",
+		values: [
+			{
+				value: 38
+			}
+		]
+	});
+
+	chart.newChart({
+		target: "#62percExample",
+		type: "progress",
+		title: "62",
+		values: [
+			{
+				value: 62
+			}
+		]
+	});
+
+	chart.newChart({
+		target: "#89percExample",
+		type: "progress",
+		title: "89",
+		values: [
+			{
+				value: 89
+			}
+		]
+	});
+
+	chart.newChart({
+		target: "#pieExample",
 		type: "pie",
 		values: [
 			{
@@ -68,7 +133,7 @@ $(document).ready(() => {
 	$(".js-slider__holder").eq(1).ionRangeSlider({
 		min: 0,
 		max: 100,
-		from: 40,
+		from: 75,
 		grid: true,
 		skin: "pips"
 	});

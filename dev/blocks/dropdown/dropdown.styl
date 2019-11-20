@@ -40,43 +40,20 @@
     &:focus
       background-color: #28a290
 
-  &__option
-    position: relative
-    padding: .35rem .9rem .5rem .9rem
-    cursor: pointer;
-    color: #888888
-    transition: .3s all
-    text-decoration: underline
-
-    &:hover
-    &:focus
-      color: white
-      background-color: #4eb7a8
-
   &__optionsBox
     position: absolute
     width: 100%
     top: 100%
     left: 0
-    margin-top: 3px
+    margin-top: -3px
     box-sizing: border-box
-    background-color: white
-    border: 1px solid #4eb7a8
+    background-color: #4eb7a8
     border-radius: 3px
+    border-top-right-radius: 0
+    border: 1px solid #4eb7a8
     cursor: default
     transition: .3s all
     z-index: 999
-
-    &::before
-      content: ''
-      position: absolute
-      display: block
-      width: 0; height: 0
-      top: -7px; left: 50%
-      margin-left: -3px
-      overflow: hidden
-      border: 3px solid transparent
-      border-bottom-color: inherit
 
     &_state
       &_hidden
@@ -84,3 +61,15 @@
 
       &_visible
         display: block
+
+  &__option
+    position: relative
+    padding: .35rem .9rem .5rem .9rem
+    cursor: pointer;
+    color: white
+    transition: .3s all
+
+    &:hover
+    &:focus
+      color: white
+      background-color: #509d92

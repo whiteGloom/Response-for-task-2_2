@@ -11,7 +11,7 @@ function map(el){
 		center: this.position,
 		zoom: 15
 	});
-	this.mark = new google.maps.Marker({position: this.position, map: this.map})
+	this.mark = new google.maps.Marker({position: this.position, map: this.map, icon: "./static/images/map-marker.png"})
 }
 
 map.prototype.findMe = function() {

@@ -1,0 +1,17 @@
+include ../title/title
+include ../wrapper/wrapper
+include ../chart/chart
+
+mixin charts-showcase-block(options)
+    -
+        options = options || {};
+    .block
+        .block__title
+            +title({text: "Percentages / Pie charts", level: 3})
+        .block__el.block__el_margin_normal
+            +wrapper({justify: "around"})
+                +chart({id: "0percExample"})
+                +chart({id: "38percExample"})
+                +chart({id: "62percExample"})
+                +chart({id: "89percExample"})
+                +chart({id: "pieExample", type: "pie"})

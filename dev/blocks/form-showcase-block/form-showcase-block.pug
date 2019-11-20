@@ -1,0 +1,37 @@
+include ../title/title
+include ../wrapper/wrapper
+include ../form/form
+include ../toggle/toggle
+include ../tick/tick
+
+mixin form-showcase-block(options)
+    -
+        options = options || {};
+    .block
+        .block__title
+            +title({text: "Form elements", level: 3})
+        .block__el.block__el_margin_extra
+            +wrapper({centering: false})
+                +wrapper({size: "48perc", centering: false})
+                    +form({
+                        data: [
+                            {type: "input", properties: {type: "email", name:"email", required: true, placeholder: "E-mail"}},
+                            {type: "input", properties: {type: "password", name: "password", required: true, placeholder: "Password"}},
+                            {type: "input", properties: {form: "box", name: "message", placeholder: "Your message"}},
+                        ]
+                    })
+                +wrapper({size: "48perc", centering: false, justify: "unset"})
+                    .block
+                        .block__title
+                            +title({text: "Toggles", level: 3})
+                        .block__el.block__el_margin_extra
+                            +wrapper({size: "half"})
+                                +toggle({name: "toggles", id: "toggleFirst"})
+                                +toggle({name: "toggles", checked: true, id: "toggleSecond"})
+                    .block
+                        .block__title
+                            +title({text: "Tick boxes", level: 3})
+                        .block__el.block__el_margin_extra
+                            +wrapper({size: "22perc"})
+                                +tick({name: "toggles", id: "tickFirst"})
+                                +tick({name: "toggles", checked: true, id: "tickSecond"})

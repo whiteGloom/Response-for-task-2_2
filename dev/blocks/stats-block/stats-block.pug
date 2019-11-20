@@ -10,13 +10,13 @@ mixin stats-block(options)
     .block
         .block__title
             +title({text: "Наши показатели"})
-        .block__el
+        .block__el.block__el_margin_normal
             .block
                 .block__title
                     +title({text: "Желаемый охват городов", level: 3})
-                .block__el
+                .block__el.block__el_margin_normal
                     +stepbar(coverageData)
-        .block__el
+        .block__el.block__el_margin_normal
             +wrapper({justify: "around"})
                 for rate in rateData
                     +rate({title: rate.title, id: rate.id})

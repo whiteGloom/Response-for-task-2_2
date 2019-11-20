@@ -9,15 +9,15 @@ mixin contact-us-block(options)
     .block
         .block__title
             +title({text: "Напишите нам!"})
-        .block__el
+        .block__el.block__el_margin_normal
             .block
                 .block__title
                     +title({text: "На почту", level: 3})
-                .block__el
+                .block__el.block__el_margin_normal
                     +form({data: formData})
-        .block__el
+        .block__el.block__el_margin_normal
             .block
                 .block__title
                     +title({text: "Или онлайн", level: 3})
-                .block__el
+                .block__el.block__el_margin_normal
                     +messenger(messengerData)
