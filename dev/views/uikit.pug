@@ -17,7 +17,131 @@ html
     body
         +header({title: "UI Kit"})
         main.base
-            +uikit-page-content
+            +uikit-page-content({
+                videoData: {
+                    src: "./static/videos/intro.mp4",
+                    preview:  "./static/images/lkl-logo.png",
+                    title: "intro", author: "mr lKlAlRlAlBlIlNl",
+                    source: "https://youtu.be/y9Z-gDcCSmU"
+                },
+                messengerData: {
+                    title: "whiteGloom",
+                    logo: "./static/images/wg-logo.jpg",
+                    messages: [
+                        {sender: "interlocutor", text: "Hi! I\'m a Globglogabgalab. I love books, and this basement is a true treasure trove."}
+                    ]
+                },
+                locationData: {
+                    title: "Meet us!",
+                    street: "** Predzavodskaya ST",
+                    city: "Seversk, RU",
+                    coordinates: '{"lat": 56.590212, "lng": 84.939791}'
+                },
+                newsData: {
+                    image: "./static/images/wg-logo.jpg",
+                    title: "This is a title!",
+                    date: "23 November 2001",
+                    description: "There must be some description.."
+                },
+                eventData: {
+                    type: "event",
+                    image: "./static/images/wg-logo.jpg",
+                    title: "this is a title",
+                    dateDay: "23",
+                    dateMonth: "Nov",
+                    description: "This is a description, I assure you."
+                },
+                barsUsersData: {
+                    formData: {
+                        submit: false, data: [
+                            {type: "searchbar"},
+                            {type: "dropdown", properties: {
+                                type: "dropdown", data: [
+                                    {value: "Tomsk", text: "Томск"},
+                                    {value: "Kemerovo", text: "Кемерово"},
+                                    {value: "Novosibirsk", text: "Новосибирск"},
+                                    {value: "Krasnoyarsk", text: "Красноярск"}
+                                ]}
+                            }
+                        ]
+                    },
+                    usersData: [
+                        {
+                            color: "gray",
+                            name: "Evgeniy Miller",
+                            profession: "whiteGloom",
+                            logo: "./static/images/wg-logo.jpg"
+                        },
+                        {
+                            theme: "aquamarine",
+                            profession: "profession",
+                            theme: "aquamarine",
+                            logo: "./static/images/lkl-logo.png"
+                        }
+                    ]
+                },
+                formData: {
+                    formData: {
+                        data: [
+                            {type: "input", properties: {type: "email", name:"email", required: true, placeholder: "E-mail"}},
+                            {type: "input", properties: {type: "password", name: "password", required: true, placeholder: "Password"}},
+                            {type: "input", properties: {form: "box", name: "message", placeholder: "Your message"}},
+                        ]
+                    },
+                    togglesData: [
+                        {name: "toggles", id: "toggleFirst"},
+                        {name: "toggles", checked: true, id: "toggleSecond"}
+                    ],
+                    ticksData: [
+                        {name: "toggles", id: "tickFirst"},
+                        {name: "toggles", checked: true, id: "tickSecond"}
+                    ]
+                },
+                stepbarData: {
+                    id: "stepbarTest"
+                },
+                slidersData: [
+                    {id: "sliderSimpleTest", size: "min"},
+                    {id: "sliderPipsTest", size: "min"}
+                ],
+                chartsData: [
+                    {id: "0percExample"},
+                    {id: "38percExample"},
+                    {id: "62percExample"},
+                    {id: "89percExample"},
+                    {id: "pieExample", type: "pie"}
+                ],
+                roundButtonsData: [
+                    [
+                        {},
+                        {content: "leftArrow"},
+                        {blocked: true},
+                        {content: "leftArrow", blocked: true},
+                        {theme:"aquamarineAlternate"},
+                        {theme:"aquamarineAlternate", content: "leftArrow"}
+                    ]
+                ],
+                buttonsData: [
+                    [
+                        {form: "boxMini", content:"button", theme: "aquamarineAlternate"},
+                        {form: "box", content:"button", theme: "aquamarineAlternate"},
+                        {form: "box", content:"button", theme: "orangeAlternate"},
+                        {form: "boxMini", content:"button", theme: "orangeAlternate"}
+                    ],
+                    [
+                        {form: "boxMini", content:"button", theme: "aquamarineAlternate"},
+                        {form: "box", content:"button", theme: "aquamarineAlternate"},
+                        {form: "box", content:"button", theme: "orangeAlternate"},
+                        {form: "boxMini", content:"button", theme: "orangeAlternate"}
+                    ],
+                    [
+                        {form: "boxMini", content:"button", theme: "aquamarine"},
+                        {form: "box", content:"button", theme: "aquamarine"},
+                        {form: "box", content:"button", theme: "orange"},
+                        {form: "boxMini", content:"button", theme: "orange"}
+                    ]
+                ]
+            })
         script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6UQbE2epfLfDfa2uaXCx1soXdAfSFU-c&callback=initMap" async defer)
         script(src="https://vjs.zencdn.net/5-unsafe/video.js")
         script(type="text/javascript" src="./scripts/vendors.js")

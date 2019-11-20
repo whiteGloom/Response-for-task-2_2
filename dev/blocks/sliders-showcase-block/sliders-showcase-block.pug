@@ -5,10 +5,11 @@ include ../slider/slider
 mixin sliders-showcase-block(options)
     -
         options = options || {};
+        const {slidersData = {}} = options;
     .block
         .block__title
             +title({text: "Sliders", level: 3})
         .block__el.block__el_margin_normal
             +wrapper({centering: false})
-                +slider({id: "sliderSimpleTest", size: "min"})
-                +slider({id: "sliderPipsTest", size: "min"})
+                for sliderData in slidersData
+                    +slider(sliderData)

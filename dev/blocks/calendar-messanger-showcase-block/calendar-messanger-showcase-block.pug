@@ -5,7 +5,8 @@ include ../messenger/messenger
 
 mixin calendar-messanger-showcase-block(options)
     -
-        options = options || {}   
+        options = options || {};
+        const {messengerData = {}} = options;
     +wrapper({justify: "between"})
         +wrapper({centering: false, size: "48%"})
             .block
@@ -18,10 +19,4 @@ mixin calendar-messanger-showcase-block(options)
                 .block__title
                     +title({text: "Messeging", level: 3})
                 .block__el.block__el_margin_extra
-                        +messenger({
-                            title: "whiteGloom",
-                            logo: "./static/images/wg-logo.jpg",
-                            messages: [
-                                {sender: "interlocutor", text: "Hi! I\'m a Globglogabgalab. I love books, and this basement is a true treasure trove."}
-                            ]
-                        })
+                    +messenger(messengerData)

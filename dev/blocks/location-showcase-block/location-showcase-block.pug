@@ -4,8 +4,9 @@ include ../map/map
 mixin location-showcase-block(options)
     -
         options = options || {};
+        const {locationData = {}} = options;
     .block
         .block__title
             +title({text: "Location", level: 3})
         .block__el.block__el_margin_extra
-            +map({title: "Meet us!", street: "** Predzavodskaya ST", city: "Seversk, RU", coordinates: '{"lat": 56.590212, "lng": 84.939791}'})
+            +map(locationData)

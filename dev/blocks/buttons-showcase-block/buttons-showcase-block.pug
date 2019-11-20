@@ -5,24 +5,18 @@ include ../title/title
 mixin buttons-showcase-block(options)
     -
         options = options || {};
+        const {buttonsData = []} = options;
     .block
         .block__title
             +title({text: "Standart buttons", level: 3})
-        .block__el.block__el_margin_big
-            +wrapper({justify: "around", size: "82perc", align: "end"})
-                +button({form: "boxMini", content:"button", theme: "aquamarineAlternate"})
-                +button({form: "box", content:"button", theme: "aquamarineAlternate"})
-                +button({form: "box", content:"button", theme: "orangeAlternate"})
-                +button({form: "boxMini", content:"button", theme: "orangeAlternate"})
-        .block__el.block__el_margin_big
-            +wrapper({justify: "around", size: "82perc", align: "end"})
-                +button({form: "boxMini", content:"button", theme: "aquamarineAlternate"})
-                +button({form: "box", content:"button", theme: "aquamarineAlternate"})
-                +button({form: "box", content:"button", theme: "orangeAlternate"})
-                +button({form: "boxMini", content:"button", theme: "orangeAlternate"})
-        .block__el.block__el_margin_big
-            +wrapper({justify: "around", size: "82perc", align: "end"})
-                +button({form: "boxMini", content:"button", theme: "aquamarine"})
-                +button({form: "box", content:"button", theme: "aquamarine"})
-                +button({form: "box", content:"button", theme: "orange"})
-                +button({form: "boxMini", content:"button", theme: "orange"})
+        for buttonLine, index in buttonsData
+            if index == 0
+                .block__el.block__el_margin_extra
+                    +wrapper({justify: "around", size: "82perc", align: "end"})
+                        for buttonData in buttonLine
+                            +button(buttonData)
+            if index > 0
+                .block__el.block__el_margin_big
+                    +wrapper({justify: "around", size: "82perc", align: "end"})
+                        for buttonData in buttonLine
+                            +button(buttonData)

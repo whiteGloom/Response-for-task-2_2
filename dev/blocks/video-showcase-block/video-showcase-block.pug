@@ -4,8 +4,9 @@ include ../video/video
 mixin video-showcase-block(options)
     -
         options = options || {};
+        const {videoData = {}} = options;
     .block
         .block__title
             +title({text: "Video", level: 3})
         .block__el.block__el_margin_big
-            +video({src: "./static/videos/intro8.2.mp4", preview:  "./static/images/lkl-logo.png", title: "intro8.2", author: "mr lKlAlRlAlBlIlNl", source: "https://youtu.be/y9Z-gDcCSmU"})
+            +video(videoData)

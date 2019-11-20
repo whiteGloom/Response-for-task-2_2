@@ -5,10 +5,11 @@ include ../note/note
 mixin news-event-showcase-block(options)
     -
         options = options || {};
+        const {newsData = {}, eventData = {}} = options;
     .block
         .block__title
             +title({text: "News & events", level: 3})
         .block__el.block__el_margin_extra
             +wrapper({justify: "between", centering: false})
-                +note({image: "./static/images/wg-logo.jpg", title: "This is a title!", date: "23 November 2001", description: "There must be some description.."})
-                +note({type: "event", image: "./static/images/wg-logo.jpg", title: "this is a title", dateDay: "23", dateMonth: "Nov", description: "This is a description, I assure you."})
+                +note(newsData)
+                +note(eventData)

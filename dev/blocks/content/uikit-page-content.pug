@@ -13,25 +13,40 @@ include ../bars-users-showcase-blocks/bars-users-showcase-blocks
 mixin uikit-page-content(options)
     -
         options = options || {};
+        const {
+            videoData = {},
+            messengerData = {},
+            locationData = {},
+            newsData = {},
+            eventData = {},
+            barsUsersData = {},
+            formData = {},
+            stepbarData = {},
+            slidersData = [],
+            chartsData = [],
+            roundButtonsData = [],
+            buttonsData = []
+        } = options;
+
     section.base__section
-        +buttons-showcase-block
+        +buttons-showcase-block({buttonsData})
     section.base__section
-        +buttons-round-showcase-block
+        +buttons-round-showcase-block({buttonsData: roundButtonsData})
     section.base__section
-        +charts-showcase-block
+        +charts-showcase-block({chartsData})
     section.base__section
-        +sliders-showcase-block
+        +sliders-showcase-block({slidersData})
     section.base__section
-        +stepbar-showcase-block
+        +stepbar-showcase-block({stepbarData})
     section.base__section
-        +form-showcase-block
+        +form-showcase-block({formData: formData.formData, ticksData: formData.ticksData, togglesData: formData.togglesData})
     section.base__section
-        +bars-users-showcase-blocks
+        +bars-users-showcase-blocks({usersData: barsUsersData.usersData, formData: barsUsersData.formData})
     section.base__section
-        +news-event-showcase-block
+        +news-event-showcase-block({newsData: newsData, eventData: eventData})
     section.base__section
-        +location-showcase-block
+        +location-showcase-block({locationData})
     section.base__section
-        +calendar-messanger-showcase-block
+        +calendar-messanger-showcase-block({messengerData})
     section.base__section
-        +video-showcase-block
+        +video-showcase-block({videoData})
