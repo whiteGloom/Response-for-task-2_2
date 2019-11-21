@@ -1,20 +1,20 @@
 // Test scripts
 $(document).ready(() => {
   $(".js-form").each(function () {
-    window.makeForm(this);
+    window.kit.makeForm(this);
   });
   $(".js-input").each(function () {
-    window.makeInput(this);
+    window.kit.makeInput(this);
   });
   $(".js-dropdown").each(function () {
-    window.makeDropdown(this);
+    window.kit.makeDropdown(this);
   });
   $(".js-searchbar").each(function () {
-    window.makeSearchbar(this);
+    window.kit.makeSearchbar(this);
   });
   window.initMap = (function () {
     $(".js-map").each(function () {
-      window.makeMap(this);
+      window.kit.makeMap(this);
     });
   }());
 
@@ -23,7 +23,7 @@ $(document).ready(() => {
     firstDayOfWeek: 1
   });
 
-  window.makeChart({
+  window.kit.makeChart({
     target: "#Rating",
     type: "progress",
     title: "89",
@@ -34,7 +34,7 @@ $(document).ready(() => {
     ]
   });
 
-  window.makeChart({
+  window.kit.makeChart({
     target: "#Assort",
     type: "progress",
     title: "50",
@@ -45,7 +45,7 @@ $(document).ready(() => {
     ]
   });
 
-  window.makeChart({
+  window.kit.makeChart({
     target: "#Categories",
     type: "pie",
     values: [
@@ -68,7 +68,7 @@ $(document).ready(() => {
     ]
   });
 
-  window.makeChart({
+  window.kit.makeChart({
     target: "#0percExample",
     type: "progress",
     title: "0",
@@ -79,7 +79,7 @@ $(document).ready(() => {
     ]
   });
 
-  window.makeChart({
+  window.kit.makeChart({
     target: "#38percExample",
     type: "progress",
     title: "38",
@@ -90,7 +90,7 @@ $(document).ready(() => {
     ]
   });
 
-  window.makeChart({
+  window.kit.makeChart({
     target: "#62percExample",
     type: "progress",
     title: "62",
@@ -101,7 +101,7 @@ $(document).ready(() => {
     ]
   });
 
-  window.makeChart({
+  window.kit.makeChart({
     target: "#89percExample",
     type: "progress",
     title: "89",
@@ -112,7 +112,7 @@ $(document).ready(() => {
     ]
   });
 
-  window.makeChart({
+  window.kit.makeChart({
     target: "#pieExample",
     type: "pie",
     values: [
