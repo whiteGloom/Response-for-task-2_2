@@ -9,7 +9,7 @@ mixin sliders-showcase-block(options)
     .block
         .block__title
             +title({text: "Sliders", level: 3})
-        .block__el.block__el_margin_normal
+        .block__el.block__el_margin_sliders
             +wrapper({centering: false})
                 for sliderData in slidersData
                     +slider(sliderData)

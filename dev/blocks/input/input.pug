@@ -21,6 +21,7 @@ mixin input(options)
                         (" input__entry_form_" + form))
                     .input__message.js-input__message(class="" + (" input__message_state_hidden"))
                 when "box"
+                when "boxMini"
                     textarea.input__entry.js-input__entry(required=(required ? required : false) type=type placeholder=placeholder class="" +
                         (" input__entry_radius_" + radius) +
                         (" input__entry_color_" + color) +

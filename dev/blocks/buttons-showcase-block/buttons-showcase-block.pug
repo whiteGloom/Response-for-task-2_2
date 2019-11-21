@@ -8,10 +8,10 @@ mixin buttons-showcase-block(options)
         const {buttonsData = []} = options;
     .block
         .block__title
-            +title({text: "Standart buttons", level: 3})
+            +title({text: "Standard buttons", level: 3})
         for buttonLine, index in buttonsData
             if index == 0
-                .block__el.block__el_margin_extra
+                .block__el.block__el_margin_buttons
                     +wrapper({justify: "around", size: "82perc", align: "end"})
                         for buttonData in buttonLine
                             +button(buttonData)

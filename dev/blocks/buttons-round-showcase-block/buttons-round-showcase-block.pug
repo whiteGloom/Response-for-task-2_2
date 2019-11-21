@@ -10,7 +10,7 @@ mixin buttons-round-showcase-block(options)
         .block__title
             +title({text: "Arrow buttons", level: 3})
         for buttonLine in buttonsData
-            .block__el.block__el_margin_extra
+            .block__el.block__el_margin_buttons-round
                 +wrapper({justify: "around", size: "75perc"})
                     for buttonData in buttonLine
                         +button-round(buttonData)

@@ -28,25 +28,25 @@ mixin uikit-page-content(options)
             buttonsData = []
         } = options;
 
-    section.base__section
+    section.base__section.base__section_type_normal
         +buttons-showcase-block({buttonsData})
-    section.base__section
+    section.base__section.base__section_type_large
         +buttons-round-showcase-block({buttonsData: roundButtonsData})
-    section.base__section
+    section.base__section.base__section_type_charts
         +charts-showcase-block({chartsData})
-    section.base__section
+    section.base__section.base__section_type_sliders
         +sliders-showcase-block({slidersData})
-    section.base__section
+    section.base__section.base__section_type_stages
         +stepbar-showcase-block({stepbarData})
-    section.base__section
+    section.base__section.base__section_type_form
         +form-showcase-block({formData: formData.formData, ticksData: formData.ticksData, togglesData: formData.togglesData})
-    section.base__section
+    section.base__section.base__section_type_bars-users
         +bars-users-showcase-blocks({usersData: barsUsersData.usersData, formData: barsUsersData.formData})
-    section.base__section
+    section.base__section.base__section_type_events
         +news-event-showcase-block({newsData: newsData, eventData: eventData})
-    section.base__section
+    section.base__section.base__section_type_normal
         +location-showcase-block({locationData})
-    section.base__section
+    section.base__section.base__section_type_large
         +calendar-messanger-showcase-block({messengerData})
-    section.base__section
+    section.base__section.base__section_type_large
         +video-showcase-block({videoData})

@@ -26,6 +26,6 @@ mixin messenger(options)
                 for item in messages
                     p.messenger__message(class="" + ("messenger__message_sender_" + item.sender))= item.text
             .messenger__entry
-                +input({form: "box", name: "entry", placeholder: inputPlaceholder})
+                +input({form: "boxMini", name: "entry", placeholder: inputPlaceholder})
             .messenger__send
                 +button({text:"button", theme: sendButtonTheme, size: "auto"})

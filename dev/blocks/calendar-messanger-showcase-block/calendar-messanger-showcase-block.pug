@@ -12,11 +12,11 @@ mixin calendar-messanger-showcase-block(options)
             .block
                 .block__title
                     +title({text: "Calendar", level: 3})
-                .block__el.block__el_margin_extra
+                .block__el.block__el_margin_calendar-messages
                     +calendar
         +wrapper({centering: false, size: "48%"})
             .block
                 .block__title
                     +title({text: "Messeging", level: 3})
-                .block__el.block__el_margin_extra
+                .block__el.block__el_margin_calendar-messages
                     +messenger(messengerData)
