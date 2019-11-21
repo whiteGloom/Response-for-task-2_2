@@ -3,7 +3,7 @@ mixin button(options)
         options = options || {};
         let {form = "box", type = "button", blocked = false, size, content = "button", theme = "aquamarine"} = options;
 
-    button.button(type=type class="" + 
+    button.button.js-button(type=type class="" + 
         (blocked ? " button_blocked" : "") + 
         (" button_theme_" + theme) + 
         (size ? " button_size_" + size : "") + 
@@ -16,7 +16,7 @@ mixin button(options)
                 (" button__inner_form_" + form) +
                 (" button__inner_theme_" + theme) +
                 (blocked ? " button__inner_blocked" : ""))
-                .button__rippleEffect(class="" + (!blocked ? " button__rippleEffect_active" : ""))
+                .button__rippleEffect.js-button__rippleEffect(class="" + (!blocked ? " button__rippleEffect_active" : ""))
                 .button__content(class="" +
                     (" button__content_form_" + form) +
                     (" button__content_theme_" + theme) +

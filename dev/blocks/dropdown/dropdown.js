@@ -1,71 +1,68 @@
-function dropdown(el){
-	this.base 	= el;
-	this.button = $(this.base).find(".js-dropdown__button");
-	this.type 	= $(this.base).data("type");
-	this.name 	= $(this.base).data("name");
+class Dropdown {
+  constructor(el) {
+    this.$base = el;
+    this.$button = this.$base.find(".js-dropdown__button");
+    this.$currentValue = this.$base.find(".js-dropdown__currentValue");
+    this.$optionsBox = this.$base.find(".js-dropdown__optionsBox");
+    this.type = this.$base.data("type");
+    this.name = this.$base.data("name");
 
-	this.valid 	= false;
-	this.custom = true;
-	$(this.base).data("custom", true);
-	$(this.base).data("valid", false)
-	$(this.base).data("value", false)
+    this.valid = false;
+    this.custom = true;
+    this.$base.data("custom", true);
+    this.$base.data("valid", false);
+    this.$base.data("value", false);
+
+    this.onClick();
+  }
+
+  setValue(value) {
+    this.value = value;
+    this.$base.data("value", value);
+  }
+
+  setValid(valid) {
+    this.valid = valid;
+    this.$base.data("valid", valid);
+  }
+
+  onClick() {
+    this.$button.on("click", $.proxy(this.test, this));
+  }
+
+  test() {
+    function selecting(event) {
+      const $target = $(event.target);
+      if ($target.closest(".dropdown").is(this.$base) && $target.closest(".dropdown__button").length > 0) return;
+
+      if ($target.closest(".dropdown").is(this.$base)) {
+        if ($target.hasClass("dropdown__option")) {
+          this.setValue($target.data("value"));
+          this.setValid(true);
+          this.$optionsBox.removeClass("dropdown__optionsBox_state_visible");
+          this.$optionsBox.addClass("dropdown__optionsBox_state_hidden");
+          this.$currentValue.text($target.text());
+          $(document).off("click", $.proxy(selecting, this));
+        }
+      } else {
+        $(document).off("click", $.proxy(selecting, this));
+        this.$optionsBox
+          .removeClass("dropdown__optionsBox_state_visible")
+          .addClass("dropdown__optionsBox_state_hidden");
+      }
+    }
+
+    if (this.$optionsBox.hasClass("dropdown__optionsBox_state_hidden")) {
+      this.$optionsBox
+        .removeClass("dropdown__optionsBox_state_hidden")
+        .addClass("dropdown__optionsBox_state_visible");
+      $(document).on("click", $.proxy(selecting, this));
+    }
+  }
 }
 
-dropdown.prototype.setValue = function(value){
-	this.value = value;
-	$(this.base).data("value", value)
+function makeDropdown(el) {
+  return new Dropdown($(el));
 }
 
-dropdown.prototype.setValid = function(valid){
-	this.valid = valid;
-	$(this.base).data("valid", valid)
-}
-
-dropdown.prototype.test = function(){
-	this.currentValue = $(this.base).find(".js-dropdown__currentValue");
-	this.optionsBox = $(this.base).find(".js-dropdown__optionsBox");
-	if ($(this.optionsBox).hasClass("dropdown__optionsBox_state_hidden")) {
-		$(this.optionsBox)
-			.removeClass("dropdown__optionsBox_state_hidden")
-			.addClass("dropdown__optionsBox_state_visible");
-		$(document).on("click", $.proxy(selecting, this));
-	}
-
-	function selecting(event){
-		if ($(event.target).closest(".dropdown")[0] == this.base && $(event.target).closest(".dropdown__button").length != 0) return;
-
-		if ($(event.target).closest(".dropdown")[0] == this.base) {
-			if ($(event.target).hasClass("dropdown__option")) {
-				this.setValue($(event.target).data("value"));
-				this.setValid(true);
-				$(this.optionsBox).removeClass("dropdown__optionsBox_state_visible")
-				$(this.optionsBox).addClass("dropdown__optionsBox_state_hidden");
-				$(this.currentValue).text($(event.target).text())
-				$(document).off("click", $.proxy(selecting, this));
-				return;
-			}
-		}else{
-			$(document).off("click", $.proxy(selecting, this));
-			$(this.optionsBox)
-				.removeClass("dropdown__optionsBox_state_visible")
-				.addClass("dropdown__optionsBox_state_hidden");
-			return;
-		}
-	}
-}
-
-dropdown.prototype.onClick = function(){
-	$(this.button).on("click", $.proxy(this.test, this))
-}
-
-function makeArray() {
-	var arr = [];
-	var $dropdowns = $(".js-dropdown");
-	for (var i = 0; i <= $dropdowns.length - 1; i++) {
-		arr[i] = new dropdown($dropdowns[i]);
-		arr[i].onClick();
-	}
-	return arr;
-}
-
-module.exports.mkArr = makeArray;
+export default makeDropdown;

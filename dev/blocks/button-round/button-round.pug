@@ -3,13 +3,13 @@ mixin button-round(options)
         options = options || {};
         let {type = "button", blocked = false, content = "rightArrow", theme = "aquamarine"} = options;
 
-    button.button-round(type=type class="" +
+    button.button-round.js-button-round(type=type class="" +
         (blocked ? " button-round_blocked" : "") +
         (" button-round_theme_" + theme))
         .button-round__outer(class="" +
             (" button-round__outer_theme_" + theme) +
             (blocked ? " button-round__outer_blocked" : ""))
-            .button-round__rippleEffect(class="" + 
+            .button-round__rippleEffect.js-button-round__rippleEffect(class="" + 
                 (!blocked ? " button-round__rippleEffect_active" : ""))
             svg.button-round__content(viewbox="0 0 44 44" class="" +
                 (" button-round__content_theme_" + theme) +
