@@ -1,6 +1,5 @@
-mixin tick(options)
+mixin tick(options = {})
     -
-        options = options || {};
         const {checked = false, name = "tick", id = ""} = options;
 
     .tick.js-tick(type="button")

@@ -3,12 +3,18 @@
   &__el
     display: flex
     width: 100%
-    margin-top: .8rem
+    
+    &_margin
+      &_normal
+        margin-top: .8rem
+
+      &_big
+        margin-top: 1rem
 
     &:first-child
       margin-top: 0
 
-  &__elEntry
+  &__el-entry
     &_size
       &_auto
         flex-shrink: 0
@@ -16,7 +22,7 @@
       &_fill
         width: 100%
 
-  &__elText
+  &__el-text
     width: 100%
     cursor: default
     font-style: normal

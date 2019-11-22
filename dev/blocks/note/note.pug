@@ -1,8 +1,7 @@
 include ../button/button
 
-mixin note(options)
+mixin note(options = {})
     -
-        options = options || {};
         const {
             size = "min",
             type = "news",
@@ -32,4 +31,4 @@ mixin note(options)
                         em.note__title(class="" + (" note__title_type_" + type))= title
                         .note__description(class="" + (" note__description_type_" + type))= description
                         .note__button
-                            +button({form: "boxMini", size: "auto", theme: "aquamarine", content: "Add to calendar"})
+                            +button({form: "box-mini", size: "auto", theme: "aquamarine", content: "Add to calendar"})

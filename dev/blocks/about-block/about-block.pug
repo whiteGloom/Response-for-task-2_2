@@ -1,9 +1,8 @@
 include ../p/p
 include ../title/title
 
-mixin about-block(options)
+mixin about-block(options = {})
     -
-        options = options || {};
         const {data = []} = options;
     section.block
         .block__title

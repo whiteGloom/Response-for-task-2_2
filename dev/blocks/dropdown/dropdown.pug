@@ -1,6 +1,5 @@
-mixin dropdown(options)
+mixin dropdown(options = {})
     -
-        options = options || {};
         const {defaultText = "Choose an option", data = []} = options;
     .dropdown.js-dropdown
         .dropdown__outer

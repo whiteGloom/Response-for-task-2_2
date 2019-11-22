@@ -1,8 +1,7 @@
 include ../chart/chart
 
-mixin rate(options)
+mixin rate(options = {})
     -
-        options = options || {};
         const {title = "", id = ""} = options;
     .rate
         .rate__title= title

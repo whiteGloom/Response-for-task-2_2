@@ -1,9 +1,8 @@
 include ../title/title
 include ../video/video
 
-mixin video-showcase-block(options)
+mixin video-showcase-block(options = {})
     -
-        options = options || {};
         const {videoData = {}} = options;
     .block
         .block__title

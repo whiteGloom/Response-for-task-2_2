@@ -2,9 +2,8 @@ include ../title/title
 include ../wrapper/wrapper
 include ../note/note
 
-mixin news-event-showcase-block(options)
+mixin news-event-showcase-block(options = {})
     -
-        options = options || {};
         const {newsData = {}, eventData = {}} = options;
     .block
         .block__title

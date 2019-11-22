@@ -2,9 +2,8 @@ include ../title/title
 include ../wrapper/wrapper
 include ../chart/chart
 
-mixin charts-showcase-block(options)
+mixin charts-showcase-block(options = {})
     -
-        options = options || {};
         const {chartsData = []} = options;
     .block
         .block__title

@@ -5,12 +5,12 @@ class Input {
     this.$message = this.$base.find(".js-input__message");
     this.type = this.$base.data("type");
     this.name = this.$base.data("name");
-    this.value = this.$entry.val();
     this.valid = true;
 
-    $(this.base).data("custom", true);
-    $(this.base).data("valid", true);
+    this.$base.data("custom", true);
+    this.$base.data("valid", true);
 
+    this.setValue(this.$entry.val());
     this.onChange();
     this.test();
   }

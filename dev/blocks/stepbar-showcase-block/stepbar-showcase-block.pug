@@ -1,9 +1,8 @@
 include ../title/title
 include ../stepbar/stepbar
 
-mixin stepbar-showcase-block(options)
+mixin stepbar-showcase-block(options = {})
     -
-        options = options || {};
         const {stepbarData = {}} = options;
     .block
         .block__title

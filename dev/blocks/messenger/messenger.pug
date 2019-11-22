@@ -2,15 +2,14 @@ include ../icon/icon
 include ../input/input
 include ../button/button
 
-mixin messenger(options)
+mixin messenger(options = {})
     -
-        options = options || {};
         const {
             size = "normal",
             title = "title",
             logo = "",
             messages = [],
-            sendButtonTheme = "aquamarineAlternate",
+            sendButtonTheme = "aquamarine-alternate",
             inputPlaceholder = "Your message",
         } = options;
     .messenger(class="" + (" messenger_size_" + size))

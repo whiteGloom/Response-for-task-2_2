@@ -1,6 +1,5 @@
-mixin button(options)
+mixin button(options = {})
     -
-        options = options || {};
         let {form = "box", type = "button", blocked = false, size, content = "button", theme = "aquamarine"} = options;
 
     button.button.js-button(type=type class="" + 

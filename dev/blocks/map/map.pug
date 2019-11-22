@@ -1,6 +1,5 @@
-mixin map(options)
+mixin map(options = {})
     -
-        options = options || {};
         const {title = "title", coordinates = {}, street = "street", city = "city"} = options;
     .map.js-map(data-coordinates=coordinates)
         .map__outer

@@ -2,9 +2,8 @@ include ../button-round/button-round
 include ../title/title
 include ../wrapper/wrapper
 
-mixin buttons-round-showcase-block(options)
+mixin buttons-round-showcase-block(options = {})
     -
-        options = options || {};
         const {buttonsData = []} = options;
     .block
         .block__title

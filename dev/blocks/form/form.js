@@ -7,7 +7,7 @@ class Form {
   getValues() {
     try {
       const data = [];
-      const formEntrys = this.$base.find(".js-form__elEntry");
+      const formEntrys = this.$base.find(".js-form__el-entry");
 
       formEntrys.forEach(($el) => {
         const $entry = $el.children();

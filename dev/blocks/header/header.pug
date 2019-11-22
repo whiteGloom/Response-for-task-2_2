@@ -1,18 +1,17 @@
 include ../title/title
 include ../button/button
 
-mixin header(options)
+mixin header(options = {})
     -
-        options = options || {};
         const {title = "title"} = options;
     header.header
         +title({text: title, level: 1})
         nav.header__nav
             a.header__link(href="./index.html")
-                +button({form: "boxMini", content:"home", theme: "aquamarine"})
+                +button({form: "box-mini", content:"home", theme: "aquamarine"})
             a.header__link(href="./about.html")
-                +button({form: "boxMini", content:"about", theme: "aquamarine"})
+                +button({form: "box-mini", content:"about", theme: "aquamarine"})
             a.header__link(href="./contacts.html")
-                +button({form: "boxMini", content:"contacts", theme: "aquamarine"})
+                +button({form: "box-mini", content:"contacts", theme: "aquamarine"})
             a.header__link(href="./uikit.html")
-                +button({form: "boxMini", content:"ui kit", theme: "aquamarine"})
+                +button({form: "box-mini", content:"ui kit", theme: "aquamarine"})

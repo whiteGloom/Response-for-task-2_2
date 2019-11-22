@@ -3,9 +3,8 @@ include ../title/title
 include ../form/form
 include ../user/user
 
-mixin bars-users-showcase-blocks(options)
+mixin bars-users-showcase-blocks(options = {})
     -
-        options = options || {};
         const {formData = {}, usersData = []} = options;
     +wrapper
         +wrapper({size: "48perc", centering: false})

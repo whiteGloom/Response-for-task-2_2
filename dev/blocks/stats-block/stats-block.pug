@@ -3,9 +3,8 @@ include ../title/title
 include ../stepbar/stepbar
 include ../rate/rate
 
-mixin stats-block(options)
+mixin stats-block(options = {})
     -
-        options = options || {};
         const {rateData = [], coverageData = {}} = options;
     .block
         .block__title

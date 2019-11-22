@@ -1,6 +1,5 @@
-mixin toggle(options)
+mixin toggle(options = {})
     -
-        options = options || {};
         const {checked = false, name = "toggle", id = ""} = options;
         let title
     .toggle

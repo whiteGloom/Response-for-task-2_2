@@ -2,9 +2,8 @@ include ../wrapper/wrapper
 include ../user/user
 include ../title/title
 
-mixin menagers-block(options)
+mixin menagers-block(options = {})
     -
-        options = options || {};
         const {data = []} = options;
     .block
         .block__title

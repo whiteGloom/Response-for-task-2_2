@@ -2,9 +2,8 @@ include ../title/title
 include ../wrapper/wrapper
 include ../slider/slider
 
-mixin sliders-showcase-block(options)
+mixin sliders-showcase-block(options = {})
     -
-        options = options || {};
         const {slidersData = {}} = options;
     .block
         .block__title

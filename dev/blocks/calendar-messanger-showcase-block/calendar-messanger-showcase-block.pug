@@ -3,9 +3,8 @@ include ../title/title
 include ../calendar/calendar
 include ../messenger/messenger
 
-mixin calendar-messanger-showcase-block(options)
+mixin calendar-messanger-showcase-block(options = {})
     -
-        options = options || {};
         const {messengerData = {}} = options;
     +wrapper({justify: "between"})
         +wrapper({centering: false, size: "48%"})

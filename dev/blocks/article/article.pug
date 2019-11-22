@@ -1,6 +1,5 @@
-mixin article(options)
+mixin article(options = {})
     -
-        options = options || {};
         const {data = []} = options;
     article.article
         for item in data

@@ -1,9 +1,8 @@
 include ../title/title
 include ../map/map
 
-mixin location-showcase-block(options)
+mixin location-showcase-block(options = {})
     -
-        options = options || {};
         const {locationData = {}} = options;
     .block
         .block__title

@@ -1,6 +1,5 @@
-mixin slider(options)
+mixin slider(options = {})
     -
-        options = options || {};
         const {size = "auto", id = ""} = options;
     .slider(class="" + (" slider_size_" + size) id= id)
         input.slider__holder.js-slider__holder

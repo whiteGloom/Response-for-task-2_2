@@ -1,6 +1,5 @@
-mixin wrapper(options)
+mixin wrapper(options = {})
     -
-        options = options || {};
         const {justify = "between", align, centering = true, size = "fill"} = options;
     .wrapper(class="" + (" wrapper_justify_" + justify) + 
     	(" wrapper_size_" + size) + 

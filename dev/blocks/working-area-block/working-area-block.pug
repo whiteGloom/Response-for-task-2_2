@@ -1,9 +1,8 @@
 include ../title/title
 include ../p/p
 
-mixin working-area-block(options)
+mixin working-area-block(options = {})
     -
-        options = options || {};
         const {data = []} = options;
     .block
         .block__title

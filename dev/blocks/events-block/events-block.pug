@@ -1,8 +1,7 @@
 include ../note/note
 
-mixin events-block(options)
+mixin events-block(options = {})
     -
-        options = options || {};
         const {data = []} = options;
     .block
         .block__title

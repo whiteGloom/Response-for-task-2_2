@@ -2,9 +2,8 @@ include ../title/title
 include ../form/form
 include ../messenger/messenger
 
-mixin contact-us-block(options)
+mixin contact-us-block(options = {})
     -
-        options = options || {};
         const {formData = [], messengerData = {}} = options;
     .block
         .block__title

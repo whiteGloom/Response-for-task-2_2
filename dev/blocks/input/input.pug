@@ -1,6 +1,5 @@
-mixin input(options)
+mixin input(options = {})
     -
-        options = options || {};
         const {
             type = "text",
             color = "aquamarine",
@@ -8,21 +7,22 @@ mixin input(options)
             required,
             name = "input",
             radius = "default",
-            placeholder = ""
+            placeholder = "",
+            value = ""
         } = options;
 
     .input.js-input(data-type=type data-name=name)
         .input__outer
             case form
                 when "bar"
-                    input.input__entry.js-input__entry(required=(required ? required : false) type=type placeholder=placeholder class="" + 
+                    input.input__entry.js-input__entry(required=(required ? required : false) value=value type=type placeholder=placeholder class="" + 
                         (" input__entry_radius_" + radius) +
                         (" input__entry_color_" + color) +
                         (" input__entry_form_" + form))
                     .input__message.js-input__message(class="" + (" input__message_state_hidden"))
                 when "box"
                 when "boxMini"
-                    textarea.input__entry.js-input__entry(required=(required ? required : false) type=type placeholder=placeholder class="" +
+                    textarea.input__entry.js-input__entry(required=(required ? required : false) value=value type=type placeholder=placeholder class="" +
                         (" input__entry_radius_" + radius) +
                         (" input__entry_color_" + color) +
                         (" input__entry_form_" + form))

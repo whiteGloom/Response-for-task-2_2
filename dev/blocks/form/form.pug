@@ -4,16 +4,15 @@ include ../tick/tick
 include ../dropdown/dropdown
 include ../searchbar/searchbar
 
-mixin form(options)
+mixin form(options = {})
     -
-        options = options || {};
-        const {name = "form", data = [], submitTheme = "aquamarineAlternate", submit = true} = options;
+        const {name = "form", data = [], submitTheme = "aquamarine-alternate", submit = true} = options;
     form.form.js-form(name=name)
         for item in data
-            .form__el
+            .form__el(class="" + (" form__el_margin_" + (item.margin ? item.margin : "normal")))
                 if item.text
-                    .form__elText= item.text
-                .form__elEntry.js-form__elEntry(class="" + (" form__elEntry_size_" + (item.text ? "auto" : "fill")))
+                    .form__el-text= item.text
+                .form__el-entry.js-form__el-entry(class="" + (" form__el-entry_size_" + (item.text ? "auto" : "fill")))
                     case item.type
                         when "input"
                             +input(item.properties)

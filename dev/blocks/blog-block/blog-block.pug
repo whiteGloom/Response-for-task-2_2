@@ -1,8 +1,7 @@
 include ../article/article
 
-mixin blog-block(options)
+mixin blog-block(options = {})
     -
-        options = options || {};
         const {data = []} = options;
     .block
         .block__title

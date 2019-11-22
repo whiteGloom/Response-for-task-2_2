@@ -1,6 +1,5 @@
-mixin button-round(options)
+mixin button-round(options = {})
     -
-        options = options || {};
         let {type = "button", blocked = false, content = "rightArrow", theme = "aquamarine"} = options;
 
     button.button-round.js-button-round(type=type class="" +

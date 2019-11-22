@@ -1,5 +1,4 @@
-mixin chart(options)
+mixin chart(options = {})
     -
-        options = options || {};
         const {id = "", size = "min", type = "progress"} = options;
     .chart(id= id class="" + (" chart_size_" + size) + (" chart_type_" + type))

@@ -10,9 +10,8 @@ include ../location-showcase-block/location-showcase-block
 include ../news-event-showcase-block/news-event-showcase-block
 include ../bars-users-showcase-blocks/bars-users-showcase-blocks
 
-mixin uikit-page-content(options)
+mixin uikit-page-content(options = {})
     -
-        options = options || {};
         const {
             videoData = {},
             messengerData = {},

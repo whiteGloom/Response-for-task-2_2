@@ -55,8 +55,9 @@ html
                 barsUsersData: {
                     formData: {
                         submit: false, data: [
-                            {type: "searchbar"},
-                            {type: "dropdown", properties: {
+                            {margin: "big", type: "searchbar"},
+                            {margin: "big", type: "searchbar", properties:{ value: "I've not found what i'm looking for..." }},
+                            {margin: "big", type: "dropdown", properties: {
                                 type: "dropdown", data: [
                                     {value: "Tomsk", text: "Томск"},
                                     {value: "Kemerovo", text: "Кемерово"},
@@ -119,28 +120,28 @@ html
                         {content: "leftArrow"},
                         {blocked: true},
                         {content: "leftArrow", blocked: true},
-                        {theme:"aquamarineAlternate"},
-                        {theme:"aquamarineAlternate", content: "leftArrow"}
+                        {theme:"aquamarine-alternate"},
+                        {theme:"aquamarine-alternate", content: "leftArrow"}
                     ]
                 ],
                 buttonsData: [
                     [
-                        {form: "boxMini", content:"button", theme: "aquamarineAlternate"},
-                        {form: "box", content:"button", theme: "aquamarineAlternate"},
-                        {form: "box", content:"button", theme: "orangeAlternate"},
-                        {form: "boxMini", content:"button", theme: "orangeAlternate"}
+                        {form: "box-mini", content:"button", theme: "aquamarine-alternate"},
+                        {form: "box", content:"button", theme: "aquamarine-alternate"},
+                        {form: "box", content:"button", theme: "orange-alternate"},
+                        {form: "box-mini", content:"button", theme: "orange-alternate"}
                     ],
                     [
-                        {form: "boxMini", content:"button", theme: "aquamarineAlternate"},
-                        {form: "box", content:"button", theme: "aquamarineAlternate"},
-                        {form: "box", content:"button", theme: "orangeAlternate"},
-                        {form: "boxMini", content:"button", theme: "orangeAlternate"}
+                        {form: "box-mini", content:"button", theme: "aquamarine-alternate"},
+                        {form: "box", content:"button", theme: "aquamarine-alternate"},
+                        {form: "box", content:"button", theme: "orange-alternate"},
+                        {form: "box-mini", content:"button", theme: "orange-alternate"}
                     ],
                     [
-                        {form: "boxMini", content:"button", theme: "aquamarine"},
+                        {form: "box-mini", content:"button", theme: "aquamarine"},
                         {form: "box", content:"button", theme: "aquamarine"},
                         {form: "box", content:"button", theme: "orange"},
-                        {form: "boxMini", content:"button", theme: "orange"}
+                        {form: "box-mini", content:"button", theme: "orange"}
                     ]
                 ]
             })

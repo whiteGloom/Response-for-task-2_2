@@ -1,6 +1,5 @@
-mixin calendar(options)
+mixin calendar(options = {})
     -
-        options = options || {};
         const {size = "normal"} = options;
         const day = (new Date()).getDate();
     .calendar(class="" + (" calendar_size_" + size))

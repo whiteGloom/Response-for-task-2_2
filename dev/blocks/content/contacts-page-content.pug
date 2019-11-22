@@ -2,13 +2,12 @@ include ../map/map
 include ../menagers-block/menagers-block
 include ../contact-us-block/contact-us-block
 
-mixin contacts-page-content(options)
+mixin contacts-page-content(options = {})
     -
-        options = options || {};
         const {mapData = {}, menagersData = {}, contactUsData = {}} = options;
-    section.base__section
+    section.base__section.base__section_type_normal
         +map(mapData)
-    section.base__section
+    section.base__section.base__section_type_normal
         +menagers-block(menagersData)
-    section.base__section
+    section.base__section.base__section_type_normal
         +contact-us-block(contactUsData)
