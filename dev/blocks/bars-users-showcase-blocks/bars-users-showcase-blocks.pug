@@ -18,5 +18,5 @@ mixin bars-users-showcase-blocks(options = {})
                 .block__title
                     +title({text: "User profile", level: 3})
                 for userData in usersData
-                    .block__el.block__el_margin_extra
+                    .block__el.block__el_margin_extra.block__el_type_users
                         +user(userData)

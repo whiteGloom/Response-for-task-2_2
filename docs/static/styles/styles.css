@@ -66,6 +66,9 @@
 .block__el_margin_buttons-round {
   margin-top: 2.3rem;
 }
+.block__el_margin_stepbar {
+  margin-top: 1.3rem;
+}
 .block__el_margin_sliders {
   margin-top: 0.5rem;
 }
@@ -83,6 +86,9 @@
 }
 .block__el_margin_video {
   margin-top: 1.5rem;
+}
+.block__el_type_users {
+  padding-left: 1.4rem;
 }
 .block__el:first-child {
   margin-top: 0;
