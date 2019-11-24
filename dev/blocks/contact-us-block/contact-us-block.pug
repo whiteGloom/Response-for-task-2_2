@@ -5,18 +5,16 @@ include ../messenger/messenger
 mixin contact-us-block(options = {})
     -
         const {formData = [], messengerData = {}} = options;
-    .block
-        .block__title
+    section.contact-us-block
+        .contact-us-block__title
             +title({text: "Напишите нам!"})
-        .block__el.block__el_margin_normal
-            .block
-                .block__title
-                    +title({text: "На почту", level: 3})
-                .block__el.block__el_margin_normal
-                    +form({data: formData})
-        .block__el.block__el_margin_normal
-            .block
-                .block__title
-                    +title({text: "Или онлайн", level: 3})
-                .block__el.block__el_margin_normal
-                    +messenger(messengerData)
+        section.contact-us-block__content
+            .contact-us-block__title
+                +title({text: "На почту", level: 3})
+            .contact-us-block__content
+                +form({data: formData})
+        section.contact-us-block__content
+            .contact-us-block__title
+                +title({text: "Или онлайн", level: 3})
+            .contact-us-block__content
+                +messenger(messengerData)

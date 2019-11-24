@@ -1,0 +1,27 @@
+include ../title/title
+include ../form/form
+include ../toggle/toggle
+include ../tick/tick
+
+mixin form-showcase(options = {})
+    -
+        const {formData = {}, togglesData = [], ticksData = []} = options;
+    .form-showcase
+        .form-showcase__title
+            +title({text: "Form elements", level: 3})
+        .form-showcase__wrapper
+            .form-showcase__form
+                +form(formData)
+            .form-showcase__buttons-container
+                .form-showcase__button
+                    .form-showcase__button-title
+                        +title({text: "Toggles", level: 3})
+                    .form-showcase__button-content.form-showcase__button-content_type_toggle
+                        for toggleData in togglesData
+                            +toggle(toggleData)
+                .form-showcase__button
+                    .form-showcase__button-title
+                        +title({text: "Tick boxes", level: 3})
+                    .form-showcase__button-content.form-showcase__button-content_type_tick
+                        for tickData in ticksData
+                            +tick(tickData)

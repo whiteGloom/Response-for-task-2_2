@@ -1,0 +1,19 @@
+include ../title/title
+include ../form/form
+include ../user/user
+
+mixin bars-users-showcase(options = {})
+    -
+        const {formData = {}, usersData = []} = options;
+    .bars-users-showcase
+        .bars-users-showcase__bars-container
+            .bars-users-showcase__bars-title
+                +title({text: "search / drop down", level: 3})
+            .bars-users-showcase__bars-content
+                +form(formData)
+        .bars-users-showcase__users-container
+            .bars-users-showcase__users-title
+                +title({text: "User profile", level: 3})
+            for userData in usersData
+                .bars-users-showcase__users-content
+                    +user(userData)

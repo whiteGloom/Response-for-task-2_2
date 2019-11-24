@@ -1,0 +1,12 @@
+include ../title/title
+include ../slider/slider
+
+mixin sliders-showcase(options = {})
+    -
+        const {slidersData = {}} = options;
+    .sliders-showcase
+        .sliders-showcase__title
+            +title({text: "Sliders", level: 3})
+        .sliders-showcase__el
+            for sliderData in slidersData
+                +slider(sliderData)

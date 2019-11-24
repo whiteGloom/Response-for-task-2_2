@@ -1,0 +1,12 @@
+include ../title/title
+include ../chart/chart
+
+mixin charts-showcase(options = {})
+    -
+        const {chartsData = []} = options;
+    .charts-showcase
+        .charts-showcase__title
+            +title({text: "Percentages / Pie charts", level: 3})
+        .charts-showcase__el
+            for chartData in chartsData
+                +chart(chartData)

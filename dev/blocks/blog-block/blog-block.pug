@@ -3,8 +3,8 @@ include ../article/article
 mixin blog-block(options = {})
     -
         const {data = []} = options;
-    .block
-        .block__title
+    .blog-block
+        .blog-block__title
             +title({text: "Блог"})
-        .block__el.block__el_margin_normal
+        .blog-block__el
             +article({data: data})

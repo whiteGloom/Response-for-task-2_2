@@ -1,0 +1,11 @@
+include ../title/title
+include ../map/map
+
+mixin location-showcase(options = {})
+    -
+        const {locationData = {}} = options;
+    .location-showcase
+        .location-showcase__title
+            +title({text: "Location", level: 3})
+        .location-showcase__el
+            +map(locationData)

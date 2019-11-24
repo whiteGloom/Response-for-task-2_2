@@ -1,14 +1,12 @@
-include ../wrapper/wrapper
 include ../user/user
 include ../title/title
 
 mixin menagers-block(options = {})
     -
         const {data = []} = options;
-    .block
-        .block__title
+    section.menager-block
+        .menager-block__title
             +title({text: "Наши менеджеры"})
-        .block__el.block__el_margin_normal
-            +wrapper({justify: "around"})
-                for item in data
-                    +user(item)
+        .menager-block__el
+            for item in data
+                +user(item)

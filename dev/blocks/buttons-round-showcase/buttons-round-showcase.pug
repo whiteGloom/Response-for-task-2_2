@@ -1,0 +1,13 @@
+include ../button-round/button-round
+include ../title/title
+
+mixin buttons-round-showcase(options = {})
+    -
+        const {buttonsData = []} = options;
+    .buttons-round-showcase
+        .buttons-round-showcase__title
+            +title({text: "Arrow buttons", level: 3})
+        for buttonLine in buttonsData
+            .buttons-round-showcase__el
+                for buttonData in buttonLine
+                    +button-round(buttonData)

@@ -1,14 +1,14 @@
-include ../buttons-showcase-block/buttons-showcase-block
-include ../buttons-round-showcase-block/buttons-round-showcase-block
-include ../charts-showcase-block/charts-showcase-block
-include ../sliders-showcase-block/sliders-showcase-block
-include ../stepbar-showcase-block/stepbar-showcase-block
-include ../form-showcase-block/form-showcase-block
-include ../video-showcase-block/video-showcase-block
-include ../calendar-messanger-showcase-block/calendar-messanger-showcase-block
-include ../location-showcase-block/location-showcase-block
-include ../news-event-showcase-block/news-event-showcase-block
-include ../bars-users-showcase-blocks/bars-users-showcase-blocks
+include ../buttons-showcase/buttons-showcase
+include ../buttons-round-showcase/buttons-round-showcase
+include ../charts-showcase/charts-showcase
+include ../sliders-showcase/sliders-showcase
+include ../stepbar-showcase/stepbar-showcase
+include ../form-showcase/form-showcase
+include ../bars-users-showcase/bars-users-showcase
+include ../news-event-showcase/news-event-showcase
+include ../location-showcase/location-showcase
+include ../calendar-messanger-showcase/calendar-messanger-showcase
+include ../video-showcase/video-showcase
 
 mixin uikit-page-content(options = {})
     -
@@ -28,24 +28,24 @@ mixin uikit-page-content(options = {})
         } = options;
 
     section.base__section.base__section_type_normal
-        +buttons-showcase-block({buttonsData})
+        +buttons-showcase({buttonsData})
     section.base__section.base__section_type_large
-        +buttons-round-showcase-block({buttonsData: roundButtonsData})
+        +buttons-round-showcase({buttonsData: roundButtonsData})
     section.base__section.base__section_type_charts
-        +charts-showcase-block({chartsData})
+        +charts-showcase({chartsData})
     section.base__section.base__section_type_sliders
-        +sliders-showcase-block({slidersData})
+        +sliders-showcase({slidersData})
     section.base__section.base__section_type_stages
-        +stepbar-showcase-block({stepbarData})
+        +stepbar-showcase({stepbarData})
     section.base__section.base__section_type_form
-        +form-showcase-block({formData: formData.formData, ticksData: formData.ticksData, togglesData: formData.togglesData})
+        +form-showcase({formData: formData.formData, ticksData: formData.ticksData, togglesData: formData.togglesData})
     section.base__section.base__section_type_bars-users
-        +bars-users-showcase-blocks({usersData: barsUsersData.usersData, formData: barsUsersData.formData})
+        +bars-users-showcase({usersData: barsUsersData.usersData, formData: barsUsersData.formData})
     section.base__section.base__section_type_events
-        +news-event-showcase-block({newsData: newsData, eventData: eventData})
+        +news-event-showcase({newsData: newsData, eventData: eventData})
     section.base__section.base__section_type_normal
-        +location-showcase-block({locationData})
+        +location-showcase({locationData})
     section.base__section.base__section_type_large
-        +calendar-messanger-showcase-block({messengerData})
+        +calendar-messanger-showcase({messengerData})
     section.base__section.base__section_type_large
-        +video-showcase-block({videoData})
+        +video-showcase({videoData})

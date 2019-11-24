@@ -4,9 +4,9 @@ include ../p/p
 mixin working-area-block(options = {})
     -
         const {data = []} = options;
-    .block
-        .block__title
+    .working-area-block
+        .working-area-block__title
             +title({text: "Где работаем"})
-        .block__el.block__el_margin_normal
+        .working-area-block__el
             for item in data
                 +p({text: item.text})

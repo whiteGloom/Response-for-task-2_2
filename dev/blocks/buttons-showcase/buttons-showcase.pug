@@ -1,0 +1,13 @@
+include ../button/button
+include ../title/title
+
+mixin buttons-showcase(options = {})
+    -
+        const {buttonsData = []} = options;
+    .buttons-showcase
+        .buttons-showcase__title
+            +title({text: "Standard buttons", level: 3})
+        for buttonLine, index in buttonsData
+            .buttons-showcase__el
+                for buttonData in buttonLine
+                    +button(buttonData)

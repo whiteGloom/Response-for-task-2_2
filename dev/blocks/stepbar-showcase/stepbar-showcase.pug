@@ -1,0 +1,11 @@
+include ../title/title
+include ../stepbar/stepbar
+
+mixin stepbar-showcase(options = {})
+    -
+        const {stepbarData = {}} = options;
+    .stepbar-showcase
+        .stepbar-showcase__title
+            +title({text: "Stages", level: 3})
+        .stepbar-showcase__el
+            +stepbar(stepbarData)

@@ -4,9 +4,9 @@ include ../title/title
 mixin about-block(options = {})
     -
         const {data = []} = options;
-    section.block
-        .block__title
+    section.about-block
+        .about-block__title
             +title({text: "Кратко о компании"})
-        .block__el.block__el_margin_normal
+        .about-block__el
             for item in data
                 +p({text: item.text})

@@ -1,4 +1,3 @@
-include ../wrapper/wrapper
 include ../title/title
 include ../stepbar/stepbar
 include ../rate/rate
@@ -6,16 +5,14 @@ include ../rate/rate
 mixin stats-block(options = {})
     -
         const {rateData = [], coverageData = {}} = options;
-    .block
-        .block__title
+    section.stats-block
+        .stats-block__title
             +title({text: "Наши показатели"})
-        .block__el.block__el_margin_normal
-            .block
-                .block__title
-                    +title({text: "Желаемый охват городов", level: 3})
-                .block__el.block__el_margin_normal
-                    +stepbar(coverageData)
-        .block__el.block__el_margin_normal
-            +wrapper({justify: "around"})
-                for rate in rateData
-                    +rate({title: rate.title, id: rate.id})
+        section.stats-block__el
+            .stats-block__title
+                +title({text: "Желаемый охват городов", level: 3})
+            .stats-block__el
+                +stepbar(coverageData)
+        section.stats-block__el.stats-block__el_type_stats
+            for rate in rateData
+                +rate({title: rate.title, id: rate.id})
