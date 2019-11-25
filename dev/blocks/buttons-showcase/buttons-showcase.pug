@@ -3,11 +3,11 @@ include ../title/title
 
 mixin buttons-showcase(options = {})
     -
-        const {buttonsData = []} = options;
+        const {data = [], title = ""} = options;
     .buttons-showcase
         .buttons-showcase__title
-            +title({text: "Standard buttons", level: 3})
-        for buttonLine, index in buttonsData
+            +title({text: title, level: 3})
+        for buttonLine, index in data
             .buttons-showcase__el
                 for buttonData in buttonLine
                     +button(buttonData)

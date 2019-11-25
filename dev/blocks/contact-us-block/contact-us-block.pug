@@ -4,17 +4,17 @@ include ../messenger/messenger
 
 mixin contact-us-block(options = {})
     -
-        const {formData = [], messengerData = {}} = options;
+        const {formData = [], messengerData = {}, title = ""} = options;
     section.contact-us-block
         .contact-us-block__title
-            +title({text: "Напишите нам!"})
+            +title({text: title})
         section.contact-us-block__content
             .contact-us-block__title
-                +title({text: "На почту", level: 3})
+                +title({text: formData.title, level: 3})
             .contact-us-block__content
-                +form({data: formData})
+                +form({data: formData.data})
         section.contact-us-block__content
             .contact-us-block__title
-                +title({text: "Или онлайн", level: 3})
+                +title({text: messengerData.title, level: 3})
             .contact-us-block__content
-                +messenger(messengerData)
+                +messenger(messengerData.data)

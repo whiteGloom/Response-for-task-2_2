@@ -15,29 +15,44 @@ html
         link(rel="stylesheet" type="text/css" href="static/styles/styles.css")
     // Тело странциы
     body
-        +header({title: "UI Kit"})
-        main.base
-            +uikit-page-content({
-                videoData: {
+        +uikit-page-content({
+            title: "UI Kit",
+            videoData: {
+                title: "Video",
+                data: {
                     src: "./static/videos/intro.mp4",
                     preview:  "./static/images/lkl-logo.png",
                     title: "New Zeland Landscapes Timelapse", author: "Bevan Percival",
                     source: "https://youtu.be/y9Z-gDcCSmU"
+                }
+            },
+            messengerCalendarData: {
+                calendarData: {
+                    title: "Calendar"
                 },
                 messengerData: {
-                    title: "Sarah Brown",
-                    logo: "./static/images/logo-girl.png",
-                    inputPlaceholder: "Yeah that's sounds great. See you then.",
-                    messages: [
-                        {sender: "interlocutor", text: "Hey! So are we cool to meet at the art gallery? Say 8pm"}
-                    ]
-                },
-                locationData: {
+                    title: "Messaging",
+                    data: {
+                        title: "Sarah Brown",
+                        logo: "./static/images/logo-girl.png",
+                        inputPlaceholder: "Yeah that's sounds great. See you then.",
+                        messages: [
+                            {sender: "interlocutor", text: "Hey! So are we cool to meet at the art gallery? Say 8pm"}
+                        ]
+                    }
+                }
+            },
+            locationData: {
+                title: "Location",
+                data: {
                     title: "Meet us!",
                     street: "1259 california st",
                     city: "san francisco, ca",
                     coordinates: '{"lat": 56.590212, "lng": 84.939791}'
-                },
+                }
+            },
+            newsEventsData: {
+                title: "News & events",
                 newsData: {
                     image: "./static/images/biker.png",
                     title: "It's all going dowhill",
@@ -51,12 +66,15 @@ html
                     dateDay: "24",
                     dateMonth: "Aug",
                     description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-                },
-                barsUsersData: {
-                    formData: {
+                }
+            },
+            barsUsersData: {
+                formData: {
+                    title: "search / drop down",
+                    data: {
                         submit: false, data: [
                             {margin: "big", type: "searchbar"},
-                            {margin: "big", type: "searchbar", properties:{ value: "I've not found what i'm looking for..." }},
+                            {margin: "big", type: "searchbar", properties: { value: "I've not found what i'm looking for..." }},
                             {margin: "big", type: "dropdown", properties: {
                                 type: "dropdown", data: [
                                     {value: "Tomsk", text: "Томск"},
@@ -66,8 +84,11 @@ html
                                 ]}
                             }
                         ]
-                    },
-                    usersData: [
+                    }
+                },
+                usersData: {
+                    title: "User profile",
+                    data: [
                         {
                             color: "gray",
                             name: "John Smith",
@@ -82,39 +103,52 @@ html
                             logo: "./static/images/logo-girl.png"
                         }
                     ]
-                },
+                }
+            },
+            formData: {
+                title: "Form elements",
                 formData: {
-                    formData: {
-                        data: [
-                            {type: "input", properties: {type: "email", name:"email", required: true, placeholder: "E-mail"}},
-                            {type: "input", properties: {type: "password", name: "password", required: true, placeholder: "Password"}},
-                            {type: "input", properties: {form: "box", name: "message", placeholder: "Your message"}},
-                        ]
-                    },
-                    togglesData: [
-                        {name: "toggles", id: "toggleFirst"},
-                        {name: "toggles", checked: true, id: "toggleSecond"}
-                    ],
-                    ticksData: [
-                        {name: "toggles", id: "tickFirst"},
-                        {name: "toggles", checked: true, id: "tickSecond"}
+                    data: [
+                        {type: "input", properties: {type: "email", name:"email", required: true, placeholder: "E-mail"}},
+                        {type: "input", properties: {type: "password", name: "password", required: true, placeholder: "Password"}},
+                        {type: "input", properties: {form: "box", name: "message", placeholder: "Your message"}},
                     ]
                 },
-                stepbarData: {
+                togglesData: [
+                    {name: "toggles", id: "toggleFirst"},
+                    {name: "toggles", checked: true, id: "toggleSecond"}
+                ],
+                ticksData: [
+                    {name: "toggles", id: "tickFirst"},
+                    {name: "toggles", checked: true, id: "tickSecond"}
+                ]
+            },
+            stepbarData: {
+                title: "Stages",
+                data: {
                     id: "stepbarTest"
-                },
-                slidersData: [
+                }
+            },
+            slidersData: {
+                title: "Sliders",
+                data: [
                     {id: "sliderSimpleTest", size: "min"},
                     {id: "sliderPipsTest", size: "min"}
-                ],
-                chartsData: [
+                ]
+            },
+            chartsData: {
+                title: "Percentages / Pie charts",
+                data: [
                     {id: "0percExample"},
                     {id: "38percExample"},
                     {id: "62percExample"},
                     {id: "89percExample"},
                     {id: "pieExample", type: "pie"}
-                ],
-                roundButtonsData: [
+                ]
+            },
+            roundButtonsData: {
+                title: "Arrow buttons",
+                data: [
                     [
                         {},
                         {content: "leftArrow"},
@@ -123,8 +157,11 @@ html
                         {theme:"aquamarine-alternate"},
                         {theme:"aquamarine-alternate", content: "leftArrow"}
                     ]
-                ],
-                buttonsData: [
+                ]
+            },
+            buttonsData: {
+                title: "Standard buttons",
+                data: [
                     [
                         {form: "box-mini", content:"button", theme: "aquamarine-alternate"},
                         {form: "box", content:"button", theme: "aquamarine-alternate"},
@@ -144,7 +181,8 @@ html
                         {form: "box-mini", content:"button", theme: "orange"}
                     ]
                 ]
-            })
+            }
+        })
         script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6UQbE2epfLfDfa2uaXCx1soXdAfSFU-c&callback=initMap")
         script(src="https://vjs.zencdn.net/5-unsafe/video.js")
         script(type="text/javascript" src="./scripts/vendors.js")

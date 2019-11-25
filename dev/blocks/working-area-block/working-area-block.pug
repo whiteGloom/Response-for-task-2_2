@@ -3,10 +3,10 @@ include ../p/p
 
 mixin working-area-block(options = {})
     -
-        const {data = []} = options;
+        const {data = [], title = ""} = options;
     .working-area-block
         .working-area-block__title
-            +title({text: "Где работаем"})
+            +title({text: title})
         .working-area-block__el
             for item in data
                 +p({text: item.text})

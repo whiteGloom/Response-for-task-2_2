@@ -7,45 +7,46 @@ include ../form-showcase/form-showcase
 include ../bars-users-showcase/bars-users-showcase
 include ../news-event-showcase/news-event-showcase
 include ../location-showcase/location-showcase
-include ../calendar-messanger-showcase/calendar-messanger-showcase
+include ../calendar-messenger-showcase/calendar-messenger-showcase
 include ../video-showcase/video-showcase
 
 mixin uikit-page-content(options = {})
     -
         const {
-            videoData = {},
-            messengerData = {},
-            locationData = {},
-            newsData = {},
-            eventData = {},
-            barsUsersData = {},
-            formData = {},
+            title = "",
+            buttonsData = {},
+            roundButtonsData = {},
+            chartsData = {},
+            slidersData = {},
             stepbarData = {},
-            slidersData = [],
-            chartsData = [],
-            roundButtonsData = [],
-            buttonsData = []
+            formData = {},
+            barsUsersData = {},
+            newsEventsData = {},
+            locationData = {},
+            messengerCalendarData = {},
+            videoData = {}
         } = options;
-
-    section.base__section.base__section_type_normal
-        +buttons-showcase({buttonsData})
-    section.base__section.base__section_type_large
-        +buttons-round-showcase({buttonsData: roundButtonsData})
-    section.base__section.base__section_type_charts
-        +charts-showcase({chartsData})
-    section.base__section.base__section_type_sliders
-        +sliders-showcase({slidersData})
-    section.base__section.base__section_type_stages
-        +stepbar-showcase({stepbarData})
-    section.base__section.base__section_type_form
-        +form-showcase({formData: formData.formData, ticksData: formData.ticksData, togglesData: formData.togglesData})
-    section.base__section.base__section_type_bars-users
-        +bars-users-showcase({usersData: barsUsersData.usersData, formData: barsUsersData.formData})
-    section.base__section.base__section_type_events
-        +news-event-showcase({newsData: newsData, eventData: eventData})
-    section.base__section.base__section_type_normal
-        +location-showcase({locationData})
-    section.base__section.base__section_type_large
-        +calendar-messanger-showcase({messengerData})
-    section.base__section.base__section_type_large
-        +video-showcase({videoData})
+    +header({title})
+    main.base
+        section.base__section.base__section_type_normal
+            +buttons-showcase(buttonsData)
+        section.base__section.base__section_type_large
+            +buttons-round-showcase(roundButtonsData)
+        section.base__section.base__section_type_charts
+            +charts-showcase(chartsData)
+        section.base__section.base__section_type_sliders
+            +sliders-showcase(slidersData)
+        section.base__section.base__section_type_stages
+            +stepbar-showcase(stepbarData)
+        section.base__section.base__section_type_form
+            +form-showcase(formData)
+        section.base__section.base__section_type_bars-users
+            +bars-users-showcase(barsUsersData)
+        section.base__section.base__section_type_events
+            +news-event-showcase(newsEventsData)
+        section.base__section.base__section_type_normal
+            +location-showcase(locationData)
+        section.base__section.base__section_type_large
+            +calendar-messenger-showcase(messengerCalendarData)
+        section.base__section.base__section_type_large
+            +video-showcase(videoData)

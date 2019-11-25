@@ -15,18 +15,23 @@ html
         link(rel="stylesheet" type="text/css" href="static/styles/styles.css")
     // Тело странциы
     body
-        +header({title: "Contacts"})
-        main.base
-            +contacts-page-content({
-                mapData: {
-                    title: "Мы здесь!", street: "** Predzavodskaya ST", city: "Seversk, RU", coordinates: '{"lat": 56.590212, "lng": 84.939791}'
-                },
-                menagersData: {data: [
+        +contacts-page-content({
+            title: "Contacts",
+            mapData: {
+                title: "Мы здесь!", street: "** Predzavodskaya ST", city: "Seversk, RU", coordinates: '{"lat": 56.590212, "lng": 84.939791}'
+            },
+            menagersData: {
+                title: "Наши менеджеры",
+                data: [
                     {color: "gray", name: "Евгений Миллер", profession: "Менеджер", logo: "./static/images/wg-logo.jpg"},
                     {theme: "aquamarine", name: "Евгений Миллер", profession: "Менеджер", theme: "aquamarine", logo: "./static/images/lkl-logo.png"}
-                ]},
-                contactUsData: {
-                    formData: [
+                ]
+            },
+            contactUsData: {
+                title: "Напишите нам!",
+                formData: {
+                    title: "На почту",
+                    data: [
                         {type: "input", properties: {type: "email", name:"email", required: true, placeholder: "E-mail"}},
                         {type: "input", properties: {name: "name", required: true, placeholder: "Ваше имя"}},
                         {type: "input", properties: {form: "box", name: "message", placeholder: "Ваше сообщение"}},
@@ -35,8 +40,11 @@ html
                             {value: "Seversk", text: "Северск"},
                             {value: "Asino", text: "Асино"}
                         ]}},
-                    ],
-                    messengerData: {
+                    ]
+                },
+                messengerData: {
+                    title: "Или онлайн",
+                    data: {
                         size: "auto",
                         title: "Евгений Миллер",
                         logo: "./static/images/wg-logo.jpg",
@@ -45,7 +53,8 @@ html
                         ]
                     }
                 }
-            })
+            }
+        })
         script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6UQbE2epfLfDfa2uaXCx1soXdAfSFU-c&callback=initMap")
         script(src="https://vjs.zencdn.net/5-unsafe/video.js")
         script(type="text/javascript" src="./scripts/vendors.js")

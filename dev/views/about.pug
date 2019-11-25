@@ -15,25 +15,34 @@ html
         link(rel="stylesheet" type="text/css" href="static/styles/styles.css")
     // Тело странциы
     body
-        +header({title: "About"})
-        main.base
-            +about-page-content({
-                aboutData: {data: [
+        +about-page-content({
+            title: "About", 
+            aboutData: {
+                title: "Кратко о компании",
+                data: [
                     {text: "Компания была основана в начале 2019 года, в Томске. На момент создания ей занималось всего 6 человек. Однако, уже к маю у нас было более 1500 заказов, а число работников перевалило за 60."},
                     {text: "У нашей компании есть принципы. Для нашей продукции мы выбираем лучшие материалы, стараясь сохранить высокое качество и приятную для покупателя цену. Мы никогда не откажем клиенту в помощи, если она ему потребуется, не стесняйтесь обращаться за ней!"}
-                ]},
-                statsData: {
-                    coverageData: {id: "stepbarTest"},
-                    rateData: [
-                        {title: "Рейтинг", id: "Rating"},
-                        {title: "Ассортимент", id: "Assort"},
-                        {title: "% Категорий", id: "Categories"}
-                    ]
+                ]
+            },
+            statsData: {
+                title: "Наши показатели",
+                coverageData: {
+                    title: "Желаемый охват городов",
+                    data: {id: "stepbarTest"},
                 },
-                workingAreaData: {data: [
+                rateData: [
+                    {title: "Рейтинг", id: "Rating"},
+                    {title: "Ассортимент", id: "Assort"},
+                    {title: "% Категорий", id: "Categories"}
+                ]
+            },
+            workingAreaData: {
+                title: "Где работаем",
+                data: [
                     {text: "На данный момент в зону покрытия нашей компании входят города: <strong> Томск, Асино, Северск. </strong> В ближайшее время в этот список также попадёт Кемерово. Для клиентов из других городов мы можем огранизовать доставку по почте. Доставка по почте доступна для всех стран СНГ. За подробностями доставки необходимо обратиться к менеджеру."}
-                ]}
-            })
+                ]
+            }
+        })
         script(src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB6UQbE2epfLfDfa2uaXCx1soXdAfSFU-c&callback=initMap")
         script(src="https://vjs.zencdn.net/5-unsafe/video.js")
         script(type="text/javascript" src="./scripts/vendors.js")

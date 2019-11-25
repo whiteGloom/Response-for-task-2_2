@@ -1,6 +1,6 @@
 {
   "name": "Response-for-second-task",
-  "version": "1.6.0",
+  "version": "1.7.0beta",
   "description": "The answer to the task number 2.2",
   "main": "index.js",
   "scripts": {
@@ -38,7 +38,9 @@
     "webpack-merge": "^4.2.1"
   },
   "dependencies": {
-    "jquery": "^3.4.1"
+    "ion-rangeslider": "^2.3.0",
+    "jquery": "^3.4.1",
+    "jquery-ui": "^1.12.1"
   },
   "contributors": [
     "whiteGloom <karabin.m@yandex.ru> (https://github.com/whiteGloom)"

@@ -4,10 +4,12 @@ include ../working-area-block/working-area-block
 
 mixin about-page-content(options = {})
     -
-        const {aboutData = {}, statsData = {}, workingAreaData = {}} = options;
-    section.base__section.base__section_type_normal
-        +about-block(aboutData)
-    section.base__section.base__section_type_normal
-        +stats-block(statsData)
-    section.base__section.base__section_type_normal
-        +working-area-block(workingAreaData)
+        const {aboutData = {}, statsData = {}, workingAreaData = {}, title = ""} = options;
+    +header({title})
+    main.base
+        section.base__section.base__section_type_normal
+            +about-block(aboutData)
+        section.base__section.base__section_type_normal
+            +stats-block(statsData)
+        section.base__section.base__section_type_normal
+            +working-area-block(workingAreaData)

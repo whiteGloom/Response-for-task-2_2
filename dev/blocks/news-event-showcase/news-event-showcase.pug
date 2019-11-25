@@ -3,10 +3,10 @@ include ../note/note
 
 mixin news-event-showcase(options = {})
     -
-        const {newsData = {}, eventData = {}} = options;
+        const {newsData = {}, eventData = {}, title = ""} = options;
     .news-event-showcase
         .news-event-showcase__title
-            +title({text: "News & events", level: 3})
+            +title({text: title, level: 3})
         .news-event-showcase__el
             +note(newsData)
             +note(eventData)

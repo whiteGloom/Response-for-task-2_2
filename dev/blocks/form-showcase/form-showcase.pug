@@ -5,10 +5,10 @@ include ../tick/tick
 
 mixin form-showcase(options = {})
     -
-        const {formData = {}, togglesData = [], ticksData = []} = options;
+        const {formData = {}, togglesData = [], ticksData = [], title = ""} = options;
     .form-showcase
         .form-showcase__title
-            +title({text: "Form elements", level: 3})
+            +title({text: title, level: 3})
         .form-showcase__wrapper
             .form-showcase__form
                 +form(formData)

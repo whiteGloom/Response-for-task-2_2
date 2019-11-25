@@ -3,9 +3,9 @@ include ../video/video
 
 mixin video-showcase(options = {})
     -
-        const {videoData = {}} = options;
+        const {data = {}, title = ""} = options;
     .video-showcase
         .video-showcase__title
-            +title({text: "Video", level: 3})
+            +title({text: title, level: 3})
         .video-showcase__el
-            +video(videoData)
+            +video(data)

@@ -1,0 +1,18 @@
+include ../title/title
+include ../calendar/calendar
+include ../messenger/messenger
+
+mixin calendar-messenger-showcase(options = {})
+    -
+        const {messengerData = {}, calendarData = {}} = options;
+    .calendar-messenger-showcase
+        .calendar-messenger-showcase__el
+            .calendar-messenger-showcase__el-title
+                +title({text: calendarData.title, level: 3})
+            .calendar-messenger-showcase__el-content
+                +calendar
+        .calendar-messenger-showcase__el
+            .calendar-messenger-showcase__el-title
+                +title({text: messengerData.title, level: 3})
+            .calendar-messenger-showcase__el-content
+                +messenger(messengerData.data)

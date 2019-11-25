@@ -4,15 +4,15 @@ include ../rate/rate
 
 mixin stats-block(options = {})
     -
-        const {rateData = [], coverageData = {}} = options;
+        const {rateData = [], coverageData = {}, title = ""} = options;
     section.stats-block
         .stats-block__title
-            +title({text: "Наши показатели"})
+            +title({text: title})
         section.stats-block__el
             .stats-block__title
-                +title({text: "Желаемый охват городов", level: 3})
+                +title({text: coverageData.title, level: 3})
             .stats-block__el
-                +stepbar(coverageData)
+                +stepbar(coverageData.data)
         section.stats-block__el.stats-block__el_type_stats
             for rate in rateData
                 +rate({title: rate.title, id: rate.id})

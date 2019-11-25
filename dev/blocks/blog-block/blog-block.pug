@@ -2,9 +2,9 @@ include ../article/article
 
 mixin blog-block(options = {})
     -
-        const {data = []} = options;
+        const {data = [], title = ""} = options;
     .blog-block
         .blog-block__title
-            +title({text: "Блог"})
+            +title({text: title})
         .blog-block__el
             +article({data: data})

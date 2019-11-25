@@ -3,9 +3,9 @@ include ../map/map
 
 mixin location-showcase(options = {})
     -
-        const {locationData = {}} = options;
+        const {data = {}, title = ""} = options;
     .location-showcase
         .location-showcase__title
-            +title({text: "Location", level: 3})
+            +title({text: title, level: 3})
         .location-showcase__el
-            +map(locationData)
+            +map(data)

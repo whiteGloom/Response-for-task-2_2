@@ -4,10 +4,13 @@ include ../contact-us-block/contact-us-block
 
 mixin contacts-page-content(options = {})
     -
-        const {mapData = {}, menagersData = {}, contactUsData = {}} = options;
-    section.base__section.base__section_type_normal
-        +map(mapData)
-    section.base__section.base__section_type_normal
-        +menagers-block(menagersData)
-    section.base__section.base__section_type_normal
-        +contact-us-block(contactUsData)
+        const {mapData = {}, menagersData = {}, contactUsData = {}, title = ""} = options;
+
+    +header({title})
+    main.base
+        section.base__section.base__section_type_normal
+            +map(mapData)
+        section.base__section.base__section_type_normal
+            +menagers-block(menagersData)
+        section.base__section.base__section_type_normal
+            +contact-us-block(contactUsData)

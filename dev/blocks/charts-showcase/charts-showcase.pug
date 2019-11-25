@@ -3,10 +3,10 @@ include ../chart/chart
 
 mixin charts-showcase(options = {})
     -
-        const {chartsData = []} = options;
+        const {data = [], title = ""} = options;
     .charts-showcase
         .charts-showcase__title
-            +title({text: "Percentages / Pie charts", level: 3})
+            +title({text: title, level: 3})
         .charts-showcase__el
-            for chartData in chartsData
+            for chartData in data
                 +chart(chartData)

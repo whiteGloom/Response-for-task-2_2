@@ -18,9 +18,15 @@ $(document).ready(() => {
     });
   }());
 
-  $(".js-calendar__holder").datetimepicker({
+
+  $(".js-calendar__holder").datepicker({
     date: new Date(),
-    firstDayOfWeek: 1
+    firstDay: 1,
+    dayNamesMin: [ "Sun", "Mon", "Tue", "Wen", "Thu", "Fri", "Sat" ],
+    showButtonPanel: "true",  
+    showOtherMonths: "true",
+    dateFormat: "dd", 
+    gotoCurrent: "false"
   });
 
   window.kit.makeChart({

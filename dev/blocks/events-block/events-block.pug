@@ -2,10 +2,10 @@ include ../note/note
 
 mixin events-block(options = {})
     -
-        const {data = []} = options;
+        const {data = [], title = ""} = options;
     .events-block
         .events-block__title
-            +title({text: "События"})
+            +title({text: title})
         for item in data
             .events-block__el
                 +note({image: item.image, title: item.title, date: item.date, description: item.description, size: "auto"})
