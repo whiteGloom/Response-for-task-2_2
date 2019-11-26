@@ -15,4 +15,4 @@ mixin stats-block(options = {})
                 +stepbar(coverageData.data)
         section.stats-block__el.stats-block__el_type_stats
             for rate in rateData
-                +rate({title: rate.title, id: rate.id})
+                +rate(rate)

@@ -8,5 +8,7 @@ mixin news-event-showcase(options = {})
         .news-event-showcase__title
             +title({text: title, level: 3})
         .news-event-showcase__el
-            +note(newsData)
-            +note(eventData)
+            .news-event-showcase__el-content
+                +note(newsData)
+            .news-event-showcase__el-content
+                +note(eventData)

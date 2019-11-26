@@ -4,7 +4,6 @@ module.exports = function(options) {
     return {
         resolve : {
             alias: {
-                'jchart': base + '/dev/vendors/jquery.jchart.js'
             }
         }
     }

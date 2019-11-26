@@ -9,4 +9,5 @@ mixin sliders-showcase(options = {})
             +title({text: title, level: 3})
         .sliders-showcase__el
             for sliderData in data
-                +slider(sliderData)
+                .sliders-showcase__el-content
+                    +slider(sliderData)

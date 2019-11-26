@@ -1,6 +1,6 @@
 mixin calendar(options = {})
     -
-        const {size = "normal"} = options;
+        const {size = "auto"} = options;
         const day = (new Date()).getDate();
     .calendar(class="" + (" calendar_size_" + size))
         .calendar__header

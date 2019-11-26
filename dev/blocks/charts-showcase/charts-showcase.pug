@@ -9,4 +9,5 @@ mixin charts-showcase(options = {})
             +title({text: title, level: 3})
         .charts-showcase__el
             for chartData in data
-                +chart(chartData)
+                .charts-showcase__el-content
+                    +chart(chartData)

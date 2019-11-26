@@ -1,10 +1,10 @@
-window.$ = window.jQuery = require("jquery");
+window.$ = require("jquery");
+
+window.jQuery = window.$;
 require("jquery-ui/ui/widgets/datepicker");
-require("jchart");
 require("ion-rangeslider");
 
 window.kit = {};
-window.kit.makeChart = require("./blocks/chart/chart.js").default;
 window.kit.makeForm = require("./blocks/form/form.js").default;
 window.kit.makeInput = require("./blocks/input/input.js").default;
 window.kit.makeDropdown = require("./blocks/dropdown/dropdown.js").default;

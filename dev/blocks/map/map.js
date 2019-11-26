@@ -7,7 +7,7 @@ class Map {
 
     this.position = this.$base.data("coordinates");
     this.markerPosition = this.position;
-    this.myPosition;
+    this.myPosition = 0;
     this.map = new window.google.maps.Map(this.$mapHolder[0], {
       center: this.position,
       zoom: 15

@@ -52,7 +52,7 @@
   margin-top: 3.2rem;
 }
 .base__section_type_sliders {
-  margin-top: 1.6rem;
+  margin-top: 1.3rem;
 }
 .base__section_type_stages {
   margin-top: 2rem;
@@ -410,8 +410,11 @@
   display: flex;
   justify-content: space-between;
 }
-.calendar-messenger-showcase__el {
-  width: 48.5%;
+.calendar-messenger-showcase__el_type_messenger {
+  width: 19.6rem;
+}
+.calendar-messenger-showcase__el_type_calendar {
+  width: 19rem;
 }
 .calendar-messenger-showcase__el-content {
   margin-top: 1.7rem;
@@ -449,6 +452,11 @@
 .chart {
   min-width: 8.1rem;
 }
+.chart__text {
+  font-family: Lato, arial, sans-serif;
+  font-weight: 200;
+  font-size: 15rem;
+}
 .chart_size_auto {
   width: 100%;
 }
@@ -456,15 +464,14 @@
   width: 8.1rem;
   height: 8.1rem;
 }
-.chart_type_pie {
-  padding: 0.6rem;
-  box-sizing: border-box;
-}
 
 .charts-showcase__el {
   margin-top: 0.8rem;
   display: flex;
   justify-content: space-between;
+}
+.charts-showcase__el-content {
+  width: 8.1rem;
 }
 
 .contact-us-block__content {
@@ -953,6 +960,9 @@
   display: flex;
   justify-content: space-between;
 }
+.news-event-showcase__el-content {
+  width: 19.65rem;
+}
 
 .note {
   min-width: 19.65rem;
@@ -1099,7 +1109,7 @@
 
 .slider {
   min-width: 18rem;
-  min-height: 5rem;
+  height: 5rem;
 }
 .slider_size_min {
   width: 18rem;
@@ -1112,6 +1122,9 @@
   margin-top: 0.5rem;
   display: flex;
   justify-content: space-between;
+}
+.sliders-showcase__el-content {
+  width: 18rem;
 }
 
 .stats-block__el {

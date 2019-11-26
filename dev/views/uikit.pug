@@ -132,18 +132,38 @@ html
             slidersData: {
                 title: "Sliders",
                 data: [
-                    {id: "sliderSimpleTest", size: "min"},
-                    {id: "sliderPipsTest", size: "min"}
+                    {id: "sliderSimpleTest"},
+                    {id: "sliderPipsTest"}
                 ]
             },
             chartsData: {
                 title: "Percentages / Pie charts",
                 data: [
-                    {id: "0percExample"},
-                    {id: "38percExample"},
-                    {id: "62percExample"},
-                    {id: "89percExample"},
-                    {id: "pieExample", type: "pie"}
+                    {value: 0},
+                    {value: 38},
+                    {value: 62},
+                    {value: 89},
+                    {type: "pie", values: [
+                        {
+                            value: 11,
+                            color: "#747474"
+                        },
+                        {
+                            value: 26,
+                            color: "#e75735",
+                            offset: 11
+                        },
+                        {
+                            value: 30,
+                            color: "#4eb7a8",
+                            offset: 37
+                        },
+                        {
+                            value: 33,
+                            color: "#e5e5e5",
+                            offset: 67
+                        }
+                    ]}
                 ]
             },
             roundButtonsData: {
