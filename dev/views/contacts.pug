@@ -1,5 +1,4 @@
-include ../blocks/content/contacts-page-content
-include ../blocks/header/header
+include ../blocks/content/content-contacts-page/content-contacts-page
 
 doctype html
 html
@@ -15,7 +14,7 @@ html
         link(rel="stylesheet" type="text/css" href="static/styles/styles.css")
     // Тело странциы
     body
-        +contacts-page-content({
+        +content-contacts-page({
             title: "Contacts",
             mapData: {
                 title: "Мы здесь!", street: "** Predzavodskaya ST", city: "Seversk, RU", coordinates: '{"lat": 56.590212, "lng": 84.939791}'

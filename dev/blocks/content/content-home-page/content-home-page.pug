@@ -1,0 +1,18 @@
+include ../../video/video
+include ../../blog-block/blog-block
+include ../../events-block/events-block
+include ../../header/header
+
+mixin content-home-page(options = {})
+    -
+        const {videoData = {}, blogData = {}, eventsData = {}, title = ""} = options;
+    main.content-home-page
+        .content-home-page__header
+            +header({title})
+        .content-home-page__body
+            .content-home-page__section.content-home-page__section_type_normal
+                +video(videoData)
+            .content-home-page__section.content-home-page__section_type_normal
+                +blog-block(blogData)
+            .content-home-page__section.content-home-page__section_type_normal
+                +events-block(eventsData)

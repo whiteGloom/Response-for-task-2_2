@@ -39,37 +39,6 @@
   margin-top: 2rem;
 }
 
-.base {
-  margin: 2rem 0;
-}
-.base__section_type_normal {
-  margin-top: 3rem;
-}
-.base__section_type_large {
-  margin-top: 3.6rem;
-}
-.base__section_type_charts {
-  margin-top: 3.2rem;
-}
-.base__section_type_sliders {
-  margin-top: 1.3rem;
-}
-.base__section_type_stages {
-  margin-top: 2rem;
-}
-.base__section_type_form {
-  margin-top: 2.5rem;
-}
-.base__section_type_bars-users {
-  margin-top: 4.5rem;
-}
-.base__section_type_events {
-  margin-top: 6.2rem;
-}
-.base__section:first-child {
-  margin-top: 0;
-}
-
 .blog-block__el {
   margin-top: 0.8rem;
 }
@@ -478,6 +447,67 @@
   margin-top: 0.8rem;
 }
 
+.content-about-page__body {
+  margin: 2rem 0;
+}
+.content-about-page__section {
+  margin-top: 3rem;
+}
+.content-about-page__section:first-child {
+  margin-top: 0;
+}
+
+.content-contacts-page__body {
+  margin: 2rem 0;
+}
+.content-contacts-page__section {
+  margin-top: 3rem;
+}
+.content-contacts-page__section:first-child {
+  margin-top: 0;
+}
+
+.content-home-page__body {
+  margin: 2rem 0;
+}
+.content-home-page__section {
+  margin-top: 3rem;
+}
+.content-home-page__section:first-child {
+  margin-top: 0;
+}
+
+.content-uikit-page__body {
+  margin: 2rem 0;
+}
+.content-uikit-page__section_type_normal {
+  margin-top: 3rem;
+}
+.content-uikit-page__section_type_large {
+  margin-top: 3.6rem;
+}
+.content-uikit-page__section_type_charts {
+  margin-top: 3.2rem;
+}
+.content-uikit-page__section_type_sliders {
+  margin-top: 1.3rem;
+}
+.content-uikit-page__section_type_stages {
+  margin-top: 2rem;
+}
+.content-uikit-page__section_type_form {
+  margin-top: 2.5rem;
+}
+.content-uikit-page__section_type_bars-users {
+  margin-top: 4.5rem;
+}
+.content-uikit-page__section_type_events {
+  margin-top: 6.2rem;
+}
+.content-uikit-page__section:first-child {
+  margin-top: 0;
+}
+
 .dropdown {
   width: 100%;
 }
@@ -824,7 +854,7 @@
   background-image: url("../images/marker-icon.png");
 }
 
-.menager-block__el {
+.menagers-block__el {
   display: flex;
   justify-content: space-around;
   margin-top: 0.8rem;

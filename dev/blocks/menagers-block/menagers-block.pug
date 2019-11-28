@@ -4,9 +4,9 @@ include ../title/title
 mixin menagers-block(options = {})
     -
         const {data = [], title = ""} = options;
-    section.menager-block
-        .menager-block__title
+    section.menagers-block
+        .menagers-block__title
             +title({text: title})
-        .menager-block__el
+        .menagers-block__el
             for item in data
                 +user(item)

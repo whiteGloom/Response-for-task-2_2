@@ -1,0 +1,55 @@
+include ../../buttons-showcase/buttons-showcase
+include ../../buttons-round-showcase/buttons-round-showcase
+include ../../charts-showcase/charts-showcase
+include ../../sliders-showcase/sliders-showcase
+include ../../stepbar-showcase/stepbar-showcase
+include ../../form-showcase/form-showcase
+include ../../bars-users-showcase/bars-users-showcase
+include ../../news-event-showcase/news-event-showcase
+include ../../location-showcase/location-showcase
+include ../../calendar-messenger-showcase/calendar-messenger-showcase
+include ../../video-showcase/video-showcase
+include ../../header/header
+
+mixin content-uikit-page(options = {})
+    -
+        const {
+            title = "",
+            buttonsData = {},
+            roundButtonsData = {},
+            chartsData = {},
+            slidersData = {},
+            stepbarData = {},
+            formData = {},
+            barsUsersData = {},
+            newsEventsData = {},
+            locationData = {},
+            messengerCalendarData = {},
+            videoData = {}
+        } = options;
+    main.content-uikit-page
+        .content-uikit-page__header
+            +header({title})
+        .content-uikit-page__body
+            .content-uikit-page__section.content-uikit-page__section_type_normal
+                +buttons-showcase(buttonsData)
+            .content-uikit-page__section.content-uikit-page__section_type_large
+                +buttons-round-showcase(roundButtonsData)
+            .content-uikit-page__section.content-uikit-page__section_type_charts
+                +charts-showcase(chartsData)
+            .content-uikit-page__section.content-uikit-page__section_type_sliders
+                +sliders-showcase(slidersData)
+            .content-uikit-page__section.content-uikit-page__section_type_stages
+                +stepbar-showcase(stepbarData)
+            .content-uikit-page__section.content-uikit-page__section_type_form
+                +form-showcase(formData)
+            .content-uikit-page__section.content-uikit-page__section_type_bars-users
+                +bars-users-showcase(barsUsersData)
+            .content-uikit-page__section.content-uikit-page__section_type_events
+                +news-event-showcase(newsEventsData)
+            .content-uikit-page__section.content-uikit-page__section_type_normal
+                +location-showcase(locationData)
+            .content-uikit-page__section.content-uikit-page__section_type_large
+                +calendar-messenger-showcase(messengerCalendarData)
+            .content-uikit-page__section.content-uikit-page__section_type_large
+                +video-showcase(videoData)

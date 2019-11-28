@@ -1,5 +1,4 @@
-include ../blocks/content/about-page-content
-include ../blocks/header/header
+include ../blocks/content/content-about-page/content-about-page
 
 doctype html
 html
@@ -15,7 +14,7 @@ html
         link(rel="stylesheet" type="text/css" href="static/styles/styles.css")
     // Тело странциы
     body
-        +about-page-content({
+        +content-about-page({
             title: "About", 
             aboutData: {
                 title: "Кратко о компании",

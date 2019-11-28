@@ -1,0 +1,18 @@
+include ../../about-block/about-block
+include ../../stats-block/stats-block
+include ../../working-area-block/working-area-block
+include ../../header/header
+
+mixin content-about-page(options = {})
+    -
+        const {aboutData = {}, statsData = {}, workingAreaData = {}, title = ""} = options;
+    main.content-about-page
+        .content-about-page__header
+            +header({title})
+        .content-about-page__body
+            .content-about-page__section
+                +about-block(aboutData)
+            .content-about-page__section
+                +stats-block(statsData)
+            .content-about-page__section
+                +working-area-block(workingAreaData)

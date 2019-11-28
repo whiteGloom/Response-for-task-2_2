@@ -1,5 +1,4 @@
-include ../blocks/content/home-page-content
-include ../blocks/header/header
+include ../blocks/content/content-home-page/content-home-page
 
 doctype html
 html
@@ -15,7 +14,7 @@ html
         link(rel="stylesheet" type="text/css" href="static/styles/styles.css")
     // Тело странциы
     body
-        +home-page-content({
+        +content-home-page({
             title: "Home",
             videoData: {
                 src: "./static/videos/intro.mp4", preview:  "./static/images/lkl-logo.png", title: "intro", author: "mr lKlAlRlAlBlIlNl", source: "https://youtu.be/y9Z-gDcCSmU"
