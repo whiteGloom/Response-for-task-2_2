@@ -1,4 +1,4 @@
 mixin stepbar(options = {})
     -
-        const {id = ""} = options;
-    .stepbar.js-stepbar(id=id)
+        const {id = "", items = ['1', '2', '3', '4', '5'], current = 3} = options;
+    .stepbar.js-stepbar(id=id data-items=items data-current=current)

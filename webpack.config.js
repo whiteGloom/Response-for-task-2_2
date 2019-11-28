@@ -1,28 +1,27 @@
 // External modules
-const path	= require('path'); // Плагин для упрощения работы с путями
-const merge	= require('webpack-merge');
+const path = require('path'); // Плагин для упрощения работы с путями
+const merge = require('webpack-merge');
 
-//
-var folder = path.join(__dirname);	// Переменная, хранящая абсолютный путь до рабочего каталога
+const folder = path.join(__dirname);
 
 // Local modules
-const base		= require(folder + "/webpackAdds/base.js");
-const babel		= require(folder + "/webpackAdds/babel.js");
-const pug		= require(folder + "/webpackAdds/pug.js");
-const stylus	= require(folder + "/webpackAdds/stylus.js");
-const static	= require(folder + "/webpackAdds/static.js");
-const aliases	= require(folder + "/webpackAdds/aliases.js");
+const base = require('./webpackAdds/base.js');
+const babel = require('./webpackAdds/babel.js');
+const pug = require('./webpackAdds/pug.js');
+const stylus = require('./webpackAdds/stylus.js');
+const statics = require('./webpackAdds/statics.js');
+const aliases = require('./webpackAdds/aliases.js');
 
 // Configuration
-module.exports = function() {
-	return merge([
-		base({base: folder}),
-		babel(),
-		pug({base: folder}),
-		stylus(),
-		static(),
-		aliases({base: folder})
-	])
+function config() {
+  return merge([
+    base({ base: folder }),
+    babel(),
+    pug({ base: folder }),
+    stylus(),
+    statics(),
+    aliases({ base: folder }),
+  ]);
 }
 
-// -whiteGloom
+module.exports = config;

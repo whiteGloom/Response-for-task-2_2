@@ -1,6 +1,6 @@
 const buttons = Array.from(document.querySelectorAll(".js-button-round"));
 
-buttons.forEach((el) => {
+function makeRipple(el) {
   let timerId;
 
   el.addEventListener("mousedown", (e) => {
@@ -29,4 +29,6 @@ buttons.forEach((el) => {
       ripple.classList.remove(`${el.classList[0]}__rippleEffect_start`);
     }, 500);
   });
-});
+}
+
+buttons.forEach(makeRipple);

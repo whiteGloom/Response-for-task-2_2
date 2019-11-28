@@ -1,28 +1,28 @@
 class Form {
   constructor(el) {
     this.$base = el;
-    this.name = this.$base.data("name");
+    this.name = this.$base.data('name');
   }
 
   getValues() {
     try {
       const data = [];
-      const formEntrys = this.$base.find(".js-form__el-entry");
+      const formEntrys = this.$base.find('.js-form__el-entry');
 
       formEntrys.forEach(($el) => {
         const $entry = $el.children();
-        if ($entry.data("custom")) {
-          if ($entry.data("valid") !== true) {
-            throw new SyntaxError("error");
+        if ($entry.data('custom')) {
+          if ($entry.data('valid') !== true) {
+            throw new SyntaxError('error');
           }
           data.push({
-            name: $entry.data("name"),
-            value: $entry.data("value") !== undefined ? $entry.data("value") : ""
+            name: $entry.data('name'),
+            value: $entry.data('value') !== undefined ? $entry.data('value') : '',
           });
         } else {
           data.push({
-            name: $entry.attr("name"),
-            value: $entry.val()
+            name: $entry.attr('name'),
+            value: $entry.val(),
           });
         }
       });
@@ -33,18 +33,18 @@ class Form {
   }
 
   onSubmit() {
-    this.$base.on("submit", $.proxy(function (event) {
-      event.preventDefault();
-      if (this.getValues() === "error") {
+    function submitHandler(e) {
+      e.preventDefault();
+      if (this.getValues() === 'error') {
         return;
       }
       window.location.reload();
-    }, this));
+    }
+
+    this.$base.on('submit', $.proxy(submitHandler, this));
   }
 }
 
-function makeForm(el) {
-  return new Form($(el));
-}
-
-export default makeForm;
+$('.js-form').each((i, el) => {
+  new Form($(el));
+});

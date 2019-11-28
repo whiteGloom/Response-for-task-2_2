@@ -131,8 +131,22 @@ html
             slidersData: {
                 title: "Sliders",
                 data: [
-                    {id: "sliderSimpleTest"},
-                    {id: "sliderPipsTest"}
+                    {
+                        id: "sliderSimpleTest",
+                        min: 0,
+                        max: 100,
+                        from: 40,
+                        grid: "false",
+                        skin: 'simple',
+                    },
+                    {
+                        id: "sliderPipsTest",
+                        min: 0,
+                        max: 100,
+                        from: 75,
+                        grid: "true",
+                        skin: 'pips',
+                    }
                 ]
             },
             chartsData: {

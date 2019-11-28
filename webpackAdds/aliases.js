@@ -1,12 +1,10 @@
-module.exports = function(options) {
-    var options = options ? options : {};
-    var base = options.base;
-    return {
-        resolve : {
-            alias: {
-            }
-        }
-    }
-};
+function config() {
+  return {
+    resolve: {
+      alias: {
+      },
+    },
+  };
+}
 
-// -whiteGloom
+module.exports = config;

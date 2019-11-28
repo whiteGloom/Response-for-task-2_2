@@ -1,5 +1,10 @@
 mixin slider(options = {})
     -
-        const {size = "auto", id = ""} = options;
-    .slider(class="" + (" slider_size_" + size) id= id)
+        const {size = "auto", fromValue=50, min=0, max=100, grid="true", skin="pips"} = options;
+    .slider.js-slider(class="" + (" slider_size_" + size)
+    	data-min=min
+		data-max=max
+		data-from=fromValue
+		data-grid=grid
+		data-skin=skin)
         input.slider__holder.js-slider__holder
