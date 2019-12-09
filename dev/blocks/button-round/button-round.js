@@ -1,34 +1,45 @@
-const buttons = Array.from(document.querySelectorAll(".js-button-round"));
+class Ripple {
+  constructor(el) {
+    this.element = el;
+    this._addListeners();
+  }
 
-function makeRipple(el) {
-  let timerId;
-
-  el.addEventListener("mousedown", (e) => {
-    clearTimeout(timerId);
-    const ripple = el.querySelector(`.js-${el.classList[0]}__rippleEffect`);
-    const size = el.offsetWidth;
-    const pos = el.getBoundingClientRect();
+  _handlerMousedown(e) {
+    clearTimeout(this.timerId);
+    const ripple = this.element.querySelector(`.js-${this.element.classList[0]}__rippleEffect`);
+    const size = this.element.offsetWidth;
+    const pos = this.element.getBoundingClientRect();
     const x = e.pageX - pos.left - window.pageXOffset - size;
     const y = e.pageY - pos.top - window.pageYOffset - size;
     ripple.style = `top: ${y}px; left: ${x}px; width: ${size * 2}px; height: ${size * 2}px;`;
-    ripple.classList.remove(`${el.classList[0]}__rippleEffect_active`);
-    ripple.classList.remove(`${el.classList[0]}__rippleEffect_start`);
+    ripple.classList.remove(`${this.element.classList[0]}__rippleEffect_active`);
+    ripple.classList.remove(`${this.element.classList[0]}__rippleEffect_start`);
     setTimeout(() => {
-      ripple.classList.add(`${el.classList[0]}__rippleEffect_start`);
+      ripple.classList.add(`${this.element.classList[0]}__rippleEffect_start`);
       setTimeout(() => {
-        ripple.classList.add(`${el.classList[0]}__rippleEffect_active`);
+        ripple.classList.add(`${this.element.classList[0]}__rippleEffect_active`);
       });
     });
-  });
+  }
 
-  el.addEventListener("mouseup", (e) => {
-    const ripple = el.querySelector(`.js-${el.classList[0]}__rippleEffect`);
-    clearTimeout(timerId);
-    timerId = setTimeout(() => {
-      ripple.classList.remove(`${el.classList[0]}__rippleEffect_active`);
-      ripple.classList.remove(`${el.classList[0]}__rippleEffect_start`);
+  _handlerMouseup() {
+    const ripple = this.element.querySelector(`.js-${this.element.classList[0]}__rippleEffect`);
+    clearTimeout(this.timerId);
+    this.timerId = setTimeout(() => {
+      ripple.classList.remove(`${this.element.classList[0]}__rippleEffect_active`);
+      ripple.classList.remove(`${this.element.classList[0]}__rippleEffect_start`);
     }, 500);
-  });
+  }
+
+  _addListeners() {
+    this.element.addEventListener('mousedown', this._handlerMousedown.bind(this));
+    this.element.addEventListener('mouseup', this._handlerMouseup.bind(this));
+  }
 }
 
+function makeRipple(el) {
+  return new Ripple(el);
+}
+
+const buttons = Array.from(document.getElementsByClassName('js-button-round'));
 buttons.forEach(makeRipple);

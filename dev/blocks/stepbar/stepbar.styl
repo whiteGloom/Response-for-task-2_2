@@ -1,1 +1,39 @@
-.stepbar{}
+.stepbar
+  position: relative
+  &__lineOuter
+    top: .8rem
+    left: .9rem
+    right: .9rem
+    position: absolute
+    display: flex
+    justify-content: space-between
+
+  &__separateLine
+    height: .35rem
+    &_state_active
+      background-color: #e75735
+    &_state_inactive
+      background-color: #e5e5e5
+  
+  &__divisionOuter
+    display: flex
+    justify-content: space-between
+    position: relative
+    
+  &__division
+    width: 1.9rem
+    height: 1.55rem
+    top: -.9rem
+    left: -.1rem
+    border-radius: 50%
+    font-family: lato
+    font-weight: bold
+    text-align: center
+    vertical-align: middle
+    padding-top: .4rem
+    &_state_active
+      background-color: #e75735
+      color: white
+    &_state_inactive
+      background-color: #e5e5e5
+      color: #888

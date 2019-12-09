@@ -11,7 +11,6 @@ require('./blocks/input/input.js');
 require('./blocks/searchbar/searchbar.js');
 require('./blocks/dropdown/dropdown.js');
 require('./blocks/form/form.js');
-require('./blocks/stepbar/stepbar.js');
 require('./blocks/slider/slider.js');
 require('./blocks/calendar/calendar.js');
 require('./scripts/scripts.js');

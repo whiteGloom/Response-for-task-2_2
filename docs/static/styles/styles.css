@@ -486,6 +486,9 @@
 .content-uikit-page__section_type_large {
   margin-top: 3.6rem;
 }
+.content-uikit-page__section_type_calendar-messenger {
+  margin-top: 3.4rem;
+}
 .content-uikit-page__section_type_charts {
   margin-top: 3.2rem;
 }
@@ -496,7 +499,10 @@
   margin-top: 2rem;
 }
 .content-uikit-page__section_type_form {
-  margin-top: 2.5rem;
+  margin-top: 3.8rem;
+}
+.content-uikit-page__section_type_form {
+  margin-top: 3.8rem;
 }
 .content-uikit-page__section_type_bars-users {
   margin-top: 4.5rem;
@@ -1169,9 +1175,54 @@
   witdh: 100%;
 }
 .stepbar-showcase__el {
-  margin-top: 1.3rem;
+  margin-top: 1.8rem;
 }
 
+.stepbar {
+  position: relative;
+}
+.stepbar__lineOuter {
+  top: 0.8rem;
+  left: 0.9rem;
+  right: 0.9rem;
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+}
+.stepbar__separateLine {
+  height: 0.35rem;
+}
+.stepbar__separateLine_state_active {
+  background-color: #e75735;
+}
+.stepbar__separateLine_state_inactive {
+  background-color: #e5e5e5;
+}
+.stepbar__divisionOuter {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+.stepbar__division {
+  width: 1.9rem;
+  height: 1.55rem;
+  top: -0.9rem;
+  left: -0.1rem;
+  border-radius: 50%;
+  font-family: lato;
+  font-weight: bold;
+  text-align: center;
+  vertical-align: middle;
+  padding-top: 0.4rem;
+}
+.stepbar__division_state_active {
+  background-color: #e75735;
+  color: #fff;
+}
+.stepbar__division_state_inactive {
+  background-color: #e5e5e5;
+  color: #888;
+}
 
 .tick {
   width: 1.6rem;

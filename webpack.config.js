@@ -1,10 +1,8 @@
-// External modules
-const path = require('path'); // Плагин для упрощения работы с путями
+const path = require('path');
 const merge = require('webpack-merge');
 
 const folder = path.join(__dirname);
 
-// Local modules
 const base = require('./webpackAdds/base.js');
 const babel = require('./webpackAdds/babel.js');
 const pug = require('./webpackAdds/pug.js');
@@ -12,7 +10,6 @@ const stylus = require('./webpackAdds/stylus.js');
 const statics = require('./webpackAdds/statics.js');
 const aliases = require('./webpackAdds/aliases.js');
 
-// Configuration
 function config() {
   return merge([
     base({ base: folder }),
