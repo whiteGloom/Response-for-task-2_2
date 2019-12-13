@@ -151,10 +151,17 @@
 .ui-datepicker-buttonpane .ui-widget-content {
   border: 0 !important;
 }
-.ui-datepicker tbody td.ui-datepicker-today{
+.ui-datepicker tbody td.ui-datepicker-today {
   background-color: #e75735 !important;
 }
-.ui-datepicker tbody td.ui-datepicker-today a{
+.ui-datepicker tbody td.ui-datepicker-today a {
+  color: white !important;
+  background-color: transparent !important;
+}
+.ui-datepicker tbody td.ui-datepicker-current-day:not(.ui-datepicker-today) {
+  background-color: #cc9381 !important;
+}
+.ui-datepicker tbody td.ui-datepicker-current-day:not(.ui-datepicker-today) a {
   color: white !important;
   background-color: transparent !important;
 }

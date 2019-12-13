@@ -1630,6 +1630,13 @@
   color: #fff !important;
   background-color: transparent !important;
 }
+.ui-datepicker tbody td.ui-datepicker-current-day:not(.ui-datepicker-today) {
+  background-color: #cc9381 !important;
+}
+.ui-datepicker tbody td.ui-datepicker-current-day:not(.ui-datepicker-today) a {
+  color: #fff !important;
+  background-color: transparent !important;
+}
 .ui-datepicker .ui-datepicker-buttonpane {
   border: 0 !important;
   margin: 0 !important;
