@@ -1,4 +1,4 @@
-include ../p/p
+include ../paragraph/paragraph
 include ../title/title
 
 mixin about-block(options = {})
@@ -9,4 +9,4 @@ mixin about-block(options = {})
             +title({text: title})
         .about-block__el
             for item in data
-                +p({text: item.text})
+                +paragraph({text: item.text})

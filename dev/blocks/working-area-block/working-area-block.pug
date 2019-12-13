@@ -1,5 +1,5 @@
 include ../title/title
-include ../p/p
+include ../paragraph/paragraph
 
 mixin working-area-block(options = {})
     -
@@ -9,4 +9,4 @@ mixin working-area-block(options = {})
             +title({text: title})
         .working-area-block__el
             for item in data
-                +p({text: item.text})
+                +paragraph({text: item.text})
