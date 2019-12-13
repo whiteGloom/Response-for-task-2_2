@@ -7,10 +7,16 @@ mixin chart(options = {})
             when "progress"
                 svg(version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                     viewBox="0 0 612 612" style="enable-background:new 0 0 612 612;" xml:space="preserve")
-                    circle(cx="306" cy="306" r="230" stroke="#e75735" stroke-width="32" stroke-dasharray=(dash * value / 100) + "px, " + (dash - dash * value / 100) + "px" stroke-dashoffset=(dash * 0.25) + "px" fill="transparent")
+                    circle(cx="306" cy="306" r="230" stroke="#e75735" stroke-width="32"
+                        stroke-dasharray=(dash * value / 100) + "px, " + (dash - dash * value / 100)+ "px"
+                        stroke-dashoffset=(dash * 0.25) + "px"
+                        fill="transparent")
                     text.chart__text(x="306" y="336" text-anchor="middle" fill="#9d9d9d")= value
             when "pie"
                 svg(version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                     viewBox="0 0 612 612" style="enable-background:new 0 0 612 612;" xml:space="preserve")
                     for valuePie, index in values
-                            circle(cx="306" cy="306" r="200" stroke=valuePie.color stroke-width="86" stroke-dasharray=(dash * valuePie.value / 100) + "px, " + (dash - dash * valuePie.value / 100) + "px" stroke-dashoffset=(dash * 0.25 - dash * (valuePie.offset ? valuePie.offset : 0) / 100) + "px" fill="transparent")
+                        circle(cx="306" cy="306" r="200" stroke=valuePie.color stroke-width="86"
+                            stroke-dasharray=(dash * valuePie.value / 100) + "px, " + (dash - dash * valuePie.value / 100) + "px"
+                            stroke-dashoffset=(dash * 0.25 - dash * (valuePie.offset ? valuePie.offset : 0) / 100) + "px"
+                            fill="transparent")

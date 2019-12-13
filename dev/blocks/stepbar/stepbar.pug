@@ -1,7 +1,7 @@
 mixin stepbar(options = {})
     -
         const {id = '', items = ['1', '2', '3', '4', '5'], current = 3} = options;
-    .stepbar.js-stepbar(id=id data-items=items data-current=current)
+    .stepbar(id=id data-items=items data-current=current)
         .stepbar__lineOuter
             .stepbar__separateLine.stepbar__separateLine_state_active(style='width: ' + ((current - 1) / (items.length - 1)) * 100 + '%')
             .stepbar__separateLine.stepbar__separateLine_state_inactive(style='width: ' + (((items.length - 1) - (current - 1)) / (items.length - 1)) * 100 + '%')

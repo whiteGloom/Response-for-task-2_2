@@ -2,7 +2,7 @@ mixin tick(options = {})
     -
         const {checked = false, name = "tick", id = ""} = options;
 
-    .tick.js-tick(type="button")
+    .tick(type="button")
         input.tick__fakeInput(name=name id=id type="radio" checked=checked)
         label.tick__outer(name=name for=id)
             svg.tick__icon(viewbox="0 0 40 40")
