@@ -3,7 +3,7 @@ include ../input/input
 mixin searchbar(options = {})
     -
         const {name = "searchbar", placeholder = "Search", value = "", color = "orange"} = options;
-    .searchbar.js-searchbar(data-type=type data-name=name)
+    .searchbar.js-searchbar(data-type=type data-name=name data-custom="true" data-valid="true" data-value="false")
         .searchbar__outer
             .searchbar__input.js-searchbar__input
                 +input({type: "text", name: "search", value: value, color: color, placeholder: placeholder, radius: "left"})

@@ -1,6 +1,13 @@
 class Map {
   constructor(el) {
     this.$base = el;
+
+    this._init();
+    this._findMarker();
+    this._findMe();
+  }
+
+  _init() {
     this.$mapHolder = this.$base.find('.js-map__holder').first();
     this.$findMeButton = this.$base.find('.js-map__button_type_me');
     this.$findMarkerButton = this.$base.find('.js-map__button_type_marker');
@@ -17,12 +24,9 @@ class Map {
       map: this.map,
       icon: './static/images/map-marker.png',
     });
-
-    this.findMarker();
-    this.findMe();
   }
 
-  findMe() {
+  _findMe() {
     function finder() {
       function handleLocationError(browserHasGeolocation, infoWindow, pos) {
         infoWindow.setPosition(pos);
@@ -54,7 +58,7 @@ class Map {
   }
 
 
-  findMarker() {
+  _findMarker() {
     function finder() {
       this.map.setCenter(this.markerPosition);
       this.position = this.markerPosition;

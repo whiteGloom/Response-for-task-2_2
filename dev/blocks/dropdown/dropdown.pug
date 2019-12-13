@@ -1,7 +1,7 @@
 mixin dropdown(options = {})
     -
         const {defaultText = "Choose an option", data = []} = options;
-    .dropdown.js-dropdown
+    .dropdown.js-dropdown(data-custom="true" data-valid="false" data-value="false")
         .dropdown__outer
             .dropdown__currentValue.js-dropdown__currentValue= defaultText
             .dropdown__button.js-dropdown__button

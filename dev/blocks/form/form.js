@@ -4,7 +4,19 @@ class Form {
     this.name = this.$base.data('name');
   }
 
-  getValues() {
+  onSubmit() {
+    function submitHandler(e) {
+      e.preventDefault();
+      if (this._getValues() === 'error') {
+        return;
+      }
+      window.location.reload();
+    }
+
+    this.$base.on('submit', $.proxy(submitHandler, this));
+  }
+
+  _getValues() {
     try {
       const data = [];
       const formEntrys = this.$base.find('.js-form__el-entry');
@@ -30,18 +42,6 @@ class Form {
     } catch (e) {
       return e;
     }
-  }
-
-  onSubmit() {
-    function submitHandler(e) {
-      e.preventDefault();
-      if (this.getValues() === 'error') {
-        return;
-      }
-      window.location.reload();
-    }
-
-    this.$base.on('submit', $.proxy(submitHandler, this));
   }
 }
 
