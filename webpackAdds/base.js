@@ -4,8 +4,10 @@ function config(options = {}) {
   return {
     mode: 'development',
     entry: {
-      base: `${base}/dev/index.js`,
-      static: `${base}/dev/static.js`,
+      about: `${base}/dev/views/about/about.js`,
+      contacts: `${base}/dev/views/contacts/contacts.js`,
+      uikit: `${base}/dev/views/uikit/uikit.js`,
+      statics: `${base}/dev/static.js`,
     },
     output: {
       path: `${base}/prod/`,
@@ -13,11 +15,9 @@ function config(options = {}) {
     },
     module: {
       rules: [
-
       ],
     },
     plugins: [
-
     ],
     devServer: {
       stats: 'errors-only',

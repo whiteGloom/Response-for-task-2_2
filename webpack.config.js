@@ -3,12 +3,12 @@ const merge = require('webpack-merge');
 
 const folder = path.join(__dirname);
 
+const babel = require('./webpackAdds/vendors/babel.js');
+const pug = require('./webpackAdds/vendors/pug.js');
+const stylus = require('./webpackAdds/vendors/stylus.js');
+const statics = require('./webpackAdds/vendors/statics.js');
+const aliases = require('./webpackAdds/vendors/aliases.js');
 const base = require('./webpackAdds/base.js');
-const babel = require('./webpackAdds/babel.js');
-const pug = require('./webpackAdds/pug.js');
-const stylus = require('./webpackAdds/stylus.js');
-const statics = require('./webpackAdds/statics.js');
-const aliases = require('./webpackAdds/aliases.js');
 
 function config() {
   return merge([

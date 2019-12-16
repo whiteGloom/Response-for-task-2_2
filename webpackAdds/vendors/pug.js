@@ -15,26 +15,26 @@ function config(options = {}) {
     },
     plugins: [
       new HTMLWebpackPlugin({
-        template: `${base}/dev/views/uikit.pug`,
-        filename: 'uikit.html',
-        inject: false,
-        minify: false,
-      }),
-      new HTMLWebpackPlugin({
-        template: `${base}/dev/views/home.pug`,
+        template: `${base}/dev/views/home/home.pug`,
         filename: 'index.html',
         inject: false,
         minify: false,
       }),
       new HTMLWebpackPlugin({
-        template: `${base}/dev/views/contacts.pug`,
+        template: `${base}/dev/views/about/about.pug`,
+        filename: 'about.html',
+        inject: false,
+        minify: false,
+      }),
+      new HTMLWebpackPlugin({
+        template: `${base}/dev/views/contacts/contacts.pug`,
         filename: 'contacts.html',
         inject: false,
         minify: false,
       }),
       new HTMLWebpackPlugin({
-        template: `${base}/dev/views/about.pug`,
-        filename: 'about.html',
+        template: `${base}/dev/views/uikit/uikit.pug`,
+        filename: 'uikit.html',
         inject: false,
         minify: false,
       }),
