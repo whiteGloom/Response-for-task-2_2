@@ -4,8 +4,6 @@ class Input {
     this.valid = true;
 
     this._init();
-    this._addListeners();
-    this._test();
   }
 
   _setValue(value) {
@@ -73,6 +71,9 @@ class Input {
     this.$message = this.$base.find('.js-input__message');
     this.type = this.$base.data('type');
     this.name = this.$base.data('name');
+
+    this._addListeners();
+    this._test();
   }
 
   _addListeners() {

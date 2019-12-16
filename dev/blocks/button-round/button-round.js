@@ -1,7 +1,7 @@
 class Ripple {
   constructor(el) {
     this.element = el;
-    this._addListeners();
+    this._init();
   }
 
   _handlerMousedown(e) {
@@ -34,6 +34,10 @@ class Ripple {
   _addListeners() {
     this.element.addEventListener('mousedown', this._handlerMousedown.bind(this));
     this.element.addEventListener('mouseup', this._handlerMouseup.bind(this));
+  }
+
+  _init() {
+    this._addListeners();
   }
 }
 

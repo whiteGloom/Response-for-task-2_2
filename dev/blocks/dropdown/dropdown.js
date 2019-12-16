@@ -5,16 +5,6 @@ class Dropdown {
     this.custom = true;
 
     this._init();
-    this._addListeners();
-  }
-
-  _init() {
-    this.$button = this.$base.find('.js-dropdown__button');
-    this.$currentValue = this.$base.find('.js-dropdown__currentValue');
-    this.$optionsBox = this.$base.find('.js-dropdown__optionsBox');
-
-    this.type = this.$base.data('type');
-    this.name = this.$base.data('name');
   }
 
   _setValue(value) {
@@ -25,10 +15,6 @@ class Dropdown {
   _setValid(valid) {
     this.valid = valid;
     this.$base.data('valid', valid);
-  }
-
-  _addListeners() {
-    this.$button.on('click', $.proxy(this._test, this));
   }
 
   _test() {
@@ -59,6 +45,21 @@ class Dropdown {
         .addClass('dropdown__optionsBox_state_visible');
       $(document).on('click', $.proxy(selecting, this));
     }
+  }
+
+  _addListeners() {
+    this.$button.on('click', $.proxy(this._test, this));
+  }
+
+  _init() {
+    this.$button = this.$base.find('.js-dropdown__button');
+    this.$currentValue = this.$base.find('.js-dropdown__currentValue');
+    this.$optionsBox = this.$base.find('.js-dropdown__optionsBox');
+
+    this.type = this.$base.data('type');
+    this.name = this.$base.data('name');
+
+    this._addListeners();
   }
 }
 

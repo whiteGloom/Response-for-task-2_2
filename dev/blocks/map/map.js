@@ -3,8 +3,6 @@ class Map {
     this.$base = el;
 
     this._init();
-    this._findMarker();
-    this._findMe();
   }
 
   _init() {
@@ -15,6 +13,7 @@ class Map {
     this.position = this.$base.data('coordinates');
     this.markerPosition = this.position;
     this.myPosition = 0;
+
     this.map = new window.google.maps.Map(this.$mapHolder[0], {
       center: this.position,
       zoom: 15,
@@ -24,6 +23,9 @@ class Map {
       map: this.map,
       icon: './static/images/map-marker.png',
     });
+
+    this._findMarker();
+    this._findMe();
   }
 
   _findMe() {
@@ -60,8 +62,8 @@ class Map {
 
   _findMarker() {
     function finder() {
-      this.map.setCenter(this.markerPosition);
       this.position = this.markerPosition;
+      this.map.setCenter(this.position);
     }
 
     this.$findMarkerButton.on('click', $.proxy(finder, this));
