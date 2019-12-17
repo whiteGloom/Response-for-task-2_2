@@ -32,11 +32,14 @@
   width: 48.5%;
 }
 .bars-users-showcase__bars-content {
-  margin-top: 1.2rem;
+  margin-top: 1.3rem;
 }
 .bars-users-showcase__users-content {
   padding-left: 1.3rem;
   margin-top: 2rem;
+}
+.bars-users-showcase__users-content ~ .bars-users-showcase__users-content {
+  margin-top: 1.85rem;
 }
 
 .blog-block__el {
@@ -359,7 +362,7 @@
   justify-content: space-around;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 2.3rem;
+  margin-top: 2.4rem;
 }
 
 .buttons-showcase__el {
@@ -383,7 +386,7 @@
   width: 19.6rem;
 }
 .calendar-messenger-showcase__el_type_calendar {
-  width: 19rem;
+  width: 19.05rem;
 }
 .calendar-messenger-showcase__el-content {
   margin-top: 1.7rem;
@@ -481,7 +484,7 @@
   margin: 2rem 0;
 }
 .content-uikit-page__section_type_normal {
-  margin-top: 3rem;
+  margin-top: 3.2rem;
 }
 .content-uikit-page__section_type_large {
   margin-top: 3.6rem;
@@ -496,19 +499,16 @@
   margin-top: 1.3rem;
 }
 .content-uikit-page__section_type_stages {
-  margin-top: 2rem;
+  margin-top: 1.95rem;
 }
 .content-uikit-page__section_type_form {
-  margin-top: 3.8rem;
-}
-.content-uikit-page__section_type_form {
-  margin-top: 3.8rem;
+  margin-top: 3.75rem;
 }
 .content-uikit-page__section_type_bars-users {
-  margin-top: 4.5rem;
+  margin-top: 4.45rem;
 }
 .content-uikit-page__section_type_events {
-  margin-top: 6.2rem;
+  margin-top: 6.45rem;
 }
 .content-uikit-page__section:first-child {
   margin-top: 0;
@@ -600,13 +600,13 @@
   justify-content: space-between;
 }
 .form-showcase__form {
-  width: 48.5%;
+  width: 48.4%;
 }
 .form-showcase__buttons-container {
   width: 48.5%;
 }
 .form-showcase__button {
-  margin-top: 2.5rem;
+  margin-top: 2.7rem;
 }
 .form-showcase__button:first-child {
   margin-top: 0;
@@ -614,17 +614,18 @@
 .form-showcase__button-content {
   margin-left: auto;
   margin-right: auto;
-  margin-top: 2rem;
 }
 .form-showcase__button-content_type_toggle {
   width: 46%;
   display: flex;
   justify-content: space-between;
+  margin-top: 1.8rem;
 }
 .form-showcase__button-content_type_tick {
   width: 22%;
   display: flex;
   justify-content: space-between;
+  margin-top: 2rem;
 }
 
 .form {
@@ -638,7 +639,7 @@
   margin-top: 0.8rem;
 }
 .form__el_margin_big {
-  margin-top: 1rem;
+  margin-top: 1.1rem;
 }
 .form__el:first-child {
   margin-top: 0;
@@ -655,7 +656,7 @@
   font-style: normal;
 }
 .form__submit {
-  margin-top: 0.6rem;
+  margin-top: 0.7rem;
   margin-left: auto;
   display: table;
 }
@@ -734,7 +735,7 @@
   color: #fff;
 }
 .input__entry_form_box {
-  min-height: 6rem;
+  min-height: 5.8rem;
 }
 .input__entry_form_boxMini {
   min-height: 4rem;
@@ -785,7 +786,7 @@
 }
 
 .location-showcase__el {
-  margin-top: 2rem;
+  margin-top: 2.05rem;
 }
 
 .map {
@@ -798,7 +799,7 @@
   height: 100%;
   border-radius: 3px;
   overflow: hidden;
-  min-height: 18.5rem;
+  min-height: 18.55rem;
 }
 .map__holder {
   width: 100%;
@@ -1017,6 +1018,7 @@
   overflow: hidden;
 }
 .note__imageBox {
+  position: relative;
   width: 33%;
   flex-shrink: 0;
 }
@@ -1024,6 +1026,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  position: absolute;
 }
 .note__info {
   width: 67%;
@@ -1088,7 +1091,7 @@
 }
 .note__button {
   width: 88%;
-  margin: 1.2rem auto 0 auto;
+  margin: 1.15rem auto 0 auto;
 }
 
 .paragraph {
@@ -1120,7 +1123,7 @@
 .searchbar__outer {
   display: flex;
   width: 100%;
-  height: 2rem;
+  height: 1.9rem;
   justify-content: space-between;
 }
 .searchbar__input {
